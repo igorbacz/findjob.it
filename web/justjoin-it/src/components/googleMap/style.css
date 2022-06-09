@@ -1,0 +1,14 @@
+.map__container__wrapper{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+
+.map__container{
+    width: 40%;
+    height:500px;
+    background-color: rgb(219, 255, 219);
+    display: flex;
+    
+}

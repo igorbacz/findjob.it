@@ -1,15 +1,19 @@
 .topbar{
     display: flex;
+    border-bottom: 1px solid #E4E8F0;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.topbar__logo{
+  padding-right: 20px;
 }
 
 .topbar__left{
     display: flex;
     align-items: center;
     flex: 1;
-}
-
-.topbar__logo{
-    margin-left: 16px;
 }
 
 .switch {
@@ -100,16 +104,16 @@ input:checked + .slider:before {
 }
 
 .button--light{
-    border: 2px solid #99A1AB;
+    border: 2px solid #ebeced;;
     width: 90px;
     height: 40px;
     border-radius: 50px;
     background-color: white;
-    border-color: #99A1AB; 
+    border-color: #ebeced;
     margin-right: 15px;
 }
 .button--light:hover{
-    background-color: #99A1AB;
+    background-color:#ebeced;
 }
 
 .button--pink{
@@ -127,4 +131,20 @@ input:checked + .slider:before {
     border-color: #b91a4f; 
 }
 
+
+
+.button__currency{
+  border: 0px;
+  background-color: white;
+  height: 70px;
+}
+
+.button__wrapper{
+  border-left: 1px solid #E4E8F0;
+  border-right: 1px solid #E4E8F0;
+}
+
+.button__currency:hover{
+   background-color:#ebeced;
+}
 

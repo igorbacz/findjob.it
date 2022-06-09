@@ -15,18 +15,18 @@ export const TopBar = () => {
         </label>
       </div>
       <div className="topbar__items">
-        <h5 className="topbar__item">
+        <h4 className="topbar__item">
           <a>Offers</a>
-        </h5>
-        <h5 className="topbar__item">
+        </h4>
+        <h4 className="topbar__item">
           <a>Brand Stories</a>
-        </h5>
-        <h5 className="topbar__item">
+        </h4>
+        <h4 className="topbar__item">
           <a>Geek</a>
-        </h5>
-        <h5 className="topbar__item">
+        </h4>
+        <h4 className="topbar__item">
           <a>Matchmaking</a>
-        </h5>
+        </h4>
       </div>
       <div className="topbar__buttons">
         <button className="button--light" type="button">
@@ -35,6 +35,11 @@ export const TopBar = () => {
         <button className="button--pink" type="button">
           Sign in
         </button>
+        <div className="button__wrapper">
+          <button className="button__currency" type="button">
+            PLN
+          </button>
+        </div>
       </div>
     </div>
   );
