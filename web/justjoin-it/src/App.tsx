@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <h1>Iwooona</h1>
     </div>
   );
 }
