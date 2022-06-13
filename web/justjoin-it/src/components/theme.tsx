@@ -1,6 +1,5 @@
 import { createTheme } from "@mui/material/styles";
 import { pink, grey } from "@mui/material/colors";
-import { spacing } from "@mui/system";
 
 export const theme = createTheme({
   palette: {
