@@ -1,78 +1,110 @@
+import Button from "@mui/material/Button";
 import React from "react";
-import "./style.css";
 import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPython, FaReact, FaVuejs } from "react-icons/fa";
+import { Container, ContainerSection, IconContainer, IconText } from "./styled";
+import { IconButton, TextField, ThemeProvider } from "@mui/material";
+import { theme } from "../theme";
+import { SearchOutlined } from "@mui/icons-material";
+import makeStyles from "@mui/styles/makeStyles";
+import { LocationMenu } from "./LocationMenu";
+
+// const useStyles = makeStyles({
+//   input1: {
+//     borderColor: "red",   <==== doesn`t WORK !!
+//   },
+// });
 
 export const SearchBar = () => {
+  // const classes = useStyles();
+
   return (
-    <div className="searchBar">
-      <div className="searchBar__left">
-        <input className="searchBar__input" placeholder="Search..."></input>
-        <button type="button" className="searchBar__button">
-          Location
-        </button>
-      </div>
-      <div className="searchBar__right">
-        <div className="searchBar__icon">
-          <a>
-            <FaCss3 className="icon" />
-          </a>
-          <span className="icon__text">CSS</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaJs className="icon" />
-          </a>
-          <span className="icon__text">JS</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaHtml5 className="icon" />
-          </a>
-          <span className="icon__text">HTML</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaPython className="icon" />
-          </a>
-          <span className="icon__text">Python</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaJava className="icon" />
-          </a>
-          <span className="icon__text">Java</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaReact className="icon" />
-          </a>
-          <span className="icon__text">React</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaNodeJs className="icon" />
-          </a>
-          <span className="icon__text">Node</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaVuejs className="icon" />
-          </a>
-          <span className="icon__text">Vue</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaAngular className="icon" />
-          </a>
-          <span className="icon__text">Angular</span>
-        </div>
-        <div className="searchBar__icon">
-          <a>
-            <FaGithub className="icon" />
-          </a>
-          <span className="icon__text">Github</span>
-        </div>
-      </div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <ContainerSection>
+          <TextField
+            id="standard-bare"
+            variant="outlined"
+            size="small"
+            color="secondary"
+            placeholder="Search..."
+            InputProps={{
+              // classes: { input: classes.input1 },
+              endAdornment: (
+                <IconButton>
+                  <SearchOutlined />
+                </IconButton>
+              ),
+            }}
+          />
+          <LocationMenu />
+
+          {/* <Button color="secondary" variant="outlined">
+            Location
+          </Button> */}
+        </ContainerSection>
+        <ContainerSection>
+          <IconContainer>
+            <a>
+              <FaCss3 />
+            </a>
+            <IconText> CSS</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaJs />
+            </a>
+            <IconText> JS</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaHtml5 />
+            </a>
+            <IconText> HTML</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaPython />
+            </a>
+            <IconText> Python</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaJava />
+            </a>
+            <IconText> Java</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaReact />
+            </a>
+            <IconText> React</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaNodeJs />
+            </a>
+            <IconText> Node</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaVuejs />
+            </a>
+            <IconText> Vue</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaAngular />
+            </a>
+            <IconText> Angular</IconText>
+          </IconContainer>
+          <IconContainer>
+            <a>
+              <FaGithub />
+            </a>
+            <IconText> Github</IconText>
+          </IconContainer>
+        </ContainerSection>
+      </Container>
+    </ThemeProvider>
   );
 };

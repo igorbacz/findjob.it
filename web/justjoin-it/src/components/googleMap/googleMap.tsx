@@ -1,11 +1,10 @@
 import React from "react";
-import "./style.css";
+import { MapContainer, Wrapper } from "./styled";
 
 export const GoogleMap = () => {
   return (
-    <div className="map__container__wrapper">
-      <div className="map__container">Map</div>;
-    </div>
+    <Wrapper>
+      <MapContainer>Map</MapContainer>
+    </Wrapper>
   );
 };
-

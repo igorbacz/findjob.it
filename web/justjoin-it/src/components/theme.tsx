@@ -1,13 +1,12 @@
 import { createTheme } from "@mui/material/styles";
-import { pink, grey } from "@mui/material/colors";
-import { spacing } from "@mui/system";
+import { grey } from "@mui/material/colors";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      light: pink[300],
-      main: pink[500],
-      dark: pink[700],
+      light: "#ff92b6",
+      main: "#FF4081",
+      dark: "#d60e61",
       contrastText: grey[50],
     },
     secondary: {

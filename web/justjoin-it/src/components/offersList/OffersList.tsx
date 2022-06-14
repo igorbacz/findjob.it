@@ -1,7 +1,6 @@
 import React from "react";
-import { GoogleMap } from "../googleMap/googleMap";
 import { MiniOffer } from "../miniOffer/MiniOffer";
-import "./style.css";
+import { Container } from "./styled";
 
 export const OffersList = () => {
   const offers = [
@@ -28,10 +27,10 @@ export const OffersList = () => {
     },
   ];
   return (
-    <div className="offers__components">
+    <Container>
       <MiniOffer logo={offers[0].logo} amount={offers[0].amount} title={offers[0].title} city={offers[0].city} companyName={offers[0].companyName} />
       <MiniOffer logo={offers[1].logo} amount={offers[1].amount} title={offers[1].title} city={offers[1].city} companyName={offers[1].companyName} />
       <MiniOffer logo={offers[2].logo} amount={offers[2].amount} title={offers[2].title} city={offers[2].city} companyName={offers[2].companyName} />
-    </div>
+    </Container>
   );
 };
