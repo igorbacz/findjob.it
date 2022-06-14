@@ -3,5 +3,5 @@ export interface Offer {
   amount: number;
   city: string;
   companyName: string;
-  logo?: string;
+  logo: string;
 }

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   margin-top: 3px;
   display: flex;
+  background-color: white;
 `;
 
 export const ContainerSection = styled.div`
@@ -37,3 +38,26 @@ export const IconContainer = styled.div`
 export const IconText = styled.span`
   font-size: 10px;
 `;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+`;
+export const HeaderBig = styled.h4`
+  color: rgb(119, 119, 119);
+  font-weight: 700;
+  font-size: 20px;
+`;
+export const Header = styled.h5`
+  color: rgb(119, 119, 119);
+  font-weight: 600;
+  font-size: 16px;
+`;
+
+// export const ButtonsContainer = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+// `;

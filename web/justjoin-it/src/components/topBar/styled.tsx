@@ -6,6 +6,7 @@ export const Container = styled.div`
   height: 70px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: white;
 `;
 
 export const LogoWrapper = styled.div`

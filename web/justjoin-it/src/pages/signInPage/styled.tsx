@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Wrapper = styled.div`
   background-color: rgb(243, 246, 248);
+  box-sizing: inherit;
 `;

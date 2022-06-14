@@ -1,19 +1,46 @@
 import Button from "@mui/material/Button";
 import React from "react";
 import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPython, FaReact, FaVuejs } from "react-icons/fa";
-import { Container, ContainerSection, IconContainer, IconText, Input } from "./styled";
-import { ThemeProvider } from "@mui/material";
+import { Container, ContainerSection, IconContainer, IconText } from "./styled";
+import { IconButton, TextField, ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
+import { SearchOutlined } from "@mui/icons-material";
+import makeStyles from "@mui/styles/makeStyles";
+import { LocationMenu } from "./LocationMenu";
+
+// const useStyles = makeStyles({
+//   input1: {
+//     borderColor: "red",   <==== doesn`t WORK !!
+//   },
+// });
 
 export const SearchBar = () => {
+  // const classes = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <ContainerSection>
-          <Input placeholder="Search..."></Input>
-          <Button color="secondary" variant="outlined">
+          <TextField
+            id="standard-bare"
+            variant="outlined"
+            size="small"
+            color="secondary"
+            placeholder="Search..."
+            InputProps={{
+              // classes: { input: classes.input1 },
+              endAdornment: (
+                <IconButton>
+                  <SearchOutlined />
+                </IconButton>
+              ),
+            }}
+          />
+          <LocationMenu />
+
+          {/* <Button color="secondary" variant="outlined">
             Location
-          </Button>
+          </Button> */}
         </ContainerSection>
         <ContainerSection>
           <IconContainer>

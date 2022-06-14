@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 59%;
   border-radius: 10px;
+  background: white;
+  margin: 5px;
+  padding: 6px;
+  height: 90px;
   -webkit-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   -moz-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
