@@ -3,10 +3,10 @@ import React from "react";
 import "./styled.tsx";
 import { SwitchMode } from "./SwitchMode";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "../theme";
 import { SignInMenu } from "./SignInMenu";
-import { CurrencyMenu } from "./CurrencyMenu";
 import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoHeader, LogoParagraph, LogoWrapper } from "./styled";
+import { theme } from "../theme";
+import { CurrencyMenu } from "./CurrencyMenu";
 
 export const TopBar = () => {
   return (

@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Header, HeaderBig, HeaderContainer } from "./styled";
+import { Header, HeaderBig, HeaderContainer, ButtonsContainer } from "./styled";
 
 export const LocationMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -39,46 +39,46 @@ export const LocationMenu = () => {
           </HeaderContainer>
           <div>
             <Header>Top Poland</Header>
-            {/* <ButtonsContainer> */}
-            <Button color="secondary" variant="outlined">
-              Warszawa
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Kraków
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Wrocław
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Poznań
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Trójmiasto
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Śląsk
-            </Button>
-            {/* </ButtonsContainer> */}
+            <ButtonsContainer>
+              <Button color="secondary" variant="outlined">
+                Warszawa
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Kraków
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Wrocław
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Poznań
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Trójmiasto
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Śląsk
+              </Button>
+            </ButtonsContainer>
           </div>
           <div>
             <Header>Top World</Header>
-            {/* <ButtonsContainer> */}
-            <Button color="secondary" variant="outlined">
-              New York
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Sydney
-            </Button>
-            <Button color="secondary" variant="outlined">
-              Berlin
-            </Button>
-            <Button color="secondary" variant="outlined">
-              San Franciso
-            </Button>
-            <Button color="secondary" variant="outlined">
-              London
-            </Button>
-            {/* </ButtonsContainer> */}
+            <ButtonsContainer>
+              <Button color="secondary" variant="outlined">
+                New York
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Sydney
+              </Button>
+              <Button color="secondary" variant="outlined">
+                Berlin
+              </Button>
+              <Button color="secondary" variant="outlined">
+                San Franciso
+              </Button>
+              <Button color="secondary" variant="outlined">
+                London
+              </Button>
+            </ButtonsContainer>
           </div>
         </Typography>
       </Popover>

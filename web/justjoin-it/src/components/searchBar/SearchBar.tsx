@@ -1,22 +1,60 @@
-import Button from "@mui/material/Button";
 import React from "react";
-import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPython, FaReact, FaVuejs } from "react-icons/fa";
-import { Container, ContainerSection, IconContainer, IconText } from "./styled";
+import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaPython, FaReact, FaVuejs } from "react-icons/fa";
+import { SiScala } from "react-icons/si";
+import { BsPhone } from "react-icons/bs";
+import {
+  AngularButton,
+  Container,
+  ContainerSection,
+  CSSButton,
+  GHButton,
+  HTMLButton,
+  IconContainer,
+  IconText,
+  JavaButton,
+  JSButton,
+  NodeButton,
+  PythonButton,
+  ReactButton,
+  VueButton,
+} from "./styled";
+
 import { IconButton, TextField, ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
 import { SearchOutlined } from "@mui/icons-material";
-import makeStyles from "@mui/styles/makeStyles";
 import { LocationMenu } from "./LocationMenu";
+import styled from "@emotion/styled";
 
-// const useStyles = makeStyles({
-//   input1: {
-//     borderColor: "red",   <==== doesn`t WORK !!
-//   },
-// });
+export const PHPButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(65, 173, 250), rgb(21, 124, 252));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+export const ScalaButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(248, 100, 104), rgb(241, 70, 76));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const MobileButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(224, 79, 134), rgb(186, 74, 141));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
 
 export const SearchBar = () => {
-  // const classes = useStyles();
-
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -28,7 +66,6 @@ export const SearchBar = () => {
             color="secondary"
             placeholder="Search..."
             InputProps={{
-              // classes: { input: classes.input1 },
               endAdornment: (
                 <IconButton>
                   <SearchOutlined />
@@ -37,71 +74,85 @@ export const SearchBar = () => {
             }}
           />
           <LocationMenu />
-
-          {/* <Button color="secondary" variant="outlined">
-            Location
-          </Button> */}
         </ContainerSection>
         <ContainerSection>
           <IconContainer>
-            <a>
+            <CSSButton>
               <FaCss3 />
-            </a>
+            </CSSButton>
             <IconText> CSS</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <JSButton>
               <FaJs />
-            </a>
+            </JSButton>
             <IconText> JS</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <HTMLButton>
               <FaHtml5 />
-            </a>
+            </HTMLButton>
             <IconText> HTML</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <PythonButton>
               <FaPython />
-            </a>
+            </PythonButton>
             <IconText> Python</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <JavaButton>
               <FaJava />
-            </a>
+            </JavaButton>
             <IconText> Java</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <ReactButton>
               <FaReact />
-            </a>
+            </ReactButton>
             <IconText> React</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <NodeButton>
               <FaNodeJs />
-            </a>
+            </NodeButton>
             <IconText> Node</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <VueButton>
               <FaVuejs />
-            </a>
+            </VueButton>
             <IconText> Vue</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <AngularButton>
               <FaAngular />
-            </a>
+            </AngularButton>
             <IconText> Angular</IconText>
           </IconContainer>
           <IconContainer>
-            <a>
+            <GHButton>
               <FaGithub />
-            </a>
+            </GHButton>
             <IconText> Github</IconText>
+          </IconContainer>
+          <IconContainer>
+            <PHPButton>
+              <FaPhp />
+            </PHPButton>
+            <IconText> PHP</IconText>
+          </IconContainer>
+          <IconContainer>
+            <ScalaButton>
+              <SiScala />
+            </ScalaButton>
+            <IconText> Scala</IconText>
+          </IconContainer>
+          <IconContainer>
+            <MobileButton>
+              <BsPhone />
+            </MobileButton>
+            <IconText> Mobile</IconText>
           </IconContainer>
         </ContainerSection>
       </Container>
