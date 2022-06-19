@@ -22,8 +22,36 @@ export const theme = createTheme({
       contrastText: "#000",
     },
   },
-  shape: {
-    borderRadius: 30,
+
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 28,
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          borderRadius: 28,
+        },
+      },
+    },
+    MuiSlider: {
+      styleOverrides: {
+        root: {
+          color: "#ab47bc",
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          margin: "10px 10px 10px 10px",
+        },
+      },
+    },
   },
   typography: {
     button: {

@@ -5,11 +5,17 @@ export const Container = styled.div`
   margin-top: 3px;
   display: flex;
   background-color: white;
+  // gap: 20px;
+  width: 100%;
+
+  flex-wrap: nowrap;
+  justify-content: space-between;
 `;
 
 export const ContainerSection = styled.div`
   display: flex;
   align-items: center;
+  gap: 10px;
 `;
 
 export const Input = styled.input`
@@ -27,14 +33,91 @@ export const Input = styled.input`
 `;
 
 export const IconContainer = styled.div`
-  padding: 15px 15px 15px 15px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  padding: 5px 0px 10px 0px;
 `;
 
 export const CSSButton = styled(IconButton)`
   background: linear-gradient(-90deg, rgb(82, 102, 225), rgb(129, 102, 224));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const TestingButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(0, 150, 136), rgb(0, 121, 107));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const GameButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(255, 64, 129), rgb(236, 64, 122));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const AnalyticsButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(59, 89, 152), rgb(112, 140, 199));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const SecurityButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(83, 109, 254), rgb(13, 71, 161));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const DotsButton = styled(IconButton)`
+  background: white;
+  color: grey;
+  &:hover {
+    background: light-grey;
+  }
+`;
+
+export const PHPButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(65, 173, 250), rgb(21, 124, 252));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+export const ScalaButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(248, 100, 104), rgb(241, 70, 76));
+  color: white;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+`;
+
+export const MobileButton = styled(IconButton)`
+  background: linear-gradient(-90deg, rgb(224, 79, 134), rgb(186, 74, 141));
   color: white;
   &:hover {
     box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
@@ -133,7 +216,6 @@ export const GHButton = styled(IconButton)`
 `;
 
 export const IconText = styled.span`
-  margin-top: 8px;
   font-size: 11px;
   font-weight: 300;
   color: #757575;
@@ -151,6 +233,18 @@ export const HeaderBig = styled.h4`
   font-weight: 700;
   font-size: 20px;
 `;
+
+export const HeaderMedium = styled.h4`
+  color: rgb(119, 119, 119);
+  font-weight: 600;
+  font-size: 17px;
+`;
+
+export const Header200 = styled.h4`
+  color: rgb(119, 119, 119);
+  font-weight: 200;
+  font-size: 20px;
+`;
 export const Header = styled.h5`
   color: rgb(119, 119, 119);
   font-weight: 600;
@@ -160,4 +254,13 @@ export const Header = styled.h5`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const ContextContainer = styled.div`
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+`;
+
+export const ContextNestedContainer = styled.div`
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 `;

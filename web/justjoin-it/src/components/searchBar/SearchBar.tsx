@@ -1,65 +1,57 @@
 import React from "react";
-import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaPython, FaReact, FaVuejs } from "react-icons/fa";
+import { FaAngular, FaCss3, FaGithub, FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaPython, FaReact, FaVuejs, FaSearch } from "react-icons/fa";
 import { SiScala } from "react-icons/si";
-import { BsPhone } from "react-icons/bs";
+import { BsPhone, BsThreeDots } from "react-icons/bs";
+import { TbDeviceGamepad2 } from "react-icons/tb";
+import { MdAnalytics, MdOutlineSecurity } from "react-icons/md";
 import {
+  AnalyticsButton,
   AngularButton,
   Container,
   ContainerSection,
   CSSButton,
+  DotsButton,
+  GameButton,
   GHButton,
   HTMLButton,
   IconContainer,
   IconText,
   JavaButton,
   JSButton,
+  MobileButton,
   NodeButton,
+  PHPButton,
   PythonButton,
   ReactButton,
+  ScalaButton,
+  SecurityButton,
+  TestingButton,
   VueButton,
 } from "./styled";
 
-import { IconButton, TextField, ThemeProvider } from "@mui/material";
+import ManageSearchIcon from "@mui/icons-material/ManageSearch";
+import { Button, IconButton, TextField, ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
 import { SearchOutlined } from "@mui/icons-material";
 import { LocationMenu } from "./LocationMenu";
 import styled from "@emotion/styled";
+import { MoreFilters } from "./MoreFilters";
 
-export const PHPButton = styled(IconButton)`
-  background: linear-gradient(-90deg, rgb(65, 173, 250), rgb(21, 124, 252));
-  color: white;
-  &:hover {
-    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
-    color: rgb(255, 255, 255);
-    fill: rgb(255, 255, 255);
-  }
-`;
-export const ScalaButton = styled(IconButton)`
-  background: linear-gradient(-90deg, rgb(248, 100, 104), rgb(241, 70, 76));
-  color: white;
-  &:hover {
-    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
-    color: rgb(255, 255, 255);
-    fill: rgb(255, 255, 255);
-  }
+export const MyTextField = styled(TextField)`
+  border-radius: 50px;
+  width: 150px;
 `;
 
-export const MobileButton = styled(IconButton)`
-  background: linear-gradient(-90deg, rgb(224, 79, 134), rgb(186, 74, 141));
-  color: white;
-  &:hover {
-    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
-    color: rgb(255, 255, 255);
-    fill: rgb(255, 255, 255);
-  }
+export const ContainerRightSection = styled.div`
+  display: flex;
+  align-items: center;
 `;
-
 export const SearchBar = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <ContainerSection>
-          <TextField
+          <MyTextField
             id="standard-bare"
             variant="outlined"
             size="small"
@@ -154,7 +146,40 @@ export const SearchBar = () => {
             </MobileButton>
             <IconText> Mobile</IconText>
           </IconContainer>
+          <IconContainer>
+            <TestingButton>
+              <FaSearch />
+            </TestingButton>
+            <IconText> Testing</IconText>
+          </IconContainer>
+          <IconContainer>
+            <GameButton>
+              <TbDeviceGamepad2 />
+            </GameButton>
+            <IconText> Game</IconText>
+          </IconContainer>
+          <IconContainer>
+            <AnalyticsButton>
+              <MdAnalytics />
+            </AnalyticsButton>
+            <IconText> Analytics</IconText>
+          </IconContainer>
+          <IconContainer>
+            <SecurityButton>
+              <MdOutlineSecurity />
+            </SecurityButton>
+            <IconText> Security</IconText>
+          </IconContainer>
+          <IconContainer>
+            <DotsButton>
+              <BsThreeDots />
+            </DotsButton>
+            <IconText> .</IconText>
+          </IconContainer>
         </ContainerSection>
+        <ContainerRightSection>
+          <MoreFilters />
+        </ContainerRightSection>
       </Container>
     </ThemeProvider>
   );

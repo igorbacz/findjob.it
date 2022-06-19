@@ -1,8 +1,9 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import { IconButton, Popover, Typography } from "@mui/material";
+import { Box, IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { Header, HeaderBig, HeaderContainer, ButtonsContainer } from "./styled";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const LocationMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -13,15 +14,15 @@ export const LocationMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const id = open ? "simple-popover" : undefined;
+
+  // const id = open ? "simple-popover" : undefined;
 
   return (
     <div>
-      <Button aria-describedby={id} variant="outlined" onClick={handleClick}>
+      <Button variant="outlined" color="secondary" onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
         Location
       </Button>
       <Popover
-        id={id}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
@@ -33,8 +34,8 @@ export const LocationMenu = () => {
         <Typography sx={{ p: 2 }}>
           <HeaderContainer>
             <HeaderBig>Location</HeaderBig>
-            <IconButton aria-label="close" color="secondary">
-              <CloseIcon />
+            <IconButton color="secondary">
+              <CloseIcon onClick={handleClose} />
             </IconButton>
           </HeaderContainer>
           <div>
