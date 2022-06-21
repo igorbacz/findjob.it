@@ -33,9 +33,9 @@ import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import { Button, IconButton, TextField, ThemeProvider } from "@mui/material";
 import { theme } from "../theme";
 import { SearchOutlined } from "@mui/icons-material";
-import { LocationMenu } from "./LocationMenu";
+import { LocationMenu } from "./components/LocationMenu";
 import styled from "@emotion/styled";
-import { MoreFilters } from "./MoreFilters";
+import { MoreFilters } from "./components/MoreFilters";
 
 export const MyTextField = styled(TextField)`
   border-radius: 50px;

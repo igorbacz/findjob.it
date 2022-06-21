@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { Backdrop, Box, IconButton, Modal, Popover, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Header, HeaderBig, HeaderContainer, ButtonsContainer, Header200, HeaderMedium, ContextNestedContainer } from "./styled";
+import { Header, HeaderBig, HeaderContainer, ButtonsContainer, Header200, HeaderMedium, ContextNestedContainer } from "../styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import styled from "@emotion/styled";
@@ -48,6 +48,8 @@ export const MoreFilters = () => {
     setValue(newValue as number[]);
   };
 
+  const [select, setSelected] = React.useState<string | undefined>(""); //NIE DZIAŁA
+
   return (
     <div>
       <Button variant="outlined" color="secondary" startIcon={<ManageSearchIcon />} onClick={handleClick}>
@@ -75,7 +77,7 @@ export const MoreFilters = () => {
             <ContextNestedContainer>
               <HeaderMedium>Employment Type</HeaderMedium>
               <ButtonsContainer>
-                <DefaultButton autoFocus variant="outlined" color="secondary">
+                <DefaultButton autoFocus variant="outlined" color="secondary" value={select}>
                   All
                 </DefaultButton>
                 <DefaultButton variant="outlined" color="secondary">
@@ -92,7 +94,7 @@ export const MoreFilters = () => {
             <ContextNestedContainer>
               <HeaderMedium>Seniority</HeaderMedium>
               <ButtonsContainer>
-                <DefaultButton variant="outlined" color="secondary">
+                <DefaultButton variant="outlined" color="secondary" value={select}>
                   All
                 </DefaultButton>
                 <DefaultButton variant="outlined" color="secondary">

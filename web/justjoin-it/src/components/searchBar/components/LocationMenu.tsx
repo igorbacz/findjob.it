@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { Box, IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Header, HeaderBig, HeaderContainer, ButtonsContainer } from "./styled";
+import { Header, HeaderBig, HeaderContainer, ButtonsContainer } from "../styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const LocationMenu = () => {
