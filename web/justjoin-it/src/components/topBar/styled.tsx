@@ -35,6 +35,8 @@ export const Item = styled.h4`
   display: flex;
   color: #99a1ab;
   cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 0;
   &:active {
     color: #ff4081;
   }
