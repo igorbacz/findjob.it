@@ -1,14 +1,13 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Backdrop, Box, Button, IconButton, MenuItem, Modal } from "@mui/material";
+import { Backdrop, Box, IconButton, MenuItem, Modal } from "@mui/material";
 import styled from "@emotion/styled";
-import { HeaderBig, HeaderContainer } from "../../searchBar/styled";
+import { Header, HeaderContainer } from "../../searchBar/styled";
 import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
-import { Wrapper } from "../../googleMap/styled";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -20,17 +19,19 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import HelpIcon from "@mui/icons-material/Help";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { BurgerButton, SignInBox, SignInButton, SmallBox, SocialBox } from "../styled";
 
-export const BurgerBox = styled(Box)`position: 'absolute' as 'absolute',
- display:flex;
+export const BurgerBox = styled(Box)`
+  position: absolute;
+  display: flex;
   transform: translate(-50%, -50%);
-   background-color: white;
+  background-color: white;
   width: 300;
-  height:100%;
+  height: 100%;
   background-color: white;
   border: 2px solid #000;
-  boxShadow: 24;
-  `;
+  boxshadow: 24;
+`;
 
 const style = {
   position: "absolute" as "absolute",
@@ -44,52 +45,12 @@ const style = {
   transform: " none",
 };
 
-export const Header = styled.h3`
-  color: #37474f;
-  font-weight: 700;
-  margin-left: 10px;
-`;
-
-export const BurgerButton = styled(Button)`
-  border-radius: 0px;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  padding: 3px 3px 3px 20px;
-`;
-
-export const SmallBox = styled(Box)`
-  border-top: 4px solid #f3f6f8;
-`;
-
-const menuStyle = {
-  border: "solid 1px black",
-};
-
-export const SignInBox = styled.div`
-  padding-left: 24px;
-  padding-right: 20px;
-  padding-bottom: 16px;
-`;
-
-export const SignInButton = styled.div`
-  border: 1px solid black;
-  margin: 6px 10px 6px 10px;
-`;
-
-export const SocialBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 10px 10px 10px;
-`;
-
 export const BurgerMenu = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div>
+    <Box>
       <IconButton onClick={handleOpen}>
         <MenuIcon />
       </IconButton>
@@ -166,6 +127,6 @@ export const BurgerMenu = () => {
           </SocialBox>
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 };

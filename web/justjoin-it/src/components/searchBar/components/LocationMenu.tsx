@@ -18,7 +18,7 @@ export const LocationMenu = () => {
   // const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
+    <Box>
       <Button variant="outlined" color="secondary" onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
         Location
       </Button>
@@ -38,7 +38,7 @@ export const LocationMenu = () => {
               <CloseIcon onClick={handleClose} />
             </IconButton>
           </HeaderContainer>
-          <div>
+          <Box>
             <Header>Top Poland</Header>
             <ButtonsContainer>
               <Button color="secondary" variant="outlined">
@@ -60,8 +60,8 @@ export const LocationMenu = () => {
                 Śląsk
               </Button>
             </ButtonsContainer>
-          </div>
-          <div>
+          </Box>
+          <Box>
             <Header>Top World</Header>
             <ButtonsContainer>
               <Button color="secondary" variant="outlined">
@@ -80,9 +80,9 @@ export const LocationMenu = () => {
                 London
               </Button>
             </ButtonsContainer>
-          </div>
+          </Box>
         </Typography>
       </Popover>
-    </div>
+    </Box>
   );
 };

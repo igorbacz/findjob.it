@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IconButton } from "@mui/material";
+import { Button, IconButton, TextField } from "@mui/material";
 
 export const Container = styled.div`
   margin-top: 3px;
@@ -263,4 +263,35 @@ export const ContextContainer = styled.div`
 
 export const ContextNestedContainer = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+`;
+
+export const StyledField = styled(TextField)`
+  .MuiOutlinedInput-root {
+    border-radius: 30px;
+    height: 45px;
+  }
+`;
+
+export const ContainerRightSection = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ButtonFocus = styled(Button)`
+  &:focus {
+    color: #ff4081;
+    border: 1px solid #ff4081;
+    background: rgba(255, 64, 129, 0.08);
+  }
+`;
+
+export const StyledModalBox = styled.div`
+  position: absolute;
+  padding: 20px 25px 20px 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: white;
+  border-radius: 5px;
 `;
