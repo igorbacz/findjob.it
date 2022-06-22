@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Box, Button } from "@mui/material";
 
 export const Container = styled.div`
   display: flex;
@@ -58,4 +59,40 @@ export const ButtonSignIn = styled.div`
 export const ButtonCurrency = styled.div`
   border-left: 1px solid #e4e8f0;
   border-right: 1px solid #e4e8f0;
+`;
+
+export const SignInBox = styled.div`
+  padding-left: 24px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+`;
+
+export const SignInButton = styled.div`
+  border: 1px solid black;
+  margin: 6px 10px 6px 10px;
+`;
+
+export const SocialBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 10px 10px 10px;
+`;
+
+export const Header = styled.h3`
+  color: #37474f;
+  font-weight: 700;
+  margin-left: 10px;
+`;
+
+export const BurgerButton = styled(Button)`
+  border-radius: 0px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 3px 3px 3px 20px;
+`;
+
+export const SmallBox = styled(Box)`
+  border-top: 4px solid #f3f6f8;
 `;
