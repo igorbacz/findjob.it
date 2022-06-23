@@ -246,6 +246,7 @@ export const Header200 = styled.h4`
   font-size: 20px;
 `;
 export const Header = styled.h5`
+  padding: 15px 15px 0px 35px;
   color: rgb(119, 119, 119);
   font-weight: 600;
   font-size: 16px;
