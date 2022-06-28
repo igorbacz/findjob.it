@@ -1,5 +1,5 @@
 import React from "react";
-import { MiniOffer } from "../miniOffer/MiniOffer";
+import MiniOffer from "../miniOffer/MiniOffer";
 import { Container } from "./styled";
 
 export const OffersList = () => {

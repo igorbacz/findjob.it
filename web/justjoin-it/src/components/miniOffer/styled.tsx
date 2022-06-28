@@ -1,38 +1,51 @@
 import styled from "@emotion/styled";
+import { Box } from "@mui/material";
 
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 59%;
-  height: 77px;
-  border-radius: 10px;
+export const MiniOfferCon = styled(Box)`
+  width: 100%;
+  height: 120px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   background: white;
-  margin: 5px;
-  padding: 6px;
+  padding: 10px 10px 10px 10px;
 
   -webkit-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   -moz-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
 `;
 
-export const Img = styled.img`
-  width: 60px;
-  padding: 10px 60px 10px 30px;
-`;
-
-export const Description = styled.div`
+export const LogoContainer = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding-left: 14px;
   display: flex;
-  flex: 3;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: center;
 `;
 
 export const Title = styled.h4`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
   color: #6b6b6b;
 `;
-export const Details = styled.div`
+
+export const DetailsSection = styled(Box)`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(153, 161, 171);
+  margin-bottom: 10px;
 `;
 
 export const Paragraph = styled.p`
@@ -41,14 +54,14 @@ export const Paragraph = styled.p`
   color: #a9a6a6;
 `;
 
-export const AmountWrapper = styled.div`
-  display: flex;
-  flex: 1;
-`;
-
 export const Amount = styled.h3`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
   font-weight: 200;
   color: rgb(30, 198, 108);
   font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-right: 30px;
 `;
