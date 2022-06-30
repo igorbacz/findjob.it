@@ -15,3 +15,10 @@ html>body
      
    
 } */
+
+ul{
+  text-align: left;
+  color: rgb(55, 71, 79);
+  font-size: 14px;
+  line-height: 1.5;
+}
