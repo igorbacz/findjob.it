@@ -31,7 +31,7 @@ export const LocationMenu = () => {
           horizontal: "left",
         }}
       >
-        <Typography sx={{ p: 2 }}>
+        <Box sx={{ p: 2 }}>
           <HeaderContainer>
             <HeaderBig>Location</HeaderBig>
             <IconButton color="secondary">
@@ -81,7 +81,7 @@ export const LocationMenu = () => {
               </Button>
             </ButtonsContainer>
           </Box>
-        </Typography>
+        </Box>
       </Popover>
     </Box>
   );

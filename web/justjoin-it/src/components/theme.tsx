@@ -53,7 +53,13 @@ export const theme = createTheme({
       },
     },
   },
+
   typography: {
+    allVariants: {
+      fontFamily: "Open Sans,sans-serif",
+    },
+    h3: { "font-size": " 24px" }, // można zmienić
+
     button: {
       textTransform: "none",
     },

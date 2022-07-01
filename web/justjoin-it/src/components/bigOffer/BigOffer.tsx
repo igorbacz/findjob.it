@@ -6,9 +6,7 @@ import {
   LogoBox,
   LogoImg,
   HeaderInfo,
-  TitleHeader,
   AdressHeader,
-  AmountHeader,
   HeaderDetails,
   HeaderDetail,
   IconCon,
@@ -30,6 +28,7 @@ import {
   BigInputContainer,
   StyledBigField,
   FileContainer,
+  TitleBox,
 } from "./styled";
 import { BigOfferDetails } from "./types";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -40,6 +39,8 @@ import TimelapseIcon from "@mui/icons-material/Timelapse";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import { FileUpload } from "./FileUpload";
+import styled from "@emotion/styled";
+import { Box, Typography } from "@mui/material";
 
 export const BigOffer = (props: BigOfferDetails) => {
   return (
@@ -53,12 +54,14 @@ export const BigOffer = (props: BigOfferDetails) => {
             ></LogoImg>
           </LogoBox>
           <HeaderInfo>
-            <TitleHeader>Senior FullStack JS Developer</TitleHeader>
+            <TitleBox>
+              <Typography variant="h5">Senior FullStack JS Developer</Typography>
+            </TitleBox>
             <AdressHeader>
               <LocationOnIcon />
-              ul.Zwycięska 44 55-095 Wrocław
+              <Typography variant="h6">ul.Zwycięska 44 55-095 Wrocław </Typography>
             </AdressHeader>
-            <AmountHeader>7800 PLN</AmountHeader>
+            <Typography variant="h5">7800 PLN</Typography>
           </HeaderInfo>
         </HeaderBox>
         <HeaderDetails>
