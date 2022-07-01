@@ -55,23 +55,13 @@ export const HeaderInfo = styled(Box)`
   flex-direction: column;
   align-items: flex-start;
   color: white;
+  gap: 10px;
 `;
 
-export const TitleHeader = styled.h3`
-  font-size: 24px;
+export const AdressHeader = styled(Box)`
   font-weight: 600;
-  margin-bottom: 4px;
-`;
-
-export const AdressHeader = styled.h5`
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 4px;
-`;
-
-export const AmountHeader = styled.h4`
-  font-size: 18px;
-  font-weight: 600;
+  padding: 4px 4px;
+  display: flex;
 `;
 
 export const HeaderDetails = styled(Box)`
@@ -229,4 +219,8 @@ export const BigInputContainer = styled(Box)`
 
 export const FileContainer = styled(Box)`
   padding: 20px 20px;
+`;
+
+export const TitleBox = styled(Box)`
+  margin-bottom: 4px;
 `;

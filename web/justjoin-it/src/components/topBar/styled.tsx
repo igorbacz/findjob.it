@@ -14,10 +14,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
-`;
-
-export const LogoHeader = styled.h1`
-  padding-right: 20px;
+  gap: 35px;
 `;
 
 export const LogoParagraph = styled.p`
@@ -78,11 +75,7 @@ export const SocialBox = styled.div`
   padding: 10px 10px 10px 10px;
 `;
 
-export const Header = styled.h3`
-  color: #37474f;
-  font-weight: 700;
-  margin-left: 10px;
-`;
+
 
 export const BurgerButton = styled(Button)`
   border-radius: 0px;
