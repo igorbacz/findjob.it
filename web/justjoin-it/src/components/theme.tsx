@@ -55,10 +55,12 @@ export const theme = createTheme({
   },
 
   typography: {
+    poster: {
+      color: "red",
+    },
     allVariants: {
       fontFamily: "Open Sans,sans-serif",
     },
-    h3: { "font-size": " 24px" }, // można zmienić
 
     button: {
       textTransform: "none",
