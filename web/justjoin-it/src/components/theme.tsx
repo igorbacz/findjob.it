@@ -53,15 +53,10 @@ export const theme = createTheme({
       },
     },
   },
-
   typography: {
-    poster: {
-      color: "red",
-    },
     allVariants: {
       fontFamily: "Open Sans,sans-serif",
     },
-
     button: {
       textTransform: "none",
     },
