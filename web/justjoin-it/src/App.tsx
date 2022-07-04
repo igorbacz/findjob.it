@@ -5,13 +5,15 @@ import { SearchBar } from "./components/searchBar/SearchBar";
 import { theme } from "./components/theme";
 import { TopBar } from "./components/topBar/TopBar";
 import { HomePage } from "./pages/homePage/HomePage";
+import { PostOffersPage } from "./pages/postOffersPage/PostOffersPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <HomePage />
+        <PostOffersPage />
+        {/* <HomePage /> */}
         {/* <SignInPage /> */}
       </div>
     </ThemeProvider>
