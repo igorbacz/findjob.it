@@ -1,60 +1,20 @@
-import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, Button, List, ListItemIcon, ListItemText } from "@mui/material";
 import React from "react";
-
-export const HeaderPostOffers = styled(Box)`
-  background: url(https://justjoin.it/next-assets/addOffer/header-background.jpg);
-  background-size: cover;
-  background-position: center center;
-  color: white;
-  display: flex;
-`;
-
-export const HeaderIcons = styled(Box)``;
-
-export const HeaderText = styled(Box)`
-  padding: 50px 80px;
-  text-align: left;
-`;
-export const OffersBox = styled(Box)`
-  padding: 40px;
-  width: 100%;
-  background-color: #fafafa;
-`;
-
-export const ContentOffers = styled(Box)`
-  display: flex;
-  justify-content: space-around;
-`;
-
-export const OfferBox = styled(Box)`
-  border: 1px solid #e7e9ed;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px -1px rgb(214 231 249 / 55%);
-  width: 100%;
-  margin: 0 20px;
-`;
-
-export const OfferHeader = styled(Box)``;
-
-export const Option = styled.h3`
-  font-size: 24px;
-  font-weight: 600;
-`;
-
-export const Price = styled.span`
-  font-size: 50px;
-  font-weight: bold;
-`;
-
-export const Currency = styled.span`
-  color: #cfd8dc;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.38px;
-`;
-
-export const ContentOffer = styled(Box)``;
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import DoDisturbIcon from "@mui/icons-material/DoDisturb";
+import {
+  HeaderPostOffers,
+  HeaderText,
+  OffersBox,
+  ContentOffers,
+  OfferBox,
+  OfferHeader,
+  Price,
+  Currency,
+  ContentOffer,
+  StyledListItem,
+  Option,
+} from "./styled";
 
 export const PostOffers = () => {
   return (
@@ -63,23 +23,183 @@ export const PostOffers = () => {
         <HeaderText>
           <h1>Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</h1>
         </HeaderText>
-        <HeaderIcons>
+        <Box>
           <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
-        </HeaderIcons>
+        </Box>
       </HeaderPostOffers>
       <OffersBox>
         <h3>Poznaj ogłoszenia na justjoin.it</h3>
         <ContentOffers>
           <OfferBox>
+            {" "}
             <OfferHeader>
               <Option>Basic</Option>
               <Price>390</Price>
               <Currency>PLN</Currency>
             </OfferHeader>
-            <ContentOffer></ContentOffer>
+            <ContentOffer>
+              <List>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak Customer Care" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Bez odświeżeń" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak promocji w Social Media" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak indywidualnego copy" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                </StyledListItem>
+              </List>
+              <Button variant="contained" size="large">
+                Kup ogłoszenie
+              </Button>
+            </ContentOffer>
           </OfferBox>
-          <OfferBox>Box</OfferBox>
-          <OfferBox>Box</OfferBox>
+          <OfferBox>
+            <OfferHeader>
+              <Option>Premium</Option>
+              <Price>490</Price>
+              <Currency>PLN</Currency>
+            </OfferHeader>
+            <ContentOffer>
+              <List>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Deykowany Opiekun Customer Care" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="1 automatyczne odświeżenie" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak promocji w Social Media" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak indywidualnego copy" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <DoDisturbIcon color="secondary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                </StyledListItem>
+              </List>
+              <Button variant="contained" size="large">
+                Kup ogłoszenie
+              </Button>
+            </ContentOffer>
+          </OfferBox>
+          <OfferBox>
+            {" "}
+            <OfferHeader>
+              <Option>Business</Option>
+              <Price>690</Price>
+              <Currency>PLN</Currency>
+            </OfferHeader>
+            <ContentOffer>
+              <List>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Deykowany Opiekun Customer Care" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="1 automatyczne odświeżenie" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Indywidualna promocja w Social Media" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Inywidualne copy ogłoszenia + audyt" />
+                </StyledListItem>
+                <StyledListItem>
+                  <ListItemIcon>
+                    <CheckCircleOutlineIcon color="primary" />
+                  </ListItemIcon>
+                  <ListItemText primary="Możliwy Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                </StyledListItem>
+              </List>
+              <Button variant="contained" size="large">
+                Kup ogłoszenie
+              </Button>
+            </ContentOffer>
+          </OfferBox>
         </ContentOffers>
       </OffersBox>
     </Box>

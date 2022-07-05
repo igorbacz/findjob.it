@@ -224,3 +224,10 @@ export const FileContainer = styled(Box)`
 export const TitleBox = styled(Box)`
   margin-bottom: 4px;
 `;
+
+export const UploadBox = styled(Box)`
+  width: 100%;
+  height: 72px;
+  border: 2px dashed rgb(228, 232, 240);
+  border-radius: 5px;
+`;

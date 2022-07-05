@@ -1,4 +1,5 @@
 import React from "react";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import {
   BigOfferWrapper,
   BigOfferContainer,
@@ -40,7 +41,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import { FileUpload } from "./FileUpload";
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 
 export const BigOffer = (props: BigOfferDetails) => {
   return (
@@ -135,15 +136,20 @@ export const BigOffer = (props: BigOfferDetails) => {
             If youare an advocate of test automation and software craftsmanship is close to your heart, this is a place where you’ll fit right in.
           </Content>
           <DescriptionMiniHeader>Key responsibilities: </DescriptionMiniHeader>
-          <ul>
-            <li>Active participation in defining, designing and prioritizing features</li>
-            <li>Taking part and contributing in our team’s activities such as estimation, planning or product reviews </li>
-            <li>Contributing to key decisions, including work prioritization and deadlines </li>
-            <li>Developing features and enhancements with top quality in mind </li>
-            <li>Maintenance, monitoring and scaling of our fast growing platform</li>
-            <li> Sharing knowledge, investigating and promoting latest technologies </li>
-            <li>Driving and influencing continuous improvement of our applications</li>
-          </ul>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" />
+              </ListItemIcon>
+              <ListItemText primary="Active participation in defining, designing and prioritizing features" />
+            </ListItem>
+            <ListItem>Taking part and contributing in our team’s activities such as estimation, planning or product reviews </ListItem>
+            <ListItem>Contributing to key decisions, including work prioritization and deadlines </ListItem>
+            <ListItem>Developing features and enhancements with top quality in mind </ListItem>
+            <ListItem>Maintenance, monitoring and scaling of our fast growing platform</ListItem>
+            <ListItem> Sharing knowledge, investigating and promoting latest technologies </ListItem>
+            <ListItem>Driving and influencing continuous improvement of our applications</ListItem>
+          </List>
           <DescriptionMiniHeader> We are looking for someone who </DescriptionMiniHeader>
           <ul>
             <li>

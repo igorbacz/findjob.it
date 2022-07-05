@@ -1,6 +1,7 @@
 import Menu, { MenuProps } from "@mui/material/Menu";
-import { styled, alpha } from "@mui/material/styles";
 import { pink } from "@mui/material/colors";
+import { alpha } from "@mui/material";
+import styled from "styled-components";
 
 export const StyledLocationMenu = styled((props: MenuProps) => (
   <Menu
