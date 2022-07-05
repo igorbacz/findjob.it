@@ -16,3 +16,7 @@ declare module "@mui/material/Typography" {
     h3: false;
   }
 }
+
+interface TypographyOptions {
+  poster?: React.CSSProperties;
+}

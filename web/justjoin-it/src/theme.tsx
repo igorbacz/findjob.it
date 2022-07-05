@@ -1,5 +1,5 @@
-import { createTheme } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
+import createTheme from "@mui/material/styles/createTheme";
 
 export const theme = createTheme({
   palette: {
@@ -54,6 +54,9 @@ export const theme = createTheme({
     },
   },
   typography: {
+    poster: {
+      color: "red",
+    },
     allVariants: {
       fontFamily: "Open Sans,sans-serif",
     },
