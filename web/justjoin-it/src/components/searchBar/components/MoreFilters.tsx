@@ -2,16 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { Backdrop, Box, IconButton, Modal, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import {
-  HeaderContainer,
-  StyledModalBox,
-  ButtonsContainer,
-  Header200,
-  HeaderMedium,
-  ContextNestedContainer,
-  ButtonFocus,
-  ContextContainer,
-} from "../styled";
+import { HeaderContainer, StyledModalBox, ButtonsContainer, ContextNestedContainer, ButtonFocus, ContextContainer } from "../styled";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 
 export const MoreFilters = () => {
@@ -40,13 +31,13 @@ export const MoreFilters = () => {
       <Modal open={open} onClose={handleClose} BackdropComponent={Backdrop}>
         <StyledModalBox>
           <HeaderContainer>
-            <Header200>More Filters</Header200>
+            <Typography variant="subtitleStrong">More Filters</Typography>
             <IconButton color="secondary">
               <CloseIcon onClick={handleClose} />
             </IconButton>
           </HeaderContainer>
           <ContextContainer>
-            <HeaderMedium>Salary expectations?</HeaderMedium>
+            <Typography variant="subtitle6">Salary expectations?</Typography>
             <Slider getAriaLabel={() => "Temperature range"} value={value} onChange={handleChange} size="small" />
             <ButtonsContainer>
               <Button variant="outlined" color="secondary">
@@ -57,7 +48,7 @@ export const MoreFilters = () => {
               </Button>
             </ButtonsContainer>
             <ContextNestedContainer>
-              <HeaderMedium>Employment Type</HeaderMedium>
+              <Typography variant="subtitle6">Employment Type</Typography>
               <ButtonsContainer>
                 <ButtonFocus autoFocus variant="outlined" color="secondary" value={select}>
                   All
@@ -74,7 +65,7 @@ export const MoreFilters = () => {
               </ButtonsContainer>
             </ContextNestedContainer>
             <ContextNestedContainer>
-              <HeaderMedium>Seniority</HeaderMedium>
+              <Typography variant="subtitle6">Seniority</Typography>
               <ButtonsContainer>
                 <ButtonFocus variant="outlined" color="secondary" value={select}>
                   All

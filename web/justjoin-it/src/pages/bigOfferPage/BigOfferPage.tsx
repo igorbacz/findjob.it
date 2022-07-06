@@ -3,6 +3,8 @@ import React from "react";
 import { Box } from "@mui/material";
 import { BigOffer } from "../../components/bigOffer/BigOffer";
 import { GoogleMap } from "../../components/googleMap/googleMap";
+import { SearchBar } from "../../components/searchBar/SearchBar";
+import { TopBar } from "../../components/topBar/TopBar";
 
 export const PageContainer = styled(Box)`
   display: flex;
@@ -12,9 +14,13 @@ export const PageContainer = styled(Box)`
 
 export const BigOfferPage = () => {
   return (
-    <PageContainer>
-      <BigOffer />
-      <GoogleMap />
-    </PageContainer>
+    <Box>
+      <TopBar />
+      <SearchBar />
+      <PageContainer>
+        <BigOffer />
+        <GoogleMap />
+      </PageContainer>
+    </Box>
   );
 };

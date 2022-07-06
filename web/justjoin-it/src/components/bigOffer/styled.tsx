@@ -228,6 +228,9 @@ export const UploadBox = styled(Box)`
   border: 2px dashed rgb(228, 232, 240);
   border-radius: 5px;
   padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `;
 
 //nie działa

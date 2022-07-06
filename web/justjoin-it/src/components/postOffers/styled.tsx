@@ -12,11 +12,15 @@ export const HeaderPostOffers = styled(Box)`
 export const HeaderText = styled(Box)`
   padding: 50px 80px;
   text-align: left;
+  width: 450px;
 `;
 export const OffersBox = styled(Box)`
   padding: 40px;
   width: 100%;
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ContentOffers = styled(Box)`
@@ -36,6 +40,10 @@ export const OfferBox = styled(Box)`
 export const OfferHeader = styled(Box)`
   border-bottom: solid 1px #cfd8dc;
   padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Price = styled.span``;
@@ -46,6 +54,8 @@ export const Currency = styled.span`
 
 export const ContentOffer = styled(Box)`
   padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const StyledListItem = styled(ListItem)`

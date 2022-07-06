@@ -1,21 +1,28 @@
-import { ThemeProvider } from "@mui/material";
 import React from "react";
 import "./App.css";
 import { SearchBar } from "./components/searchBar/SearchBar";
-import { TopBar } from "./components/topBar/TopBar";
-import { theme } from "./theme";
+
 import { HomePage } from "./pages/homePage/HomePage";
 import { PostOffersPage } from "./pages/postOffersPage/PostOffersPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BigOfferPage } from "./pages/bigOfferPage/BigOfferPage";
+import { OffersListPage } from "./pages/OffersListPage/OffersListPage";
+import { TopBar } from "./components/topBar/TopBar";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./theme";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        {/* <PostOffersPage /> */}
-        <HomePage />
-        {/* <SignInPage /> */}
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<OffersListPage />} />
+          <Route path="offer" element={<BigOfferPage />} />
+          <Route path="signIn" element={<SignInPage />} />
+          <Route path="post" element={<PostOffersPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
