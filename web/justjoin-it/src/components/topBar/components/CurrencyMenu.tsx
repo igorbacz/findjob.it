@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { StyledCurrencyMenu } from "./StyledCurrencyMenu";
+import { Typography } from "@mui/material";
 
 export const CurrencyMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -26,7 +27,7 @@ export const CurrencyMenu = () => {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        PLN
+        <Typography variant="buttonFont">PLN</Typography>
       </Button>
       <StyledCurrencyMenu
         id="demo-customized-menu"

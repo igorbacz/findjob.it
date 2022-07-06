@@ -20,6 +20,7 @@ export const OffersBox = styled(Box)`
 `;
 
 export const ContentOffers = styled(Box)`
+  padding: 30px 0px;
   display: flex;
   justify-content: space-around;
 `;
@@ -37,21 +38,10 @@ export const OfferHeader = styled(Box)`
   padding: 20px 30px;
 `;
 
-export const Option = styled.h3`
-  font-size: 24px;
-  font-weight: 600;
-`;
-
-export const Price = styled.span`
-  font-size: 50px;
-  font-weight: bold;
-`;
+export const Price = styled.span``;
 
 export const Currency = styled.span`
   color: #cfd8dc;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.38px;
 `;
 
 export const ContentOffer = styled(Box)`

@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
-import { Box, Rating, TextField } from "@mui/material";
+import { Box, List, Rating, TextField } from "@mui/material";
 
 export const BigOfferWrapper = styled(Box)`
   display: flex;
   flex: 1 1 50%;
   margin-right: 5px;
   background: rgb(243, 246, 248);
+  height: 100%;
 `;
 
 export const BigOfferContainer = styled(Box)`
@@ -75,12 +76,12 @@ export const HeaderDetails = styled(Box)`
 `;
 
 export const HeaderDetail = styled(Box)`
-  width: 172px;
-  height: 76px;
+  width: 182px;
+  height: 56px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content-: center;
   align-items: center;
   box-shadow: rgb(0 0 0 / 8%) 0px 2px 2px 0px, rgb(0 0 0 / 6%) 0px 1px 5px 0px;
   border-radius: 4px;
@@ -125,10 +126,7 @@ export const StackContainer = styled(Box)`
 `;
 
 export const ContainerHeader = styled(Box)`
-  color: rgb(55, 71, 79);
   border-bottom: 2px solid rgb(243, 246, 248);
-  font-weight: 400;
-  font-size: 18px;
   padding: 12px 20px;
   display: flex;
   margin-bottom: 10px;
@@ -155,8 +153,7 @@ export const StackName = styled(Box)`
 
 export const StackLvl = styled(Box)`
   color: rgb(153, 161, 171);
-  font-size: 0.875rem;
-  font-weight: 200;
+
   padding: 5px;
 `;
 
@@ -179,7 +176,6 @@ export const DescriptionHeader = styled(Box)``;
 
 export const Content = styled(Box)`
   color: rgb(55, 71, 79);
-  font-size: 14px;
   line-height: 1.5;
   text-align: left;
 `;
@@ -218,11 +214,12 @@ export const BigInputContainer = styled(Box)`
 `;
 
 export const FileContainer = styled(Box)`
-  padding: 20px 20px;
+  padding: 28px 23px;
 `;
 
 export const TitleBox = styled(Box)`
   margin-bottom: 4px;
+  color: "rgb(255, 255, 255)";
 `;
 
 export const UploadBox = styled(Box)`
@@ -230,4 +227,13 @@ export const UploadBox = styled(Box)`
   height: 72px;
   border: 2px dashed rgb(228, 232, 240);
   border-radius: 5px;
+  padding: 20px 0px;
 `;
+
+//nie działa
+export const StyledList = styled(List)`
+  .MuiList-root {
+    list-style: square;
+  }
+`;
+

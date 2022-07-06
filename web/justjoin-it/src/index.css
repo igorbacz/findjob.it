@@ -8,17 +8,3 @@ font-family: "Open Sans", sans-serif;
     color: rgb(55, 71, 79);
   
 }
-/* 
-html>body
-{
-      background-color: #EEEEEE;
-     
-   
-} */
-
-ul{
-  text-align: left;
-  color: rgb(55, 71, 79);
-  font-size: 14px;
-  line-height: 1.5;
-}

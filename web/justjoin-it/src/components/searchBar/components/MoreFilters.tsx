@@ -1,6 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import { Backdrop, Box, IconButton, Modal, Slider } from "@mui/material";
+import { Backdrop, Box, IconButton, Modal, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   HeaderContainer,
@@ -35,7 +35,7 @@ export const MoreFilters = () => {
   return (
     <Box>
       <Button variant="outlined" color="secondary" startIcon={<ManageSearchIcon />} onClick={handleClick}>
-        More filters
+        <Typography variant="buttonFont"> More filters</Typography>
       </Button>
       <Modal open={open} onClose={handleClose} BackdropComponent={Backdrop}>
         <StyledModalBox>

@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Button, List, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import React from "react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoDisturbIcon from "@mui/icons-material/DoDisturb";
@@ -13,7 +13,6 @@ import {
   Currency,
   ContentOffer,
   StyledListItem,
-  Option,
 } from "./styled";
 
 export const PostOffers = () => {
@@ -21,21 +20,26 @@ export const PostOffers = () => {
     <Box>
       <HeaderPostOffers>
         <HeaderText>
-          <h1>Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</h1>
+          <Typography variant="H2Styled">Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</Typography>
         </HeaderText>
         <Box>
           <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
         </Box>
       </HeaderPostOffers>
       <OffersBox>
-        <h3>Poznaj ogłoszenia na justjoin.it</h3>
+        <Typography variant="H3Styled">Poznaj ogłoszenia na justjoin.it</Typography>
         <ContentOffers>
           <OfferBox>
-            {" "}
             <OfferHeader>
-              <Option>Basic</Option>
-              <Price>390</Price>
-              <Currency>PLN</Currency>
+              <Box>
+                <Typography variant="headerFont">Basic</Typography>
+              </Box>
+              <Price>
+                <Typography variant="H1Styled">390</Typography>
+              </Price>
+              <Currency>
+                <Typography variant="H6Light">PLN</Typography>
+              </Currency>
             </OfferHeader>
             <ContentOffer>
               <List>
@@ -89,9 +93,15 @@ export const PostOffers = () => {
           </OfferBox>
           <OfferBox>
             <OfferHeader>
-              <Option>Premium</Option>
-              <Price>490</Price>
-              <Currency>PLN</Currency>
+              <Box>
+                <Typography variant="headerFont">Premium</Typography>
+              </Box>
+              <Price>
+                <Typography variant="H1Styled">490</Typography>
+              </Price>
+              <Currency>
+                <Typography variant="H6Light">PLN</Typography>
+              </Currency>
             </OfferHeader>
             <ContentOffer>
               <List>
@@ -144,11 +154,16 @@ export const PostOffers = () => {
             </ContentOffer>
           </OfferBox>
           <OfferBox>
-            {" "}
             <OfferHeader>
-              <Option>Business</Option>
-              <Price>690</Price>
-              <Currency>PLN</Currency>
+              <Box>
+                <Typography variant="headerFont">Business</Typography>
+              </Box>
+              <Price>
+                <Typography variant="H1Styled">690</Typography>
+              </Price>
+              <Currency>
+                <Typography variant="H6Light">PLN</Typography>
+              </Currency>
             </OfferHeader>
             <ContentOffer>
               <List>
@@ -196,7 +211,7 @@ export const PostOffers = () => {
                 </StyledListItem>
               </List>
               <Button variant="contained" size="large">
-                Kup ogłoszenie
+                <Typography variant="buttonFont">Kup ogłoszenie</Typography>
               </Button>
             </ContentOffer>
           </OfferBox>

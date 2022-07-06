@@ -30,6 +30,7 @@ import {
   StyledBigField,
   FileContainer,
   TitleBox,
+  StyledList,
 } from "./styled";
 import { BigOfferDetails } from "./types";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -40,8 +41,7 @@ import TimelapseIcon from "@mui/icons-material/Timelapse";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import { FileUpload } from "./FileUpload";
-import styled from "@emotion/styled";
-import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemIcon, Typography } from "@mui/material";
 
 export const BigOffer = (props: BigOfferDetails) => {
   return (
@@ -56,13 +56,13 @@ export const BigOffer = (props: BigOfferDetails) => {
           </LogoBox>
           <HeaderInfo>
             <TitleBox>
-              <Typography variant="h5">Senior FullStack JS Developer</Typography>
+              <Typography variant="headerFont">Senior FullStack JS Developer</Typography>
             </TitleBox>
             <AdressHeader>
               <LocationOnIcon />
-              <Typography variant="h6">ul.Zwycięska 44 55-095 Wrocław </Typography>
+              <Typography variant="subtitle1">ul.Zwycięska 44 55-095 Wrocław </Typography>
             </AdressHeader>
-            <Typography variant="h5">7800 PLN</Typography>
+            <Typography variant="subtitleLight">7800 PLN</Typography>
           </HeaderInfo>
         </HeaderBox>
         <HeaderDetails>
@@ -70,117 +70,217 @@ export const BigOffer = (props: BigOfferDetails) => {
             <IconCon>
               <LocationCityIcon />
             </IconCon>
-            <DataName>City Bank</DataName>
-            <DataDesc>Company name</DataDesc>
+            <DataName>City </DataName>
+            <DataDesc>
+              <Typography variant="dataDesc">Company name</Typography>
+            </DataDesc>
           </HeaderDetail>
           <HeaderDetail>
             <IconCon>
               <PeopleIcon />
             </IconCon>
             <DataName>15+</DataName>
-            <DataDesc>Company size</DataDesc>
+            <DataDesc>
+              <Typography variant="dataDesc">Company size</Typography>
+            </DataDesc>
           </HeaderDetail>
           <HeaderDetail>
             <IconCon>
               <MovingIcon />
             </IconCon>
             <DataName>Senior</DataName>
-            <DataDesc>EXP.lvl</DataDesc>
+            <DataDesc>
+              <Typography variant="dataDesc">EXP.lvl</Typography>
+            </DataDesc>
           </HeaderDetail>
           <HeaderDetail>
             <IconCon>
               <TimelapseIcon />
             </IconCon>
             <DataName>New</DataName>
-            <DataDesc>Added</DataDesc>
+            <DataDesc>
+              <Typography variant="dataDesc">Added</Typography>
+            </DataDesc>
           </HeaderDetail>
         </HeaderDetails>
         <StackContainer>
-          <ContainerHeader>Tech Stack</ContainerHeader>
+          <ContainerHeader>
+            <Typography variant="subtitle2">Tech Stack</Typography>
+          </ContainerHeader>
           <StackDetails>
             <StackDetail>
               <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={5} readOnly />
-              <StackName>Polish</StackName>
+              <StackName>
+                <Typography variant="subtitle4">Polish</Typography>
+              </StackName>
               <StackLvl>master</StackLvl>
             </StackDetail>
             <StackDetail>
               <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={5} readOnly />
-              <StackName>JavaScript</StackName>
+              <StackName>
+                <Typography variant="subtitle4">JavaScript</Typography>
+              </StackName>
               <StackLvl>master</StackLvl>
             </StackDetail>
             <StackDetail>
               <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={4} readOnly />
-              <StackName>Node.js</StackName>
+              <StackName>
+                <Typography variant="subtitle4">Node.js</Typography>
+              </StackName>
               <StackLvl>advanced</StackLvl>
             </StackDetail>
             <StackDetail>
               <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={3} readOnly />
-              <StackName>English</StackName>
+              <StackName>
+                <Typography variant="subtitle4">English</Typography>
+              </StackName>
               <StackLvl>regular</StackLvl>
             </StackDetail>
             <StackDetail>
               <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={4} readOnly />
-              <StackName>ReactJS</StackName>
+              <StackName>
+                <Typography variant="subtitle4">ReactJS</Typography>
+              </StackName>
               <StackLvl>advanced</StackLvl>
             </StackDetail>
           </StackDetails>
         </StackContainer>
         <BigOfferSection>
-          <ContainerHeader>Description</ContainerHeader>
+          <ContainerHeader>
+            <Typography variant="subtitle2">Description</Typography>
+          </ContainerHeader>
           <Content>
-            We are looking for a FullStack JS Developer who feels excited to have a real impact on the shape and direction of the product they are
-            building. We work in an agile environment, so you'll be collaborating closely with other developers, conversation designers and product
-            owners. You will be responsible for delivering high-quality software, ready to be deployed frequently and safely into production.
+            <Typography variant="subtitle5">
+              We are looking for a FullStack JS Developer who feels excited to have a real impact on the shape and direction of the product they are
+              building. We work in an agile environment, so you'll be collaborating closely with other developers, conversation designers and product
+              owners. You will be responsible for delivering high-quality software, ready to be deployed frequently and safely into production.
+            </Typography>
           </Content>
           <Content>
-            If youare an advocate of test automation and software craftsmanship is close to your heart, this is a place where you’ll fit right in.
+            <Typography variant="subtitle5">
+              If youare an advocate of test automation and software craftsmanship is close to your heart, this is a place where you’ll fit right in.
+            </Typography>
           </Content>
           <DescriptionMiniHeader>Key responsibilities: </DescriptionMiniHeader>
-          <List>
-            <ListItem>
-              <ListItemIcon>
-                <FiberManualRecordIcon color="secondary" />
-              </ListItemIcon>
-              <ListItemText primary="Active participation in defining, designing and prioritizing features" />
-            </ListItem>
+          <StyledList>
+            <ListItem>Active participation in defining, designing and prioritizing features</ListItem>
             <ListItem>Taking part and contributing in our team’s activities such as estimation, planning or product reviews </ListItem>
             <ListItem>Contributing to key decisions, including work prioritization and deadlines </ListItem>
             <ListItem>Developing features and enhancements with top quality in mind </ListItem>
             <ListItem>Maintenance, monitoring and scaling of our fast growing platform</ListItem>
-            <ListItem> Sharing knowledge, investigating and promoting latest technologies </ListItem>
+            <ListItem>Sharing knowledge, investigating and promoting latest technologies </ListItem>
             <ListItem>Driving and influencing continuous improvement of our applications</ListItem>
-          </List>
+          </StyledList>
           <DescriptionMiniHeader> We are looking for someone who </DescriptionMiniHeader>
-          <ul>
-            <li>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
               Can describe their technical skill set as:
-              <ul>
-                <li>Master: JavaScript </li>
-                <li>Advanced: Node.js, ReactJS, TypeScript </li>
-                <li>Good: MongoDB, TDD </li>
-                <li>Nice to have: AWS, Microservices</li>
-              </ul>
-            </li>
-            <li>Feels enthusiastic about quality and the importance of testing (e.g by applying TDD, BDD, CI/CD, pair programming)</li>
-            <li>Is inquisitive, curious and a great problem solver </li>
-            <li>Takes ownership and responsibility for the work they deliver </li>
-            <li>Wants to have a real impact on the product they are building </li>
-            <li>Is approachable, friendly and a team player</li> <li>Loves to learn as well as share knowledge</li>
-            <li>Is a clear, concise and proactive communicator</li>
-          </ul>
+              <List>
+                <ListItem>
+                  <ListItemIcon>
+                    <FiberManualRecordIcon color="secondary" fontSize="small" />
+                  </ListItemIcon>
+                  Master: JavaScript
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <FiberManualRecordIcon color="secondary" fontSize="small" />
+                  </ListItemIcon>
+                  Advanced: Node.js, ReactJS, TypeScript
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <FiberManualRecordIcon color="secondary" fontSize="small" />
+                  </ListItemIcon>
+                  Good: MongoDB, TDD
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <FiberManualRecordIcon color="secondary" fontSize="small" />
+                  </ListItemIcon>
+                  Nice to have: AWS, Microservices
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Feels enthusiastic about quality and the importance of testing (e.g by applying TDD, BDD, CI/CD, pair programming)
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Is inquisitive, curious and a great problem solver
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Takes ownership and responsibility for the work they deliver
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Wants to have a real impact on the product they are building
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Is approachable, friendly and a team player
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Loves to learn as well as share knowledge
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Is a clear, concise and proactive communicator
+            </ListItem>
+          </List>
           <DescriptionMiniHeader> What we offer:</DescriptionMiniHeader>
-          <ul>
-            <li> Competitive pay with benefits: employment contract or B2B co-operation</li>
-            <li>A continuous improvement environment, with 10% of your time dedicated to self-development and professional growth activities</li>
-            <li>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Competitive pay with benefits: employment contract or B2B co-operation
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              A continuous improvement environment, with 10% of your time dedicated to self-development and professional growth activities
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
               Exceptional conditions for growth: regular brown-bag meetings, workshops, hackathons, trainings and conferences (with a dedicated budget
               for that) Unique company culture based on mutual trust, honest feedback and autonomy
-            </li>
-            <li>Work in a team of highly-motivated professionals who love what they do, and enjoy each others company</li>
-          </ul>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordIcon color="secondary" fontSize="small" />
+              </ListItemIcon>
+              Work in a team of highly-motivated professionals who love what they do, and enjoy each others company
+            </ListItem>
+          </List>
         </BigOfferSection>
         <BigOfferSection>
-          <ContainerHeader>Apply</ContainerHeader>
+          <ContainerHeader>
+            <Typography variant="subtitle2">Apply</Typography>
+          </ContainerHeader>
           <InputsContainer>
             <InputContainer>
               <p>First and last name *</p>
