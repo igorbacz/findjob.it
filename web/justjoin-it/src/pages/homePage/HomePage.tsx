@@ -4,16 +4,15 @@ import { SearchBar } from "../../components/searchBar/SearchBar";
 import { TopBar } from "../../components/topBar/TopBar";
 import { BigOfferPage } from "../bigOfferPage/BigOfferPage";
 import { OffersListPage } from "../OffersListPage/OffersListPage";
+import { PostOffersPage } from "../postOffersPage/PostOffersPage";
 import { SignInPage } from "../signInPage/SignInPage";
 
 export const HomePage = () => {
   return (
     <Box>
       {/* <SignInPage /> */}
-      <TopBar />
-      <SearchBar />
-      <BigOfferPage />
-
+      {/* <BigOfferPage /> */}
+      <PostOffersPage />
       {/* <OffersListPage /> */}
     </Box>
   );

@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import { StyledSignInMenu } from "./StyledSignInMenu";
 
 export const SignInMenu = () => {
@@ -20,7 +20,7 @@ export const SignInMenu = () => {
   return (
     <div>
       <Button id="demo-customized-button" variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
-        Sign In
+        <Typography variant="buttonFont"> Sign In</Typography>
       </Button>
       <StyledSignInMenu id="demo-customized-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose} disableRipple>

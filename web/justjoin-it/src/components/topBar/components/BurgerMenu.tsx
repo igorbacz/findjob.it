@@ -1,7 +1,6 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Backdrop, Box, IconButton, MenuItem, Modal } from "@mui/material";
-import styled from "@emotion/styled";
+import { Backdrop, Box, IconButton, MenuItem, Modal, Typography } from "@mui/material";
 import { Header, HeaderContainer } from "../../searchBar/styled";
 import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
@@ -21,29 +20,17 @@ import HelpIcon from "@mui/icons-material/Help";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { BurgerButton, SignInBox, SignInButton, SmallBox, SocialBox } from "../styled";
 
-export const BurgerBox = styled(Box)`
-  position: absolute;
-  display: flex;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  width: 300;
-  height: 100%;
-  background-color: white;
-  border: 2px solid #000;
-  boxshadow: 24;
-`;
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "0%",
-  right: "0%",
-  width: 400,
-  height: "100%",
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  borderRadius: "5px",
-  transform: " none",
-};
+export const style = {
+   position: "absolute" as "absolute",
+   top: "0%",
+   right: "0%",
+   width: 400,
+   height: "100%",
+   bgcolor: "background.paper",
+   boxShadow: 24,
+   borderRadius: "5px",
+   transform: " none",
+ };
 
 export const BurgerMenu = () => {
   const [open, setOpen] = React.useState(false);
@@ -57,7 +44,9 @@ export const BurgerMenu = () => {
       <Modal open={open} onClose={handleClose} BackdropComponent={Backdrop}>
         <Box sx={style}>
           <HeaderContainer>
-            <Header>MENU</Header>
+            <Header>
+              <Typography variant="subtitle4">MENU</Typography>
+            </Header>
             <IconButton color="secondary">
               <CloseIcon onClick={handleClose} />
             </IconButton>

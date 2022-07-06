@@ -1,9 +1,7 @@
 import React from "react";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { UploadBox } from "./styled";
-
-
 
 export const FileUpload: React.FC = () => {
   return (
@@ -11,7 +9,7 @@ export const FileUpload: React.FC = () => {
       <label htmlFor="file-upload">
         <Box>
           <CloudUploadOutlinedIcon fontSize="large" />
-          <p>Drag and drop</p>
+          <Typography>Drag and drop</Typography>
         </Box>
       </label>
     </UploadBox>

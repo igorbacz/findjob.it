@@ -89,3 +89,15 @@ export const BurgerButton = styled(Button)`
 export const SmallBox = styled(Box)`
   border-top: 4px solid #f3f6f8;
 `;
+
+export const BurgerBox = styled(Box)`
+  position: absolute;
+  display: flex;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 300;
+  height: 100%;
+  background-color: white;
+  border: 2px solid #000;
+  boxshadow: 24;
+`;

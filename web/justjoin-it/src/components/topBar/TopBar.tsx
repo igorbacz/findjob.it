@@ -14,28 +14,36 @@ export const TopBar = () => {
     <Container>
       <LogoWrapper>
         <a>
-          <Typography variant="h4">justjoin.it</Typography>
+          <Typography variant="H1Styled">justjoin.it</Typography>
         </a>
         <LogoParagraph> #1 Job Board for tech industry in Europe</LogoParagraph>
         <SwitchMode />
       </LogoWrapper>
       <Items>
         <a>
-          <Item>Offers</Item>
+          <Item>
+            <Typography variant="buttonFont">Offers</Typography>
+          </Item>
         </a>
         <a>
-          <Item>Brand Stories</Item>
+          <Item>
+            <Typography variant="buttonFont">Brand Stories</Typography>
+          </Item>
         </a>
         <a>
-          <Item>Geek</Item>
+          <Item>
+            <Typography variant="buttonFont">Geek</Typography>
+          </Item>
         </a>
         <a>
-          <Item>Matchmaking</Item>
+          <Item>
+            <Typography variant="buttonFont">Matchmaking</Typography>
+          </Item>
         </a>
       </Items>
       <ButtonsWrapper>
         <Button color="secondary" variant="outlined">
-          Post a Job
+          <Typography variant="buttonFont"> Post a Job</Typography>
         </Button>
         <ButtonSignIn>
           <SignInMenu />

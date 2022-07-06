@@ -65,3 +65,14 @@ export const Amount = styled.h3`
   font-size: 1.25rem;
   margin-right: 30px;
 `;
+
+export const AmountBox = styled(Box)`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  color: rgb(30, 198, 108);
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+`;

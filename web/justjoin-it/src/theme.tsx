@@ -54,14 +54,77 @@ export const theme = createTheme({
     },
   },
   typography: {
-    poster: {
-      color: "red",
-    },
     allVariants: {
       fontFamily: "Open Sans,sans-serif",
+      color: "rgba(0, 0, 0, 0.87)",
+      fontSize: "0.875rem",
+
+      lineHeight: " 1.43",
+      fontWeight: "200",
     },
     button: {
       textTransform: "none",
+    },
+    buttonFont: {
+      lineHeight: "1.75",
+      whiteSpace: "nowrap",
+    },
+    headerFont: {
+      fontSize: "24px",
+      fontWeight: "600",
+      whiteSpace: "nowrap",
+    },
+    subtitle1: {
+      fontSize: "14px",
+      fontWeight: "600",
+      color: "rgb(255, 255, 255)",
+    },
+    subtitleLight: {
+      fontSize: "18px",
+      fontWeight: "600",
+      color: "rgb(255, 255, 255)",
+    },
+    subtitle2: {
+      fontSize: "20px",
+      fontWeight: "400",
+    },
+    subtitle3: {
+      fontWeight: "400",
+      fontSize: "16px",
+    },
+    subtitle4: {
+      fontWeight: "600",
+      fontSize: "16px",
+    },
+    subtitle5: {
+      fontSize: "14px",
+    },
+
+    dataDesc: {
+      fontSize: "11px",
+      color: "rgb(153, 161, 171)",
+    },
+
+    H2Styled: {
+      fontSize: "1.875rem",
+    },
+    H3Styled: {
+      fontSize: "1.75rem",
+      fontWeight: "400",
+    },
+
+    H1Styled: {
+      fontSize: "50px",
+      fontWeight: "bold",
+    },
+    H6Light: {
+      fontSize: "16px",
+      fontWeight: " 500",
+      letterSpacing: "0.38px",
+    },
+    PStyled: {
+      fontSize: "11px",
+      fontWeight: "200",
     },
   },
 });

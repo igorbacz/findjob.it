@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, IconButton, TextField } from "@mui/material";
+import { Box, Button, IconButton, TextField } from "@mui/material";
 
 export const Container = styled.div`
   margin-top: 3px;
@@ -216,8 +216,6 @@ export const GHButton = styled(IconButton)`
 `;
 
 export const IconText = styled.span`
-  font-size: 11px;
-  font-weight: 300;
   color: #757575;
 `;
 
@@ -245,11 +243,9 @@ export const Header200 = styled.h4`
   font-weight: 200;
   font-size: 20px;
 `;
-export const Header = styled.h5`
+export const Header = styled(Box)`
   padding: 15px 15px 0px 35px;
   color: rgb(119, 119, 119);
-  font-weight: 600;
-  font-size: 16px;
 `;
 
 export const ButtonsContainer = styled.div`
