@@ -27,12 +27,16 @@ export const LogoContainer = styled(Box)`
   justify-content: center;
 `;
 
-export const Title = styled.h4`
+export const Title = styled(Box)`
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   color: #6b6b6b;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export const DetailsSection = styled(Box)`
@@ -54,18 +58,6 @@ export const Paragraph = styled.p`
   color: #a9a6a6;
 `;
 
-export const Amount = styled.h3`
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  font-weight: 200;
-  color: rgb(30, 198, 108);
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
-  margin-right: 30px;
-`;
-
 export const AmountBox = styled(Box)`
   grid-column-start: 4;
   grid-column-end: 5;
@@ -75,4 +67,7 @@ export const AmountBox = styled(Box)`
   margin-right: 30px;
   display: flex;
   align-items: center;
+  line-height: 23px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;

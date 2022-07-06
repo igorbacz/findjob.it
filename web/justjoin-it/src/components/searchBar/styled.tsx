@@ -217,6 +217,7 @@ export const GHButton = styled(IconButton)`
 
 export const IconText = styled.span`
   color: #757575;
+  text-align: center;
 `;
 
 export const HeaderContainer = styled.div`
@@ -226,23 +227,7 @@ export const HeaderContainer = styled.div`
   -webkit-box-pack: justify;
   justify-content: space-between;
 `;
-export const HeaderBig = styled.h4`
-  color: rgb(119, 119, 119);
-  font-weight: 700;
-  font-size: 20px;
-`;
 
-export const HeaderMedium = styled.h4`
-  color: rgb(119, 119, 119);
-  font-weight: 600;
-  font-size: 17px;
-`;
-
-export const Header200 = styled.h4`
-  color: rgb(119, 119, 119);
-  font-weight: 200;
-  font-size: 20px;
-`;
 export const Header = styled(Box)`
   padding: 15px 15px 0px 35px;
   color: rgb(119, 119, 119);
@@ -254,6 +239,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const ContextContainer = styled.div`
+  padding: 20px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 `;

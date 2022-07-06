@@ -15,6 +15,9 @@ declare module "@mui/material" {
     H1Styled: CSSProperties;
     H6Light: CSSProperties;
     PStyled: CSSProperties;
+    H5Styled: CSSProperties;
+    subtitleStrong: CSSProperties;
+    subtitle6: CSSProperties;
   }
 
   // allow configuration using `createTheme`
@@ -31,6 +34,9 @@ declare module "@mui/material" {
     H1Styled?: CSSProperties;
     H6Light?: CSSProperties;
     PStyled?: CSSProperties;
+    H5Styled?: CSSProperties;
+    subtitleStrong?: CSSProperties;
+    subtitle6?: CSSProperties;
   }
 }
 
@@ -49,5 +55,8 @@ declare module "@mui/material/Typography" {
     H1Styled: true;
     H6Light: true;
     PStyled: true;
+    H5Styled: true;
+    subtitleStrong: true;
+    subtitle6: true;
   }
 }

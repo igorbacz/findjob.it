@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { Box, IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Header, HeaderBig, HeaderContainer, ButtonsContainer } from "../styled";
+import { Header, HeaderContainer, ButtonsContainer } from "../styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const LocationMenu = () => {
@@ -33,13 +33,15 @@ export const LocationMenu = () => {
       >
         <Box sx={{ p: 2 }}>
           <HeaderContainer>
-            <HeaderBig>Location</HeaderBig>
+            <Typography variant="H5Styled">Location</Typography>
             <IconButton color="secondary">
               <CloseIcon onClick={handleClose} />
             </IconButton>
           </HeaderContainer>
           <Box>
-            <Header>Top Poland</Header>
+            <Header>
+              <Typography variant="subtitle4">Top Poland</Typography>
+            </Header>
             <ButtonsContainer>
               <Button color="secondary" variant="outlined">
                 Warszawa
@@ -62,7 +64,9 @@ export const LocationMenu = () => {
             </ButtonsContainer>
           </Box>
           <Box>
-            <Header>Top World</Header>
+            <Header>
+              <Typography variant="subtitle4">Top World</Typography>
+            </Header>
             <ButtonsContainer>
               <Button color="secondary" variant="outlined">
                 New York

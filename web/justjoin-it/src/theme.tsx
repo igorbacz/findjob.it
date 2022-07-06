@@ -84,6 +84,10 @@ export const theme = createTheme({
       fontWeight: "600",
       color: "rgb(255, 255, 255)",
     },
+    subtitleStrong: {
+      fontSize: "18px",
+      fontWeight: "200",
+    },
     subtitle2: {
       fontSize: "20px",
       fontWeight: "400",
@@ -98,6 +102,10 @@ export const theme = createTheme({
     },
     subtitle5: {
       fontSize: "14px",
+    },
+    subtitle6: {
+      fontWeight: "700",
+      fontSize: "16px",
     },
 
     dataDesc: {
@@ -116,7 +124,9 @@ export const theme = createTheme({
     H1Styled: {
       fontSize: "50px",
       fontWeight: "bold",
+      textDecorationLine: "none",
     },
+
     H6Light: {
       fontSize: "16px",
       fontWeight: " 500",
@@ -125,6 +135,10 @@ export const theme = createTheme({
     PStyled: {
       fontSize: "11px",
       fontWeight: "200",
+    },
+    H5Styled: {
+      fontWeight: "700",
+      fontSize: "1.25rem",
     },
   },
 });

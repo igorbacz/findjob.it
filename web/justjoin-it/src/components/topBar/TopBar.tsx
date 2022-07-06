@@ -4,7 +4,7 @@ import "./styled.tsx";
 import { SwitchMode } from "./components/SwitchMode";
 import { Typography } from "@mui/material";
 import { SignInMenu } from "./components/SignInMenu";
-import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoParagraph, LogoWrapper } from "./styled";
+import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoParagraph, LogoWrapper, StyledLink } from "./styled";
 import { CurrencyMenu } from "./components/CurrencyMenu";
 
 import { BurgerMenu } from "./components/BurgerMenu";
@@ -13,38 +13,34 @@ export const TopBar = () => {
   return (
     <Container>
       <LogoWrapper>
-        <a>
+        <StyledLink to="/">
           <Typography variant="H1Styled">justjoin.it</Typography>
-        </a>
+        </StyledLink>
         <LogoParagraph> #1 Job Board for tech industry in Europe</LogoParagraph>
         <SwitchMode />
       </LogoWrapper>
       <Items>
-        <a>
+        <StyledLink to="/">
           <Item>
             <Typography variant="buttonFont">Offers</Typography>
           </Item>
-        </a>
-        <a>
-          <Item>
-            <Typography variant="buttonFont">Brand Stories</Typography>
-          </Item>
-        </a>
-        <a>
-          <Item>
-            <Typography variant="buttonFont">Geek</Typography>
-          </Item>
-        </a>
-        <a>
-          <Item>
-            <Typography variant="buttonFont">Matchmaking</Typography>
-          </Item>
-        </a>
+        </StyledLink>
+        <Item>
+          <Typography variant="buttonFont">Brand Stories</Typography>
+        </Item>
+        <Item>
+          <Typography variant="buttonFont">Geek</Typography>
+        </Item>
+        <Item>
+          <Typography variant="buttonFont">Matchmaking</Typography>
+        </Item>
       </Items>
       <ButtonsWrapper>
-        <Button color="secondary" variant="outlined">
-          <Typography variant="buttonFont"> Post a Job</Typography>
-        </Button>
+        <StyledLink to="post">
+          <Button color="secondary" variant="outlined">
+            <Typography variant="buttonFont"> Post a Job</Typography>
+          </Button>
+        </StyledLink>
         <ButtonSignIn>
           <SignInMenu />
         </ButtonSignIn>

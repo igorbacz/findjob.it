@@ -12,9 +12,11 @@ const MiniOffer = (props: SmallOffer) => {
       <LogoContainer>
         <img alt="logo" src={props.logo}></img>
       </LogoContainer>
-      <Title>{props.title}</Title>
+      <Title>
+        <Typography variant="subtitle4">{props.title}</Typography>
+      </Title>
       <AmountBox>
-        <Typography variant="h5">{props.amount} PLN</Typography>
+        <Typography variant="subtitle3">{props.amount} PLN</Typography>
       </AmountBox>
       <DetailsSection>
         <BusinessIcon />

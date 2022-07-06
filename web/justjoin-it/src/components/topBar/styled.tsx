@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -75,8 +76,6 @@ export const SocialBox = styled.div`
   padding: 10px 10px 10px 10px;
 `;
 
-
-
 export const BurgerButton = styled(Button)`
   border-radius: 0px;
   height: 50px;
@@ -100,4 +99,9 @@ export const BurgerBox = styled(Box)`
   background-color: white;
   border: 2px solid #000;
   boxshadow: 24;
+`;
+
+export const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: inherit;
 `;

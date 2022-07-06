@@ -4,8 +4,9 @@ import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
-import { IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { StyledSignInMenu } from "./StyledSignInMenu";
+import { StyledLink } from "../styled";
 
 export const SignInMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -18,7 +19,7 @@ export const SignInMenu = () => {
   };
 
   return (
-    <div>
+    <Box>
       <Button id="demo-customized-button" variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
         <Typography variant="buttonFont"> Sign In</Typography>
       </Button>
@@ -29,13 +30,15 @@ export const SignInMenu = () => {
           </IconButton>
           Sign in as a developer
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <IconButton>
-            <WorkIcon />
-          </IconButton>
-          Sign in to Employer Panel
-        </MenuItem>
+        <StyledLink to="signIn">
+          <MenuItem onClick={handleClose} disableRipple>
+            <IconButton>
+              <WorkIcon />
+            </IconButton>
+            Sign in to Employer Panel
+          </MenuItem>
+        </StyledLink>
       </StyledSignInMenu>
-    </div>
+    </Box>
   );
 };
