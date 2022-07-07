@@ -83,6 +83,8 @@ export const HeaderDetail = styled(Box)`
   flex-direction: column;
   justify-content-: center;
   align-items: center;
+  justify-content: space-between;
+
   box-shadow: rgb(0 0 0 / 8%) 0px 2px 2px 0px, rgb(0 0 0 / 6%) 0px 1px 5px 0px;
   border-radius: 4px;
   padding: 20px 5px;
@@ -102,16 +104,13 @@ export const IconCon = styled(Box)`
   position: absolute;
 `;
 
-export const DataName = styled.h4`
-  font-size: 0.875rem;
-  font-weight: 400;
+export const DataName = styled(Box)`
   margin-bottom: -16px;
+  margin-top: 15px;
 `;
 
-export const DataDesc = styled.h6`
+export const DataDesc = styled(Box)`
   color: rgb(153, 161, 171);
-  font-size: 11px;
-  font-weight: 200;
 `;
 
 export const StyledRating = styled(Rating)`
