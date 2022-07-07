@@ -29,12 +29,11 @@ export const Items = styled.div`
   margin: 16px;
 `;
 
-export const Item = styled.h4`
+export const Item = styled(Box)`
   margin: 16px;
   display: flex;
   color: #99a1ab;
   cursor: pointer;
-  font-weight: 400;
   letter-spacing: 0;
   &:active {
     color: #ff4081;

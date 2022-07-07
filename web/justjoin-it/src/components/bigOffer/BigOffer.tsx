@@ -70,7 +70,9 @@ export const BigOffer = (props: BigOfferDetails) => {
             <IconCon>
               <LocationCityIcon />
             </IconCon>
-            <DataName>City </DataName>
+            <DataName>
+              <Typography>City </Typography>
+            </DataName>
             <DataDesc>
               <Typography variant="dataDesc">Company name</Typography>
             </DataDesc>
@@ -79,7 +81,9 @@ export const BigOffer = (props: BigOfferDetails) => {
             <IconCon>
               <PeopleIcon />
             </IconCon>
-            <DataName>15+</DataName>
+            <DataName>
+              <Typography>15+</Typography>
+            </DataName>
             <DataDesc>
               <Typography variant="dataDesc">Company size</Typography>
             </DataDesc>
@@ -88,7 +92,9 @@ export const BigOffer = (props: BigOfferDetails) => {
             <IconCon>
               <MovingIcon />
             </IconCon>
-            <DataName>Senior</DataName>
+            <DataName>
+              <Typography>Senior</Typography>
+            </DataName>
             <DataDesc>
               <Typography variant="dataDesc">EXP.lvl</Typography>
             </DataDesc>
@@ -97,7 +103,9 @@ export const BigOffer = (props: BigOfferDetails) => {
             <IconCon>
               <TimelapseIcon />
             </IconCon>
-            <DataName>New</DataName>
+            <DataName>
+              <Typography>New</Typography>
+            </DataName>
             <DataDesc>
               <Typography variant="dataDesc">Added</Typography>
             </DataDesc>
