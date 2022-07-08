@@ -62,3 +62,8 @@ export const StyledListItem = styled(ListItem)`
   gap: 15px;
   padding: 15px;
 `;
+
+export const ImgBox = styled(Box)`
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+`;

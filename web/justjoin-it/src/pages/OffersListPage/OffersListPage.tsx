@@ -3,8 +3,9 @@ import React from "react";
 import { GoogleMap } from "../../components/googleMap/googleMap";
 import { OffersList } from "../../components/offersList/OffersList";
 import { SearchBar } from "../../components/searchBar/SearchBar";
+import BasicTabs from "../../components/Tabs/Tabs";
 import { TopBar } from "../../components/topBar/TopBar";
-import { PageContainer } from "../bigOfferPage/BigOfferPage";
+import { PageContainer } from "../bigOfferPage/styled";
 
 export const OffersListPage = () => {
   return (
@@ -12,7 +13,7 @@ export const OffersListPage = () => {
       <TopBar />
       <SearchBar />
       <PageContainer>
-        <OffersList />
+        <BasicTabs />
         <GoogleMap />
       </PageContainer>
     </Box>

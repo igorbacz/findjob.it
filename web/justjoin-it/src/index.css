@@ -4,7 +4,11 @@ button{
 
 
 body{
-font-family: "Open Sans", sans-serif;
-    color: rgb(55, 71, 79);
-  
+  font-family: "Open Sans", sans-serif;
+  color: rgb(55, 71, 79);
+  background-color: #EEEEEE;
+}
+
+html body{
+  height: 100%;
 }
