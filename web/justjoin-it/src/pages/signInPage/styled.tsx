@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import { Box } from "@mui/material";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Box)`
   background-color: white;
-  width: 300px;
+  width: 350px;
 
   display: flex;
   justify-content: center;
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
 `;
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   padding: 25px 0px 25px 0px;
   width: 300px;
   background-color: white;
@@ -24,20 +25,20 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const LabelContainer = styled.div`
+export const LabelContainer = styled(Box)`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled(Box)`
   width: 200px;
   margin-top: 30px;
 `;
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled(Box)`
   text-align: right;
   margin-top: 30px;
   margin-bottom: 30px;

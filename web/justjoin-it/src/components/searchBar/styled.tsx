@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Box, Button, IconButton, TextField } from "@mui/material";
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   margin-top: 3px;
   display: flex;
   background-color: white;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const ContainerSection = styled.div`
+export const ContainerSection = styled(Box)`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,7 +32,7 @@ export const Input = styled.input`
   }
 `;
 
-export const IconContainer = styled.div`
+export const IconContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -220,7 +220,7 @@ export const IconText = styled.span`
   text-align: center;
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled(Box)`
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -233,29 +233,29 @@ export const Header = styled(Box)`
   color: rgb(119, 119, 119);
 `;
 
-export const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
 `;
 
-export const ContextContainer = styled.div`
+export const ContextContainer = styled(Box)`
   padding: 20px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 `;
 
-export const ContextNestedContainer = styled.div`
+export const ContextNestedContainer = styled(Box)`
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 `;
 
 export const StyledField = styled(TextField)`
   .MuiOutlinedInput-root {
     border-radius: 30px;
-    height: 45px;
+    height: 35px;
   }
 `;
 
-export const ContainerRightSection = styled.div`
+export const ContainerRightSection = styled(Box)`
   display: flex;
   align-items: center;
 `;
@@ -268,7 +268,7 @@ export const ButtonFocus = styled(Button)`
   }
 `;
 
-export const StyledModalBox = styled.div`
+export const StyledModalBox = styled(Box)`
   position: absolute;
   padding: 20px 25px 20px 25px;
   top: 50%;

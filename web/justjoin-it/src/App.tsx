@@ -1,14 +1,10 @@
 import React from "react";
 import "./App.css";
-import { SearchBar } from "./components/searchBar/SearchBar";
-
-import { HomePage } from "./pages/homePage/HomePage";
 import { PostOffersPage } from "./pages/postOffersPage/PostOffersPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BigOfferPage } from "./pages/bigOfferPage/BigOfferPage";
 import { OffersListPage } from "./pages/OffersListPage/OffersListPage";
-import { TopBar } from "./components/topBar/TopBar";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 

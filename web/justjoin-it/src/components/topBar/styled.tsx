@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   display: flex;
   border-bottom: 1px solid #e4e8f0;
   height: 70px;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-color: white;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(Box)`
   display: flex;
   align-items: center;
   flex: 1;
@@ -22,7 +22,7 @@ export const LogoParagraph = styled.p`
   padding-right: 20px;
 `;
 
-export const Items = styled.div`
+export const Items = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -43,33 +43,33 @@ export const Item = styled(Box)`
   }
 `;
 
-export const ButtonsWrapper = styled.div`
+export const ButtonsWrapper = styled(Box)`
   display: flex;
   align-items: center;
 `;
 
-export const ButtonSignIn = styled.div`
+export const ButtonSignIn = styled(Box)`
   margin-left: 10px;
   margin-right: 10px;
 `;
 
-export const ButtonCurrency = styled.div`
+export const ButtonCurrency = styled(Box)`
   border-left: 1px solid #e4e8f0;
   border-right: 1px solid #e4e8f0;
 `;
 
-export const SignInBox = styled.div`
+export const SignInBox = styled(Box)`
   padding-left: 24px;
   padding-right: 20px;
   padding-bottom: 16px;
 `;
 
-export const SignInButton = styled.div`
+export const SignInButton = styled(Box)`
   border: 1px solid black;
   margin: 6px 10px 6px 10px;
 `;
 
-export const SocialBox = styled.div`
+export const SocialBox = styled(Box)`
   display: flex;
   justify-content: space-around;
   padding: 10px 10px 10px 10px;

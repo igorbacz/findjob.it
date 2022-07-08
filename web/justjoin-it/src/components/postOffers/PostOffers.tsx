@@ -13,13 +13,8 @@ import {
   Currency,
   ContentOffer,
   StyledListItem,
+  ImgBox,
 } from "./styled";
-import styled from "@emotion/styled";
-
-export const Boxo = styled(Box)`
-  max-width: 58.333333%;
-  flex-basis: 58.333333%;
-`;
 
 export const PostOffers = () => {
   return (
@@ -28,9 +23,9 @@ export const PostOffers = () => {
         <HeaderText>
           <Typography variant="H2Styled">Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</Typography>
         </HeaderText>
-        <Boxo>
+        <ImgBox>
           <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
-        </Boxo>
+        </ImgBox>
       </HeaderPostOffers>
       <OffersBox>
         <Typography variant="H3Styled">Poznaj ogłoszenia na justjoin.it</Typography>

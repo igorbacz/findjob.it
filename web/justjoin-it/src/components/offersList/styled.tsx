@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { Box } from "@mui/material";
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   padding-right: 26px;
   display: flex;
   flex: 1 1 50%;

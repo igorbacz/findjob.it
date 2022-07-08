@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { StyledCurrencyMenu } from "./StyledCurrencyMenu";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export const CurrencyMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -16,7 +16,7 @@ export const CurrencyMenu = () => {
   };
 
   return (
-    <div>
+    <Box>
       <Button
         id="demo-customized-button"
         aria-controls={open ? "demo-customized-menu" : undefined}
@@ -57,6 +57,6 @@ export const CurrencyMenu = () => {
           Default
         </MenuItem>
       </StyledCurrencyMenu>
-    </div>
+    </Box>
   );
 };

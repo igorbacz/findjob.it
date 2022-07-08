@@ -166,11 +166,6 @@ export const BigOfferSection = styled(Box)`
   padding: 12px 20px;
 `;
 
-export const DescriptionMiniHeader = styled(Box)`
-  font-weight: 700;
-  text-align: left;
-  margin-top: 15px;
-`;
 export const DescriptionHeader = styled(Box)``;
 
 export const Content = styled(Box)`
@@ -230,12 +225,5 @@ export const UploadBox = styled(Box)`
   display: flex;
   justify-content: center;
   text-align: center;
-`;
-
-//nie działa
-export const StyledList = styled(List)`
-  .MuiList-root {
-    list-style: square;
-  }
 `;
 

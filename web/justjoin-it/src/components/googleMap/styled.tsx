@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import { Box } from "@mui/material";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Box)`
   display: flex;
   flex: 0 0 50%;
 `;
-export const MapContainer = styled.div`
+export const MapContainer = styled(Box)`
   width: 100%;
   height: 750px;
   background-color: rgb(219, 255, 219);

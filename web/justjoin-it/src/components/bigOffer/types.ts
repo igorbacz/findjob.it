@@ -8,3 +8,9 @@ export interface BigOfferDetails extends SmallOffer {
   techStack?: any;
   description?: string;
 }
+
+export interface StackProp {
+  stackName: string;
+  stackLvl: string;
+  value: number;
+}
