@@ -5,14 +5,14 @@ import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import { StackProp } from "../types";
 
-const Stack = (props: StackProp) => {
+const Stack = ({ value, stackName, stackLvl }: StackProp) => {
   return (
     <StackDetail>
-      <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={props.value} readOnly />
+      <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={value} readOnly />
       <StackName>
-        <Typography variant="subtitle4">{props.stackName}</Typography>
+        <Typography variant="subtitle4">{stackName}</Typography>
       </StackName>
-      <StackLvl>{props.stackLvl}</StackLvl>
+      <StackLvl>{stackLvl}</StackLvl>
     </StackDetail>
   );
 };

@@ -1,18 +1,10 @@
-import styled from "@emotion/styled";
-import { Box } from "@mui/material";
 import React from "react";
 import MiniOffer from "../miniOffer/MiniOffer";
-import { Container } from "./styled";
-
-export const OffersContainer = styled(Box)`
-  display: block;
-  position: absolute;
-  height: 100%;
-  overflow: scroll;
-`;
+import { SmallOffer } from "../miniOffer/types";
+import { Container, OffersContainer } from "./styled";
 
 export const OffersList = () => {
-  const offers = [
+  const offers: SmallOffer[] = [
     {
       logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
       title: "Java Script Developer",
@@ -27,6 +19,7 @@ export const OffersList = () => {
       city: "Gdańsk",
       companyName: "Neoteric",
     },
+
     {
       logo: "https://bucket.justjoin.it/offers/company_logos/thumb/cad5d063093baa141ec6dfb31c607a431f9dc601.png?1652167322",
       title: "Node Developer",
@@ -34,21 +27,49 @@ export const OffersList = () => {
       city: "Warszawa",
       companyName: "Cschark",
     },
+    {
+      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
+      title: "React Developer",
+      amount: 8900,
+      city: "Gdańsk",
+      companyName: "Neoteric",
+    },
+    {
+      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
+      title: "React Developer",
+      amount: 8900,
+      city: "Gdańsk",
+      companyName: "Neoteric",
+    },
+    {
+      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
+      title: "React Developer",
+      amount: 8900,
+      city: "Gdańsk",
+      companyName: "Neoteric",
+    },
+    {
+      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
+      title: "React Developer",
+      amount: 8900,
+      city: "Gdańsk",
+      companyName: "Neoteric",
+    },
+    {
+      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
+      title: "React Developer",
+      amount: 8900,
+      city: "Gdańsk",
+      companyName: "Neoteric",
+    },
   ];
   return (
     <OffersContainer>
-      <MiniOffer logo={offers[0].logo} amount={offers[0].amount} title={offers[0].title} city={offers[0].city} companyName={offers[0].companyName} />
-      <MiniOffer logo={offers[1].logo} amount={offers[1].amount} title={offers[1].title} city={offers[1].city} companyName={offers[1].companyName} />
-      <MiniOffer logo={offers[2].logo} amount={offers[2].amount} title={offers[2].title} city={offers[2].city} companyName={offers[2].companyName} />
-      <MiniOffer logo={offers[0].logo} amount={offers[0].amount} title={offers[0].title} city={offers[0].city} companyName={offers[0].companyName} />
-      <MiniOffer logo={offers[1].logo} amount={offers[1].amount} title={offers[1].title} city={offers[1].city} companyName={offers[1].companyName} />
-      <MiniOffer logo={offers[2].logo} amount={offers[2].amount} title={offers[2].title} city={offers[2].city} companyName={offers[2].companyName} />
-      <MiniOffer logo={offers[0].logo} amount={offers[0].amount} title={offers[0].title} city={offers[0].city} companyName={offers[0].companyName} />
-      <MiniOffer logo={offers[1].logo} amount={offers[1].amount} title={offers[1].title} city={offers[1].city} companyName={offers[1].companyName} />
-      <MiniOffer logo={offers[2].logo} amount={offers[2].amount} title={offers[2].title} city={offers[2].city} companyName={offers[2].companyName} />
-      <MiniOffer logo={offers[0].logo} amount={offers[0].amount} title={offers[0].title} city={offers[0].city} companyName={offers[0].companyName} />
-      <MiniOffer logo={offers[1].logo} amount={offers[1].amount} title={offers[1].title} city={offers[1].city} companyName={offers[1].companyName} />
-      <MiniOffer logo={offers[2].logo} amount={offers[2].amount} title={offers[2].title} city={offers[2].city} companyName={offers[2].companyName} />
+      <Container>
+        {offers.map((offer) => {
+          return <MiniOffer {...offer} />;
+        })}
+      </Container>
     </OffersContainer>
   );
 };

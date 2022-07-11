@@ -6,23 +6,23 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography } from "@mui/material";
 
 
-const MiniOffer = (props: SmallOffer) => {
+const MiniOffer = ({ logo, title, amount, companyName, city }: SmallOffer) => {
   return (
     <MiniOfferCon>
       <LogoContainer>
-        <img alt="logo" src={props.logo}></img>
+        <img alt="logo" src={logo}></img>
       </LogoContainer>
       <Title>
-        <Typography variant="subtitle4">{props.title}</Typography>
+        <Typography variant="subtitle4">{title}</Typography>
       </Title>
       <AmountBox>
-        <Typography variant="subtitle3">{props.amount} PLN</Typography>
+        <Typography variant="subtitle3">{amount} PLN</Typography>
       </AmountBox>
       <DetailsSection>
         <BusinessIcon />
-        <Paragraph>{props.companyName}</Paragraph>
+        <Paragraph>{companyName}</Paragraph>
         <LocationOnIcon />
-        <Paragraph>{props.city}</Paragraph>
+        <Paragraph>{city}</Paragraph>
       </DetailsSection>
     </MiniOfferCon>
   );
