@@ -133,7 +133,8 @@ export const ContainerHeader = styled(Box)`
 
 export const StackDetails = styled(Box)`
   display: flex;
-  gap: 50px;
+  justify-content: space-evenly;
+  gap: 30px;
   padding: 12px;
 `;
 
@@ -169,6 +170,7 @@ export const BigOfferSection = styled(Box)`
 export const DescriptionHeader = styled(Box)``;
 
 export const Content = styled(Box)`
+  padding: 15px;
   color: rgb(55, 71, 79);
   line-height: 1.5;
   text-align: left;

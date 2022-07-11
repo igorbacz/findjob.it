@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import React from "react";
 import { OffersList } from "../offersList/OffersList";
 import styled from "@emotion/styled";
+import { SmallOffer } from "../miniOffer/types";
 
 interface TabPanelProps {
   children?: React.ReactNode;

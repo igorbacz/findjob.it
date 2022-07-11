@@ -36,7 +36,14 @@ import { Typography } from "@mui/material";
 import Stack from "./components/Stack";
 
 export const BigOffer = (props: BigOfferDetails) => {
-  const stack = [{ stackName: "Polish", stackLvl: "master", value: 5 }];
+  const stack = [
+    { stackName: "Polish", stackLvl: "master", value: 5 },
+    { stackName: "JavaSript", stackLvl: "advanced", value: 4 },
+    { stackName: "TypeScript", stackLvl: "regular", value: 3 },
+    { stackName: "React", stackLvl: "regular", value: 3 },
+    { stackName: "Node.js", stackLvl: "regular", value: 3 },
+    { stackName: "Vue.js", stackLvl: "regular", value: 3 },
+  ];
 
   return (
     <BigOfferWrapper>
@@ -110,11 +117,9 @@ export const BigOffer = (props: BigOfferDetails) => {
             <Typography variant="subtitle2">Tech Stack</Typography>
           </ContainerHeader>
           <StackDetails>
-            <Stack stackName={stack[0].stackName} stackLvl={stack[0].stackLvl} value={stack[0].value} />
-            <Stack stackName={stack[0].stackName} stackLvl={stack[0].stackLvl} value={stack[0].value} />
-            <Stack stackName={stack[0].stackName} stackLvl={stack[0].stackLvl} value={stack[0].value} />
-            <Stack stackName={stack[0].stackName} stackLvl={stack[0].stackLvl} value={stack[0].value} />
-            <Stack stackName={stack[0].stackName} stackLvl={stack[0].stackLvl} value={stack[0].value} />
+            {stack.map((item) => {
+              return <Stack {...item} />;
+            })}
           </StackDetails>
         </StackContainer>
         <BigOfferSection>
