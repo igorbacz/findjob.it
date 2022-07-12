@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, List, Rating, TextField } from "@mui/material";
+import { Box, Rating, TextField } from "@mui/material";
 
 export const BigOfferWrapper = styled(Box)`
   display: flex;
@@ -43,7 +43,10 @@ export const LogoBox = styled(Box)`
   border: 10px solid rgba(255, 255, 255, 0.15);
 `;
 
-export const LogoImg = styled.img``;
+export const LogoImg = styled.img`
+  max-width: 70px;
+  max-height: 45px;
+`;
 
 export const HeaderInfo = styled(Box)`
   grid-column-start: 2;

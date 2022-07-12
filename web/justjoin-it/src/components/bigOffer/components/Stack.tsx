@@ -3,7 +3,7 @@ import React from "react";
 import { StackDetail, StyledRating, StackName, StackLvl } from "../styled";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import { StackProp } from "../types";
+import { StackProp } from "../../../types/types";
 
 const Stack = ({ value, stackName, stackLvl }: StackProp) => {
   return (

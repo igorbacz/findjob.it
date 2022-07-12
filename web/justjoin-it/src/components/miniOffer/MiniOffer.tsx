@@ -1,9 +1,10 @@
 import React from "react";
 import { Paragraph, Title, DetailsSection, LogoContainer, MiniOfferCon, AmountBox } from "./styled";
-import { SmallOffer } from "./types";
+
 import BusinessIcon from "@mui/icons-material/Business";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography } from "@mui/material";
+import { SmallOffer } from "../../types/types";
 
 
 const MiniOffer = ({ logo, title, amount, companyName, city }: SmallOffer) => {

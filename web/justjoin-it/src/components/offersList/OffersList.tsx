@@ -1,6 +1,7 @@
 import React from "react";
+import { SmallOffer } from "../../types/types";
 import MiniOffer from "../miniOffer/MiniOffer";
-import { SmallOffer } from "../miniOffer/types";
+
 import { Container, OffersContainer } from "./styled";
 
 export const OffersList = () => {
@@ -27,42 +28,10 @@ export const OffersList = () => {
       city: "Warszawa",
       companyName: "Cschark",
     },
-    {
-      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
-      title: "React Developer",
-      amount: 8900,
-      city: "Gdańsk",
-      companyName: "Neoteric",
-    },
-    {
-      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
-      title: "React Developer",
-      amount: 8900,
-      city: "Gdańsk",
-      companyName: "Neoteric",
-    },
-    {
-      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
-      title: "React Developer",
-      amount: 8900,
-      city: "Gdańsk",
-      companyName: "Neoteric",
-    },
-    {
-      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
-      title: "React Developer",
-      amount: 8900,
-      city: "Gdańsk",
-      companyName: "Neoteric",
-    },
-    {
-      logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
-      title: "React Developer",
-      amount: 8900,
-      city: "Gdańsk",
-      companyName: "Neoteric",
-    },
   ];
+
+  //TODO How mock offers from data.ts
+
   return (
     <OffersContainer>
       <Container>
@@ -72,4 +41,4 @@ export const OffersList = () => {
       </Container>
     </OffersContainer>
   );
-};
+};;

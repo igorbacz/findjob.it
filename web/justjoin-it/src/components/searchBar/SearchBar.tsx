@@ -14,7 +14,7 @@ import {
   GameButton,
   GHButton,
   HTMLButton,
-  IconContainer,
+  IconWrapper,
   IconText,
   JavaButton,
   JSButton,
@@ -57,150 +57,150 @@ export const SearchBar = () => {
         <LocationMenu />
       </ContainerSection>
       <ContainerSection>
-        <IconContainer>
+        <IconWrapper>
           <CSSButton>
             <FaCss3 />
           </CSSButton>
           <IconText>
             <Typography variant="PStyled">CSS</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <JSButton>
             <FaJs />
           </JSButton>
           <IconText>
             <Typography variant="PStyled"> JS</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <HTMLButton>
             <FaHtml5 />
           </HTMLButton>
           <IconText>
             <Typography variant="PStyled"> HTML</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <PythonButton>
             <FaPython />
           </PythonButton>
           <IconText>
             <Typography variant="PStyled"> Python</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <JavaButton>
             <FaJava />
           </JavaButton>
           <IconText>
             <Typography variant="PStyled"> Java</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <ReactButton>
             <FaReact />
           </ReactButton>
           <IconText>
             <Typography variant="PStyled"> React</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <NodeButton>
             <FaNodeJs />
           </NodeButton>
           <IconText>
             <Typography variant="PStyled"> Node</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <VueButton>
             <FaVuejs />
           </VueButton>
           <IconText>
             <Typography variant="PStyled"> Vue</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <AngularButton>
             <FaAngular />
           </AngularButton>
           <IconText>
             <Typography variant="PStyled"> Angular</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <GHButton>
             <FaGithub />
           </GHButton>
           <IconText>
             <Typography variant="PStyled"> Github</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <PHPButton>
             <FaPhp />
           </PHPButton>
           <IconText>
             <Typography variant="PStyled"> PHP</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <ScalaButton>
             <SiScala />
           </ScalaButton>
           <IconText>
             <Typography variant="PStyled"> Scala</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <MobileButton>
             <BsPhone />
           </MobileButton>
           <IconText>
             <Typography variant="PStyled"> Mobile</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <TestingButton>
             <FaSearch />
           </TestingButton>
           <IconText>
             <Typography variant="PStyled"> Testing</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <GameButton>
             <TbDeviceGamepad2 />
           </GameButton>
           <IconText>
             <Typography variant="PStyled"> Game</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <AnalyticsButton>
             <MdAnalytics />
           </AnalyticsButton>
           <IconText>
             <Typography variant="PStyled"> Analytics</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <SecurityButton>
             <MdOutlineSecurity />
           </SecurityButton>
           <IconText>
             <Typography variant="PStyled"> Security</Typography>
           </IconText>
-        </IconContainer>
-        <IconContainer>
+        </IconWrapper>
+        <IconWrapper>
           <DotsButton>
             <BsThreeDots />
           </DotsButton>
           <IconText>
             <Typography variant="PStyled"> .</Typography>
           </IconText>
-        </IconContainer>
+        </IconWrapper>
       </ContainerSection>
       <ContainerRightSection>
         <MoreFilters />
