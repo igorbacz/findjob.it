@@ -8,7 +8,6 @@ export const Wrapper = styled(Box)`
 export const MapContainer = styled(Box)`
   width: 100%;
   height: 100%;
-
   background-color: rgb(219, 255, 219);
   display: flex;
 `;

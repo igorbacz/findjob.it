@@ -25,7 +25,7 @@ import {
   FileContainer,
   TitleBox,
 } from "./styled";
-import { BigOfferDetails } from "./types";
+import { BigOfferDetails, StackProp } from "../../types/types";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import PeopleIcon from "@mui/icons-material/People";
@@ -34,36 +34,27 @@ import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
 import { Typography } from "@mui/material";
 import Stack from "./components/Stack";
+import { data } from "../../data";
 
-export const BigOffer = (props: BigOfferDetails) => {
-  const stack = [
-    { stackName: "Polish", stackLvl: "master", value: 5 },
-    { stackName: "JavaSript", stackLvl: "advanced", value: 4 },
-    { stackName: "TypeScript", stackLvl: "regular", value: 3 },
-    { stackName: "React", stackLvl: "regular", value: 3 },
-    { stackName: "Node.js", stackLvl: "regular", value: 3 },
-    { stackName: "Vue.js", stackLvl: "regular", value: 3 },
-  ];
+export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, techStack }: BigOfferDetails) => {
+  const stack = data[0].techStack;
 
   return (
     <BigOfferWrapper>
       <BigOfferContainer>
         <HeaderBox>
           <LogoBox>
-            <LogoImg
-              alt="logo"
-              src="https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465"
-            ></LogoImg>
+            <LogoImg alt="logo" src={logo}></LogoImg>
           </LogoBox>
           <HeaderInfo>
             <TitleBox>
-              <Typography variant="headerFont">Senior FullStack JS Developer</Typography>
+              <Typography variant="headerFont">{title}</Typography>
             </TitleBox>
             <AdressHeader>
               <LocationOnIcon />
-              <Typography variant="subtitle1">ul.Zwycięska 44 55-095 Wrocław </Typography>
+              <Typography variant="subtitle1">{adress}</Typography>
             </AdressHeader>
-            <Typography variant="subtitleLight">7800 PLN</Typography>
+            <Typography variant="subtitleLight">{amount} PLN</Typography>
           </HeaderInfo>
         </HeaderBox>
         <HeaderDetails>
@@ -72,7 +63,7 @@ export const BigOffer = (props: BigOfferDetails) => {
               <LocationCityIcon />
             </IconCon>
             <DataName>
-              <Typography>City </Typography>
+              <Typography>{companyName}</Typography>
             </DataName>
             <DataDesc>
               <Typography variant="dataDesc">Company name</Typography>
@@ -83,7 +74,7 @@ export const BigOffer = (props: BigOfferDetails) => {
               <PeopleIcon />
             </IconCon>
             <DataName>
-              <Typography>15+</Typography>
+              <Typography>{companySize}+/-</Typography>
             </DataName>
             <DataDesc>
               <Typography variant="dataDesc">Company size</Typography>
@@ -94,7 +85,7 @@ export const BigOffer = (props: BigOfferDetails) => {
               <MovingIcon />
             </IconCon>
             <DataName>
-              <Typography>Senior</Typography>
+              <Typography>{exp}</Typography>
             </DataName>
             <DataDesc>
               <Typography variant="dataDesc">EXP.lvl</Typography>
@@ -127,12 +118,7 @@ export const BigOffer = (props: BigOfferDetails) => {
             <Typography variant="subtitle2">Description</Typography>
           </ContainerHeader>
           <Content>
-            <Typography variant="subtitle5">
-              We are looking for a FullStack JS Developer who feels excited to have a real impact on the shape and direction of the product they are
-              building. We work in an agile environment, so you'll be collaborating closely with other developers, conversation designers and product
-              owners. You will be responsible for delivering high-quality software, ready to be deployed frequently and safely into production. If
-              youare an advocate of test automation and software craftsmanship is close to your heart, this is a place where you’ll fit right in.
-            </Typography>
+            <Typography variant="subtitle5">{description}</Typography>
           </Content>
         </BigOfferSection>
         <BigOfferSection>

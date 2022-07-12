@@ -32,7 +32,7 @@ export const Input = styled.input`
   }
 `;
 
-export const IconContainer = styled(Box)`
+export const IconWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   cursor: pointer;

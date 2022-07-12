@@ -9,7 +9,6 @@ export const MiniOfferCon = styled(Box)`
   grid-template-rows: 1fr 1fr;
   background: white;
   padding: 10px 10px 10px 10px;
-
   -webkit-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   -moz-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);

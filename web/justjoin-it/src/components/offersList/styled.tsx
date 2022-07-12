@@ -13,7 +13,6 @@ export const OffersContainer = styled(Box)`
 export const Container = styled(Box)`
   display: flex;
   width: 100%;
-
   gap: 10px;
   flex-direction: column;
 `;

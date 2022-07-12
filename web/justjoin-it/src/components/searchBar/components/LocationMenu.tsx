@@ -15,7 +15,6 @@ export const LocationMenu = () => {
     setAnchorEl(null);
   };
 
-  // const id = open ? "simple-popover" : undefined;
 
   return (
     <Box>
