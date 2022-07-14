@@ -6,9 +6,8 @@ export const Container = styled(Box)`
   display: flex;
   border-bottom: 1px solid #e4e8f0;
   height: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
   background-color: white;
+  width: 100%;
 `;
 
 export const LogoWrapper = styled(Box)`
@@ -16,6 +15,7 @@ export const LogoWrapper = styled(Box)`
   align-items: center;
   flex: 1;
   gap: 35px;
+  padding-left: 15px;
 `;
 
 export const LogoParagraph = styled.p`

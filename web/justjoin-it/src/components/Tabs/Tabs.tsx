@@ -40,6 +40,11 @@ export const StyledTab = styled(Tab)`
   }
 `;
 
+export const Boxy = styled(Box)`
+  display: flex;
+  flex: 0 0 60%;
+`;
+
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
 
@@ -48,19 +53,21 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <StyledTab label="Offers with salary" {...a11yProps(0)} />
-          <StyledTab label="All offers" {...a11yProps(1)} />
-        </Tabs>
+    <Boxy>
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <StyledTab label="Offers with salary" {...a11yProps(0)} />
+            <StyledTab label="All offers" {...a11yProps(1)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <OffersList />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          second tab
+        </TabPanel>
       </Box>
-      <TabPanel value={value} index={0}>
-        <OffersList />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        second tab
-      </TabPanel>
-    </Box>
+    </Boxy>
   );
 }

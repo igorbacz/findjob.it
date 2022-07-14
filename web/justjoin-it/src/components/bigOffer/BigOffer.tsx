@@ -35,9 +35,12 @@ import { FileUpload } from "./components/FileUpload";
 import { Typography } from "@mui/material";
 import Stack from "./components/Stack";
 import { data } from "../../data";
+import { useParams } from "react-router-dom";
 
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, techStack }: BigOfferDetails) => {
   const stack = data[0].techStack;
+  let _id = useParams();
+  console.log(_id);
 
   return (
     <BigOfferWrapper>

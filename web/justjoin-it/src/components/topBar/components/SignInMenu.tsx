@@ -30,7 +30,7 @@ export const SignInMenu = () => {
           </IconButton>
           Sign in as a developer
         </MenuItem>
-        <StyledLink to="signIn">
+        <StyledLink to="/signIn">
           <MenuItem onClick={handleClose} disableRipple>
             <IconButton>
               <WorkIcon />

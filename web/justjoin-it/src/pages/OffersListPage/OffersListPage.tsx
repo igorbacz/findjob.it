@@ -8,13 +8,13 @@ import { PageContainer } from "../bigOfferPage/styled";
 
 export const OffersListPage = () => {
   return (
-    <Fragment>
+    <Box>
       <TopBar />
       <SearchBar />
       <PageContainer>
         <BasicTabs />
         <GoogleMap />
       </PageContainer>
-    </Fragment>
+    </Box>
   );
 };
