@@ -1,10 +1,10 @@
-import { Box, Button, Checkbox, Container, FormControlLabel, TextField, Typography } from "@mui/material";
+import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
 import React from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink } from "./styled";
-import { HeaderBox } from "../../components/bigOffer/styled";
 import styled from "@emotion/styled";
+import { StyledLink } from "../../components/topBar/styled";
 
 export const HeaderLoginBox = styled(Box)`
   padding: 40px 20px;
@@ -14,7 +14,9 @@ export const SignInPage = () => {
   return (
     <Wrapper>
       <HeaderLoginBox>
-        <Typography variant="H1Styled">justjoin.it</Typography>
+        <StyledLink to="/">
+          <Typography variant="H1Styled">justjoin.it</Typography>
+        </StyledLink>
       </HeaderLoginBox>
       <LabelContainer>
         <EmailIcon fontSize="large" />

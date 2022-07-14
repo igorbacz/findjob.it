@@ -7,6 +7,7 @@ import { TopBar } from "../../components/topBar/TopBar";
 import { PageContainer } from "./styled";
 import { data } from "../../data";
 import styled from "@emotion/styled";
+import { useParams } from "react-router-dom";
 
 export const Boxe = styled(Box)`
   display: flex;

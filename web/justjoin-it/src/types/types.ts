@@ -1,5 +1,4 @@
-import { IconType } from "react-icons";
-import { IconBaseProps } from "react-icons/lib";
+import { ReactElement } from "react";
 
 export interface SmallOffer {
   _id?: string;
@@ -26,7 +25,7 @@ export type StackProp = {
 };
 
 export interface Icon {
-  ikona?: string;
-  stack?: string;
-  background?: string;
+  ikona: ReactElement;
+  stack: string;
+  background: string;
 }

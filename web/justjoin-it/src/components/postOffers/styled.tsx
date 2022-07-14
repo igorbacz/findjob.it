@@ -15,7 +15,6 @@ export const HeaderText = styled(Box)`
   width: 450px;
 `;
 export const OffersBox = styled(Box)`
-  padding: 40px;
   width: 100%;
   background-color: #fafafa;
   display: flex;
@@ -35,6 +34,7 @@ export const OfferBox = styled(Box)`
   box-shadow: 0 15px 30px -1px rgb(214 231 249 / 55%);
   width: 80%;
   margin: 0 20px;
+  padding: 10px;
 `;
 
 export const OfferHeader = styled(Box)`
