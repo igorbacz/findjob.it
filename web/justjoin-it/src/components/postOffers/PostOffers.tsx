@@ -1,5 +1,5 @@
 import { Box, Button, List, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import React from "react";
+import React, { Fragment } from "react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import {
@@ -18,7 +18,7 @@ import {
 
 export const PostOffers = () => {
   return (
-    <Box>
+    <Fragment>
       <HeaderPostOffers>
         <HeaderText>
           <Typography variant="H2Styled">Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</Typography>
@@ -224,6 +224,6 @@ export const PostOffers = () => {
           </OfferBox>
         </ContentOffers>
       </OffersBox>
-    </Box>
+    </Fragment>
   );
 };

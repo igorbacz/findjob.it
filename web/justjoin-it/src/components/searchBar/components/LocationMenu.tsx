@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Button from "@mui/material/Button";
 import { Box, IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -14,7 +14,6 @@ export const LocationMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
 
   return (
     <Box>

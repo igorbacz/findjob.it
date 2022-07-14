@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Button from "@mui/material/Button";
 import { Backdrop, Box, IconButton, Modal, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -24,7 +24,7 @@ export const MoreFilters = () => {
   const [select, setSelected] = React.useState<string | undefined>(""); //NIE DZIAŁA
 
   return (
-    <Box>
+    <Fragment>
       <Button variant="outlined" color="secondary" startIcon={<ManageSearchIcon />} onClick={handleClick}>
         <Typography variant="buttonFont"> More filters</Typography>
       </Button>
@@ -92,6 +92,6 @@ export const MoreFilters = () => {
           </ButtonsContainer>
         </StyledModalBox>
       </Modal>
-    </Box>
+    </Fragment>
   );
 };

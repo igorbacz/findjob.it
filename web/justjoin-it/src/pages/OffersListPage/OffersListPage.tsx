@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { Fragment } from "react";
 import { GoogleMap } from "../../components/googleMap/googleMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import BasicTabs from "../../components/Tabs/Tabs";
@@ -8,13 +8,13 @@ import { PageContainer } from "../bigOfferPage/styled";
 
 export const OffersListPage = () => {
   return (
-    <Box>
+    <Fragment>
       <TopBar />
       <SearchBar />
       <PageContainer>
         <BasicTabs />
         <GoogleMap />
       </PageContainer>
-    </Box>
+    </Fragment>
   );
 };

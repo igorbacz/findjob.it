@@ -6,18 +6,25 @@ import { SearchBar } from "../../components/searchBar/SearchBar";
 import { TopBar } from "../../components/topBar/TopBar";
 import { PageContainer } from "./styled";
 import { data } from "../../data";
-import { OfferHeader } from "../../components/postOffers/styled";
+import styled from "@emotion/styled";
 
+export const Boxe = styled(Box)`
+  display: flex;
+  flex: 0 0 60%;
+  position: relative;
+`;
 export const BigOfferPage = () => {
   return (
     <Box>
       <TopBar />
       <SearchBar />
       <PageContainer>
-        {data.map((offer) => {
+        {/* {data.map((offer) => {
           return <BigOffer {...offer} key={offer._id} />;
-        })}
-
+        })} */}
+        <Boxe>
+          <BigOffer {...data[0]} key={data[0]._id} />
+        </Boxe>
         <GoogleMap />
       </PageContainer>
     </Box>
