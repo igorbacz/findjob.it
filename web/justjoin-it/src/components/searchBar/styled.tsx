@@ -252,6 +252,8 @@ export const StyledField = styled(TextField)`
   .MuiOutlinedInput-root {
     border-radius: 30px;
     height: 35px;
+    width: 160px;
+    margin-left: 10px;
   }
 `;
 

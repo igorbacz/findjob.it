@@ -35,8 +35,21 @@ import { IconButton, Typography } from "@mui/material";
 import { SearchOutlined } from "@mui/icons-material";
 import { LocationMenu } from "./components/LocationMenu";
 import { MoreFilters } from "./components/MoreFilters";
+import { IconContainer } from "./components/IconContainer";
+import { Icon } from "../../types/types";
 
 export const SearchBar = () => {
+  enum IconType {
+    CSS = "FaCss3",
+  }
+
+  const stackIcons: Icon[] = [
+    {
+      stack: "CSS",
+      background: "linear-gradient(-90deg, rgb(82, 102, 225), rgb(129, 102, 224))",
+      ikona: IconType.CSS,
+    },
+  ];
   return (
     <Container>
       <ContainerSection>
@@ -57,7 +70,11 @@ export const SearchBar = () => {
         <LocationMenu />
       </ContainerSection>
       <ContainerSection>
-        <IconWrapper>
+        {stackIcons.map((name, idx) => {
+          const Icon = stackIcons[idx].ikona;
+          return <IconContainer {...name} />;
+        })}
+        {/* <IconWrapper>
           <CSSButton>
             <FaCss3 />
           </CSSButton>
@@ -200,7 +217,7 @@ export const SearchBar = () => {
           <IconText>
             <Typography variant="PStyled"> .</Typography>
           </IconText>
-        </IconWrapper>
+        </IconWrapper> */}
       </ContainerSection>
       <ContainerRightSection>
         <MoreFilters />

@@ -1,3 +1,6 @@
+import { IconType } from "react-icons";
+import { IconBaseProps } from "react-icons/lib";
+
 export interface SmallOffer {
   _id?: string;
   title?: string;
@@ -21,3 +24,9 @@ export type StackProp = {
   stackLvl: string;
   value: number;
 };
+
+export interface Icon {
+  ikona?: string;
+  stack?: string;
+  background?: string;
+}

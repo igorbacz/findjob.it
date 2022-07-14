@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Backdrop, Box, IconButton, MenuItem, Modal, Typography } from "@mui/material";
 import { Header, HeaderContainer } from "../../searchBar/styled";
@@ -21,23 +21,23 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { BurgerButton, SignInBox, SignInButton, SmallBox, SocialBox } from "../styled";
 
 export const style = {
-   position: "absolute" as "absolute",
-   top: "0%",
-   right: "0%",
-   width: 400,
-   height: "100%",
-   bgcolor: "background.paper",
-   boxShadow: 24,
-   borderRadius: "5px",
-   transform: " none",
- };
+  position: "absolute" as "absolute",
+  top: "0%",
+  right: "0%",
+  width: 400,
+  height: "100%",
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  borderRadius: "5px",
+  transform: " none",
+};
 
 export const BurgerMenu = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <Box>
+    <Fragment>
       <IconButton onClick={handleOpen}>
         <MenuIcon />
       </IconButton>
@@ -116,6 +116,6 @@ export const BurgerMenu = () => {
           </SocialBox>
         </Box>
       </Modal>
-    </Box>
+    </Fragment>
   );
 };

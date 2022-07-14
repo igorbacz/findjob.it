@@ -2,11 +2,10 @@ import styled from "@emotion/styled";
 import { Box, Rating, TextField } from "@mui/material";
 
 export const BigOfferWrapper = styled(Box)`
-  display: flex;
-  flex: 1 1 50%;
-  margin-right: 5px;
-  background: rgb(243, 246, 248);
+  display: block;
+
   height: 100%;
+  overflow: scroll;
 `;
 
 export const BigOfferContainer = styled(Box)`

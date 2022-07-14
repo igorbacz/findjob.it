@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -16,7 +16,7 @@ export const CurrencyMenu = () => {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button
         id="demo-customized-button"
         aria-controls={open ? "demo-customized-menu" : undefined}
@@ -57,6 +57,6 @@ export const CurrencyMenu = () => {
           Default
         </MenuItem>
       </StyledCurrencyMenu>
-    </Box>
+    </Fragment>
   );
 };

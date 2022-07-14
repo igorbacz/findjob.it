@@ -33,7 +33,7 @@ export const OfferBox = styled(Box)`
   border: 1px solid #e7e9ed;
   border-radius: 10px;
   box-shadow: 0 15px 30px -1px rgb(214 231 249 / 55%);
-  width: 100%;
+  width: 80%;
   margin: 0 20px;
 `;
 

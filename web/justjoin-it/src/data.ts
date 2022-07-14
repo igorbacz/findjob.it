@@ -1,4 +1,5 @@
-import { BigOfferDetails } from "./types/types";
+import { FaCss3 } from "react-icons/fa";
+import { BigOfferDetails, Icon } from "./types/types";
 
 export const data: BigOfferDetails[] = [
   {
@@ -85,5 +86,17 @@ export const data: BigOfferDetails[] = [
     ],
     description:
       "Aterian (NASDAQ: ATER) is a rapidly growing technology-enabled consumer products company that uses machine learning, natural language processing, and data analytics to design, develop, market, and sell products through online retail channels (e.g., Amazon, Walmart, etc). Aterian was founded on the premise that if a company selling consumer packaged goods was founded today, it would apply artificial intelligence and machine learning, the synthesis of massive quantities of data, and the use of social proof to validate high caliber product offerings as opposed to over-reliance on brand value and other traditional marketing tactics.",
+  },
+];
+
+enum IconType {
+  CSS = "<FaCss3 />",
+}
+
+export const stackIcons: Icon[] = [
+  {
+    stack: "CSS",
+    background: "linear-gradient(-90deg, rgb(82, 102, 225), rgb(129, 102, 224))",
+    ikona: IconType.CSS,
   },
 ];

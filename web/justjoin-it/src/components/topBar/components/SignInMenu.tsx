@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -19,7 +19,7 @@ export const SignInMenu = () => {
   };
 
   return (
-    <Box>
+    <Fragment>
       <Button id="demo-customized-button" variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
         <Typography variant="buttonFont"> Sign In</Typography>
       </Button>
@@ -39,6 +39,6 @@ export const SignInMenu = () => {
           </MenuItem>
         </StyledLink>
       </StyledSignInMenu>
-    </Box>
+    </Fragment>
   );
 };
