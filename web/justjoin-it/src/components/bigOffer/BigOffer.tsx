@@ -25,7 +25,7 @@ import {
   FileContainer,
   TitleBox,
 } from "./styled";
-import { BigOfferDetails, StackProp } from "../../types/types";
+import { BigOfferDetails } from "../../types/types";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import PeopleIcon from "@mui/icons-material/People";
@@ -37,10 +37,10 @@ import Stack from "./components/Stack";
 import { data } from "../../data";
 import { useParams } from "react-router-dom";
 
-export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, techStack }: BigOfferDetails) => {
-  const stack = data[0].techStack;
-  let _id = useParams();
-  console.log(_id);
+export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description }: BigOfferDetails) => {
+  const { offerId } = useParams();
+  const offer = data.find((offer) => offer._id === offerId);
+  const stack = offer.techStack;
 
   return (
     <BigOfferWrapper>
@@ -57,7 +57,8 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
               <LocationOnIcon />
               <Typography variant="subtitle1">{adress}</Typography>
             </AdressHeader>
-            <Typography variant="subtitleLight">{amount} PLN</Typography>
+            {!amount && <Typography variant="subtitleLight">Undisclosed Salary</Typography>}
+            {amount && <Typography variant="subtitleLight">{amount} PLN</Typography>}
           </HeaderInfo>
         </HeaderBox>
         <HeaderDetails>

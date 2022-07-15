@@ -5,19 +5,22 @@ import BusinessIcon from "@mui/icons-material/Business";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography } from "@mui/material";
 import { SmallOffer } from "../../types/types";
+import { StyledLink } from "../topBar/styled";
 
-
-const MiniOffer = ({ logo, title, amount, companyName, city }: SmallOffer) => {
+const MiniOffer = ({ logo, title, amount, companyName, city, _id }: SmallOffer) => {
   return (
     <MiniOfferCon>
-      <LogoContainer>
-        <img alt="logo" src={logo}></img>
-      </LogoContainer>
+      <StyledLink to={`/offer/${_id}`}>
+        <LogoContainer>
+          <img alt="logo" src={logo}></img>
+        </LogoContainer>
+      </StyledLink>
       <Title>
         <Typography variant="subtitle4">{title}</Typography>
       </Title>
       <AmountBox>
-        <Typography variant="subtitle3">{amount} PLN</Typography>
+        {!amount && <Typography variant="subtitle3">{amount} Undisclosed Salary</Typography>}
+        {amount && <Typography variant="subtitle3">{amount} PLN</Typography>}
       </AmountBox>
       <DetailsSection>
         <BusinessIcon />

@@ -15,19 +15,22 @@ export const Boxe = styled(Box)`
   position: relative;
 `;
 export const BigOfferPage = () => {
-  return (
+  
+  const { offerId } = useParams();
+  const offer = data.find((offer) => offer._id === offerId);
+
+  return offer ? (
     <Box>
       <TopBar />
       <SearchBar />
       <PageContainer>
-        {/* {data.map((offer) => {
-          return <BigOffer {...offer} key={offer._id} />;
-        })} */}
         <Boxe>
-          <BigOffer {...data[0]} key={data[0]._id} />
+          <BigOffer {...offer} />
         </Boxe>
         <GoogleMap />
       </PageContainer>
     </Box>
+  ) : (
+    <div>Offer not found</div>
   );
 };

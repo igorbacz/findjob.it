@@ -3,9 +3,9 @@ import { Box, Rating, TextField } from "@mui/material";
 
 export const BigOfferWrapper = styled(Box)`
   display: block;
-
   height: 100%;
   overflow: scroll;
+  inset: 0px;
 `;
 
 export const BigOfferContainer = styled(Box)`
@@ -18,7 +18,6 @@ export const HeaderBox = styled(Box)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 200px 100px;
-
   border-radius: 0px 0px 4px 4px;
   padding: 40px 20px 0px;
   background: url(https://justjoin.it/static/media/header_background.0ef18c97.png) center center / cover no-repeat,
