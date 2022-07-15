@@ -13,10 +13,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<OffersListPage />} />
-        <Route path="/offer" element={<BigOfferPage />} />
         <Route path="/signIn" element={<SignInPage />} />
         <Route path="/post" element={<PostOffersPage />} />
-        <Route path="/offer/:id" element={<PostOffersPage />} />
+        <Route path="/offer/:offerId" element={<BigOfferPage />} />
       </Routes>
     </ThemeProvider>
   );
