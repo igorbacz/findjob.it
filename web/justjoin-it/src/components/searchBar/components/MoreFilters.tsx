@@ -21,7 +21,7 @@ export const MoreFilters = () => {
     setValue(newValue as number[]);
   };
 
-  const [select, setSelected] = React.useState<string | undefined>(""); //NIE DZIAŁA
+  const [select, setSelected] = React.useState<string | undefined>(""); 
 
   return (
     <Fragment>
