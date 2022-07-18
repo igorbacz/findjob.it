@@ -8,10 +8,8 @@ export const MiniOfferCon = styled(Box)`
   grid-template-columns: 1fr 3fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   background: white;
-  padding: 10px 10px 10px 10px;
-  -webkit-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
-  -moz-box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
+  margin-top: 10px;
 `;
 
 export const LogoContainer = styled(Box)`
