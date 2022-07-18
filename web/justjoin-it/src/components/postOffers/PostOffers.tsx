@@ -15,6 +15,7 @@ import {
   StyledListItem,
   ImgBox,
 } from "./styled";
+import { StyledLink } from "../topBar/styled";
 
 export const PostOffers = () => {
   return (
@@ -89,8 +90,9 @@ export const PostOffers = () => {
                   <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
+
               <Button variant="contained" size="large">
-                Kup ogłoszenie
+                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
               </Button>
             </ContentOffer>
           </OfferBox>
@@ -154,7 +156,7 @@ export const PostOffers = () => {
                 </StyledListItem>
               </List>
               <Button variant="contained" size="large">
-                Kup ogłoszenie
+                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
               </Button>
             </ContentOffer>
           </OfferBox>
@@ -218,7 +220,7 @@ export const PostOffers = () => {
                 </StyledListItem>
               </List>
               <Button variant="contained" size="large">
-                <Typography variant="buttonFont">Kup ogłoszenie</Typography>
+                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
               </Button>
             </ContentOffer>
           </OfferBox>

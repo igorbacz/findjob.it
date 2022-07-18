@@ -40,7 +40,7 @@ import { useParams } from "react-router-dom";
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description }: BigOfferDetails) => {
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
-  const stack = offer.techStack;
+  const stack = offer?.techStack;
 
   return (
     <BigOfferWrapper>
@@ -112,7 +112,7 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
             <Typography variant="subtitle2">Tech Stack</Typography>
           </ContainerHeader>
           <StackDetails>
-            {stack.map((item) => {
+            {stack?.map((item) => {
               return <Stack {...item} />;
             })}
           </StackDetails>
