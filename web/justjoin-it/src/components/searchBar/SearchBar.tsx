@@ -28,7 +28,7 @@ export const SearchBar = () => {
       </ContainerSection>
       <ContainerSection>
         {stackIcons.map((icon) => (
-          <IconContainer ikona={icon.ikona} stack={icon.stack} background={icon.background} />
+          <IconContainer key={icon._id} ikona={icon.ikona} stack={icon.stack} background={icon.background} />
         ))}
       </ContainerSection>
       <ContainerRightSection>

@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React, { Fragment } from "react";
 import { GoogleMap } from "../../components/googleMap/googleMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import BasicTabs from "../../components/Tabs/Tabs";

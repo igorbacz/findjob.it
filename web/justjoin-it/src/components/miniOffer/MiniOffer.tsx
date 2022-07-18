@@ -9,26 +9,26 @@ import { StyledLink } from "../topBar/styled";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id }: SmallOffer) => {
   return (
-    <MiniOfferCon>
-      <StyledLink to={`/offer/${_id}`}>
+    <StyledLink to={`/offer/${_id}`}>
+      <MiniOfferCon>
         <LogoContainer>
           <img alt="logo" src={logo}></img>
         </LogoContainer>
-      </StyledLink>
-      <Title>
-        <Typography variant="subtitle4">{title}</Typography>
-      </Title>
-      <AmountBox>
-        {!amount && <Typography variant="subtitle3">{amount} Undisclosed Salary</Typography>}
-        {amount && <Typography variant="subtitle3">{amount} PLN</Typography>}
-      </AmountBox>
-      <DetailsSection>
-        <BusinessIcon />
-        <Paragraph>{companyName}</Paragraph>
-        <LocationOnIcon />
-        <Paragraph>{city}</Paragraph>
-      </DetailsSection>
-    </MiniOfferCon>
+        <Title>
+          <Typography variant="subtitle4">{title}</Typography>
+        </Title>
+        <AmountBox>
+          {!amount && <Typography variant="subtitle3">{amount} Undisclosed Salary</Typography>}
+          {amount && <Typography variant="subtitle3">{amount} PLN</Typography>}
+        </AmountBox>
+        <DetailsSection>
+          <BusinessIcon />
+          <Paragraph>{companyName}</Paragraph>
+          <LocationOnIcon />
+          <Paragraph>{city}</Paragraph>
+        </DetailsSection>
+      </MiniOfferCon>
+    </StyledLink>
   );
 };
 
