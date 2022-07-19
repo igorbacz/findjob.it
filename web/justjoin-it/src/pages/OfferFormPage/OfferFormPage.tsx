@@ -6,7 +6,7 @@ import StepperForm from "../../components/offerForm/StepperForm";
 import { TopBar } from "../../components/topBar/TopBar";
 
 export const FormPageContainer = styled(Box)`
-  background-color: #f3f6f8;
+
   height: 100%;
 `;
 

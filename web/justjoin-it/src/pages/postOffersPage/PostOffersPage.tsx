@@ -8,7 +8,6 @@ export const PostOffersPage = () => {
   return (
     <Fragment>
       <TopBar />
-      <StepperForm />
       <PostOffers />
     </Fragment>
   );
