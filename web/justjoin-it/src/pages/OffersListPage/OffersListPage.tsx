@@ -17,7 +17,6 @@ export const OffersListPage = () => {
       <SearchBar />
       <PageContainer>
         <BasicTabs />
-
         <GoogleMap />
       </PageContainer>
     </Box>
