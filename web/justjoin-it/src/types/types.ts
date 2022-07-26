@@ -25,7 +25,8 @@ export type StackProp = {
 
 export interface Icon {
   _id?: string;
-  ikona: ReactElement;
+  logo: ReactElement;
   stack: string;
+  stackFullName?: string;
   background: string;
 }

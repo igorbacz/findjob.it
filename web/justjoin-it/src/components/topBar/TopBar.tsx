@@ -36,11 +36,9 @@ export const TopBar = () => {
         </Item>
       </Items>
       <ButtonsWrapper>
-        <StyledLink to="/post">
-          <Button color="secondary" variant="outlined">
-            <Typography variant="buttonFont"> Post a Job</Typography>
-          </Button>
-        </StyledLink>
+        <Button color="secondary" variant="outlined" href="/post">
+          <Typography variant="buttonFont"> Post a Job</Typography>
+        </Button>
         <ButtonSignIn>
           <SignInMenu />
         </ButtonSignIn>
