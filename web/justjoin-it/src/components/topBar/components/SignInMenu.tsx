@@ -30,14 +30,12 @@ export const SignInMenu = () => {
           </IconButton>
           Sign in as a developer
         </MenuItem>
-        <StyledLink to="/signIn">
-          <MenuItem onClick={handleClose} disableRipple>
-            <IconButton>
-              <WorkIcon />
-            </IconButton>
-            Sign in to Employer Panel
-          </MenuItem>
-        </StyledLink>
+        <MenuItem onClick={handleClose} disableRipple>
+          <IconButton href="/signIn">
+            <WorkIcon />
+          </IconButton>
+          Sign in to Employer Panel
+        </MenuItem>
       </StyledSignInMenu>
     </Fragment>
   );

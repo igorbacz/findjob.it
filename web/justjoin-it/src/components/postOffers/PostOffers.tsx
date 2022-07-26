@@ -91,8 +91,8 @@ export const PostOffers = () => {
                 </StyledListItem>
               </List>
 
-              <Button variant="contained" size="large">
-                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
+              <Button variant="contained" size="large" href="/add-offer">
+                Kup ogłoszenie
               </Button>
             </ContentOffer>
           </OfferBox>
@@ -155,8 +155,8 @@ export const PostOffers = () => {
                   <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
-              <Button variant="contained" size="large">
-                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
+              <Button variant="contained" size="large" href="/add-offer">
+                Kup ogłoszenie
               </Button>
             </ContentOffer>
           </OfferBox>
@@ -219,8 +219,8 @@ export const PostOffers = () => {
                   <ListItemText primary="Możliwy Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
-              <Button variant="contained" size="large">
-                <StyledLink to="/add-offer">Kup ogłoszenie</StyledLink>
+              <Button variant="contained" size="large" href="/add-offer">
+                Kup ogłoszenie
               </Button>
             </ContentOffer>
           </OfferBox>
