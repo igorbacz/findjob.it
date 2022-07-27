@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 import { BigOffer } from "../../components/bigOffer/BigOffer";
 import { GoogleMap } from "../../components/googleMap/googleMap";
@@ -15,7 +14,6 @@ export const Boxe = styled(Box)`
   position: relative;
 `;
 export const BigOfferPage = () => {
-  
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
 

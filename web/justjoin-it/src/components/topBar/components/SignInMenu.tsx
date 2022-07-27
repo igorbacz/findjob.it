@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -6,10 +6,9 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
 import { IconButton, Typography } from "@mui/material";
 import { StyledSignInMenu } from "./StyledSignInMenu";
-import { StyledLink } from "../styled";
 
 export const SignInMenu = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -20,10 +19,10 @@ export const SignInMenu = () => {
 
   return (
     <Fragment>
-      <Button id="demo-customized-button" variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
+      <Button variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
         <Typography variant="buttonFont"> Sign In</Typography>
       </Button>
-      <StyledSignInMenu id="demo-customized-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <StyledSignInMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose} disableRipple>
           <IconButton>
             <SupportAgentIcon />
@@ -31,7 +30,7 @@ export const SignInMenu = () => {
           Sign in as a developer
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <IconButton href="/signIn">
+          <IconButton href="/signin">
             <WorkIcon />
           </IconButton>
           Sign in to Employer Panel

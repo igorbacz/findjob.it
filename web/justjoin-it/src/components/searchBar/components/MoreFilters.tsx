@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
 import { Backdrop, Box, IconButton, Modal, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -6,7 +6,7 @@ import { HeaderContainer, StyledModalBox, ButtonsContainer, ContextNestedContain
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 
 export const MoreFilters = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -15,13 +15,13 @@ export const MoreFilters = () => {
     setAnchorEl(null);
   };
 
-  const [value, setValue] = React.useState<number[]>([0, 100000]);
+  const [value, setValue] = useState<number[]>([0, 100000]);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
   };
 
-  const [select, setSelected] = React.useState<string | undefined>(""); 
+  const [select, setSelected] = useState<string | undefined>("");
 
   return (
     <Fragment>

@@ -1,13 +1,13 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import { useState } from "react";
 
 const steps = ["Create", "Publish"];
 
 export default function StepperForm() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   return (
     <Box sx={{ width: "60%" }}>
       <Stepper activeStep={activeStep}>

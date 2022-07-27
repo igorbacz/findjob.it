@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import React from "react";
 import { StackDetail, StyledRating, StackName, StackLvl } from "../styled";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";

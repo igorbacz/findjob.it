@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { BigOfferDetails, Icon } from "../../../types/types";
 import { IconText, IconWrapper, StyledIconButton } from "../styled";
-import { data, stackIcons } from "../../../data";
+import { data } from "../../../data";
 
 export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
   const stackSearch = () => {
@@ -16,7 +16,6 @@ export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
       });
     });
     console.log(filteredOffers);
-    debugger;
   };
 
   return (

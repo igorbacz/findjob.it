@@ -1,14 +1,8 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import React from "react";
+import { Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
-import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink } from "./styled";
-import styled from "@emotion/styled";
+import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox } from "./styled";
 import { StyledLink } from "../../components/topBar/styled";
-
-export const HeaderLoginBox = styled(Box)`
-  padding: 40px 20px;
-`;
 
 export const SignInPage = () => {
   return (
@@ -20,11 +14,11 @@ export const SignInPage = () => {
       </HeaderLoginBox>
       <LabelContainer>
         <EmailIcon fontSize="large" />
-        <TextField id="standard-password-input" label="Email" type="email" autoComplete="email" variant="standard" />
+        <TextField label="Email" type="email" autoComplete="email" variant="standard" />
       </LabelContainer>
       <LabelContainer>
         <LockIcon fontSize="large" />
-        <TextField id="standard-password-input" label="Password" type="password" autoComplete="current-password" variant="standard" />
+        <TextField label="Password" type="password" autoComplete="current-password" variant="standard" />
       </LabelContainer>
       <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" />
       <ButtonContainer>

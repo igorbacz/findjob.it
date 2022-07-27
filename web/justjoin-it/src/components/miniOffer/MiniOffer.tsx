@@ -1,6 +1,4 @@
-import React from "react";
 import { Paragraph, Title, DetailsSection, LogoContainer, MiniOfferCon, AmountBox } from "./styled";
-
 import BusinessIcon from "@mui/icons-material/Business";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography } from "@mui/material";

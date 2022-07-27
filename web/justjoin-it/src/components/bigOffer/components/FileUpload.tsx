@@ -1,4 +1,3 @@
-import React from "react";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 import { Box, Typography } from "@mui/material";
 import { UploadBox } from "../styled";

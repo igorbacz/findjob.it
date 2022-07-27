@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Backdrop, Box, IconButton, MenuItem, Modal, Typography } from "@mui/material";
 import { Header, HeaderContainer } from "../../searchBar/styled";
@@ -33,7 +33,7 @@ export const style = {
 };
 
 export const BurgerMenu = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
