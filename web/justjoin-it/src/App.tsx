@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import { PostOffersPage } from "./pages/postOffersPage/PostOffersPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
@@ -14,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<OffersListPage />} />
-        <Route path="/signIn" element={<SignInPage />} />
+        <Route path="/signin" element={<SignInPage />} />
         <Route path="/post" element={<PostOffersPage />} />
         <Route path="/add-offer" element={<OfferFormPage />} />
         <Route path="/offer/:offerId" element={<BigOfferPage />} />

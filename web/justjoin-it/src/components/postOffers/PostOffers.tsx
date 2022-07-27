@@ -1,5 +1,5 @@
 import { Box, Button, List, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import {
@@ -15,7 +15,6 @@ import {
   StyledListItem,
   ImgBox,
 } from "./styled";
-import { StyledLink } from "../topBar/styled";
 
 export const PostOffers = () => {
   return (

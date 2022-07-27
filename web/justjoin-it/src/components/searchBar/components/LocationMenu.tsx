@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import { Box, IconButton, Popover, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -6,7 +6,7 @@ import { Header, HeaderContainer, ButtonsContainer } from "../styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const LocationMenu = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);

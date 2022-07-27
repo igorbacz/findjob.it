@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -6,7 +6,7 @@ import { StyledCurrencyMenu } from "./StyledCurrencyMenu";
 import { Box, Typography } from "@mui/material";
 
 export const CurrencyMenu = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);

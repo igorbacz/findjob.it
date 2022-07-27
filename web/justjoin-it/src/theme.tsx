@@ -52,6 +52,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiStepIcon: {
+      styleOverrides: {
+        root: {
+          minHeight: "50px",
+        },
+      },
+    },
   },
   typography: {
     allVariants: {
