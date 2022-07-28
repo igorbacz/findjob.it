@@ -85,30 +85,77 @@ export const InpputsSecondBox = styled(Box)`
   padding: 25px;
 `;
 
-const currencies = [
+const companyTypes = [
   {
-    value: "USD",
-    label: "$",
+    value: "Startup",
+    label: "Startup",
   },
   {
-    value: "EUR",
-    label: "€",
+    value: "Software House",
+    label: "Software House",
   },
   {
-    value: "BTC",
-    label: "฿",
+    value: "E-commerce",
+    label: "E-commerce",
   },
   {
-    value: "JPY",
-    label: "¥",
+    value: "Corporation",
+    label: "Corporation",
+  },
+  {
+    value: "Other",
+    label: "Other",
+  },
+];
+
+const companyInustries = [
+  {
+    value: "Fintech",
+    label: "Fintech",
+  },
+  {
+    value: "Blockchain",
+    label: "Blockchain",
+  },
+  {
+    value: "Medicine",
+    label: "Medicine",
+  },
+  {
+    value: "Military",
+    label: "Military",
+  },
+  {
+    value: "Martech",
+    label: "Martech",
+  },
+  {
+    value: "IoT",
+    label: "IoT",
+  },
+  {
+    value: "Logistic",
+    label: "Logistic",
+  },
+  {
+    value: "Beauty",
+    label: "Beauty",
+  },
+  {
+    value: "Travel",
+    label: "Travel",
+  },
+  {
+    value: "Other",
+    label: "Other",
   },
 ];
 
 export const OfferForm = () => {
-  const [currency, setCurrency] = useState("EUR");
+  const [choice, setChoice] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrency(event.target.value);
+    setChoice(event.target.value);
   };
   return (
     <FormContainer>
@@ -134,27 +181,41 @@ export const OfferForm = () => {
       </InpputsBox>
       <InpputsSecondBox>
         <TextField
-          id="outlined-select-currency-native"
+          id="standard-select-currency-native"
           select
-          label="Native select"
-          value={currency}
+          label="Company type"
+          value={choice}
           onChange={handleChange}
           SelectProps={{
             native: true,
           }}
-          helperText="Please select your currency"
-        ></TextField>
+          helperText="Select company type"
+          variant="standard"
+        >
+          {companyTypes.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </TextField>
         <TextField
-          id="outlined-select-currency-native"
+          id="standard-select-currency-native"
           select
-          label="Native select"
-          value={currency}
+          label="Company industry"
+          value={choice}
           onChange={handleChange}
           SelectProps={{
             native: true,
           }}
-          helperText="Please select your currency"
-        ></TextField>
+          helperText="Select company industry"
+          variant="standard"
+        >
+          {companyInustries.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </TextField>
       </InpputsSecondBox>
       <HeaderStack>
         <Typography variant="subtitle2">Main technology</Typography>
