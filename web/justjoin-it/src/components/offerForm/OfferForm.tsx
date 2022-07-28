@@ -32,8 +32,8 @@ export const PhotoBox = styled(Box)`
 export const HeaderStack = styled(Box)`
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 7;
   padding: 30px 0px 0px 30px;
 `;
 
@@ -82,6 +82,101 @@ export const InpputsSecondBox = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 25px;
+`;
+
+export const InfoBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding: 30px 0px 0px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 80px;
+`;
+export const OfferTitleBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 20px;
+`;
+export const OfferExpBox = styled(Box)`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 20px;
+`;
+
+export const HeaderInfoBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+
+export const EmpoloymentBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 30px 0px 0px 30px;
+`;
+export const EmpoloymentHeader = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+export const EmpoloymentDesc = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+`;
+
+export const EmpTypeBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+`;
+
+export const EmpoloymentSalaryBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+`;
+export const SalaryFromBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 25px;
+`;
+
+export const SalaryToBox = styled(Box)`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 25px;
+`;
+
+export const CurrencyBox = styled(Box)`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
   padding: 25px;
 `;
 
@@ -151,6 +246,59 @@ const companyInustries = [
   },
 ];
 
+const exp = [
+  {
+    value: "Junior",
+    label: "Junior",
+  },
+  {
+    value: "Mid",
+    label: "Mid",
+  },
+  {
+    value: "Mandate Contract",
+    label: "Senior",
+  },
+];
+
+const employmentTypes = [
+  {
+    value: "B2B",
+    label: "B2B",
+  },
+  {
+    value: "Permanent",
+    label: "Permanent",
+  },
+  {
+    value: "Mandate Contract",
+    label: "Mandate Contract",
+  },
+];
+
+const currency = [
+  {
+    value: "PLN",
+    label: "PLN",
+  },
+  {
+    value: "EUR",
+    label: "EUR",
+  },
+  {
+    value: "USD",
+    label: "USD",
+  },
+  {
+    value: "GBP",
+    label: "GBP",
+  },
+  {
+    value: "CHF",
+    label: "CHF",
+  },
+];
+
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");
 
@@ -173,11 +321,11 @@ export const OfferForm = () => {
         </PhotoBox>
       </PhotoForm>
       <InpputsBox>
-        <TextField label="Short company name*" variant="standard" />
+        <TextField required label="Short company name" variant="standard" />
 
-        <TextField label="StandCompany size*" variant="standard" />
+        <TextField required label="StandCompany size" variant="standard" />
 
-        <TextField label="Company website" variant="standard" />
+        <TextField required label="Company website" variant="standard" />
       </InpputsBox>
       <InpputsSecondBox>
         <TextField
@@ -189,7 +337,7 @@ export const OfferForm = () => {
           SelectProps={{
             native: true,
           }}
-          helperText="Select company type"
+          // helperText="Select company type"
           variant="standard"
         >
           {companyTypes.map((option) => (
@@ -207,7 +355,7 @@ export const OfferForm = () => {
           SelectProps={{
             native: true,
           }}
-          helperText="Select company industry"
+          // helperText="Select company industry"
           variant="standard"
         >
           {companyInustries.map((option) => (
@@ -217,6 +365,90 @@ export const OfferForm = () => {
           ))}
         </TextField>
       </InpputsSecondBox>
+      <InfoBox>
+        <Typography variant="subtitle2">Position info</Typography>
+        <OfferTitleBox>
+          <TextField required fullWidth label="Offer title" variant="standard" />
+        </OfferTitleBox>
+        <OfferExpBox>
+          <TextField
+            fullWidth
+            id="standard-select-currency-native"
+            select
+            label="Company type"
+            value={choice}
+            onChange={handleChange}
+            SelectProps={{
+              native: true,
+            }}
+            // helperText="Select company type"
+            variant="standard"
+          >
+            {exp.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </TextField>
+        </OfferExpBox>
+      </InfoBox>
+      <EmpoloymentBox>
+        <EmpoloymentHeader>
+          <Typography variant="subtitle2">Employment type</Typography>
+        </EmpoloymentHeader>
+        <EmpoloymentDesc>
+          <Typography>How much the candidate will earn monthly? You can add two employment types.</Typography>{" "}
+        </EmpoloymentDesc>
+        <EmpTypeBox>
+          <TextField
+            id="standard-select-currency-native"
+            select
+            label="Employment type"
+            value={choice}
+            onChange={handleChange}
+            SelectProps={{
+              native: true,
+            }}
+            // helperText="Select company type"
+            variant="standard"
+          >
+            {employmentTypes.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </TextField>
+        </EmpTypeBox>
+        <EmpoloymentSalaryBox>
+          <SalaryFromBox>
+            <TextField fullWidth label="Monthly salary from (gross)" variant="standard" />
+          </SalaryFromBox>
+          <SalaryToBox>
+            <TextField fullWidth label="Monthly salary to (gross)" variant="standard" />
+          </SalaryToBox>
+          <CurrencyBox>
+            <TextField
+              fullWidth
+              id="standard-select-currency-native"
+              select
+              label="Currency"
+              value={choice}
+              onChange={handleChange}
+              SelectProps={{
+                native: true,
+              }}
+              // helperText="Select company type"
+              variant="standard"
+            >
+              {currency.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextField>
+          </CurrencyBox>
+        </EmpoloymentSalaryBox>
+      </EmpoloymentBox>
       <HeaderStack>
         <Typography variant="subtitle2">Main technology</Typography>
       </HeaderStack>

@@ -2,20 +2,12 @@ import { Typography } from "@mui/material";
 import { BigOfferDetails, Icon } from "../../../types/types";
 import { IconText, IconWrapper, StyledIconButton } from "../styled";
 import { data } from "../../../data";
+import { useSearchParams } from "react-router-dom";
 
 export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const stackSearch = () => {
-    let searchedStack = stack;
-    let filteredOffers: BigOfferDetails[] = [];
-
-    data.forEach((item) => {
-      item.techStack.forEach((nameStack) => {
-        if (nameStack.stackName === searchedStack) {
-          filteredOffers.push(item);
-        }
-      });
-    });
-    console.log(filteredOffers);
+    setSearchParams({ techStack: stack });
   };
 
   return (
