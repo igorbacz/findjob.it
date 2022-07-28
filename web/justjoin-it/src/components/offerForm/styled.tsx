@@ -9,5 +9,6 @@ export const FormContainer = styled(Box)`
   display: grid;
   width: 60%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 80px 200px 200px 200px 200px;
+  grid-template-rows: 80px 200px 200px 200px 200px 200px 200px;
+  padding: 25px;
 `;
