@@ -37,20 +37,22 @@ export const BasicTabs = () => {
           <Tab>All offers</Tab>
         </TabsList>
         <TabPanel value={0}>
-          {offers.map((offer) => (
-            <MiniOffer
-              key={offer._id}
-              _id={offer._id}
-              logo={offer.logo}
-              title={offer.title}
-              amount={offer.amount}
-              companyName={offer.companyName}
-              city={offer.city}
-            />
-          ))}
+          {offers
+            .filter((amount) => amount.amount)
+            .map((offer) => (
+              <MiniOffer
+                key={offer._id}
+                _id={offer._id}
+                logo={offer.logo}
+                title={offer.title}
+                amount={offer.amount}
+                companyName={offer.companyName}
+                city={offer.city}
+              />
+            ))}
         </TabPanel>
         <TabPanel value={1}>
-          {data.map((offer) => {
+          {offers.map((offer) => {
             return (
               <MiniOffer
                 key={offer._id}

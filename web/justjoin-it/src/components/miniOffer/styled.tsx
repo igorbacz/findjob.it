@@ -68,3 +68,7 @@ export const AmountBox = styled(Box)`
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
+
+export const MiniLogoImg = styled.img`
+  max-width: 85px;
+`;
