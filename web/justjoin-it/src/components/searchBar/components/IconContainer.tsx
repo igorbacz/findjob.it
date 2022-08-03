@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
-import { BigOfferDetails, Icon } from "../../../types/types";
+import { Icon } from "../../../types/types";
 import { IconText, IconWrapper, StyledIconButton } from "../styled";
-import { data } from "../../../data";
 import { useSearchParams } from "react-router-dom";
 
 export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
