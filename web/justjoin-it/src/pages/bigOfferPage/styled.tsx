@@ -6,3 +6,11 @@ export const PageContainer = styled(Box)`
   display: flex;
   flex: 1 1 0%;
 `;
+
+export const LeftSideBox = styled(Box)`
+  // TODO
+`;
+
+export const RightSideBox = styled(Box)`
+  // TODO
+`;

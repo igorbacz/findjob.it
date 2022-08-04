@@ -33,7 +33,6 @@ export const TabsList = styled(TabsListUnstyled)`
 export const TabPanel = styled(TabPanelUnstyled)`
   padding: 10px;
   background-color: #f3f6f8;
-  display: block;
   // position: absolute;
   height: 100%;
   overflow-y: scroll; //DOESN'T WORK
