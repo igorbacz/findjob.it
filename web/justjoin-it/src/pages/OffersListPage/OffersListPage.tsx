@@ -12,11 +12,9 @@ export const OffersListPage = () => {
       <SearchBar />
       <PageContainer>
         <LeftSideBox>
-          {/* // TODO */}
           <BasicTabs />
         </LeftSideBox>
         <RightSideBox>
-          {/* // TODO */}
           <GoogleMap />
         </RightSideBox>
       </PageContainer>

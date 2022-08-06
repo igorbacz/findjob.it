@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 
 export interface SmallOffer {
   _id: string;
+  dateAdded: string;
+  remote: boolean;
   title: string;
   amount?: number;
   city: string;
