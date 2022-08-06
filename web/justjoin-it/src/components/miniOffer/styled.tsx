@@ -3,13 +3,14 @@ import { Box } from "@mui/material";
 
 export const MiniOfferCon = styled(Box)`
   width: 100%;
-  height: 120px;
+  height: 80px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   background: white;
   box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
   margin-top: 10px;
+  padding-top: 10px;
 `;
 
 export const LogoContainer = styled(Box)`
@@ -32,21 +33,23 @@ export const Title = styled(Box)`
   color: #6b6b6b;
   text-align: center;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: flex-start;
+  padding-left: 35px;
 `;
 
 export const DetailsSection = styled(Box)`
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: rgb(153, 161, 171);
   margin-bottom: 10px;
+  padding-left: 35px;
 `;
 
 export const Paragraph = styled.p`
@@ -71,4 +74,16 @@ export const AmountBox = styled(Box)`
 
 export const MiniLogoImg = styled.img`
   max-width: 85px;
+  max-height: 70px;
+`;
+
+export const RemoteBox = styled(Box)`
+  color: rgb(255, 64, 129);
+  height: 21px;
+  padding: 0 12px;
+  line-height: 21px;
+  margin-left: 12px;
+  white-space: nowrap;
+  border-radius: 11px;
+  background-color: rgb(255, 245, 248);
 `;

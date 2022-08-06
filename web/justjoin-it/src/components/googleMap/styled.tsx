@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export const Wrapper = styled(Box)`
   display: flex;
-  flex: 0 0 40%;
+  flex: 1 1 0%;
 `;
 export const MapContainer = styled(Box)`
   width: 100%;

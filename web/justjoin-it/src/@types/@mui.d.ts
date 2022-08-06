@@ -18,6 +18,7 @@ declare module "@mui/material" {
     H5Styled: CSSProperties;
     subtitleStrong: CSSProperties;
     subtitle6: CSSProperties;
+    RemoteTypography: CSSProperties;
   }
 
   // allow configuration using `createTheme`
@@ -37,6 +38,7 @@ declare module "@mui/material" {
     H5Styled?: CSSProperties;
     subtitleStrong?: CSSProperties;
     subtitle6?: CSSProperties;
+    RemoteTypography?: CSSProperties;
   }
 }
 
@@ -58,5 +60,6 @@ declare module "@mui/material/Typography" {
     H5Styled: true;
     subtitleStrong: true;
     subtitle6: true;
+    RemoteTypography: true;
   }
 }

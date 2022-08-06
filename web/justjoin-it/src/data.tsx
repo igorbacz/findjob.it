@@ -316,7 +316,9 @@ export const stackIcons: Icon[] = [
 export const data: BigOfferDetails[] = [
   {
     _id: "1",
+    dateAdded: "22-12-2021",
     title: "Python Developer",
+    remote: true,
     city: "Warszawa",
     companyName: "Santander",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
@@ -336,8 +338,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "2",
+    dateAdded: "14-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     title: "Java Script Developer",
+    remote: true,
     amount: 7800,
     city: "Kraków",
     companyName: "City Bank",
@@ -357,8 +361,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "3",
+    dateAdded: "15-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: false,
     amount: 8900,
     city: "Gdańsk",
     companyName: "Neoteric",
@@ -379,8 +385,10 @@ export const data: BigOfferDetails[] = [
 
   {
     _id: "4",
+    dateAdded: "16-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
+    remote: true,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -400,8 +408,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "5",
+    dateAdded: "17-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/original/838f09ef0c79515c2d3f293877bd225082233530.jpg?1646232331",
     title: "Node Developer",
+    remote: false,
     city: "Warszawa",
     companyName: "Cschark",
     adress: "ul. Wyszyńskiego  Warszawa",
@@ -420,8 +430,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "6",
+    dateAdded: "18-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/946d2546b9be88aa4d43d8a9c239c4cd6fdfdc3d.png?1654855198",
     title: "Node Developer",
+    remote: false,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -441,8 +453,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "7",
+    dateAdded: "19-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/b2d788fbd968f44676722ea6d26ec1da94a3ece1.png?1653301626",
     title: "Node Developer",
+    remote: false,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -462,8 +476,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "8",
+    dateAdded: "20-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/4790e438b8c7e2be1584b156222300593123c998.jpg?1658224535",
     title: "Node Developer",
+    remote: false,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -483,8 +499,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "9",
+    dateAdded: "21-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/a2b551939d33ad8cf56cb68645ad4ddbc88192b1.png?1657796749",
     title: "Node Developer",
+    remote: true,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -504,8 +522,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "10",
+    dateAdded: "22-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: false,
     city: "Gdańsk",
     companyName: "Neoteric",
     adress: "ul. Wyszyńskiego  Warszawa",
@@ -524,8 +544,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "11",
+    dateAdded: "23-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: false,
     amount: 8900,
     city: "Gdańsk",
     companyName: "Neoteric",
@@ -545,8 +567,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "12",
+    dateAdded: "24-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: true,
     city: "Gdańsk",
     companyName: "Neoteric",
     adress: "ul. Wyszyńskiego  Warszawa",
@@ -565,8 +589,10 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "13",
+    dateAdded: "25-07-2022",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: true,
     amount: 8900,
     city: "Gdańsk",
     companyName: "Neoteric",
@@ -586,8 +612,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "14",
+    dateAdded: "26-07-2022",
+
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
+    remote: false,
     city: "Gdańsk",
     companyName: "Neoteric",
     adress: "ul. Wyszyńskiego  Warszawa",
@@ -606,8 +635,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "15",
+    dateAdded: "27-07-2022",
+
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/d74c9af166641766f091238ced82c668ccd04199.png?1658312380",
     title: "Node Developer",
+    remote: true,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -627,8 +659,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "16",
-    logo: "https://bucket.justjoin.it/offers/company_logos/thumb/078e784a2d0e664b14cf276ad31497bc4a88da30.png?1637235896",
+    dateAdded: "28-07-2022",
+
+    logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
+    remote: true,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -648,8 +683,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "17",
-    logo: "https://bucket.justjoin.it/offers/company_logos/thumb/078e784a2d0e664b14cf276ad31497bc4a88da30.png?1637235896",
+    dateAdded: "29-07-2022",
+
+    logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
+    remote: false,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -669,8 +707,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "18",
-    logo: "https://bucket.justjoin.it/offers/company_logos/thumb/b5837e992bdc88c7c01302ce7338ee9c0ddd145e.png?1657184296",
+    dateAdded: "30-07-2022",
+
+    logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
+    remote: true,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -690,8 +731,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "19",
+    dateAdded: "31-07-2022",
+
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
+    remote: false,
     amount: 10000,
     city: "Warszawa",
     companyName: "Cschark",
@@ -711,8 +755,11 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "20",
+    dateAdded: "01-08-2022",
+
     title: "Python Developer",
     city: "Warszawa",
+    remote: false,
     companyName: "Santander",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     adress: "ul. Wyszyńskiego  Warszawa",
@@ -731,7 +778,9 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "21",
+    dateAdded: "02-08-2022",
     title: "Python Developer",
+    remote: true,
     amount: 7700,
     city: "Warszawa",
     companyName: "Santander",
@@ -752,6 +801,8 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "22",
+    dateAdded: "03-08-2022",
+    remote: false,
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
     amount: 10000,

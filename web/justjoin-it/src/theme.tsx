@@ -147,5 +147,8 @@ export const theme = createTheme({
       fontWeight: "700",
       fontSize: "1.25rem",
     },
+    RemoteTypography: {
+      fontSize: "10px",
+    },
   },
 });
