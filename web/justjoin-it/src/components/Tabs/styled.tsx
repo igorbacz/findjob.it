@@ -5,6 +5,7 @@ import TabUnstyled from "@mui/base/TabUnstyled";
 import styled from "@emotion/styled";
 import { Box, FormControlLabel, Switch } from "@mui/material";
 
+
 export const Tab = styled(TabUnstyled)`
   background-color: rgb(255, 255, 255);
   height: 40px;
@@ -20,9 +21,6 @@ export const Tab = styled(TabUnstyled)`
   &:hover {
     background: rgb(149, 149, 149);
     color: white;
-  }
-  &:selected {
-    background: #f3f6f8;
   }
 `;
 
@@ -56,6 +54,12 @@ export const TabPanel = styled(TabPanelUnstyled)`
 
 export const Tabs = styled(TabsUnstyled)`
   padding: 10px;
+  .MuiTabs-indicator {
+    background-color: #f3f6f8;
+  }
+  .MuiTabs-scrollableY {
+    scroll: 100%;
+  }
 `;
 
 export const TabsContainer = styled(Box)`
