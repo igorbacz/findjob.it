@@ -1,4 +1,4 @@
-import { Box, FormControlLabel, Switch } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { data } from "../../data";
@@ -11,7 +11,7 @@ export const BasicTabs = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStack = searchParams.get("techStack");
   const [offers, setOffers] = useState<BigOfferDetails[]>(data);
-  const remote = searchParams.get("filter");
+  const remoteOffers = searchParams.get("filter");
 
   const currentTab = searchParams.get("with-salary"); //TODO
 
@@ -35,31 +35,30 @@ export const BasicTabs = () => {
     setSearchParams({ filter: "with-salary" });
     //TODO
   };
-
-  const offersRemoteSearch = () => {
-    if (remote) {
-      setSearchParams({});
-      setOffers(offers);
-    } else setSearchParams({ filter: "remote" });
-    setOffers(remoteOffers);
-  };
-
-  const remoteOffers: BigOfferDetails[] = [];
+  const remoteOffersArray: BigOfferDetails[] = [];
   const offersRemote = () => {
-    if (!remote) {
+    if (!remoteOffers) {
       data.forEach((item) => {
         if (item.remote) {
-          remoteOffers.push(item);
+          remoteOffersArray.push(item);
         }
       });
     }
+  };
+
+  const offersRemoteSearch = () => {
+    if (remoteOffers) {
+      setSearchParams({});
+      setOffers(data); //TODO
+    } else setSearchParams({ filter: "remote" });
+    setOffers(remoteOffersArray);
   };
 
   console.log(remoteOffers);
 
   useEffect(() => {
     offersRemote();
-  }, [remote]);
+  }, [remoteOffers]);
 
   useEffect(() => {
     stackSearch();
@@ -89,6 +88,7 @@ export const BasicTabs = () => {
             // .sort() TODO SORT LATEST
             .map((offer) => (
               <MiniOffer
+                techStack={offer.techStack}
                 dateAdded={offer.dateAdded}
                 remote={offer.remote}
                 key={offer._id}
@@ -105,6 +105,7 @@ export const BasicTabs = () => {
           {offers.map((offer) => {
             return (
               <MiniOffer
+                techStack={offer.techStack}
                 remote={offer.remote}
                 key={offer._id}
                 _id={offer._id}

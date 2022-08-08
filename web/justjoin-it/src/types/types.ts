@@ -9,20 +9,20 @@ export interface SmallOffer {
   city: string;
   companyName: string;
   logo: string;
+  techStack: StackProp[];
 }
 
 export interface BigOfferDetails extends SmallOffer {
   adress: string;
   companySize: number;
   exp: string;
-  techStack: StackProp[];
   description: string;
 }
 
 export type StackProp = {
   stackName: string;
-  stackLvl: string;
-  value: number;
+  stackLvl?: string;
+  value?: number;
 };
 
 export interface Icon {

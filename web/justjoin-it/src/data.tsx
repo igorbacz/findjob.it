@@ -315,7 +315,7 @@ export const stackIcons: Icon[] = [
 
 export const data: BigOfferDetails[] = [
   {
-    _id: "1",
+    _id: "0",
     dateAdded: "22-12-2021",
     title: "Python Developer",
     remote: true,
@@ -326,7 +326,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "English", stackLvl: "master", value: 5 },
       { stackName: "Python", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -372,7 +372,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "English", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -489,7 +489,7 @@ export const data: BigOfferDetails[] = [
     techStack: [
       { stackName: "Polish", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
-      { stackName: "Angular", stackLvl: "regular", value: 3 },
+      { stackName: "Angular", stackLvl: "master", value: 5 },
       { stackName: "React", stackLvl: "regular", value: 3 },
       { stackName: "Node", stackLvl: "regular", value: 3 },
       { stackName: "Testing", stackLvl: "regular", value: 3 },
@@ -558,8 +558,8 @@ export const data: BigOfferDetails[] = [
       { stackName: "Polish", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
-      { stackName: "React", stackLvl: "regular", value: 3 },
-      { stackName: "HTML", stackLvl: "regular", value: 3 },
+      { stackName: "React", stackLvl: "master", value: 5 },
+      { stackName: "HTML", stackLvl: "master", value: 5 },
       { stackName: "Vue.js", stackLvl: "regular", value: 3 },
     ],
     description:
@@ -628,7 +628,7 @@ export const data: BigOfferDetails[] = [
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
       { stackName: "HTML", stackLvl: "regular", value: 3 },
-      { stackName: "Vue.js", stackLvl: "regular", value: 3 },
+      { stackName: "Vue.js", stackLvl: "master", value: 5 },
     ],
     description:
       "Aterian (NASDAQ: ATER) is a rapidly growing technology-enabled consumer products company that uses machine learning, natural language processing, and data analytics to design, develop, market, and sell products through online retail channels (e.g., Amazon, Walmart, etc). Aterian was founded on the premise that if a company selling consumer packaged goods was founded today, it would apply artificial intelligence and machine learning, the synthesis of massive quantities of data, and the use of social proof to validate high caliber product offerings as opposed to over-reliance on brand value and other traditional marketing tactics.",
@@ -649,7 +649,7 @@ export const data: BigOfferDetails[] = [
     techStack: [
       { stackName: "Polish", stackLvl: "master", value: 5 },
       { stackName: "Github", stackLvl: "advanced", value: 4 },
-      { stackName: "Angular", stackLvl: "regular", value: 3 },
+      { stackName: "Angular", stackLvl: "master", value: 5 },
       { stackName: "React", stackLvl: "regular", value: 3 },
       { stackName: "Node", stackLvl: "regular", value: 3 },
       { stackName: "Testing", stackLvl: "regular", value: 3 },
@@ -674,7 +674,7 @@ export const data: BigOfferDetails[] = [
       { stackName: "Polish", stackLvl: "master", value: 5 },
       { stackName: "Game", stackLvl: "advanced", value: 4 },
       { stackName: "Mobile", stackLvl: "regular", value: 3 },
-      { stackName: "React", stackLvl: "regular", value: 3 },
+      { stackName: "React", stackLvl: "master", value: 5 },
       { stackName: "Node", stackLvl: "regular", value: 3 },
       { stackName: "PHP", stackLvl: "regular", value: 3 },
     ],
@@ -722,7 +722,7 @@ export const data: BigOfferDetails[] = [
       { stackName: "Polish", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "CSS", stackLvl: "regular", value: 3 },
-      { stackName: "Analytics", stackLvl: "regular", value: 3 },
+      { stackName: "Analytics", stackLvl: "master", value: 5 },
       { stackName: "Node", stackLvl: "regular", value: 3 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
     ],
@@ -743,11 +743,11 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "English", stackLvl: "master", value: 5 },
       { stackName: "Scala", stackLvl: "advanced", value: 4 },
       { stackName: "CSS", stackLvl: "regular", value: 3 },
       { stackName: "Testing", stackLvl: "regular", value: 3 },
-      { stackName: "Node", stackLvl: "regular", value: 3 },
+      { stackName: "Node", stackLvl: "master", value: 5 },
       { stackName: "Vue", stackLvl: "regular", value: 3 },
     ],
     description:
@@ -812,7 +812,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "English", stackLvl: "master", value: 5 },
       { stackName: "Security", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },

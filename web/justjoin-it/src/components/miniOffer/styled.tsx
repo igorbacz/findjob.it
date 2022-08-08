@@ -87,3 +87,31 @@ export const RemoteBox = styled(Box)`
   border-radius: 11px;
   background-color: rgb(255, 245, 248);
 `;
+
+export const TagsBox = styled(Box)`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  align-items: center;
+`;
+
+export const TagBox = styled(Box)`
+  color: rgb(153, 161, 171);
+  height: 22px;
+  display: inline-block;
+  padding: 0 7px;
+  overflow: hidden;
+  font-size: 11px;
+  min-width: 1ch;
+  line-height: 20px;
+  white-space: nowrap;
+  border-color: rgb(224, 224, 224);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 11px;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+  background-color: rgb(255, 255, 255);
+`;
