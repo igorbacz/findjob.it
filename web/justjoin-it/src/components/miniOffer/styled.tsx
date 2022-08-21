@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
 export const MiniOfferCon = styled(Box)`
-  width: 100%;
+  width: 97%;
   height: 80px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   background: white;
-  box-shadow: 24px 19px 32px -31px rgba(66, 68, 90, 0.57);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 1px 5px 0 rgb(0 0 0 / 4%);
   margin-top: 10px;
   padding-top: 10px;
 `;

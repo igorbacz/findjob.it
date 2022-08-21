@@ -396,7 +396,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Mobile", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -418,7 +418,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Security", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -441,7 +441,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "PHP", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -464,7 +464,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Scala", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -487,7 +487,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Vue", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "master", value: 5 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -532,7 +532,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Game", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -555,7 +555,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Java", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "master", value: 5 },
@@ -577,7 +577,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Scala", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -600,7 +600,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "PHP", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "Game", stackLvl: "regular", value: 3 },
@@ -623,7 +623,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Testing", stackLvl: "master", value: 5 },
       { stackName: "JS", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "React", stackLvl: "regular", value: 3 },
@@ -647,7 +647,7 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Polish", stackLvl: "master", value: 5 },
+      { stackName: "Analytics", stackLvl: "master", value: 5 },
       { stackName: "Github", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "master", value: 5 },
       { stackName: "React", stackLvl: "regular", value: 3 },

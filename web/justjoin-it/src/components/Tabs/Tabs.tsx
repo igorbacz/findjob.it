@@ -1,29 +1,57 @@
-import { Box } from "@mui/material";
+import * as React from "react";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { data } from "../../data";
-import { BigOfferDetails } from "../../types/types";
-import MiniOffer from "../miniOffer/MiniOffer";
+import TabsUnstyled from "@mui/base/TabsUnstyled";
+import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList } from "./styled";
 import { SortMenu } from "./components/SortMenu";
-import { TabsContainer, TabsList, TabPanel, Tabs, Tab, InsideTabsBox, StyledSwitch, StyledFormControlLabel } from "./styled";
+import { BigOfferDetails } from "../../types/types";
+import { data } from "../../data";
+import { useSearchParams } from "react-router-dom";
+import MiniOffer from "../miniOffer/MiniOffer";
 
-export const BasicTabs = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const currentStack = searchParams.get("techStack");
+export default function Tabs() {
+  const [value, setValue] = React.useState("0");
   const [offers, setOffers] = useState<BigOfferDetails[]>(data);
-  const remoteOffers = searchParams.get("filter");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const currentTab = searchParams.get("with-salary"); //TODO
+  const remoteOffersParam = searchParams.get("filter");
+
+  const remoteOffersArray: BigOfferDetails[] = [];
+  const [remoteOffers, setRemoteOffers] = useState<BigOfferDetails[]>(remoteOffersArray);
+
+  const currentStackParam = searchParams.get("techStack");
+
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+
+  const offersRemote = () => {
+    //WORKS!!
+  };
+
+  const offersRemoteSearch = () => {
+    data.forEach((item) => {
+      if (item.remote) {
+        remoteOffersArray.push(item);
+      }
+    });
+    if (!remoteOffersParam) {
+      console.log(remoteOffersArray);
+      setRemoteOffers(remoteOffersArray);
+      setSearchParams({ filter: "remote" });
+    } else setSearchParams({});
+    setOffers(remoteOffersArray); //TODO
+  };
 
   const stackSearch = () => {
-    if (!currentStack) {
+    //PRZYKŁAD DZIAŁA BDB !!!!
+    if (!currentStackParam) {
       return;
     }
     const filteredOffers: BigOfferDetails[] = [];
 
     data.forEach((item) => {
       item.techStack.forEach((nameStack) => {
-        if (nameStack.stackName === currentStack) {
+        if (nameStack.stackName === currentStackParam) {
           filteredOffers.push(item);
         }
       });
@@ -31,97 +59,68 @@ export const BasicTabs = () => {
     setOffers(filteredOffers);
   };
 
-  const offerWithSalarySearch = () => {
-    setSearchParams({ filter: "with-salary" });
-    //TODO
-  };
-  const remoteOffersArray: BigOfferDetails[] = [];
-  const offersRemote = () => {
-    if (!remoteOffers) {
-      data.forEach((item) => {
-        if (item.remote) {
-          remoteOffersArray.push(item);
-        }
-      });
-    }
-  };
-
-  const offersRemoteSearch = () => {
-    if (remoteOffers) {
-      setSearchParams({});
-      setOffers(data); //TODO
-    } else setSearchParams({ filter: "remote" });
-    setOffers(remoteOffersArray);
-  };
-
-  console.log(remoteOffers);
-
   useEffect(() => {
     offersRemote();
   }, [remoteOffers]);
 
   useEffect(() => {
     stackSearch();
-  }, [currentStack]);
+  }, [currentStackParam]);
 
   return (
-    <TabsContainer>
-      <Tabs defaultValue={1}>
-        <TabsList>
-          <Box>
-            <Tab onClick={offerWithSalarySearch}>Offers with salary</Tab>
-            <Tab onClick={() => setSearchParams({})}>All offers</Tab>
-          </Box>
-          <InsideTabsBox>
-            <StyledFormControlLabel
-              value="start"
-              control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
-              label="Remote"
-              labelPlacement="start"
-            />
-            <SortMenu />
-          </InsideTabsBox>
+    <TabsUnstyled defaultValue={0}>
+      <TabBar>
+        <TabsList defaultValue={0}>
+          <Tab>Offers with salary</Tab>
+          <Tab>All Offers</Tab>
         </TabsList>
-        <TabPanel value={0}>
-          {offers
-            .filter((amount) => amount.amount)
-            // .sort() TODO SORT LATEST
-            .map((offer) => (
-              <MiniOffer
-                techStack={offer.techStack}
-                dateAdded={offer.dateAdded}
-                remote={offer.remote}
-                key={offer._id}
-                _id={offer._id}
-                logo={offer.logo}
-                title={offer.title}
-                amount={offer.amount}
-                companyName={offer.companyName}
-                city={offer.city}
-              />
-            ))}
-        </TabPanel>
-        <TabPanel value={1}>
-          {offers.map((offer) => {
-            return (
-              <MiniOffer
-                techStack={offer.techStack}
-                remote={offer.remote}
-                key={offer._id}
-                _id={offer._id}
-                logo={offer.logo}
-                title={offer.title}
-                amount={offer.amount}
-                companyName={offer.companyName}
-                city={offer.city}
-                dateAdded={offer.dateAdded}
-              />
-            );
-          })}
-        </TabPanel>
-      </Tabs>
-    </TabsContainer>
+        <InsideTabsBox>
+          <StyledFormControlLabel
+            value="start"
+            control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
+            label="Remote"
+            labelPlacement="start"
+          />
+          <SortMenu />
+        </InsideTabsBox>
+      </TabBar>
+      <TabPanel value={0}>
+        {offers
+          .filter((amount) => amount.amount)
+          // .sort() TODO SORT LATEST
+          .map((offer) => (
+            <MiniOffer
+              techStack={offer.techStack}
+              dateAdded={offer.dateAdded}
+              remote={offer.remote}
+              key={offer._id}
+              _id={offer._id}
+              logo={offer.logo}
+              title={offer.title}
+              amount={offer.amount}
+              companyName={offer.companyName}
+              city={offer.city}
+            />
+          ))}
+      </TabPanel>
+      <TabPanel value={1}>
+        {offers.map((offer) => {
+          return (
+            <MiniOffer
+              techStack={offer.techStack}
+              remote={offer.remote}
+              key={offer._id}
+              _id={offer._id}
+              logo={offer.logo}
+              title={offer.title}
+              amount={offer.amount}
+              companyName={offer.companyName}
+              city={offer.city}
+              dateAdded={offer.dateAdded}
+            />
+          );
+        })}
+      </TabPanel>
+    </TabsUnstyled>
   );
-};
-
-export default BasicTabs;
+}

@@ -24,6 +24,16 @@ export const theme = createTheme({
   },
 
   components: {
+    MuiTabs: {
+      styleOverrides: {
+        // root: {
+        //   indicator: { backgroundColor: "red" },
+        // },
+        // indicator: { backgroundColor: "red" },
+      },
+    },
+    //TODO Doesn`t work
+
     MuiButton: {
       styleOverrides: {
         root: {

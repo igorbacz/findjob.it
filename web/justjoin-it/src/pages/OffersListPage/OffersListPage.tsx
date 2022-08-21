@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { GoogleMap } from "../../components/googleMap/googleMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
-import BasicTabs from "../../components/Tabs/Tabs";
+import Tabs from "../../components/Tabs/Tabs";
 import { TopBar } from "../../components/topBar/TopBar";
 import { LeftSideBox, PageContainer, RightSideBox } from "../bigOfferPage/styled";
 
@@ -12,7 +12,7 @@ export const OffersListPage = () => {
       <SearchBar />
       <PageContainer>
         <LeftSideBox>
-          <BasicTabs />
+          <Tabs />
         </LeftSideBox>
         <RightSideBox>
           <GoogleMap />
