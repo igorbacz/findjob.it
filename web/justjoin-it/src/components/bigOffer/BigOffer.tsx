@@ -40,7 +40,6 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
   const stack = offer?.techStack;
-  debugger;
 
   return (
     <BigOfferWrapper>

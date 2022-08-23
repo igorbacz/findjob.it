@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export const MiniOfferCon = styled(Box)`
   width: 97%;
-  height: 80px;
+  height: 77px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
@@ -58,18 +58,20 @@ export const Paragraph = styled.p`
   color: #a9a6a6;
 `;
 
-export const AmountBox = styled(Box)`
+export const AmountAndTag = styled(Box)`
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
   color: rgb(30, 198, 108);
-  margin-right: 30px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   line-height: 23px;
   white-space: nowrap;
   text-overflow: ellipsis;
+  gap: 7px;
+  padding-right: 15px;
 `;
 
 export const MiniLogoImg = styled.img`
@@ -95,6 +97,9 @@ export const TagsBox = styled(Box)`
   grid-row-end: 3;
   display: flex;
   align-items: center;
+  gap: 7px;
+  justify-content: flex-end;
+  padding-right: 15px;
 `;
 
 export const TagBox = styled(Box)`

@@ -13,7 +13,7 @@ export const PageContainer = styled(Box)`
 
 export const LeftSideBox = styled(Box)`
   display: flex;
-  width: 50%;
+  width: 60%;
   height: 100%;
   overflow: hidden;
   flex-direction: column;

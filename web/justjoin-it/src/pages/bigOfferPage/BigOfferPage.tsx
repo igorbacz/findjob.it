@@ -1,34 +1,48 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { BigOffer } from "../../components/bigOffer/BigOffer";
 import { GoogleMap } from "../../components/googleMap/googleMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import { TopBar } from "../../components/topBar/TopBar";
-import { PageContainer } from "./styled";
+import { LeftSideBox, PageContainer, RightSideBox } from "./styled";
 import { data } from "../../data";
 import styled from "@emotion/styled";
 import { useParams } from "react-router-dom";
+import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
+import { theme } from "../../theme";
 
 export const Boxe = styled(Box)`
   display: flex;
   flex: 0 0 60%;
   position: relative;
 `;
+
 export const BigOfferPage = () => {
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
+  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   return offer ? (
     <Box>
-      <TopBar />
-      <SearchBar />
+      {isMatch ? (
+        <TopBarResponsive />
+      ) : (
+        <>
+          <TopBar />
+          <SearchBar />
+        </>
+      )}
       <PageContainer>
-        <Boxe>
+        <LeftSideBox>
           <BigOffer {...offer} />
-        </Boxe>
-        <GoogleMap />
+        </LeftSideBox>
+        {!isMatch ? (
+          <RightSideBox>
+            <GoogleMap />
+          </RightSideBox>
+        ) : null}
       </PageContainer>
     </Box>
   ) : (
-    <div>Offer not found</div>
+    <Box>Offer not found</Box>
   );
 };

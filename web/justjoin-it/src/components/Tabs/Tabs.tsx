@@ -2,11 +2,13 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
 import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList } from "./styled";
-import { SortMenu } from "./components/SortMenu";
 import { BigOfferDetails } from "../../types/types";
 import { data } from "../../data";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
+import SortMenu from "./components/SortMenu";
+import { Button, Typography } from "@mui/material";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 export default function Tabs() {
   const [value, setValue] = React.useState("0");
@@ -20,13 +22,9 @@ export default function Tabs() {
 
   const currentStackParam = searchParams.get("techStack");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
+  const currentSortParam = searchParams.get("sort");
 
-  const offersRemote = () => {
-    //WORKS!!
-  };
+  const offersRemote = () => {};
 
   const offersRemoteSearch = () => {
     data.forEach((item) => {
@@ -43,7 +41,6 @@ export default function Tabs() {
   };
 
   const stackSearch = () => {
-    //PRZYKŁAD DZIAŁA BDB !!!!
     if (!currentStackParam) {
       return;
     }
@@ -59,6 +56,27 @@ export default function Tabs() {
     setOffers(filteredOffers);
   };
 
+  const filterSearch = () => {
+    if (!currentSortParam) {
+      return;
+    }
+
+    if (currentSortParam === "highest salary") {
+      const sortOffers: BigOfferDetails[] = offers?.filter((amount) => amount.amount).sort((a, b) => b?.amount - a?.amount);
+      setOffers(sortOffers);
+    } else if (currentSortParam === "lowest salary") {
+      const sortOffers: BigOfferDetails[] = offers?.filter((amount) => amount.amount).sort((a, b) => a?.amount - b?.amount);
+      setOffers(sortOffers);
+    } else if (currentSortParam === "latest") {
+      const sortOffers: BigOfferDetails[] = offers?.sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a.dateAdded).valueOf());
+      setOffers(sortOffers);
+    }
+  };
+
+  useEffect(() => {
+    filterSearch();
+  }, [currentSortParam]);
+
   useEffect(() => {
     offersRemote();
   }, [remoteOffers]);
@@ -72,9 +90,15 @@ export default function Tabs() {
       <TabBar>
         <TabsList defaultValue={0}>
           <Tab>Offers with salary</Tab>
-          <Tab>All Offers</Tab>
+          <Tab>
+            All Offers
+            <Typography variant="TabPink"> {data.length} offers</Typography>
+          </Tab>
         </TabsList>
         <InsideTabsBox>
+          <Button variant="text" color="secondary" startIcon={<NotificationsNoneIcon />}>
+            Subscribe
+          </Button>
           <StyledFormControlLabel
             value="start"
             control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
@@ -87,7 +111,6 @@ export default function Tabs() {
       <TabPanel value={0}>
         {offers
           .filter((amount) => amount.amount)
-          // .sort() TODO SORT LATEST
           .map((offer) => (
             <MiniOffer
               techStack={offer.techStack}

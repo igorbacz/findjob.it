@@ -1,15 +1,10 @@
 import styled from "@emotion/styled";
 import { Box, Rating, TextField } from "@mui/material";
 
-export const BigOfferWrapper = styled(Box)`
-  display: block;
-  height: 100%;
-  overflow: scroll;
-  inset: 0px;
-`;
+export const BigOfferWrapper = styled(Box)``;
 
 export const BigOfferContainer = styled(Box)`
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -77,7 +72,7 @@ export const HeaderDetails = styled(Box)`
 `;
 
 export const HeaderDetail = styled(Box)`
-  width: 182px;
+  width: 20%;
   height: 56px;
   background-color: white;
   display: flex;
