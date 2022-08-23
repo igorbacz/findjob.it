@@ -5,7 +5,6 @@ import { LocationMenu } from "./components/LocationMenu";
 import { MoreFilters } from "./components/MoreFilters";
 import { IconContainer } from "./components/IconContainer";
 import { stackIcons } from "../../data";
-import { useSearchParams } from "react-router-dom";
 
 export const SearchBar = () => {
   return (

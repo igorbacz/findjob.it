@@ -1,4 +1,3 @@
-import TabsUnstyled from "@mui/base/TabsUnstyled";
 import styled from "@emotion/styled";
 import { Box, FormControlLabel, Switch } from "@mui/material";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
@@ -9,7 +8,7 @@ export const InsideTabsBox = styled(Box)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 `;
 export const StyledSwitch = styled(Switch)`
   .MuiSwitch-switchBase {
@@ -23,14 +22,17 @@ export const StyledFormControlLabel = styled(FormControlLabel)`
 
 export const Tab = styled(TabUnstyled)`
   color: rgb(119, 119, 119);
+  gap: 6px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: bold;
   background-color: transparent;
-  width: 100%;
+  max-width: 63%;
   height: 100%;
   border: none;
-  padding: 15px;
+  padding: 0px 30px;
   border-radius: 18px 18px 0px 0px;
   display: flex;
   justify-content: center;
@@ -48,7 +50,7 @@ export const TabPanel = styled(TabPanelUnstyled)`
   width: 100%;
   background-color: rgb(243, 246, 248);
   padding-top: 7px;
- padding-left:18px;
+  padding-left: 18px;
 `;
 
 export const TabsList = styled(TabsListUnstyled)`
@@ -62,6 +64,7 @@ export const TabsList = styled(TabsListUnstyled)`
 `;
 
 export const TabBar = styled(Box)`
+  height: 40px;
   display: flex;
   justify-content: space-between;
 `;

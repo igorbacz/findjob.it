@@ -65,12 +65,8 @@ export const ButtonBox = styled(Box)`
 `;
 
 export const StyledIconButton = styled(IconButton)`
-  &.MuiButtonBase-root {
-    &:hover {
-      background-color: white;
-
-      //NIE DZIAŁA
-    }
+  &:hover {
+    background-color: white;
   }
 `;
 

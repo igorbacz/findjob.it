@@ -1,36 +1,74 @@
-import { useState } from "react";
-import Button from "@mui/material/Button";
-import { Box, Menu, MenuItem } from "@mui/material";
+import * as React from "react";
+import List from "@mui/material/List";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
+import { Box, Button } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useSearchParams } from "react-router-dom";
+import styled from "@emotion/styled";
 
-export const SortMenu = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+export const StyledButton = styled(Button)`
+  margin: 0px;
+  padding: 0px;
+  &:hover {
+    background-color: white;
+  }
+  &:checked {
+    background-color: white;
+  }
+`;
+
+const options = ["lowest salary", "latest", "highest salary"];
+
+export default function SortMenu() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleClickListItem = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const handleMenuItemClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
+    setSelectedIndex(index);
+    setAnchorEl(null);
+    setSearchParams({ sort: options[index] });
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   return (
     <Box>
-      <Button variant="text" color="secondary" onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
-        latest
-      </Button>
+      <List component="nav" aria-label="Device settings" sx={{ bgcolor: "background.paper" }}>
+        <StyledButton
+          variant="text"
+          color="secondary"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClickListItem}
+          endIcon={<KeyboardArrowDownIcon />}
+        >
+          {options[selectedIndex]}
+        </StyledButton>
+      </List>
       <Menu
-        id="basic-menu"
+        id="lock-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          "aria-labelledby": "basic-button",
+          "aria-labelledby": "lock-button",
+          role: "listbox",
         }}
       >
-        <MenuItem onClick={handleClose}>latest</MenuItem>
-        <MenuItem onClick={handleClose}>highest salary</MenuItem>
-        <MenuItem onClick={handleClose}>lowest salary</MenuItem>
+        {options.map((option, index) => (
+          <MenuItem key={option} selected={index === selectedIndex} onClick={(event) => handleMenuItemClick(event, index)}>
+            {option}
+          </MenuItem>
+        ))}
       </Menu>
     </Box>
   );
-};
+}

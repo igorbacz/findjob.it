@@ -110,7 +110,7 @@ export const theme = createTheme({
       fontWeight: "400",
     },
     subtitle3: {
-      fontWeight: "400",
+      fontWeight: "200",
       fontSize: "16px",
     },
     subtitle4: {
@@ -143,6 +143,11 @@ export const theme = createTheme({
       fontWeight: "bold",
       textDecorationLine: "none",
     },
+    H2StyledBold: {
+      fontSize: "30px",
+      fontWeight: "bold",
+      textDecorationLine: "none",
+    },
 
     H6Light: {
       fontSize: "16px",
@@ -159,6 +164,11 @@ export const theme = createTheme({
     },
     RemoteTypography: {
       fontSize: "10px",
+    },
+    TabPink: {
+      fontSize: "12px",
+      fontWeight: "400",
+      color: "rgb(255, 64, 129)",
     },
   },
 });

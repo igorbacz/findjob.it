@@ -1,14 +1,17 @@
 import Button from "@mui/material/Button";
 import "./styled.tsx";
 import { SwitchMode } from "./components/SwitchMode";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import { SignInMenu } from "./components/SignInMenu";
 import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoParagraph, LogoWrapper, StyledLink } from "./styled";
 import { CurrencyMenu } from "./components/CurrencyMenu";
 
 import { BurgerMenu } from "./components/BurgerMenu";
+import { TopBarResponsive } from "./TopBarResponsive";
+import { theme } from "../../theme";
 
 export const TopBar = () => {
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Container>
       <LogoWrapper>
@@ -44,7 +47,7 @@ export const TopBar = () => {
         <ButtonCurrency>
           <CurrencyMenu />
         </ButtonCurrency>
-        <BurgerMenu />
+        {isMatch ? <TopBarResponsive /> : <BurgerMenu />}
       </ButtonsWrapper>
     </Container>
   );
