@@ -1,5 +1,8 @@
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 import { grey } from "@mui/material/colors";
 import createTheme from "@mui/material/styles/createTheme";
+import { breakpoints } from "@mui/system";
+import { responsiveFontSizes } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
@@ -172,3 +175,9 @@ export const theme = createTheme({
     },
   },
 });
+
+theme.typography.subtitle3 = {
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "12px",
+  },
+};
