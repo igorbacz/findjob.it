@@ -1,4 +1,3 @@
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 import { grey } from "@mui/material/colors";
 import createTheme from "@mui/material/styles/createTheme";
 import { breakpoints } from "@mui/system";
