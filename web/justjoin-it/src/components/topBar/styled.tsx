@@ -18,8 +18,13 @@ export const LogoWrapper = styled(Box)`
   padding-left: 15px;
 `;
 
+export const LogoResponsiveWrapper = styled(Box)`
+  padding-left: 10px;
+`;
+
 export const LogoParagraph = styled.p`
   padding-right: 20px;
+  color: #99a1ab;
 `;
 
 export const Items = styled(Box)`

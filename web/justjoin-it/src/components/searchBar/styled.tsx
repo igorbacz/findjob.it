@@ -57,6 +57,7 @@ export const Header = styled(Box)`
 export const ButtonsContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 `;
 
 export const ContextContainer = styled(Box)`
@@ -67,6 +68,7 @@ export const ContextContainer = styled(Box)`
 
 export const ContextNestedContainer = styled(Box)`
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 15px;
 `;
 
 export const StyledField = styled(TextField)`

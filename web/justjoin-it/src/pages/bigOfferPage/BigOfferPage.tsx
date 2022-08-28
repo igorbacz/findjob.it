@@ -1,6 +1,6 @@
 import { Box, useMediaQuery } from "@mui/material";
 import { BigOffer } from "../../components/bigOffer/BigOffer";
-import { GoogleMap } from "../../components/googleMap/googleMap";
+import { OpenStreetMap } from "../../components/OpenStreetMap/OpenStreetMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import { TopBar } from "../../components/topBar/TopBar";
 import { LeftSideBox, PageContainer, RightSideBox } from "./styled";
@@ -19,11 +19,11 @@ export const Boxe = styled(Box)`
 export const BigOfferPage = () => {
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
-  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+  const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   return offer ? (
     <Box>
-      {isMatch ? (
+      {isMatchLarge ? (
         <TopBarResponsive />
       ) : (
         <>
@@ -35,9 +35,9 @@ export const BigOfferPage = () => {
         <LeftSideBox>
           <BigOffer {...offer} />
         </LeftSideBox>
-        {!isMatch ? (
+        {!isMatchLarge ? (
           <RightSideBox>
-            <GoogleMap />
+            <OpenStreetMap />
           </RightSideBox>
         ) : null}
       </PageContainer>

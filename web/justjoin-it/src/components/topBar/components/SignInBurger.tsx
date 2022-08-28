@@ -1,13 +1,11 @@
 import { MenuItem, IconButton, useMediaQuery } from "@mui/material";
-import React from "react";
-import { theme } from "../../../theme";
 import { SignInBox, SignInButton } from "../styled";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
+import { theme } from "../../../theme";
 
 export const SignInBurger = () => {
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <SignInBox>
       <SignInButton>
@@ -18,10 +16,10 @@ export const SignInBurger = () => {
           Sign in as a developer
         </MenuItem>
       </SignInButton>
-      {!isMatch ? (
+      {!isMatchMedium ? (
         <SignInButton>
           <MenuItem>
-            <IconButton color="primary">
+            <IconButton color="primary" href="/signin">
               <WorkIcon />
             </IconButton>
             Sign in to Employer Panel

@@ -32,8 +32,8 @@ export const MoreFilters = () => {
         <StyledModalBox>
           <HeaderContainer>
             <Typography variant="subtitleStrong">More Filters</Typography>
-            <IconButton color="secondary">
-              <CloseIcon onClick={handleClose} />
+            <IconButton color="secondary" onClick={handleClose}>
+              <CloseIcon />
             </IconButton>
           </HeaderContainer>
           <ContextContainer>

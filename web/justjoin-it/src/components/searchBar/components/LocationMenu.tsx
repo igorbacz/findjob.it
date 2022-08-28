@@ -32,8 +32,8 @@ export const LocationMenu = () => {
         <Box sx={{ p: 2 }}>
           <HeaderContainer>
             <Typography variant="H5Styled">Location</Typography>
-            <IconButton color="secondary">
-              <CloseIcon onClick={handleClose} />
+            <IconButton color="secondary" onClick={handleClose}>
+              <CloseIcon />
             </IconButton>
           </HeaderContainer>
           <Box>

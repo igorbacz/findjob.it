@@ -9,8 +9,8 @@ export const MiniOfferCon = styled(Box)`
   grid-template-rows: 1fr 1fr;
   background: white;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 1px 5px 0 rgb(0 0 0 / 4%);
-  margin-top: 10px;
-  padding-top: 10px;
+  padding: 5px;
+  border-radius: 6px;
 `;
 
 export const LogoContainer = styled(Box)`
@@ -35,7 +35,10 @@ export const Title = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 35px;
+  padding-left: 53px;
+  wrap: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const DetailsSection = styled(Box)`
@@ -49,7 +52,7 @@ export const DetailsSection = styled(Box)`
   align-items: center;
   color: rgb(153, 161, 171);
   margin-bottom: 10px;
-  padding-left: 35px;
+  padding-left: 53px;
 `;
 
 export const Paragraph = styled.p`
@@ -119,4 +122,49 @@ export const TagBox = styled(Box)`
   text-overflow: ellipsis;
   text-transform: lowercase;
   background-color: rgb(255, 255, 255);
+`;
+export const TagNewBox = styled(Box)`
+  color: rgb(153, 161, 171);
+  height: 16px;
+  padding: 0px 5px;
+  font-size: 8px;
+  line-height: 13px;
+  margin-left: 10px;
+  white-space: nowrap;
+  border-color: rgb(228, 232, 240);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 11px;
+  background-color: rgb(228, 232, 240);
+  display: flex;
+  align-items: center;
+`;
+
+export const DaysBox = styled(Box)`
+  color: rgb(55, 71, 79);
+`;
+
+export const AmountResponsive = styled(Box)`
+  color: rgb(30, 198, 108);
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding-left: 53px;
+  display: flex;
+  align-items: center;
+`;
+
+export const LocationRemote = styled(Box)`
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;

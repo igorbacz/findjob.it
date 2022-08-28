@@ -385,7 +385,7 @@ export const data: BigOfferDetails[] = [
 
   {
     _id: "4",
-    dateAdded: "2022-06-17",
+    dateAdded: "2022-08-28",
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
     remote: true,
@@ -408,7 +408,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "5",
-    dateAdded: "2022-08-01",
+    dateAdded: "2022-08-28",
     logo: "https://bucket.justjoin.it/offers/company_logos/original/838f09ef0c79515c2d3f293877bd225082233530.jpg?1646232331",
     title: "Node Developer",
     remote: false,
@@ -430,7 +430,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "6",
-    dateAdded: "2022-08-02",
+    dateAdded: "2022-08-28",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/946d2546b9be88aa4d43d8a9c239c4cd6fdfdc3d.png?1654855198",
     title: "Node Developer",
     remote: false,
@@ -731,7 +731,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "19",
-    dateAdded: "2022-08-07",
+    dateAdded: "2022-08-24",
 
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
@@ -755,7 +755,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "20",
-    dateAdded: "2022-07-14",
+    dateAdded: "2022-08-25",
 
     title: "Python Developer",
     city: "Warszawa",
@@ -801,7 +801,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "22",
-    dateAdded: "2022-06-13",
+    dateAdded: "2022-08-26",
     remote: false,
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
