@@ -1,5 +1,4 @@
 import {
-  BigOfferWrapper,
   BigOfferContainer,
   HeaderBox,
   LogoBox,
@@ -33,7 +32,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import MovingIcon from "@mui/icons-material/Moving";
 import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import Stack from "./components/Stack";
 import { data } from "../../data";
 import { useParams } from "react-router-dom";
@@ -46,7 +45,7 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <BigOfferWrapper>
+    <Box>
       <BigOfferContainer>
         <HeaderBox>
           {!isMatchMedium ? (
@@ -166,6 +165,6 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
           </FileContainer>
         </BigOfferSection>
       </BigOfferContainer>
-    </BigOfferWrapper>
+    </Box>
   );
 };

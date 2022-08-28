@@ -28,7 +28,7 @@ export const PostOffers = () => {
         </ImgBox>
       </HeaderPostOffers>
       <OffersBox>
-        <Typography variant="H3Styled">Poznaj ogłoszenia na justjoin.it</Typography>
+        <Typography variant="H3Styled">Poznaj ogłoszenia na findjob.it</Typography>
         <ContentOffers>
           <OfferBox>
             <OfferHeader>

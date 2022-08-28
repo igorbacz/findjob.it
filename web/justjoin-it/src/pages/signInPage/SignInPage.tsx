@@ -9,7 +9,7 @@ export const SignInPage = () => {
     <Wrapper>
       <HeaderLoginBox>
         <StyledLink to="/">
-          <Typography variant="H1Styled">justjoin.it</Typography>
+          <Typography variant="H1Styled">findjob.it</Typography>
         </StyledLink>
       </HeaderLoginBox>
       <LabelContainer>

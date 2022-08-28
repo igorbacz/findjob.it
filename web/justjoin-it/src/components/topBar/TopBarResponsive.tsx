@@ -47,7 +47,7 @@ export const TopBarResponsive = () => {
         </BoxFlex>
         <LogoResponsiveWrapper>
           <StyledLink to="/">
-            <Typography variant="H2StyledBold">justjoin.it</Typography>
+            <Typography variant="H2StyledBold">findjob.it</Typography>
           </StyledLink>
         </LogoResponsiveWrapper>
       </TopBarResponsiveHeader>

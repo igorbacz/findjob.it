@@ -8,24 +8,24 @@ export const SignInBurger = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <SignInBox>
-      <SignInButton>
-        <MenuItem>
-          <IconButton color="primary">
-            <SupportAgentIcon />
-          </IconButton>
-          Sign in as a developer
-        </MenuItem>
-      </SignInButton>
       {!isMatchMedium ? (
         <SignInButton>
           <MenuItem>
-            <IconButton color="primary" href="/signin">
-              <WorkIcon />
+            <IconButton color="primary">
+              <SupportAgentIcon />
             </IconButton>
-            Sign in to Employer Panel
+            Sign in as a developer
           </MenuItem>
         </SignInButton>
       ) : null}
+      <SignInButton>
+        <MenuItem>
+          <IconButton color="primary" href="/signin">
+            <WorkIcon />
+          </IconButton>
+          Sign in to Employer Panel
+        </MenuItem>
+      </SignInButton>
     </SignInBox>
   );
 };
