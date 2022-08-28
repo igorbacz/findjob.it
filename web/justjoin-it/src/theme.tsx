@@ -1,7 +1,5 @@
 import { grey } from "@mui/material/colors";
 import createTheme from "@mui/material/styles/createTheme";
-import { breakpoints } from "@mui/system";
-import { responsiveFontSizes } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
@@ -26,20 +24,11 @@ export const theme = createTheme({
   },
 
   components: {
-    MuiTabs: {
-      styleOverrides: {
-        // root: {
-        //   indicator: { backgroundColor: "red" },
-        // },
-        // indicator: { backgroundColor: "red" },
-      },
-    },
-    //TODO Doesn`t work
-
     MuiButton: {
       styleOverrides: {
         root: {
           borderRadius: 28,
+          cursor: "pointer",
         },
       },
     },
@@ -88,16 +77,7 @@ export const theme = createTheme({
       lineHeight: "1.75",
       whiteSpace: "nowrap",
     },
-    headerFont: {
-      fontSize: "24px",
-      fontWeight: "600",
-      whiteSpace: "nowrap",
-    },
-    subtitle1: {
-      fontSize: "14px",
-      fontWeight: "600",
-      color: "rgb(255, 255, 255)",
-    },
+
     subtitleLight: {
       fontSize: "18px",
       fontWeight: "600",
@@ -113,10 +93,6 @@ export const theme = createTheme({
     },
     subtitle3: {
       fontWeight: "200",
-      fontSize: "16px",
-    },
-    subtitle4: {
-      fontWeight: "600",
       fontSize: "16px",
     },
     subtitle5: {
@@ -141,16 +117,10 @@ export const theme = createTheme({
     },
 
     H1Styled: {
-      fontSize: "50px",
+      fontSize: "35px",
       fontWeight: "bold",
       textDecorationLine: "none",
     },
-    H2StyledBold: {
-      fontSize: "30px",
-      fontWeight: "bold",
-      textDecorationLine: "none",
-    },
-
     H6Light: {
       fontSize: "16px",
       fontWeight: " 500",
@@ -175,8 +145,54 @@ export const theme = createTheme({
   },
 });
 
-theme.typography.subtitle3 = {
-  [theme.breakpoints.down("lg")]: {
+theme.typography.subtitle4 = {
+  fontWeight: "600",
+  fontSize: "16px",
+  [theme.breakpoints.down("sm")]: {
     fontSize: "12px",
+    fontWeight: "600",
+  },
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "8px",
+    fontWeight: "600",
+  },
+};
+
+theme.typography.H2StyledBold = {
+  fontSize: "30px",
+  fontWeight: "bold",
+  textDecorationLine: "none",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "25px",
+  },
+};
+
+theme.typography.headerFont = {
+  fontSize: "24px",
+  fontWeight: "600",
+  whiteSpace: "nowrap",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "16px",
+    fontWeight: "400",
+  },
+};
+
+theme.typography.subtitle1 = {
+  fontSize: "14px",
+  fontWeight: "600",
+  color: "rgb(255, 255, 255)",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "12px",
+    fontWeight: "400",
+  },
+};
+
+theme.typography.subtitleLight = {
+  fontSize: "18px",
+  fontWeight: "600",
+  color: "rgb(255, 255, 255)",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "12px",
+    fontWeight: "400",
   },
 };

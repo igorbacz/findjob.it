@@ -7,7 +7,7 @@ import { StackProp } from "../../../types/types";
 const Stack = ({ value, stackName, stackLvl }: StackProp) => {
   return (
     <StackDetail>
-      <StyledRating icon={<CircleIcon fontSize="inherit" />} emptyIcon={<CircleOutlinedIcon fontSize="inherit" />} value={value} readOnly />
+      <StyledRating icon={<CircleIcon fontSize="small" />} emptyIcon={<CircleOutlinedIcon fontSize="small" />} value={value} readOnly />
       <StackName>
         <Typography variant="subtitle4">{stackName}</Typography>
       </StackName>

@@ -5,13 +5,12 @@ import { Typography, useMediaQuery } from "@mui/material";
 import { SignInMenu } from "./components/SignInMenu";
 import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoParagraph, LogoWrapper, StyledLink } from "./styled";
 import { CurrencyMenu } from "./components/CurrencyMenu";
-
 import { BurgerMenu } from "./components/BurgerMenu";
 import { TopBarResponsive } from "./TopBarResponsive";
 import { theme } from "../../theme";
 
 export const TopBar = () => {
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Container>
       <LogoWrapper>
@@ -19,7 +18,6 @@ export const TopBar = () => {
           <Typography variant="H1Styled">justjoin.it</Typography>
         </StyledLink>
         <LogoParagraph> #1 Job Board for tech industry in Europe</LogoParagraph>
-        <SwitchMode />
       </LogoWrapper>
       <Items>
         <StyledLink to="/">
@@ -47,7 +45,7 @@ export const TopBar = () => {
         <ButtonCurrency>
           <CurrencyMenu />
         </ButtonCurrency>
-        {isMatch ? <TopBarResponsive /> : <BurgerMenu />}
+        {isMatchMedium ? <TopBarResponsive /> : <BurgerMenu />}
       </ButtonsWrapper>
     </Container>
   );

@@ -20,7 +20,7 @@ import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
 
 export const BurgerMenuList = () => {
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Fragment>
       <Box>
@@ -55,7 +55,7 @@ export const BurgerMenuList = () => {
         </BurgerButton>
       </SmallBox>
       <SignInBurger />
-      {!isMatch ? (
+      {!isMatchMedium ? (
         <SocialBox>
           <IconButton>
             <FacebookIcon />

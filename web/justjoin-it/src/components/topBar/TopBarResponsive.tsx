@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { BurgerHeader } from "./components/BurgerHeader";
 import styled from "@emotion/styled";
-import { BurgerButton, ButtonCurrency, SmallBox, StyledLink } from "./styled";
+import { BurgerButton, ButtonCurrency, SmallBox, StyledLink, LogoResponsiveWrapper } from "./styled";
 import { SignInMenu } from "./components/SignInMenu";
 import { CurrencyMenu } from "./components/CurrencyMenu";
 import { BurgerMenuList } from "./components/BurgerMenuList";
@@ -45,9 +45,11 @@ export const TopBarResponsive = () => {
             <MenuIcon />
           </IconButton>
         </BoxFlex>
-        <StyledLink to="/">
-          <Typography variant="H2StyledBold">justjoin.it</Typography>
-        </StyledLink>
+        <LogoResponsiveWrapper>
+          <StyledLink to="/">
+            <Typography variant="H2StyledBold">justjoin.it</Typography>
+          </StyledLink>
+        </LogoResponsiveWrapper>
       </TopBarResponsiveHeader>
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <BurgerHeader />

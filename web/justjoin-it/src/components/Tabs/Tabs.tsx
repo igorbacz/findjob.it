@@ -7,8 +7,16 @@ import { data } from "../../data";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
 import SortMenu from "./components/SortMenu";
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import styled from "@emotion/styled";
+import { theme } from "../../theme";
+
+export const Boxe = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
 
 export default function Tabs() {
   const [value, setValue] = React.useState("0");
@@ -23,7 +31,7 @@ export default function Tabs() {
   const currentStackParam = searchParams.get("techStack");
 
   const currentSortParam = searchParams.get("sort");
-
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const offersRemote = () => {};
 
   const offersRemoteSearch = () => {
@@ -89,16 +97,18 @@ export default function Tabs() {
     <TabsUnstyled defaultValue={0}>
       <TabBar>
         <TabsList defaultValue={0}>
-          <Tab>Offers with salary</Tab>
+          {!isMatchMedium ? <Tab>Offers with salary</Tab> : <Tab>With salary</Tab>}
           <Tab>
             All Offers
             <Typography variant="TabPink"> {data.length} offers</Typography>
           </Tab>
         </TabsList>
         <InsideTabsBox>
-          <Button variant="text" color="secondary" startIcon={<NotificationsNoneIcon />}>
-            Subscribe
-          </Button>
+          {!isMatchMedium ? (
+            <Button variant="text" color="secondary" startIcon={<NotificationsNoneIcon />}>
+              Subscribe
+            </Button>
+          ) : null}
           <StyledFormControlLabel
             value="start"
             control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
@@ -109,22 +119,24 @@ export default function Tabs() {
         </InsideTabsBox>
       </TabBar>
       <TabPanel value={0}>
-        {offers
-          .filter((amount) => amount.amount)
-          .map((offer) => (
-            <MiniOffer
-              techStack={offer.techStack}
-              dateAdded={offer.dateAdded}
-              remote={offer.remote}
-              key={offer._id}
-              _id={offer._id}
-              logo={offer.logo}
-              title={offer.title}
-              amount={offer.amount}
-              companyName={offer.companyName}
-              city={offer.city}
-            />
-          ))}
+        <Boxe>
+          {offers
+            .filter((amount) => amount.amount)
+            .map((offer) => (
+              <MiniOffer
+                techStack={offer.techStack}
+                dateAdded={offer.dateAdded}
+                remote={offer.remote}
+                key={offer._id}
+                _id={offer._id}
+                logo={offer.logo}
+                title={offer.title}
+                amount={offer.amount}
+                companyName={offer.companyName}
+                city={offer.city}
+              />
+            ))}
+        </Boxe>
       </TabPanel>
       <TabPanel value={1}>
         {offers.map((offer) => {

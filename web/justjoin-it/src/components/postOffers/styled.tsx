@@ -7,6 +7,7 @@ export const HeaderPostOffers = styled(Box)`
   background-position: center center;
   color: white;
   display: flex;
+  width: 100%;
 `;
 
 export const HeaderText = styled(Box)`
@@ -20,6 +21,7 @@ export const OffersBox = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 8px;
 `;
 
 export const ContentOffers = styled(Box)`
@@ -32,7 +34,7 @@ export const OfferBox = styled(Box)`
   border: 1px solid #e7e9ed;
   border-radius: 10px;
   box-shadow: 0 15px 30px -1px rgb(214 231 249 / 55%);
-  width: 80%;
+  width: 30%;
   margin: 0 20px;
   padding: 10px;
 `;
@@ -64,6 +66,6 @@ export const StyledListItem = styled(ListItem)`
 `;
 
 export const ImgBox = styled(Box)`
-  max-width: 58.333333%;
+  max-width: 65.333333%;
   flex-basis: 58.333333%;
 `;

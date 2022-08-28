@@ -23,41 +23,53 @@ import {
   StyledBigField,
   FileContainer,
   TitleBox,
+  LogoResponsiveBox,
+  RemoteBigBox,
 } from "./styled";
 import { BigOfferDetails } from "../../types/types";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import PeopleIcon from "@mui/icons-material/People";
 import MovingIcon from "@mui/icons-material/Moving";
 import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import Stack from "./components/Stack";
 import { data } from "../../data";
 import { useParams } from "react-router-dom";
+import { theme } from "../../theme";
 
-export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description }: BigOfferDetails) => {
+export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, remote }: BigOfferDetails) => {
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
   const stack = offer?.techStack;
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <BigOfferWrapper>
       <BigOfferContainer>
         <HeaderBox>
-          <LogoBox>
-            <LogoImg alt="logo" src={logo}></LogoImg>
-          </LogoBox>
+          {!isMatchMedium ? (
+            <LogoBox>
+              <LogoImg alt="logo" src={logo}></LogoImg>
+            </LogoBox>
+          ) : (
+            <LogoResponsiveBox>
+              <LogoImg alt="logo" src={logo}></LogoImg>
+            </LogoResponsiveBox>
+          )}
           <HeaderInfo>
             <TitleBox>
               <Typography variant="headerFont">{title}</Typography>
             </TitleBox>
             <AdressHeader>
-              <LocationOnIcon />
+              <PlaceOutlinedIcon />
               <Typography variant="subtitle1">{adress}</Typography>
+              {!isMatchMedium ? remote && <RemoteBigBox>Fully Remote</RemoteBigBox> : null}
             </AdressHeader>
             {!amount && <Typography variant="subtitleLight">Undisclosed Salary</Typography>}
             {amount && <Typography variant="subtitleLight">{amount} PLN</Typography>}
+            {isMatchMedium ? remote && <RemoteBigBox>Fully Remote</RemoteBigBox> : null}
           </HeaderInfo>
         </HeaderBox>
         <HeaderDetails>

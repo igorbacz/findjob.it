@@ -36,6 +36,21 @@ export const LogoBox = styled(Box)`
   border: 10px solid rgba(255, 255, 255, 0.15);
 `;
 
+export const LogoResponsiveBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 95px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+`;
+
 export const LogoImg = styled.img`
   max-width: 70px;
   max-height: 45px;
@@ -59,6 +74,8 @@ export const AdressHeader = styled(Box)`
   font-weight: 600;
   padding: 4px 4px;
   display: flex;
+  align-items: center;
+  gap: 5px;
 `;
 
 export const HeaderDetails = styled(Box)`
@@ -73,17 +90,15 @@ export const HeaderDetails = styled(Box)`
 
 export const HeaderDetail = styled(Box)`
   width: 20%;
-  height: 56px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content-: center;
   align-items: center;
   justify-content: space-between;
-
   box-shadow: rgb(0 0 0 / 8%) 0px 2px 2px 0px, rgb(0 0 0 / 6%) 0px 1px 5px 0px;
   border-radius: 4px;
   padding: 20px 5px;
+  gap: 12px;
 `;
 
 export const IconCon = styled(Box)`
@@ -132,6 +147,7 @@ export const StackDetails = styled(Box)`
   justify-content: space-evenly;
   gap: 30px;
   padding: 12px;
+  flex-wrap: wrap;
 `;
 
 export const StackDetail = styled(Box)`
@@ -223,5 +239,15 @@ export const UploadBox = styled(Box)`
   display: flex;
   justify-content: center;
   text-align: center;
+`;
+
+export const RemoteBigBox = styled(Box)`
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 200;
+  background-color: rgb(255, 245, 248);
+  color: rgb(255, 64, 129);
 `;
 

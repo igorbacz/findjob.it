@@ -5,7 +5,7 @@ import { TagBox } from "../styled";
 
 export const MiniTag = ({ stackName }: StackProp) => {
   return (
-    <TagBox>
+    <TagBox key={stackName}>
       <Typography variant="RemoteTypography">{stackName}</Typography>
     </TagBox>
   );

@@ -23,7 +23,7 @@ export const PostOffers = () => {
         <HeaderText>
           <Typography variant="H2Styled">Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</Typography>
         </HeaderText>
-        <ImgBox>
+        <ImgBox sx={{ display: { xs: "none", md: "none", lg: "block", xl: "block" } }}>
           <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
         </ImgBox>
       </HeaderPostOffers>

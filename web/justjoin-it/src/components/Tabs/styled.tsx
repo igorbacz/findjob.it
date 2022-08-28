@@ -36,7 +36,6 @@ export const Tab = styled(TabUnstyled)`
   border-radius: 18px 18px 0px 0px;
   display: flex;
   justify-content: center;
-
   &:hover {
     background-color: rgb(185, 182, 182);
   }
@@ -50,7 +49,8 @@ export const TabPanel = styled(TabPanelUnstyled)`
   width: 100%;
   background-color: rgb(243, 246, 248);
   padding-top: 7px;
-  padding-left: 18px;
+  padding-left: 10px;
+  gap: 15px;
 `;
 
 export const TabsList = styled(TabsListUnstyled)`

@@ -4,8 +4,9 @@ import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
-import { IconButton, Typography } from "@mui/material";
+import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import { StyledSignInMenu } from "./StyledSignInMenu";
+import { theme } from "../../../theme";
 
 export const SignInMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -16,10 +17,17 @@ export const SignInMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Fragment>
-      <Button variant="contained" disableElevation onClick={handleClick} endIcon={<KeyboardArrowDownIcon />}>
+      <Button
+        variant="contained"
+        disableElevation
+        onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
+        size={isMatchMedium ? "small" : "medium"}
+      >
         <Typography variant="buttonFont"> Sign In</Typography>
       </Button>
       <StyledSignInMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
