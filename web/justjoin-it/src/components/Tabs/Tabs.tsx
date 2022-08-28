@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
-import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList } from "./styled";
+import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper } from "./styled";
 import { BigOfferDetails } from "../../types/types";
 import { data } from "../../data";
 import { useSearchParams } from "react-router-dom";
@@ -11,12 +11,6 @@ import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import styled from "@emotion/styled";
 import { theme } from "../../theme";
-
-export const Boxe = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
 
 export default function Tabs() {
   const [value, setValue] = React.useState("0");
@@ -105,21 +99,23 @@ export default function Tabs() {
         </TabsList>
         <InsideTabsBox>
           {!isMatchMedium ? (
-            <Button variant="text" color="secondary" startIcon={<NotificationsNoneIcon />}>
-              Subscribe
-            </Button>
+            <>
+              <Button variant="text" color="secondary" startIcon={<NotificationsNoneIcon />}>
+                Subscribe
+              </Button>
+              <StyledFormControlLabel
+                value="start"
+                control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
+                label="Remote"
+                labelPlacement="start"
+              />
+            </>
           ) : null}
-          <StyledFormControlLabel
-            value="start"
-            control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
-            label="Remote"
-            labelPlacement="start"
-          />
           <SortMenu />
         </InsideTabsBox>
       </TabBar>
       <TabPanel value={0}>
-        <Boxe>
+        <OfferWrapper>
           {offers
             .filter((amount) => amount.amount)
             .map((offer) => (
@@ -136,7 +132,7 @@ export default function Tabs() {
                 city={offer.city}
               />
             ))}
-        </Boxe>
+        </OfferWrapper>
       </TabPanel>
       <TabPanel value={1}>
         {offers.map((offer) => {

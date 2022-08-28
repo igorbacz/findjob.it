@@ -4,6 +4,12 @@ import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
 
+export const OfferWrapper = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
 export const InsideTabsBox = styled(Box)`
   display: flex;
   flex-direction: row;

@@ -1,10 +1,8 @@
 import styled from "@emotion/styled";
 import { Box, Rating, TextField } from "@mui/material";
 
-export const BigOfferWrapper = styled(Box)``;
-
 export const BigOfferContainer = styled(Box)`
-  // width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -23,7 +21,6 @@ export const LogoBox = styled(Box)`
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-
   background-color: white;
   border-radius: 50%;
   width: 150px;
@@ -165,7 +162,6 @@ export const StackName = styled(Box)`
 
 export const StackLvl = styled(Box)`
   color: rgb(153, 161, 171);
-
   padding: 5px;
 `;
 
@@ -179,8 +175,6 @@ export const BigOfferSection = styled(Box)`
   padding: 12px 20px;
 `;
 
-export const DescriptionHeader = styled(Box)``;
-
 export const Content = styled(Box)`
   padding: 15px;
   color: rgb(55, 71, 79);
@@ -192,7 +186,7 @@ export const StyledSmallField = styled(TextField)`
   .MuiOutlinedInput-root {
     border-radius: 5px;
     height: 45px;
-    width: 400px;
+    width: 120%;
     text-align: left;
   }
 `;
@@ -200,7 +194,8 @@ export const InputsContainer = styled(Box)`
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  justify-content: space-between;
 `;
 
 export const InputContainer = styled(Box)`
@@ -250,4 +245,3 @@ export const RemoteBigBox = styled(Box)`
   background-color: rgb(255, 245, 248);
   color: rgb(255, 64, 129);
 `;
-
