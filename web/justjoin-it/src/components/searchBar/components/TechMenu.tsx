@@ -1,8 +1,6 @@
 import { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { StyledCurrencyMenu } from "../../topBar/components/StyledCurrencyMenu";
 import { IconMenuItem } from "./IconMenuItem";
 import { stackIcons } from "../../../data";
