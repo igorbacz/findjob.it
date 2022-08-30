@@ -8,7 +8,6 @@ import {
   MiniLogoImg,
   RemoteBox,
   TagsBox,
-  TagBox,
   AmountResponsive,
   LocationRemote,
 } from "./styled";
@@ -56,7 +55,6 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
             {totalDays < 5 && <MiniTagNew />}
           </AmountAndTag>
         )}
-
         {!isMatchLarge ? (
           <DetailsSection>
             <BusinessIcon />

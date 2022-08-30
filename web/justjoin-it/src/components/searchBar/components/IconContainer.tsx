@@ -3,6 +3,7 @@ import { Icon } from "../../../types/types";
 import { IconText, IconWrapper, StyledIconButton } from "../styled";
 import { useSearchParams } from "react-router-dom";
 import styled from "@emotion/styled";
+import { StackButton } from "../../../shared/StackButton";
 
 export const IconGrey = styled(Box)`
   background: linear-gradient(-90deg, rgb(145, 147, 170), rgb(125, 130, 168));
@@ -24,9 +25,7 @@ export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
 
   return (
     <IconWrapper>
-      <StyledIconButton key={_id} size="small" sx={{ background: background }} onClick={stackSearch}>
-        {logo}
-      </StyledIconButton>
+      <StackButton logo={logo} background={background} _id={_id} />
       <IconText>
         <Typography variant="PStyled">{stack}</Typography>
       </IconText>

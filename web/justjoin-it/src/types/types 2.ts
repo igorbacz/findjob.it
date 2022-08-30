@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
-import { StringLiteral } from "typescript";
 
-export class SmallOffer {
+export interface SmallOffer {
   _id: string;
   dateAdded: string;
   remote: boolean;
@@ -13,18 +12,12 @@ export class SmallOffer {
   techStack: StackProp[];
 }
 
-export class BigOfferDetails extends SmallOffer {
+export interface BigOfferDetails extends SmallOffer {
   adress: string;
   companySize: number;
   exp: string;
   description: string;
-  geolocation: GeoProp;
 }
-
-export type GeoProp = {
-  latitude: number;
-  longitude: number;
-};
 
 export type StackProp = {
   stackName: string;
@@ -35,8 +28,7 @@ export type StackProp = {
 export interface Icon {
   _id?: string;
   logo: ReactElement;
-  stack?: string;
+  stack: string;
   stackFullName?: string;
   background: string;
-  url?: string;
 }
