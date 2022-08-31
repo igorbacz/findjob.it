@@ -22,8 +22,12 @@ import { MiniDaysTag } from "./components/MiniDaysTag";
 import { theme } from "../../theme";
 import { MiniTagNew } from "./components/MiniTagNew";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import { useSelector } from "react-redux";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
+  //TODO
+  // const data = useSelector(?????);
+
   const offer = data.find((offer) => offer._id === _id);
   const stack = offer?.techStack;
   const dateFrom = new Date(offer.dateAdded);

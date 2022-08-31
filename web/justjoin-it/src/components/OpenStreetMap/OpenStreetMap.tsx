@@ -1,4 +1,4 @@
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import { data, stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,7 @@ export const OpenStreetMap = () => {
     });
     return LeafIcon;
   };
+  // const map = useMap();
 
   return (
     <MapContainer center={[52.291335, 19.088525]} zoom={6} scrollWheelZoom={false}>
@@ -29,6 +30,8 @@ export const OpenStreetMap = () => {
           key={city._id}
           eventHandlers={{
             click: (e) => {
+              // map.flyTo(e.latlng, 9);  TODO Uncaught Error: No context provided: useLeafletContext() can only be used in a descendant of <MapContainer>
+              // map.setView([city.geolocation.latitude, city.geolocation.longitude], 9);
               return navigate(`/offer/${city._id}`);
             },
           }}

@@ -251,3 +251,18 @@ export const ButtonContainer = styled(Box)`
   display: flex;
   align-items: center;
 `;
+
+
+export const ButtonWrapper = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+`;

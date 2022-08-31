@@ -32,22 +32,31 @@ import PeopleIcon from "@mui/icons-material/People";
 import MovingIcon from "@mui/icons-material/Moving";
 import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
 import Stack from "./components/Stack";
 import { data } from "../../data";
 import { useParams } from "react-router-dom";
 import { theme } from "../../theme";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
+import { ButtonWrapper } from "../offerForm/styled";
 
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, remote }: BigOfferDetails) => {
   const { offerId } = useParams();
   const offer = data.find((offer) => offer._id === offerId);
   const stack = offer?.techStack;
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
-
+  const navigate = useNavigate();
   return (
     <Box>
       <BigOfferContainer>
         <HeaderBox>
+          <ButtonWrapper>
+            <IconButton onClick={() => navigate(-1)} color="success">
+              <ArrowBackIcon />
+            </IconButton>
+          </ButtonWrapper>
           {!isMatchMedium ? (
             <LogoBox>
               <LogoImg alt="logo" src={logo}></LogoImg>

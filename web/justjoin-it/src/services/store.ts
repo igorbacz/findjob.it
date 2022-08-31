@@ -10,7 +10,7 @@ const offersReducer = (state = initialState, action: any) => {
   };
 };
 
-const offerSlice = createSlice({
+export const offerSlice = createSlice({
   name: "offers",
   initialState,
   reducers: {
