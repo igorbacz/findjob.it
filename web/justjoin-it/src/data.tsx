@@ -371,8 +371,8 @@ export const data: BigOfferDetails[] = [
     companySize: 15,
     exp: "Senior",
     techStack: [
-      { stackName: "Github", stackLvl: "master", value: 5 },
-      { stackName: "JS", stackLvl: "advanced", value: 4 },
+      { stackName: "JS", stackLvl: "master", value: 5 },
+      { stackName: "Github", stackLvl: "advanced", value: 4 },
       { stackName: "Angular", stackLvl: "regular", value: 3 },
       { stackName: "Python", stackLvl: "regular", value: 3 },
       { stackName: "Node", stackLvl: "regular", value: 3 },

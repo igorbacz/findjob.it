@@ -10,7 +10,7 @@ export const BigOfferContainer = styled(Box)`
 export const HeaderBox = styled(Box)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 200px 100px;
+  grid-template-rows: 30px 200px 100px;
   border-radius: 0px 0px 4px 4px;
   padding: 40px 20px 0px;
   background: url(https://justjoin.it/static/media/header_background.0ef18c97.png) center center / cover no-repeat,
@@ -19,8 +19,8 @@ export const HeaderBox = styled(Box)`
 export const LogoBox = styled(Box)`
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   background-color: white;
   border-radius: 50%;
   width: 150px;
@@ -36,8 +36,8 @@ export const LogoBox = styled(Box)`
 export const LogoResponsiveBox = styled(Box)`
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   width: 95px;
   height: 95px;
   display: flex;
@@ -56,8 +56,8 @@ export const LogoImg = styled.img`
 export const HeaderInfo = styled(Box)`
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   width: 350px;
   padding: 15px;
   display: flex;
