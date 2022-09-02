@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useEffect, useState } from "react";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
 import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper } from "./styled";
@@ -7,43 +6,47 @@ import { data } from "../../data";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
 import SortMenu from "./components/SortMenu";
-import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import styled from "@emotion/styled";
 import { theme } from "../../theme";
 
 export default function Tabs() {
-  const [value, setValue] = React.useState("0");
   const [offers, setOffers] = useState<BigOfferDetails[]>(data);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const remoteOffersParam = searchParams.get("filter");
 
-  const remoteOffersArray: BigOfferDetails[] = [];
-  const [remoteOffers, setRemoteOffers] = useState<BigOfferDetails[]>(remoteOffersArray);
-
   const currentStackParam = searchParams.get("techStack");
 
   const currentSortParam = searchParams.get("sort");
+
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
-  const offersRemote = () => {};
+
+  const remoteOffersArray: BigOfferDetails[] = [];
 
   const offersRemoteSearch = () => {
-    data.forEach((item) => {
-      if (item.remote) {
-        remoteOffersArray.push(item);
-      }
-    });
     if (!remoteOffersParam) {
-      console.log(remoteOffersArray);
-      setRemoteOffers(remoteOffersArray);
-      setSearchParams({ filter: "remote" });
-    } else setSearchParams({});
-    setOffers(remoteOffersArray); //TODO
+      setOffers(data);
+      return;
+    } else
+      data.forEach((item) => {
+        if (item.remote) {
+          remoteOffersArray.push(item);
+        }
+      });
+    setOffers(remoteOffersArray);
   };
 
+  const remoteParam = () => {
+    if (!remoteOffersParam) {
+      setSearchParams({ filter: "remote" });
+    } else {
+      setSearchParams({});
+    }
+  };
   const stackSearch = () => {
     if (!currentStackParam) {
+      setOffers(data);
       return;
     }
     const filteredOffers: BigOfferDetails[] = [];
@@ -70,7 +73,7 @@ export default function Tabs() {
       const sortOffers: BigOfferDetails[] = offers?.filter((amount) => amount.amount).sort((a, b) => a?.amount - b?.amount);
       setOffers(sortOffers);
     } else if (currentSortParam === "latest") {
-      const sortOffers: BigOfferDetails[] = offers?.sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a.dateAdded).valueOf());
+      const sortOffers: BigOfferDetails[] = offers?.slice().sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
       setOffers(sortOffers);
     }
   };
@@ -80,8 +83,8 @@ export default function Tabs() {
   }, [currentSortParam]);
 
   useEffect(() => {
-    offersRemote();
-  }, [remoteOffers]);
+    offersRemoteSearch();
+  }, [remoteOffersParam]);
 
   useEffect(() => {
     stackSearch();
@@ -105,9 +108,10 @@ export default function Tabs() {
               </Button>
               <StyledFormControlLabel
                 value="start"
-                control={<StyledSwitch color="primary" onClick={offersRemoteSearch} />}
+                control={<StyledSwitch color="primary" onClick={remoteParam} />}
                 label="Remote"
                 labelPlacement="start"
+                // onClick={offersRemoteSearch}
               />
             </>
           ) : null}
@@ -135,22 +139,24 @@ export default function Tabs() {
         </OfferWrapper>
       </TabPanel>
       <TabPanel value={1}>
-        {offers.map((offer) => {
-          return (
-            <MiniOffer
-              techStack={offer.techStack}
-              remote={offer.remote}
-              key={offer._id}
-              _id={offer._id}
-              logo={offer.logo}
-              title={offer.title}
-              amount={offer.amount}
-              companyName={offer.companyName}
-              city={offer.city}
-              dateAdded={offer.dateAdded}
-            />
-          );
-        })}
+        <OfferWrapper>
+          {offers.map((offer) => {
+            return (
+              <MiniOffer
+                techStack={offer.techStack}
+                remote={offer.remote}
+                key={offer._id}
+                _id={offer._id}
+                logo={offer.logo}
+                title={offer.title}
+                amount={offer.amount}
+                companyName={offer.companyName}
+                city={offer.city}
+                dateAdded={offer.dateAdded}
+              />
+            );
+          })}
+        </OfferWrapper>
       </TabPanel>
     </TabsUnstyled>
   );

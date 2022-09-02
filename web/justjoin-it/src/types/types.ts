@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { StringLiteral } from "typescript";
 
 export class SmallOffer {
   _id: string;
@@ -37,6 +36,6 @@ export interface Icon {
   logo: ReactElement;
   stack?: string;
   stackFullName?: string;
-  background: string;
+  background?: string;
   url?: string;
 }

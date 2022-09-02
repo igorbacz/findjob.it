@@ -621,7 +621,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "13",
-    dateAdded: "2022-08-19",
+    dateAdded: "2022-09-01",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: true,
@@ -769,7 +769,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "19",
-    dateAdded: "2022-08-24",
+    dateAdded: "2022-09-01",
 
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
@@ -817,7 +817,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "21",
-    dateAdded: "2022-08-15",
+    dateAdded: "2022-09-01",
     title: "Python Developer",
     remote: true,
     amount: 7700,
@@ -841,7 +841,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "22",
-    dateAdded: "2022-08-26",
+    dateAdded: "2022-09-01",
     remote: false,
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",

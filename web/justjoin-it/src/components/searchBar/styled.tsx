@@ -105,10 +105,36 @@ export const StyledModalBox = styled(Box)`
 `;
 
 export const StyledIconButton = styled(IconButton)`
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 0px;
+  line-height: 35px;
   color: white;
   &:hover {
     box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
     color: rgb(255, 255, 255);
     fill: rgb(255, 255, 255);
   }
+`;
+
+export const AllBox = styled(Box)`
+  text-transform: none;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0px;
+  line-height: 39px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    box-shadow: rgb(228 232 240) 0px 0px 0px 5px;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+  }
+  margin: 10px 10px 10px 10px;
 `;
