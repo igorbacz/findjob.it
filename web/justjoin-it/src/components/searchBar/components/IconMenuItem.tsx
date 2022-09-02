@@ -9,15 +9,17 @@ export const IconMenuItem = ({ logo, stack, background, _id }: Icon) => {
   const stackSearch = () => {
     setSearchParams({ techStack: stack });
   };
+
   return (
     <MenuItem>
-      <Box onClick={stackSearch}></Box>
-      <StyledIconButton key={_id} size="small" sx={{ background: background }}>
-        {logo}
-      </StyledIconButton>
-      <IconText>
-        <Typography variant="PStyled">{stack}</Typography>
-      </IconText>
+      <Box onClick={stackSearch}>
+        <StyledIconButton key={_id} size="small" sx={{ background: background }}>
+          {logo}
+        </StyledIconButton>
+        <IconText>
+          <Typography variant="PStyled">{stack}</Typography>
+        </IconText>
+      </Box>
     </MenuItem>
   );
 };

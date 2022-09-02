@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSelector, createSlice } from "@reduxjs/toolkit";
 import { data } from "../data";
 import { BigOfferDetails } from "../types/types";
 
@@ -9,6 +9,8 @@ const offersReducer = (state = initialState, action: any) => {
     state,
   };
 };
+
+//create selector => offer slice =>oferty
 
 export const offerSlice = createSlice({
   name: "offers",
@@ -21,3 +23,13 @@ export const offerSlice = createSlice({
 });
 
 export const store = configureStore({ reducer: offerSlice.reducer });
+
+const state = {
+  initialState: data,
+};
+
+const selectData1 = (state: any) => state.initialState;
+
+// const selectData2 = createSelector([selectData1],( initialState))=>{
+//   return initialState
+// }

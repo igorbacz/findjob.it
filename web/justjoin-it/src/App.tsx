@@ -12,7 +12,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path="/" element={<OffersListPage />} />
+        <Route path="*" element={<OffersListPage />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/post" element={<PostOffersPage />} />
         <Route path="/add-offer" element={<OfferFormPage />} />

@@ -30,7 +30,9 @@ export const OffersListPage = () => {
         </LeftSideBox>
         {!isMatchLarge ? (
           <RightSideBox>
-            <OpenStreetMap />
+           
+              <OpenStreetMap />
+           
           </RightSideBox>
         ) : null}
       </PageContainer>
