@@ -138,3 +138,9 @@ export const AllBox = styled(Box)`
   }
   margin: 10px 10px 10px 10px;
 `;
+
+export const SearchRespWrapper = styled(Box)`
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+`;

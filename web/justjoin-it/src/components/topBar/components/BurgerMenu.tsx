@@ -1,19 +1,10 @@
 import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Backdrop, Box, IconButton, Modal } from "@mui/material";
-import styled from "@emotion/styled";
+import { Backdrop, IconButton, Modal } from "@mui/material";
 import { BurgerMenuList } from "./BurgerMenuList";
 import { BurgerHeader } from "./BurgerHeader";
+import { BigBurgerMenuBox } from "../styled";
 
-export const BigBurgerMenuBox = styled(Box)`
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  height: 100%;
-  background-color: white;
-  border-radius: 5px;
-  transform: none;
-`;
 export const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);

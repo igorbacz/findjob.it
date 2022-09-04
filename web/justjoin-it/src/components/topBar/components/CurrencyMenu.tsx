@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { StyledCurrencyMenu } from "./StyledCurrencyMenu";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 export const CurrencyMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

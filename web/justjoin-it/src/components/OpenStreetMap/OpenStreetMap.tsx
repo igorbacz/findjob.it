@@ -1,9 +1,13 @@
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
-import { data, stackIcons } from "../../data";
+import { stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../services/store";
+import { BigOfferDetails } from "../../types/types";
 
 const MapComponent = () => {
+  const offers: BigOfferDetails[] = useSelector((state: RootState) => state);
   let navigate = useNavigate();
 
   const iconUrlFind = (city: any) => {
@@ -24,7 +28,7 @@ const MapComponent = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {data.map((city) => (
+      {offers.map((city) => (
         <Marker
           position={[city.geolocation.latitude, city.geolocation.longitude]}
           key={city._id}

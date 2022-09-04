@@ -14,21 +14,20 @@ import {
 import BusinessIcon from "@mui/icons-material/Business";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Typography, useMediaQuery } from "@mui/material";
-import { SmallOffer } from "../../types/types";
+import { BigOfferDetails, SmallOffer } from "../../types/types";
 import { StyledLink } from "../topBar/styled";
-import { data } from "../../data";
 import { MiniTag } from "./components/MiniTag";
 import { MiniDaysTag } from "./components/MiniDaysTag";
 import { theme } from "../../theme";
 import { MiniTagNew } from "./components/MiniTagNew";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { useSelector } from "react-redux";
+import { RootState } from "../../services/store";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
-  //TODO
-  // const data = useSelector(?????);
+  const offers: BigOfferDetails[] = useSelector((state: RootState) => state);
 
-  const offer = data.find((offer) => offer._id === _id);
+  const offer = offers.find((offer) => offer._id === _id);
   const stack = offer?.techStack;
   const dateFrom = new Date(offer.dateAdded);
   const dateToday = new Date();
@@ -83,7 +82,7 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
               ?.filter((x) => x.value && x.value >= 3)
               .slice(0, 3)
               ?.map((stack) => {
-                return <MiniTag stackName={stack.stackName} />;
+                return <MiniTag stackName={stack.stackName} key={stack.stackName} />;
               })}
           </TagsBox>
         ) : (

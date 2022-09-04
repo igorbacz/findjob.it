@@ -1,6 +1,5 @@
 import Button from "@mui/material/Button";
 import "./styled.tsx";
-import { SwitchMode } from "./components/SwitchMode";
 import { Typography, useMediaQuery } from "@mui/material";
 import { SignInMenu } from "./components/SignInMenu";
 import { ButtonCurrency, ButtonSignIn, ButtonsWrapper, Container, Item, Items, LogoParagraph, LogoWrapper, StyledLink } from "./styled";

@@ -1,5 +1,5 @@
 import { BigOfferDetails, Icon } from "./types/types";
-import { FaAngular, FaRocketchat, FaGithub, FaHtml5, FaJava, FaJs, FaPhp, FaPython, FaVuejs, FaSearch } from "react-icons/fa";
+import { FaRocketchat, FaHtml5, FaJava, FaJs, FaPhp, FaPython, FaSearch } from "react-icons/fa";
 import { SiScala } from "react-icons/si";
 import { BsPhone } from "react-icons/bs";
 import { TbDeviceGamepad2, TbArrowsShuffle } from "react-icons/tb";
@@ -359,7 +359,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "2",
-    dateAdded: "2021-08-17",
+    dateAdded: "2022-09-04",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     title: "Java Script Developer",
     remote: true,
@@ -383,7 +383,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "3",
-    dateAdded: "2022-03-01",
+    dateAdded: "2022-09-04",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: false,
@@ -455,7 +455,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "6",
-    dateAdded: "2022-08-28",
+    dateAdded: "2022-09-04",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/946d2546b9be88aa4d43d8a9c239c4cd6fdfdc3d.png?1654855198",
     title: "Node Developer",
     remote: false,
@@ -719,7 +719,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "17",
-    dateAdded: "2022-07-31",
+    dateAdded: "2022-09-04",
 
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",
@@ -744,7 +744,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "18",
-    dateAdded: "2022-08-13",
+    dateAdded: "2022-09-04",
 
     logo: "https://bucket.justjoin.it/offers/company_logos/original/9a01ebb3a3cff2dd8d5abeb7719c88d65a2bfb2f.png?1649836095",
     title: "Node Developer",

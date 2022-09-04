@@ -109,3 +109,25 @@ export const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: inherit;
 `;
+
+export const TopBarResponsiveHeader = styled(Box)`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e8f0;
+`;
+
+export const BoxFlex = styled(Box)`
+  display: flex;
+`;
+
+export const BigBurgerMenuBox = styled(Box)`
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  transform: none;
+`;

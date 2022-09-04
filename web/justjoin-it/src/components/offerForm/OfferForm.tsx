@@ -32,7 +32,7 @@ import {
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { useState } from "react";
-import ToggleButtonsMultiple from "./ToggleButtons1";
+import ToggleButtonsMultiple from "./ToggleButtons";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");

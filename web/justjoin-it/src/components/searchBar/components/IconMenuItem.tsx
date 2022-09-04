@@ -1,5 +1,4 @@
 import { Box, MenuItem, Typography } from "@mui/material";
-import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { Icon } from "../../../types/types";
 import { IconText, StyledIconButton } from "../styled";
