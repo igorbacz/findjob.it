@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
 import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper } from "./styled";
 import { BigOfferDetails } from "../../types/types";
-import { data } from "../../data";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
 import SortMenu from "./components/SortMenu";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { theme } from "../../theme";
+import { useSelector } from "react-redux";
+import { RootState } from "../../services/store";
 
 export default function Tabs() {
-  const [offers, setOffers] = useState<BigOfferDetails[]>(data);
+  const offersList: BigOfferDetails[] = useSelector((state: RootState) => state);
+
+  const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const remoteOffersParam = searchParams.get("filter");
@@ -26,10 +29,10 @@ export default function Tabs() {
 
   const offersRemoteSearch = () => {
     if (!remoteOffersParam) {
-      setOffers(data);
+      setOffers(offersList);
       return;
     } else
-      data.forEach((item) => {
+      offersList.forEach((item) => {
         if (item.remote) {
           remoteOffersArray.push(item);
         }
@@ -46,12 +49,12 @@ export default function Tabs() {
   };
   const stackSearch = () => {
     if (!currentStackParam) {
-      setOffers(data);
+      setOffers(offersList);
       return;
     }
     const filteredOffers: BigOfferDetails[] = [];
 
-    data.forEach((item) => {
+    offersList.forEach((item) => {
       item.techStack.forEach((nameStack) => {
         if (nameStack.stackName === currentStackParam) {
           filteredOffers.push(item);
@@ -97,7 +100,7 @@ export default function Tabs() {
           {!isMatchMedium ? <Tab>Offers with salary</Tab> : <Tab>With salary</Tab>}
           <Tab>
             All Offers
-            <Typography variant="TabPink"> {data.length} offers</Typography>
+            <Typography variant="TabPink"> {offersList.length} offers</Typography>
           </Tab>
         </TabsList>
         <InsideTabsBox>

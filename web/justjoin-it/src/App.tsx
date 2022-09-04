@@ -1,4 +1,3 @@
-import "./App.css";
 import { PostOffersPage } from "./pages/postOffersPage/PostOffersPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
 import { Route, Routes } from "react-router-dom";

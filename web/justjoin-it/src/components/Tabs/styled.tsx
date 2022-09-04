@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, FormControlLabel, Switch } from "@mui/material";
+import { Box, Button, FormControlLabel, Switch } from "@mui/material";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
@@ -73,4 +73,15 @@ export const TabBar = styled(Box)`
   height: 40px;
   display: flex;
   justify-content: space-between;
+`;
+
+export const StyledButton = styled(Button)`
+  margin: 0px;
+  padding: 0px;
+  &:hover {
+    background-color: white;
+  }
+  &:checked {
+    background-color: white;
+  }
 `;

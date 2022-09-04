@@ -4,7 +4,6 @@ import { Box } from "@mui/material";
 export const Wrapper = styled(Box)`
   background-color: white;
   width: 350px;
-
   display: flex;
   justify-content: center;
   align-items: center;

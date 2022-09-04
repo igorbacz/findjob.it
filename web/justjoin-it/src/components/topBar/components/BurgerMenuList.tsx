@@ -1,6 +1,5 @@
 import SchoolIcon from "@mui/icons-material/School";
 import BarChartIcon from "@mui/icons-material/BarChart";
-
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -12,10 +11,9 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import HelpIcon from "@mui/icons-material/Help";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
-import { BurgerButton, SignInBox, SignInButton, SmallBox, SocialBox } from "../styled";
-import { IconButton, Box, MenuItem, useMediaQuery } from "@mui/material";
+import { BurgerButton, SmallBox, SocialBox } from "../styled";
+import { IconButton, Box, useMediaQuery } from "@mui/material";
 import { theme } from "../../../theme";
-import { BurgerHeader } from "./BurgerHeader";
 import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
 

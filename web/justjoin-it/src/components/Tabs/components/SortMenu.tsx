@@ -2,21 +2,11 @@ import * as React from "react";
 import List from "@mui/material/List";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useSearchParams } from "react-router-dom";
-import styled from "@emotion/styled";
+import { StyledButton } from "../styled";
 
-export const StyledButton = styled(Button)`
-  margin: 0px;
-  padding: 0px;
-  &:hover {
-    background-color: white;
-  }
-  &:checked {
-    background-color: white;
-  }
-`;
 
 const options = ["lowest salary", "latest", "highest salary"];
 

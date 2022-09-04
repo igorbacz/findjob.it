@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import Button from "@mui/material/Button";
-import { Backdrop, Box, IconButton, Modal, Slider, Typography } from "@mui/material";
+import { Backdrop, IconButton, Modal, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { HeaderContainer, StyledModalBox, ButtonsContainer, ContextNestedContainer, ButtonFocus, ContextContainer } from "../styled";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";

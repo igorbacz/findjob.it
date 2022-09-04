@@ -25,7 +25,7 @@ import {
   LogoResponsiveBox,
   RemoteBigBox,
 } from "./styled";
-import { BigOfferDetails } from "../../types/types";
+import { BigOfferDetails, StackProp } from "../../types/types";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import PeopleIcon from "@mui/icons-material/People";
@@ -34,17 +34,18 @@ import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
 import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
 import Stack from "./components/Stack";
-import { data } from "../../data";
 import { useParams } from "react-router-dom";
 import { theme } from "../../theme";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import { ButtonWrapper } from "../offerForm/styled";
+import { useSelector } from "react-redux";
+import { RootState } from "../../services/store";
 
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, remote }: BigOfferDetails) => {
+  const offers = useSelector((state: RootState) => state);
   const { offerId } = useParams();
-  const offer = data.find((offer) => offer._id === offerId);
+  const offer = offers.find((offer: BigOfferDetails) => offer._id === offerId);
   const stack = offer?.techStack;
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
@@ -131,8 +132,8 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
             <Typography variant="subtitle2">Tech Stack</Typography>
           </ContainerHeader>
           <StackDetails>
-            {stack?.map((item) => {
-              return <Stack {...item} />;
+            {stack?.map((item: StackProp) => {
+              return <Stack {...item} key={item.stackName} />;
             })}
           </StackDetails>
         </StackContainer>
