@@ -13,8 +13,8 @@ export const HeaderBox = styled(Box)`
   grid-template-rows: 30px 200px 100px;
   border-radius: 0px 0px 4px 4px;
   padding: 40px 20px 0px;
-  background: url(https://justjoin.it/static/media/header_background.0ef18c97.png) center center / cover no-repeat,
-    linear-gradient(30deg, rgb(255, 199, 6), rgb(255, 175, 0));
+  background: url(/static/media/header_background.0ef18c97.png) center center / cover no-repeat,
+    linear-gradient(30deg, rgb(212, 104, 222), rgb(82, 77, 225));
 `;
 export const LogoBox = styled(Box)`
   grid-column-start: 1;

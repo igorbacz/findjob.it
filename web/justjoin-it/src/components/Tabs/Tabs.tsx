@@ -9,10 +9,16 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { theme } from "../../theme";
 import { useSelector } from "react-redux";
+import { allOffersSelector, offersRemoteSelector } from "../../services/selectors";
 import { RootState } from "../../services/store";
 
-export default function Tabs() {
-  const offersList: BigOfferDetails[] = useSelector((state: RootState) => state);
+export const Tabs = () => {
+  const [remoteSearch, setRemoteSearch] = useState(false);
+  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
+
+  const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
+
+  console.log(offersRemote);
 
   const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -43,6 +49,7 @@ export default function Tabs() {
   const remoteParam = () => {
     if (!remoteOffersParam) {
       setSearchParams({ filter: "remote" });
+      setRemoteSearch(true); //TODO
     } else {
       setSearchParams({});
     }
@@ -163,4 +170,4 @@ export default function Tabs() {
       </TabPanel>
     </TabsUnstyled>
   );
-}
+};

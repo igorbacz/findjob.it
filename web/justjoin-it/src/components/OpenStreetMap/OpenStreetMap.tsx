@@ -3,11 +3,11 @@ import L from "leaflet";
 import { stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../services/store";
 import { BigOfferDetails } from "../../types/types";
+import { allOffersSelector } from "../../services/selectors";
 
 const MapComponent = () => {
-  const offers: BigOfferDetails[] = useSelector((state: RootState) => state);
+  const offers: BigOfferDetails[] = useSelector(allOffersSelector);
   let navigate = useNavigate();
 
   const iconUrlFind = (city: any) => {

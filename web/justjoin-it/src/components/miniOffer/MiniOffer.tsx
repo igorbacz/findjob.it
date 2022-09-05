@@ -22,10 +22,10 @@ import { theme } from "../../theme";
 import { MiniTagNew } from "./components/MiniTagNew";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { useSelector } from "react-redux";
-import { RootState } from "../../services/store";
+import { allOffersSelector } from "../../services/selectors";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
-  const offers: BigOfferDetails[] = useSelector((state: RootState) => state);
+  const offers: BigOfferDetails[] = useSelector(allOffersSelector);
 
   const offer = offers.find((offer) => offer._id === _id);
   const stack = offer?.techStack;

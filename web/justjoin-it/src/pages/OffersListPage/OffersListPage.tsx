@@ -2,7 +2,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import { OpenStreetMap } from "../../components/OpenStreetMap/OpenStreetMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import { SearchBarResponsive } from "../../components/searchBar/SearchBarResponsive";
-import Tabs from "../../components/Tabs/Tabs";
+import { Tabs } from "../../components/Tabs/Tabs";
 import { TopBar } from "../../components/topBar/TopBar";
 import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";

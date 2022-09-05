@@ -40,10 +40,10 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { ButtonWrapper } from "../offerForm/styled";
 import { useSelector } from "react-redux";
-import { RootState } from "../../services/store";
+import { allOffersSelector } from "../../services/selectors";
 
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, remote }: BigOfferDetails) => {
-  const offers = useSelector((state: RootState) => state);
+  const offers: BigOfferDetails[] = useSelector(allOffersSelector);
   const { offerId } = useParams();
   const offer = offers.find((offer: BigOfferDetails) => offer._id === offerId);
   const stack = offer?.techStack;
