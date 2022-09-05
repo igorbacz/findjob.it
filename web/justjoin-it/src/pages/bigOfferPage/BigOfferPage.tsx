@@ -8,11 +8,11 @@ import { useParams } from "react-router-dom";
 import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";
 import { useSelector } from "react-redux";
-import { RootState } from "../../services/store";
 import { BigOfferDetails } from "../../types/types";
+import { allOffersSelector } from "../../services/selectors";
 
 export const BigOfferPage = () => {
-  const offers: BigOfferDetails[] = useSelector((state: RootState) => state);
+  const offers: BigOfferDetails[] = useSelector(allOffersSelector);
   const { offerId } = useParams();
   const offer = offers.find((offer) => offer._id === offerId);
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
