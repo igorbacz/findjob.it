@@ -20,6 +20,12 @@ export class BigOfferDetails extends SmallOffer {
   geolocation: GeoProp;
 }
 
+export class User {
+  email: string = "";
+  password: string = "";
+  token?: any = "";
+}
+
 export type GeoProp = {
   latitude: number;
   longitude: number;

@@ -3,14 +3,19 @@ import { SignInBox, SignInButton } from "../styled";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
 import { theme } from "../../../theme";
+import { useNavigate } from "react-router-dom";
 
 export const SignInBurger = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate("/signin");
+  };
   return (
     <SignInBox>
       {!isMatchMedium ? (
         <SignInButton>
-          <MenuItem>
+          <MenuItem onClick={handleSubmit}>
             <IconButton color="primary">
               <SupportAgentIcon />
             </IconButton>
@@ -19,8 +24,8 @@ export const SignInBurger = () => {
         </SignInButton>
       ) : null}
       <SignInButton>
-        <MenuItem>
-          <IconButton color="primary" href="/signin">
+        <MenuItem onClick={handleSubmit}>
+          <IconButton color="primary">
             <WorkIcon />
           </IconButton>
           Sign in to Employer Panel
