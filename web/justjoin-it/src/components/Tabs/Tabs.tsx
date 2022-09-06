@@ -9,56 +9,58 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { theme } from "../../theme";
 import { useSelector } from "react-redux";
-import { allOffersSelector, offersRemoteSelector } from "../../services/selectors";
-import { RootState } from "../../services/store";
+import {
+  allOffersSelector,
+  offersRemoteSelector,
+  offersStackSelector2,
+  offersHighestSallarySelector,
+  offersLowesttSallarySelector,
+  offersLatestSelector,
+} from "../../services/selectors";
 
 export const Tabs = () => {
-  const [remoteSearch, setRemoteSearch] = useState(false);
-  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
-
-  const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
-
-  console.log(offersRemote);
-
-  const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const [searchParams, setSearchParams] = useSearchParams();
+  const currentStackParam = searchParams.get("techStack");
+  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
+  const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
+  const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
+  const currentSortParam = searchParams.get("sort");
+  const offersStack: any = useSelector(offersStackSelector2(currentStackParam));
+  const offersHighestSallary: BigOfferDetails[] = useSelector(offersHighestSallarySelector);
+  const offersLowesttSallary: BigOfferDetails[] = useSelector(offersLowesttSallarySelector);
+  const offersLatest: BigOfferDetails[] = useSelector(offersLatestSelector);
+
+  // console.log(offersList);
+
+  // console.log(offersStackCallback(currentStackParam));
 
   const remoteOffersParam = searchParams.get("filter");
 
-  const currentStackParam = searchParams.get("techStack");
-
-  const currentSortParam = searchParams.get("sort");
-
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
-
-  const remoteOffersArray: BigOfferDetails[] = [];
 
   const offersRemoteSearch = () => {
     if (!remoteOffersParam) {
       setOffers(offersList);
       return;
-    } else
-      offersList.forEach((item) => {
-        if (item.remote) {
-          remoteOffersArray.push(item);
-        }
-      });
-    setOffers(remoteOffersArray);
+    } else setOffers(offersRemote);
   };
 
   const remoteParam = () => {
     if (!remoteOffersParam) {
       setSearchParams({ filter: "remote" });
-      setRemoteSearch(true); //TODO
     } else {
       setSearchParams({});
     }
   };
+  const offersStackCallback = useSelector(offersStackSelector2);
+
   const stackSearch = () => {
     if (!currentStackParam) {
       setOffers(offersList);
       return;
     }
+    //TODO
+    // setOffers(offersStackCallback(currentStackParam));
     const filteredOffers: BigOfferDetails[] = [];
 
     offersList.forEach((item) => {
@@ -75,16 +77,12 @@ export const Tabs = () => {
     if (!currentSortParam) {
       return;
     }
-
     if (currentSortParam === "highest salary") {
-      const sortOffers: BigOfferDetails[] = offers?.filter((amount) => amount.amount).sort((a, b) => b?.amount - a?.amount);
-      setOffers(sortOffers);
+      setOffers(offersHighestSallary);
     } else if (currentSortParam === "lowest salary") {
-      const sortOffers: BigOfferDetails[] = offers?.filter((amount) => amount.amount).sort((a, b) => a?.amount - b?.amount);
-      setOffers(sortOffers);
+      setOffers(offersLowesttSallary);
     } else if (currentSortParam === "latest") {
-      const sortOffers: BigOfferDetails[] = offers?.slice().sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
-      setOffers(sortOffers);
+      setOffers(offersLatest);
     }
   };
 
@@ -170,4 +168,4 @@ export const Tabs = () => {
       </TabPanel>
     </TabsUnstyled>
   );
-};
+};;;;

@@ -7,6 +7,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import { StyledSignInMenu } from "./StyledSignInMenu";
 import { theme } from "../../../theme";
+import { useNavigate } from "react-router-dom";
 
 export const SignInMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -14,7 +15,10 @@ export const SignInMenu = () => {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const navigate = useNavigate();
   const handleClose = () => {
+    navigate("/signin");
     setAnchorEl(null);
   };
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
@@ -38,7 +42,7 @@ export const SignInMenu = () => {
           Sign in as a developer
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <IconButton href="/signin">
+          <IconButton>
             <WorkIcon />
           </IconButton>
           Sign in to Employer Panel
