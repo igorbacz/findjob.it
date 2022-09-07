@@ -193,9 +193,9 @@ export const StyledSmallField = styled(TextField)`
 export const InputsContainer = styled(Box)`
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 70px;
   padding: 10px 30px;
-  justify-content: space-between;
+  justify-content: space-flex-start;
 `;
 
 export const InputContainer = styled(Box)`

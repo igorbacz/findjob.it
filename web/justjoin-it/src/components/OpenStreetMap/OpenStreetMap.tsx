@@ -12,8 +12,8 @@ const MapComponent = () => {
 
   const iconUrlFind = (city: any) => {
     const highestLevelStack = city.techStack.find((stack: any) => stack.value === 5);
-    const iconOject = stackIcons.find((stack) => stack.stack === highestLevelStack.stackName);
-    const iconUrl = iconOject.url;
+    const iconObject = stackIcons.find((stack) => stack.stack === highestLevelStack.stackName);
+    const iconUrl = iconObject.url;
     const LeafIcon = new L.Icon({
       iconSize: [25, 25],
       iconUrl: iconUrl,
@@ -30,7 +30,7 @@ const MapComponent = () => {
       />
       {offers.map((city) => (
         <Marker
-          position={[city.geolocation.latitude, city.geolocation.longitude]}
+          position={[Number(city.geolocation.latitude), Number(city.geolocation.longitude)]}
           key={city._id}
           eventHandlers={{
             click: (e) => {

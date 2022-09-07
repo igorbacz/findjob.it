@@ -151,12 +151,12 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
           </ContainerHeader>
           <InputsContainer>
             <InputContainer>
-              <p>First and last name *</p>
-              <StyledSmallField id="outlined-basic" label="Enter your first and last name" variant="outlined" />
+              <p>First and last name </p>
+              <StyledSmallField required id="outlined-basic" label="Enter your first and last name" variant="outlined" />
             </InputContainer>
             <InputContainer>
-              <p>First and last name *</p>
-              <StyledSmallField id="outlined-basic" label="Enter your email adress" variant="outlined" />
+              <p>Email adress</p>
+              <StyledSmallField required id="outlined-basic" label="Enter your email adress" variant="outlined" />
             </InputContainer>
           </InputsContainer>
           <BigInputContainer>
