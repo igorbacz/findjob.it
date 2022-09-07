@@ -33,7 +33,7 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
   const dateToday = new Date();
   const difference = dateToday.getTime() - dateFrom.getTime();
   const totalDays = Math.ceil(difference / (1000 * 3600 * 24));
-  const amountRound = offer.amount / 1000;
+  const amountRound = Number(offer.amount) / 1000;
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (

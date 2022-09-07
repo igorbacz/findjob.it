@@ -48,7 +48,11 @@ export const ResetLink = styled.a`
   text-decoration: none;
 `;
 
-
 export const HeaderLoginBox = styled(Box)`
   padding: 40px 20px;
+`;
+
+export const ErrorBox = styled(Box)`
+  color: red;
+  font-size: 0.7em;
 `;

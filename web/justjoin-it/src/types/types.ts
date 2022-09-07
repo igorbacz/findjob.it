@@ -2,10 +2,10 @@ import { ReactElement } from "react";
 
 export class SmallOffer {
   _id: string;
-  dateAdded: string;
+  dateAdded?: string;
   remote: boolean;
   title: string;
-  amount?: number;
+  amount?: string;
   city: string;
   companyName: string;
   logo: string;
@@ -14,10 +14,10 @@ export class SmallOffer {
 
 export class BigOfferDetails extends SmallOffer {
   adress: string;
-  companySize: number;
+  companySize: string;
   exp: string;
   description: string;
-  geolocation: GeoProp;
+  geolocation?: GeoProp;
 }
 
 export class User {
@@ -27,8 +27,8 @@ export class User {
 }
 
 export type GeoProp = {
-  latitude: number;
-  longitude: number;
+  latitude: string;
+  longitude: string;
 };
 
 export type StackProp = {

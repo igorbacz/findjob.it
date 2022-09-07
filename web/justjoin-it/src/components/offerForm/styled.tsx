@@ -7,9 +7,8 @@ export const FormContainer = styled(Box)`
   border-radius: 5px;
   box-shadow: 0 2px 18px 10px rgb(225 232 240 / 70%);
   display: grid;
-  width: 60%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 80px 200px 200px 200px 100px 100px 100px 100px 75px 250px 75px 75px 100px;
+  grid-template-rows: 80px 200px 200px 200px 100px 100px 100px 100px 75px 250px 75px 75px 75px 200px 100px;
   padding: 25px;
 `;
 
@@ -245,13 +244,12 @@ export const StreetBox = styled(Box)`
 export const ButtonContainer = styled(Box)`
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 13;
-  grid-row-end: 14;
+  grid-row-start: 15;
+  grid-row-end: 16;
   padding-left: 35px;
   display: flex;
   align-items: center;
 `;
-
 
 export const ButtonWrapper = styled(Box)`
   grid-column-start: 1;
@@ -265,4 +263,22 @@ export const ButtonWrapper = styled(Box)`
   border-radius: 4px;
   width: 28px;
   height: 28px;
+`;
+
+export const MapBox = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 14;
+  grid-row-end: 15;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+`;
+
+export const RemoteContainer = styled(Box)`
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 13;
+  grid-row-end: 14;
+  padding-left: 55px;
 `;

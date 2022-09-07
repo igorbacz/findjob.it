@@ -1,17 +1,11 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
+import { Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
-import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox } from "./styled";
+import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "./styled";
 import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
-import styled from "@emotion/styled";
-
-export const ErrorBox = styled(Box)`
-  color: red;
-  font-size: 0.7em;
-`;
 
 export const SignInPage = (error: any) => {
   const [form, setForm] = useState(new User());
