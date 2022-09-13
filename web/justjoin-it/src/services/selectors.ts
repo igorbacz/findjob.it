@@ -9,9 +9,9 @@ export const offersRemoteSelector = (state: RootState) => {
 
 //TODO
 
-export const offersStackSelector2 = (currentStackParam: null | string) => (state: RootState) => {
-  return state
-  // .filter((item: BigOfferDetails) => {
+export const offersStackSelector2 = (state: RootState) => (currentStackParam: null | string) => {
+  // return state.filter((item: BigOfferDetails) => {
+  //   return item;
   //   return item.techStack.filter((nameStack) => {
   //     return  nameStack?.stackName === currentStackParam;
   //   });
