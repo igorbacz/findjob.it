@@ -23,12 +23,11 @@ export class BigOfferDetails extends SmallOffer {
 export class User {
   email: string = "";
   password: string = "";
-  token?: any = "";
 }
 
-export type GeoProp = {
-  latitude: string;
-  longitude: string;
+export class GeoProp {
+  latitude: any;
+  longitude: any;
 };
 
 export type StackProp = {

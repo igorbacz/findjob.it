@@ -1,5 +1,20 @@
-import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, Typography } from "@mui/material";
-import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons } from "../../data";
+import {
+  Button,
+  Chip,
+  FormControlLabel,
+  FormLabel,
+  IconButton,
+  InputBase,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  Rating,
+  Select,
+  SelectChangeEvent,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons, techStackOffer } from "../../data";
 import { IconContainer } from "../searchBar/components/IconContainer";
 import {
   ButtonBox,
@@ -31,13 +46,36 @@ import {
   StackSection,
   StreetBox,
   MapBox,
+  StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, useState } from "react";
 import ToggleButtonsMultiple from "./ToggleButtons";
-import styled from "@emotion/styled";
 import { OpenStreetMiniMap } from "./OpenStreetMiniMap";
 import { BigOfferDetails } from "../../types/types";
+import CircleIcon from "@mui/icons-material/Circle";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+import { StyledRating } from "../bigOffer/styled";
+import styled from "@emotion/styled";
+import { RedoSharp } from "@mui/icons-material";
+import { AnyAaaaRecord } from "dns";
+import { useGeolocation } from "../../hooks/useGeolocation";
+
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  "& .MuiInputBase-input": {
+    borderRadius: 4,
+    position: "relative",
+    border: "1px solid #ced4da",
+    fontSize: 16,
+    padding: "10px 26px 10px 12px",
+    width: "100px",
+    "&:focus": {
+      borderRadius: 4,
+      borderColor: "#80bdff",
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
+    },
+  },
+}));
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");
@@ -64,6 +102,36 @@ export const OfferForm = () => {
   };
 
   //TODO _id, dateAdded
+  const [image, setImage] = useState("");
+
+  const onLoad = (fileString: any) => {
+    setImage(fileString);
+    console.log(image);
+  };
+
+  const getBase64 = (file: any) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      onLoad(reader.result);
+    };
+  };
+
+  const onChange = (e: any) => {
+    console.log("onChange");
+    const files = e.target.files;
+    const file = files[0];
+    getBase64(file);
+  };
+
+  const location = useGeolocation();
+  const latitude = location.coordinates.latitude;
+  const longitude = location.coordinates.longitude;
+
+  setForm({ ...form, geolocation: { latitude: latitude, longitude: longitude }, logo: image });
+
+  //date of adding offer
+  // , dateAdded: new Date().valueOf()
 
   return (
     <form onSubmit={handlePostOffer}>
@@ -74,8 +142,11 @@ export const OfferForm = () => {
         <PhotoForm>
           <PhotoBox>
             <ButtonBox>
-              <AddAPhotoIcon fontSize="large" />
-              <TextField required label="Logo URL" variant="standard" name="logo" onChange={handleChangeForm} />
+              <IconButton color="secondary" aria-label="upload picture" component="label">
+                <input hidden accept=".jpeg, .png, .jpg" type="file" name="logo" onChange={(e) => onChange(e)} />
+                <AddAPhotoIcon fontSize="large" />
+              </IconButton>
+              <Typography variant="subtitle5">Upload Logo*</Typography>
             </ButtonBox>
           </PhotoBox>
         </PhotoForm>
@@ -196,7 +267,7 @@ export const OfferForm = () => {
                 // helperText="Select company type"
                 variant="standard"
               >
-                {currency.map((option) => (
+                {techStackOffer.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
@@ -213,6 +284,40 @@ export const OfferForm = () => {
             <IconContainer key={icon._id} logo={icon.logo} stack={icon.stack} background={icon.background} />
           ))}
         </StackSection>
+        {/* <StackFormContainer>
+          <Typography variant="subtitle2">Tech Stack</Typography> */}
+        {/* <Select
+            variant="outlined"
+            multiple
+            labelId="demo-customized-select-label"
+            id="demo-customized-select"
+            value={age}
+            onChange={handleChangee}
+            input={<BootstrapInput />}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select> */}
+        {/* <Select
+            sx={{ width: "200px" }}
+            multiple
+            value={selected}
+            onChange={selectionChangeHandler}
+            renderValue={(selected) => (
+              <div>
+                {selected.map((value) => (
+                  <Chip key={value} label={value} />
+                ))}
+              </div>
+            )}
+          >
+            <StyledRating icon={<CircleIcon fontSize="small" />} emptyIcon={<CircleOutlinedIcon fontSize="small" />} name="techStack.stackName" />
+          </Select>
+        </StackFormContainer> */}
         <HeaderJobDesc>
           <Typography variant="subtitle2">Job description</Typography>
         </HeaderJobDesc>
@@ -249,4 +354,4 @@ export const OfferForm = () => {
       </FormContainer>
     </form>
   );
-};
+};;

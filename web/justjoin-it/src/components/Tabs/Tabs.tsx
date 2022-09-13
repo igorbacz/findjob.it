@@ -52,7 +52,9 @@ export const Tabs = () => {
       setSearchParams({});
     }
   };
-  const offersStackCallback = useSelector(offersStackSelector2);
+  // const offersStackCallback = useSelector(offersStackSelector2);
+
+  // console.log(offersStackCallback("HTML"));
 
   const stackSearch = () => {
     if (!currentStackParam) {
