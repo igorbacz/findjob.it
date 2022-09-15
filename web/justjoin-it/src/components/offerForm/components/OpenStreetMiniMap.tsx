@@ -1,15 +1,16 @@
 import L from "leaflet";
+import useGeolocation from "react-hook-geolocation";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useSearchParams } from "react-router-dom";
-import { stackIcons } from "../../data";
-import "../../index.css";
-import { useGeolocation } from "../../hooks/useGeolocation";
+import { stackIcons } from "../../../data";
+import "../../../index.css";
 
 const MiniMapComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
-  const location = useGeolocation();
-  console.log(location);
+  const geolocation = useGeolocation();
+  const longitude = geolocation.longitude;
+  const latitude = geolocation.latitude;
 
   const iconUrlFind = () => {
     if (!currentStackParam) {
@@ -31,12 +32,7 @@ const MiniMapComponent = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {currentStackParam ? (
-        <Marker
-          position={!location ? [52.291335, 19.088525] : [Number(location.coordinates.latitude), Number(location.coordinates.longitude)]}
-          icon={iconUrlFind()}
-        ></Marker>
-      ) : null}
+      {currentStackParam ? <Marker position={!geolocation ? [52.291335, 19.088525] : [latitude, longitude]} icon={iconUrlFind()}></Marker> : null}
     </>
   );
 };
@@ -44,14 +40,9 @@ const MiniMapComponent = () => {
 export const OpenStreetMiniMap = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
-  const location = useGeolocation();
+  // const location = UseGeolocation();
   return (
-    <MapContainer
-      center={!currentStackParam ? [52.291335, 19.088525] : [Number(location.coordinates.latitude), Number(location.coordinates.longitude)]}
-      zoom={5}
-      scrollWheelZoom={false}
-      id="mini__map__container"
-    >
+    <MapContainer center={[52.291335, 19.088525]} zoom={5} scrollWheelZoom={false} id="mini__map__container">
       <MiniMapComponent />
     </MapContainer>
   );

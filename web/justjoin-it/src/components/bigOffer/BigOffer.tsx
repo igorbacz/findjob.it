@@ -49,6 +49,7 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
   const stack = offer?.techStack;
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
+
   return (
     <Box>
       <BigOfferContainer>

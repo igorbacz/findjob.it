@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import {
   allOffersSelector,
   offersRemoteSelector,
-  offersStackSelector2,
+  offersStackSelector,
   offersHighestSallarySelector,
   offersLowesttSallarySelector,
   offersLatestSelector,
@@ -25,14 +25,10 @@ export const Tabs = () => {
   const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
   const currentSortParam = searchParams.get("sort");
-  const offersStack: any = useSelector(offersStackSelector2(currentStackParam));
+  // const offersStack: StackProp = useSelector(offersStackSelector2(currentStackParam));
   const offersHighestSallary: BigOfferDetails[] = useSelector(offersHighestSallarySelector);
   const offersLowesttSallary: BigOfferDetails[] = useSelector(offersLowesttSallarySelector);
   const offersLatest: BigOfferDetails[] = useSelector(offersLatestSelector);
-
-  // console.log(offersList);
-
-  // console.log(offersStackCallback(currentStackParam));
 
   const remoteOffersParam = searchParams.get("filter");
 
@@ -52,27 +48,14 @@ export const Tabs = () => {
       setSearchParams({});
     }
   };
-  // const offersStackCallback = useSelector(offersStackSelector2);
-
-  // console.log(offersStackCallback("HTML"));
+  const offersStackCallback: any = useSelector(offersStackSelector);
 
   const stackSearch = () => {
     if (!currentStackParam) {
       setOffers(offersList);
       return;
     }
-    //TODO
-    // setOffers(offersStackCallback(currentStackParam));
-    const filteredOffers: BigOfferDetails[] = [];
-
-    offersList.forEach((item) => {
-      item.techStack.forEach((nameStack) => {
-        if (nameStack.stackName === currentStackParam) {
-          filteredOffers.push(item);
-        }
-      });
-    });
-    setOffers(filteredOffers);
+    setOffers(offersStackCallback(currentStackParam));
   };
 
   const filterSearch = () => {

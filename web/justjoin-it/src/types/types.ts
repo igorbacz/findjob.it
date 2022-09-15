@@ -26,9 +26,9 @@ export class User {
 }
 
 export class GeoProp {
-  latitude: any;
-  longitude: any;
-};
+  latitude: number;
+  longitude: number;
+}
 
 export type StackProp = {
   stackName: string;
@@ -43,4 +43,8 @@ export interface Icon {
   stackFullName?: string;
   background?: string;
   url?: string;
+}
+
+export interface MiniTagType {
+  days: number;
 }

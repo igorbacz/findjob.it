@@ -1,7 +1,8 @@
 import { Typography } from "@mui/material";
 import { TagBox, DaysBox } from "../styled";
+import { MiniTagType } from "../../../types/types";
 
-export const MiniDaysTag = ({ days }: any) => {
+export const MiniDaysTag = ({ days }: MiniTagType) => {
   return (
     <TagBox>
       <DaysBox>

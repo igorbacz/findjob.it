@@ -3,7 +3,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "./styled";
 import { StyledLink } from "../../components/topBar/styled";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ErrorInfo, EventHandler, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 
@@ -39,7 +39,7 @@ export const SignInPage = (error: any) => {
     navigate("/");
   };
 
-  const handleLogin = (e: any): void => {
+  const handleLogin = (e: SyntheticEvent): void => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);

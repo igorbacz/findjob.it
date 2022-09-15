@@ -7,15 +7,17 @@ export const offersRemoteSelector = (state: RootState) => {
   return state.filter((item: BigOfferDetails) => item.remote === true);
 };
 
-//TODO
 
-export const offersStackSelector2 = (state: RootState) => (currentStackParam: null | string) => {
-  // return state.filter((item: BigOfferDetails) => {
-  //   return item;
-  //   return item.techStack.filter((nameStack) => {
-  //     return  nameStack?.stackName === currentStackParam;
-  //   });
-  // });
+export const offersStackSelector = (state: RootState) => (currentStackParam: null | string) => {
+  const filteredOffers: BigOfferDetails[] = [];
+  state.forEach((item) => {
+    item.techStack.forEach((nameStack) => {
+      if (nameStack.stackName === currentStackParam) {
+        filteredOffers.push(item);
+      }
+    });
+  });
+  return filteredOffers;
 };
 
 export const offersHighestSallarySelector = (state: RootState) => {
