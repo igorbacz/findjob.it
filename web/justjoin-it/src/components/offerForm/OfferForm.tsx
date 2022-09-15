@@ -1,20 +1,5 @@
-import {
-  Button,
-  Chip,
-  FormControlLabel,
-  FormLabel,
-  IconButton,
-  InputBase,
-  MenuItem,
-  Radio,
-  RadioGroup,
-  Rating,
-  Select,
-  SelectChangeEvent,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons, techStackOffer } from "../../data";
+import { Button, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, TextField, Typography } from "@mui/material";
+import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons } from "../../data";
 import { IconContainer } from "../searchBar/components/IconContainer";
 import {
   ButtonBox,
@@ -46,67 +31,30 @@ import {
   StackSection,
   StreetBox,
   MapBox,
-  StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ChangeEvent, useState } from "react";
-import ToggleButtonsMultiple from "./ToggleButtons";
-import { OpenStreetMiniMap } from "./OpenStreetMiniMap";
+import { ChangeEvent, FormEvent, useState } from "react";
+import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { BigOfferDetails } from "../../types/types";
-import CircleIcon from "@mui/icons-material/Circle";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import { StyledRating } from "../bigOffer/styled";
-import styled from "@emotion/styled";
-import { RedoSharp } from "@mui/icons-material";
-import { AnyAaaaRecord } from "dns";
-import { useGeolocation } from "../../hooks/useGeolocation";
-
-const BootstrapInput = styled(InputBase)(({ theme }) => ({
-  "& .MuiInputBase-input": {
-    borderRadius: 4,
-    position: "relative",
-    border: "1px solid #ced4da",
-    fontSize: 16,
-    padding: "10px 26px 10px 12px",
-    width: "100px",
-    "&:focus": {
-      borderRadius: 4,
-      borderColor: "#80bdff",
-      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
-    },
-  },
-}));
+import { OpenStreetMiniMap } from "./components/OpenStreetMiniMap";
+import useGeolocation from "react-hook-geolocation";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");
-  const handleChange = (e: ChangeEvent<{ value: string | any; name: string }>) => {
-    setChoice(e.target.value);
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
+  const [image, setImage] = useState("");
   const [form, setForm] = useState(new BigOfferDetails());
-
-  const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
 
   const postOffer = () => {
     console.log(form);
   };
 
-  const handlePostOffer = (e: any): void => {
+  const handlePostOffer = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     postOffer();
   };
 
-  //TODO _id, dateAdded
-  const [image, setImage] = useState("");
-
   const onLoad = (fileString: any) => {
     setImage(fileString);
-    console.log(image);
   };
 
   const getBase64 = (file: any) => {
@@ -118,21 +66,33 @@ export const OfferForm = () => {
   };
 
   const onChange = (e: any) => {
-    console.log("onChange");
     const files = e.target.files;
     const file = files[0];
     getBase64(file);
   };
 
-  const location = useGeolocation();
-  const latitude = location.coordinates.latitude;
-  const longitude = location.coordinates.longitude;
+  const geolocation = useGeolocation();
+  const longitude = geolocation.longitude;
+  const latitude = geolocation.latitude;
 
-  setForm({ ...form, geolocation: { latitude: latitude, longitude: longitude }, logo: image });
+  const date = new Date();
+  const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-  //date of adding offer
-  // , dateAdded: new Date().valueOf()
+  const handleChangeExp = (event: any) => {
+    setChoice(event.target.value);
+  };
 
+  const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+      logo: image,
+      dateAdded: currentDate,
+      exp: choice,
+      geolocation: { latitude: latitude, longitude: longitude },
+    });
+  };
   return (
     <form onSubmit={handlePostOffer}>
       <FormContainer>
@@ -163,7 +123,6 @@ export const OfferForm = () => {
             select
             label="Company type"
             value={choice}
-            onChange={handleChange}
             SelectProps={{
               native: true,
             }}
@@ -180,7 +139,6 @@ export const OfferForm = () => {
             select
             label="Company industry"
             value={choice}
-            onChange={handleChange}
             SelectProps={{
               native: true,
             }}
@@ -205,7 +163,7 @@ export const OfferForm = () => {
               select
               label="Experience"
               value={choice}
-              onChange={handleChange}
+              onChange={handleChangeExp}
               SelectProps={{
                 native: true,
               }}
@@ -232,8 +190,6 @@ export const OfferForm = () => {
               id="standard-select-currency-native"
               select
               label="Employment type"
-              value={choice}
-              onChange={handleChange}
               SelectProps={{
                 native: true,
               }}
@@ -260,14 +216,12 @@ export const OfferForm = () => {
                 select
                 label="Currency"
                 value={choice}
-                onChange={handleChange}
                 SelectProps={{
                   native: true,
                 }}
-                // helperText="Select company type"
                 variant="standard"
               >
-                {techStackOffer.map((option) => (
+                {currency.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
@@ -284,7 +238,13 @@ export const OfferForm = () => {
             <IconContainer key={icon._id} logo={icon.logo} stack={icon.stack} background={icon.background} />
           ))}
         </StackSection>
-        {/* <StackFormContainer>
+
+        {/* todo onChange(e) i enter => kasujesz wartość inputa i zmieniasz lokalny state setTechStack(to co było + nowy) ==> jak wpisze to sie zmienia stan i powstaje comp */}
+        <SalaryFromBox>
+          <TextField fullWidth label="Monthly salary from (gross)" variant="standard" type="number" name="amount" onChange={handleChangeForm} />
+        </SalaryFromBox>
+
+        {/* <StackFormContainer> TODO
           <Typography variant="subtitle2">Tech Stack</Typography> */}
         {/* <Select
             variant="outlined"
@@ -347,11 +307,11 @@ export const OfferForm = () => {
           <OpenStreetMiniMap />
         </MapBox>
         <ButtonContainer>
-          <Button variant="contained" size="large" type="submit" onSubmit={handlePostOffer}>
+          <Button variant="contained" size="large" type="submit">
             NEXT STEP
           </Button>
         </ButtonContainer>
       </FormContainer>
     </form>
   );
-};;
+};

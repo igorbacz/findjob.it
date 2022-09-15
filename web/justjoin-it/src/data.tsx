@@ -343,7 +343,7 @@ export const data: BigOfferDetails[] = [
     companyName: "Santander",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     adress: "ul. Wyszyńskiego  Warszawa",
-    geolocation: { latitude: "52.238931", longitude: "20.98187 " },
+    geolocation: { latitude: 52.238931, longitude: 20.98187 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -367,7 +367,7 @@ export const data: BigOfferDetails[] = [
     city: "Kraków",
     companyName: "City Bank",
     adress: "ul. Sienkiewicza  Warszawa",
-    geolocation: { latitude: "52.233992", longitude: "21.010938" },
+    geolocation: { latitude: 52.233992, longitude: 21.010938 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -391,7 +391,7 @@ export const data: BigOfferDetails[] = [
     city: "Gdańsk",
     companyName: "Neoteric",
     adress: "ul. Słowiańska  Warszawa",
-    geolocation: { latitude: "52.276415", longitude: "20.58023 " },
+    geolocation: { latitude: 52.276415, longitude: 20.58023 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -416,7 +416,7 @@ export const data: BigOfferDetails[] = [
     city: "Wrocław",
     companyName: "Cschark",
     adress: "ul. Wyszyńskiego  Wrocław",
-    geolocation: { latitude: "51.119459", longitude: "17.051281" },
+    geolocation: { latitude: 51.119459, longitude: 17.051281 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -439,7 +439,7 @@ export const data: BigOfferDetails[] = [
     city: "Kraków",
     companyName: "Cschark",
     adress: "ul. Wyszyńskiego  Kraków",
-    geolocation: { latitude: "50.007481", longitude: "20.008465" },
+    geolocation: { latitude: 50.007481, longitude: 20.008465 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -463,7 +463,7 @@ export const data: BigOfferDetails[] = [
     city: "Berlin",
     companyName: "Cschark",
     adress: "Hafenpl. Berlin",
-    geolocation: { latitude: "52.504579", longitude: "13.373156" },
+    geolocation: { latitude: 52.504579, longitude: 13.373156 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -487,7 +487,7 @@ export const data: BigOfferDetails[] = [
     city: "Dresden",
     companyName: "Cschark",
     adress: "Wiene Str. Dresden",
-    geolocation: { latitude: "51.039276", longitude: "13.738294" },
+    geolocation: { latitude: 51.039276, longitude: 13.738294 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -511,7 +511,7 @@ export const data: BigOfferDetails[] = [
     city: "Frankfurt an der Oder",
     companyName: "Cschark",
     adress: "Mixdorfer Str.  Frankfurt an der Oder",
-    geolocation: { latitude: "52.335005", longitude: "14.543694" },
+    geolocation: { latitude: 52.335005, longitude: 14.543694 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -535,7 +535,7 @@ export const data: BigOfferDetails[] = [
     city: "Szczecin",
     companyName: "Cschark",
     adress: "ul. Śląska  Szczecin",
-    geolocation: { latitude: "53.429464", longitude: "14.546917" },
+    geolocation: { latitude: 53.429464, longitude: 14.546917 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -558,7 +558,7 @@ export const data: BigOfferDetails[] = [
     city: "Koszalin",
     companyName: "NewIT",
     adress: "ul. Mieszka I  Koszalin",
-    geolocation: { latitude: "54.189077", longitude: "16.163088" },
+    geolocation: { latitude: 54.189077, longitude: 16.163088 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -582,7 +582,7 @@ export const data: BigOfferDetails[] = [
     city: "Poznań",
     companyName: "Neoteric",
     adress: "ul. Kościelna  Poznań",
-    geolocation: { latitude: "52.413394", longitude: "16.903715" },
+    geolocation: { latitude: 52.413394, longitude: 16.903715 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -605,7 +605,7 @@ export const data: BigOfferDetails[] = [
     city: "Zielona Góra",
     companyName: "NewIT",
     adress: "ul. Ogrodowa  Zielona Góra",
-    geolocation: { latitude: "51.931358", longitude: "15.501441" },
+    geolocation: { latitude: 51.931358, longitude: 15.501441 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -629,7 +629,7 @@ export const data: BigOfferDetails[] = [
     city: "Opole",
     companyName: "NewIT",
     adress: "ul. 1 maja  Opole",
-    geolocation: { latitude: "50.663474", longitude: "17.9312" },
+    geolocation: { latitude: 50.663474, longitude: 17.9312 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -653,7 +653,7 @@ export const data: BigOfferDetails[] = [
     city: "Katowice",
     companyName: "Neoteric",
     adress: "ul. 1 maja  Katowice",
-    geolocation: { latitude: "50.2577", longitude: "19.037254" },
+    geolocation: { latitude: 50.2577, longitude: 19.037254 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -678,7 +678,7 @@ export const data: BigOfferDetails[] = [
     city: "Bielkso-Biała",
     companyName: "Cschark",
     adress: "ul. Łagodna  Bielkso-Biała",
-    geolocation: { latitude: "49.805419", longitude: "19.058589" },
+    geolocation: { latitude: 49.805419, longitude: 19.058589 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -703,7 +703,7 @@ export const data: BigOfferDetails[] = [
     city: "Ostrava",
     companyName: "Cschark",
     adress: "ul. Sportovni  Ostrava",
-    geolocation: { latitude: "49.824583", longitude: "18.269824" },
+    geolocation: { latitude: 49.824583, longitude: 18.269824 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -728,7 +728,7 @@ export const data: BigOfferDetails[] = [
     city: "Rzeszów",
     companyName: "Cschark",
     adress: "ul. Targowa  Rzeszów",
-    geolocation: { latitude: "50.038662", longitude: "22.009999" },
+    geolocation: { latitude: 50.038662, longitude: 22.009999 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -753,7 +753,7 @@ export const data: BigOfferDetails[] = [
     city: "Lublin",
     companyName: "Cschark",
     adress: "ul. Głeboka  Lublin",
-    geolocation: { latitude: "51.239632", longitude: "22.550413" },
+    geolocation: { latitude: 51.239632, longitude: 22.550413 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -778,7 +778,7 @@ export const data: BigOfferDetails[] = [
     city: "Kielce",
     companyName: "Cschark",
     adress: "ul. Sadowa  Kielce",
-    geolocation: { latitude: "50.865179", longitude: "20.623575" },
+    geolocation: { latitude: 50.865179, longitude: 20.623575 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -801,7 +801,7 @@ export const data: BigOfferDetails[] = [
     companyName: "Santander",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     adress: "ul. Grochowa  Białystok",
-    geolocation: { latitude: "53.131765", longitude: "23.151046" },
+    geolocation: { latitude: 53.131765, longitude: 23.151046 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -825,7 +825,7 @@ export const data: BigOfferDetails[] = [
     companyName: "Santander",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     adress: "ul. 3 maja  Wyszkow",
-    geolocation: { latitude: "52.590677", longitude: "21.45154 " },
+    geolocation: { latitude: 52.590677, longitude: 21.45154 },
     companySize: "15",
     exp: "Senior",
     techStack: [
@@ -849,7 +849,7 @@ export const data: BigOfferDetails[] = [
     city: "Olsztyn",
     companyName: "Cschark",
     adress: "ul. Dworcowa  Olsztyn",
-    geolocation: { latitude: "53.773328", longitude: "20.500944" },
+    geolocation: { latitude: 53.773328, longitude: 20.500944 },
     companySize: "15",
     exp: "Senior",
     techStack: [

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
+import StepperForm from "../../components/offerForm/components/StepperForm";
 import { OfferForm } from "../../components/offerForm/OfferForm";
-import StepperForm from "../../components/offerForm/StepperForm";
 import { TopBar } from "../../components/topBar/TopBar";
 import { FormPageContainer } from "./styled";
 

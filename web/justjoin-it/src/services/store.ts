@@ -1,9 +1,10 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { Action, configureStore, createSlice } from "@reduxjs/toolkit";
 import { data } from "../data";
+import { BigOfferDetails } from "../types/types";
 
-const initialState: any = data;
+const initialState: BigOfferDetails[] = data;
 
-const offersReducer = (state = initialState, action: any) => {
+const offersReducer = (state = initialState, action: Action) => {
   return {
     state,
   };

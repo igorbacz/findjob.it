@@ -22,6 +22,7 @@
     "leaflet.locatecontrol": "^0.76.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-hook-geolocation": "^1.1.0",
     "react-icons": "^4.4.0",
     "react-leaflet": "^4.0.2",
     "react-mui-fileuploader": "^0.2.0",
