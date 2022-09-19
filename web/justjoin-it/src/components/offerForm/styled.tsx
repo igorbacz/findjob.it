@@ -8,7 +8,7 @@ export const FormContainer = styled(Box)`
   box-shadow: 0 2px 18px 10px rgb(225 232 240 / 70%);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 80px 200px 200px 200px 100px 100px 100px 2px 100px 75px 250px 75px 75px 75px 200px 100px;
+  grid-template-rows: 80px 200px 200px 200px 100px 100px 100px 250px 100px 75px 250px 75px 75px 75px 200px 100px;
   padding: 25px;
 `;
 
@@ -286,8 +286,11 @@ export const RemoteContainer = styled(Box)`
 
 export const StackFormContainer = styled(Box)`
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 8;
   grid-row-end: 9;
   padding: 30px 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;

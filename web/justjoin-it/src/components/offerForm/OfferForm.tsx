@@ -1,6 +1,8 @@
 import { Button, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, TextField, Typography } from "@mui/material";
 import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons } from "../../data";
 import { IconContainer } from "../searchBar/components/IconContainer";
+import CircleIcon from "@mui/icons-material/Circle";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import {
   ButtonBox,
   ButtonContainer,
@@ -31,19 +33,23 @@ import {
   StackSection,
   StreetBox,
   MapBox,
+  StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
-import { BigOfferDetails } from "../../types/types";
+import { BigOfferDetails, StackProp } from "../../types/types";
 import { OpenStreetMiniMap } from "./components/OpenStreetMiniMap";
 import useGeolocation from "react-hook-geolocation";
+import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");
   const [image, setImage] = useState("");
   const [form, setForm] = useState(new BigOfferDetails());
-
+  const [techStack, setTechStack] = useState<StackProp>();
+  const [techStackArray, setTechStackArray] = useState<StackProp[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
   const postOffer = () => {
     console.log(form);
   };
@@ -82,6 +88,25 @@ export const OfferForm = () => {
     setChoice(event.target.value);
   };
 
+  const onStackNameChange = (e: any) => {
+    if (e.key === "Enter") {
+      let stackNameValue = e.target.value;
+      setTechStack({ stackName: stackNameValue });
+      setTechStackArray([...techStackArray, { ...techStack }]);
+      inputRef.current.value = "";
+    }
+  };
+
+  const onStackLevelChange = (e: any) => {
+    const stackLvlValue = e.target.value;
+    setTechStack({ ...techStack, stackLvl: stackLvlValue });
+  };
+
+  useEffect(() => {
+    console.log(techStack);
+    console.log(techStackArray);
+  }, [techStackArray, techStack]);
+
   const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
     const { name, value } = e.target;
     setForm({
@@ -91,6 +116,7 @@ export const OfferForm = () => {
       dateAdded: currentDate,
       exp: choice,
       geolocation: { latitude: latitude, longitude: longitude },
+      techStack: techStackArray,
     });
   };
   return (
@@ -111,14 +137,15 @@ export const OfferForm = () => {
           </PhotoBox>
         </PhotoForm>
         <InpputsBox>
-          <TextField required label="Short company name" variant="standard" name="companyName" onChange={handleChangeForm} />
+          <TextField label="Short company name" variant="standard" name="companyName" onChange={handleChangeForm} />
 
-          <TextField required label="Company size" type="number" variant="standard" name="companySize" onChange={handleChangeForm} />
+          <TextField label="Company size" type="number" variant="standard" name="companySize" onChange={handleChangeForm} />
 
-          <TextField label="Company website" variant="standard" />
+          <TextField disabled label="Company website" variant="standard" />
         </InpputsBox>
         <InpputsSecondBox>
           <TextField
+            disabled
             id="standard-select-currency-native"
             select
             label="Company type"
@@ -135,6 +162,7 @@ export const OfferForm = () => {
             ))}
           </TextField>
           <TextField
+            disabled
             id="standard-select-currency-native"
             select
             label="Company industry"
@@ -154,7 +182,7 @@ export const OfferForm = () => {
         <InfoBox>
           <Typography variant="subtitle2">Position info</Typography>
           <OfferTitleBox>
-            <TextField required fullWidth label="Offer title" variant="standard" name="title" onChange={handleChangeForm} />
+            <TextField fullWidth label="Offer title" variant="standard" name="title" onChange={handleChangeForm} />
           </OfferTitleBox>
           <OfferExpBox>
             <TextField
@@ -187,6 +215,7 @@ export const OfferForm = () => {
           </EmpoloymentDesc>
           <EmpTypeBox>
             <TextField
+              disabled
               id="standard-select-currency-native"
               select
               label="Employment type"
@@ -207,10 +236,11 @@ export const OfferForm = () => {
               <TextField fullWidth label="Monthly salary from (gross)" variant="standard" type="number" name="amount" onChange={handleChangeForm} />
             </SalaryFromBox>
             <SalaryToBox>
-              <TextField fullWidth label="Monthly salary to (gross)" variant="standard" />
+              <TextField disabled fullWidth label="Monthly salary to (gross)" variant="standard" />
             </SalaryToBox>
             <CurrencyBox>
               <TextField
+                disabled
                 fullWidth
                 id="standard-select-currency-native"
                 select
@@ -238,46 +268,35 @@ export const OfferForm = () => {
             <IconContainer key={icon._id} logo={icon.logo} stack={icon.stack} background={icon.background} />
           ))}
         </StackSection>
-
-        {/* todo onChange(e) i enter => kasujesz wartość inputa i zmieniasz lokalny state setTechStack(to co było + nowy) ==> jak wpisze to sie zmienia stan i powstaje comp */}
-        <SalaryFromBox>
-          <TextField fullWidth label="Monthly salary from (gross)" variant="standard" type="number" name="amount" onChange={handleChangeForm} />
-        </SalaryFromBox>
-
-        {/* <StackFormContainer> TODO
-          <Typography variant="subtitle2">Tech Stack</Typography> */}
-        {/* <Select
-            variant="outlined"
-            multiple
-            labelId="demo-customized-select-label"
-            id="demo-customized-select"
-            value={age}
-            onChange={handleChangee}
-            input={<BootstrapInput />}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select> */}
-        {/* <Select
-            sx={{ width: "200px" }}
-            multiple
-            value={selected}
-            onChange={selectionChangeHandler}
-            renderValue={(selected) => (
-              <div>
-                {selected.map((value) => (
-                  <Chip key={value} label={value} />
-                ))}
-              </div>
-            )}
-          >
-            <StyledRating icon={<CircleIcon fontSize="small" />} emptyIcon={<CircleOutlinedIcon fontSize="small" />} name="techStack.stackName" />
-          </Select>
-        </StackFormContainer> */}
+        <StackFormContainer>
+          <Typography variant="subtitle2">Tech Stack</Typography>
+          <TextField
+            inputRef={inputRef}
+            id="standard-select-currency-native"
+            label="Tech Stack"
+            variant="standard"
+            onKeyDown={onStackNameChange}
+          ></TextField>
+          {techStack ? (
+            <StackDetails>
+              {techStackArray?.map((item: StackProp) => {
+                return (
+                  <StackDetail>
+                    <StyledRating
+                      onClick={onStackLevelChange}
+                      icon={<CircleIcon fontSize="small" />}
+                      emptyIcon={<CircleOutlinedIcon fontSize="small" />}
+                      name="simple-controlled"
+                    />
+                    <StackName>
+                      <Typography variant="subtitle4">{item.stackName}</Typography>
+                    </StackName>
+                  </StackDetail>
+                );
+              })}
+            </StackDetails>
+          ) : null}
+        </StackFormContainer>
         <HeaderJobDesc>
           <Typography variant="subtitle2">Job description</Typography>
         </HeaderJobDesc>
@@ -291,13 +310,13 @@ export const OfferForm = () => {
           <Typography variant="subtitle2">Choose your location</Typography>
         </HeaderLocation>
         <CityBox>
-          <TextField fullWidth required label="Office city" variant="standard" name="city" onChange={handleChangeForm} />
+          <TextField fullWidth label="Office city" variant="standard" name="city" onChange={handleChangeForm} />
         </CityBox>
         <StreetBox>
-          <TextField fullWidth required label="Office street" variant="standard" name="adress" onChange={handleChangeForm} />
+          <TextField fullWidth label="Office street" variant="standard" name="adress" onChange={handleChangeForm} />
         </StreetBox>
         <RemoteContainer>
-          <FormLabel required>Fully remote ?</FormLabel>
+          <FormLabel>Fully remote ?</FormLabel>
           <RadioGroup row name="remote" onChange={handleChangeForm}>
             <FormControlLabel value={true} control={<Radio />} label="Yes" />
             <FormControlLabel value={false} control={<Radio />} label="No" />
