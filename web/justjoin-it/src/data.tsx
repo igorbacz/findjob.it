@@ -336,7 +336,7 @@ export const stackIcons: Icon[] = [
 export const data: BigOfferDetails[] = [
   {
     _id: "0",
-    dateAdded: "2021-01-12",
+    dateAdded: "2021-09-17",
     title: "Python Developer",
     remote: true,
     city: "Warszawa",
@@ -359,7 +359,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "2",
-    dateAdded: "2022-09-04",
+    dateAdded: "2022-09-17",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/e12c545be0cedf25a1a7980a42632e091d0ea2f1.png?1637058465",
     title: "Java Script Developer",
     remote: true,
@@ -383,7 +383,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "3",
-    dateAdded: "2022-09-04",
+    dateAdded: "2022-09-17",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: false,
@@ -551,7 +551,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "10",
-    dateAdded: "2022-08-11",
+    dateAdded: "2022-09-17",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: false,
@@ -598,7 +598,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "12",
-    dateAdded: "2022-08-18",
+    dateAdded: "2022-09-17",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: true,

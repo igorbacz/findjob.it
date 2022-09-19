@@ -7,7 +7,8 @@ import { StackButton } from "../../../shared/StackButton";
 export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const stackSearch = () => {
-    setSearchParams({ techStack: stack });
+    searchParams.set("techStack", stack);
+    setSearchParams(searchParams);
   };
 
   const param = searchParams.get("techStack");

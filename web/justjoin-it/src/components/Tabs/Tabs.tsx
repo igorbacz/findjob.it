@@ -25,63 +25,63 @@ export const Tabs = () => {
   const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
   const currentSortParam = searchParams.get("sort");
-  // const offersStack: StackProp = useSelector(offersStackSelector2(currentStackParam));
-  const offersHighestSallary: BigOfferDetails[] = useSelector(offersHighestSallarySelector);
-  const offersLowesttSallary: BigOfferDetails[] = useSelector(offersLowesttSallarySelector);
-  const offersLatest: BigOfferDetails[] = useSelector(offersLatestSelector);
+  // const offersHighestSallary: BigOfferDetails[] = useSelector(offersHighestSallarySelector);
+  const offersLowesttSallaryCallback = useSelector(offersLowesttSallarySelector);
+  const offersLatestCallback = useSelector(offersLatestSelector);
 
-  const remoteOffersParam = searchParams.get("filter");
+  const [checked, setChecked] = useState(false);
+
+  const remoteOffersParam = searchParams.get("remote");
+
+  const offersStackCallback: any = useSelector(offersStackSelector);
+
+  const offersHighestSallaryCallback = useSelector(offersHighestSallarySelector);
 
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
-  const offersRemoteSearch = () => {
-    if (!remoteOffersParam) {
-      setOffers(offersList);
-      return;
-    } else setOffers(offersRemote);
-  };
-
   const remoteParam = () => {
     if (!remoteOffersParam) {
-      setSearchParams({ filter: "remote" });
-    } else {
-      setSearchParams({});
+      searchParams.set("remote", "1");
+      setChecked(true);
+      setSearchParams(searchParams);
+    }
+    if (remoteOffersParam) {
+      searchParams.delete("remote");
+      setChecked(false);
+      setSearchParams(searchParams);
     }
   };
-  const offersStackCallback: any = useSelector(offersStackSelector);
 
-  const stackSearch = () => {
-    if (!currentStackParam) {
+  const offersSearch = () => {
+    //with remote param
+    if (!currentStackParam && !remoteOffersParam && !currentSortParam) {
       setOffers(offersList);
-      return;
+    } else if (remoteOffersParam && !currentStackParam && !currentSortParam) {
+      setOffers(offersRemote);
+    } else if (currentStackParam && remoteOffersParam && !currentSortParam) {
+      setOffers(offersStackCallback(currentStackParam, remoteOffersParam)); //DZIAŁA BDB !!
+    } else if (currentStackParam) {
+      setOffers(offersStackCallback(currentStackParam, remoteOffersParam));
     }
-    setOffers(offersStackCallback(currentStackParam));
-  };
 
-  const filterSearch = () => {
-    if (!currentSortParam) {
-      return;
-    }
-    if (currentSortParam === "highest salary") {
-      setOffers(offersHighestSallary);
+    //with sort param
+    else if (currentSortParam === "highest salary") {
+      setOffers(offersHighestSallaryCallback(currentSortParam, remoteOffersParam));
     } else if (currentSortParam === "lowest salary") {
-      setOffers(offersLowesttSallary);
+      setOffers(offersLowesttSallaryCallback(currentStackParam, remoteOffersParam));
     } else if (currentSortParam === "latest") {
-      setOffers(offersLatest);
+      setOffers(offersLatestSelector);
+    } else if (currentSortParam === "latest" && currentStackParam) {
+      setOffers(offersStackCallback(currentStackParam, remoteOffersParam, currentSortParam));
     }
+    //else if (currentSortParam === "highest salary" && remoteOffersParam) {
+    //   setOffers(offersRemote); //TODO
+    // }
   };
 
   useEffect(() => {
-    filterSearch();
-  }, [currentSortParam]);
-
-  useEffect(() => {
-    offersRemoteSearch();
-  }, [remoteOffersParam]);
-
-  useEffect(() => {
-    stackSearch();
-  }, [currentStackParam]);
+    offersSearch();
+  }, [remoteOffersParam, currentSortParam, currentStackParam]);
 
   return (
     <TabsUnstyled defaultValue={0}>
@@ -104,7 +104,7 @@ export const Tabs = () => {
                 control={<StyledSwitch color="primary" onClick={remoteParam} />}
                 label="Remote"
                 labelPlacement="start"
-                // onClick={offersRemoteSearch}
+                checked={checked}
               />
             </>
           ) : null}
@@ -153,4 +153,4 @@ export const Tabs = () => {
       </TabPanel>
     </TabsUnstyled>
   );
-};;;;
+};

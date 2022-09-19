@@ -11,7 +11,9 @@ export const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const param = searchParams.get("techStack");
   const allSearch = () => {
-    setSearchParams({});
+    searchParams.delete("techStack");
+    setSearchParams(searchParams);
+  
   };
 
   return (

@@ -24,7 +24,8 @@ export default function SortMenu() {
   const handleMenuItemClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
     setSelectedIndex(index);
     setAnchorEl(null);
-    setSearchParams({ sort: options[index] });
+    searchParams.set("sort", options[index]);
+    setSearchParams(searchParams);
   };
 
   const handleClose = () => {
