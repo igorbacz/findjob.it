@@ -84,28 +84,29 @@ export const OfferForm = () => {
   const date = new Date();
   const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-  const handleChangeExp = (event: any) => {
+  const handleChangeExp = (event: ChangeEvent<HTMLInputElement>) => {
     setChoice(event.target.value);
   };
 
   const onStackNameChange = (e: any) => {
     if (e.key === "Enter") {
-      let stackNameValue = e.target.value;
+      const stackNameValue = e.target.value;
       setTechStack({ stackName: stackNameValue });
-      setTechStackArray([...techStackArray, { ...techStack }]);
+      setTechStackArray([...techStackArray, { stackName: stackNameValue }]);
       inputRef.current.value = "";
     }
   };
 
   const onStackLevelChange = (e: any) => {
     const stackLvlValue = e.target.value;
-    setTechStack({ ...techStack, stackLvl: stackLvlValue });
+    const updatedStackArray = techStackArray.map((item) => {
+      if (item.stackName === techStack.stackName) {
+        return { ...item, stackLvl: stackLvlValue };
+      }
+      return item;
+    });
+    setTechStackArray(updatedStackArray);
   };
-
-  useEffect(() => {
-    console.log(techStack);
-    console.log(techStackArray);
-  }, [techStackArray, techStack]);
 
   const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
     const { name, value } = e.target;
@@ -333,4 +334,4 @@ export const OfferForm = () => {
       </FormContainer>
     </form>
   );
-};
+};;;;;;;
