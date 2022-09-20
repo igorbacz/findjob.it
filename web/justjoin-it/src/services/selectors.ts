@@ -7,6 +7,28 @@ export const offersRemoteSelector = (state: RootState) => {
   return state.filter((item: BigOfferDetails) => item.remote === true);
 };
 
+// export const offersStackSelector = (state: RootState) => (currentStackParam: null | string) => {
+//   const filteredOffers: BigOfferDetails[] = [];
+//   state.forEach((item) => {
+//     item.techStack.forEach((nameStack) => {
+//       if (nameStack.stackName === currentStackParam) {
+//         filteredOffers.push(item);
+//       }
+//     });
+//   });
+//   return filteredOffers;
+// };
+
+// export const offersHighestSallarySelector = (state: RootState) => {
+//   return state.filter((item: BigOfferDetails) => item.amount).sort((a: any, b: any) => b?.amount - a?.amount);
+// };
+// export const offersLowesttSallarySelector = (state: RootState) => {
+//   return state.filter((item: BigOfferDetails) => item.amount).sort((a: any, b: any) => a?.amount - b?.amount);
+// };
+// export const offersLatestSelector = (state: RootState) => {
+//   return state.slice().sort((a: any, b: any) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
+// };
+
 export const offersStackSelector =
   (state: RootState) => (currentStackParam: null | string, remoteOffersParam: null | string, currentSortParam: null | string) => {
     const filteredOffers: BigOfferDetails[] = [];
@@ -21,8 +43,7 @@ export const offersStackSelector =
       return filteredOffers;
     } else if (remoteOffersParam) {
       return filteredOffers.filter((item) => item.remote === true);
-    } else if (currentSortParam) {
-      console.log("currentSortParam latest ");
+    } else if (currentSortParam === "latest") {
       return filteredOffers.sort((a: any, b: any) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
     }
   };
@@ -50,5 +71,6 @@ export const offersLatestSelector = (state: RootState) => {
     .slice()
     .sort((a: any, b: any) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
   console.log("latest");
+
   return filteredOffers;
 };

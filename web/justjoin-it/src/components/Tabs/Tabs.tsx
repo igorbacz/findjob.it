@@ -19,6 +19,78 @@ import {
 } from "../../services/selectors";
 
 export const Tabs = () => {
+  // const [checked, setChecked] = useState(false);
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const currentStackParam = searchParams.get("techStack");
+  // const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
+  // const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
+  // const offersRemote: BigOfferDetails[] = useSelector(offersRemoteSelector);
+  // const currentSortParam = searchParams.get("sort");
+
+  // // const offersStack: StackProp = useSelector(offersStackSelector2(currentStackParam));
+  // const offersHighestSallary: BigOfferDetails[] = useSelector(offersHighestSallarySelector);
+  // const offersLowesttSallary: BigOfferDetails[] = useSelector(offersLowesttSallarySelector);
+  // const offersLatest: BigOfferDetails[] = useSelector(offersLatestSelector);
+
+  // const remoteOffersParam = searchParams.get("remote");
+
+  // const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
+
+  // const offersRemoteSearch = () => {
+  //   if (!remoteOffersParam) {
+  //     setOffers(offersList);
+  //     return;
+  //   } else setOffers(offersRemote);
+  // };
+
+  // const remoteParam = () => {
+  //   if (!remoteOffersParam) {
+  //     searchParams.set("remote", "1");
+  //     setChecked(true);
+  //     setSearchParams(searchParams);
+  //   }
+  //   if (remoteOffersParam) {
+  //     searchParams.delete("remote");
+  //     setChecked(false);
+  //     setSearchParams(searchParams);
+  //   }
+  // };
+
+  // const offersStackCallback: any = useSelector(offersStackSelector);
+
+  // const stackSearch = () => {
+  //   if (!currentStackParam) {
+  //     setOffers(offersList);
+  //     return;
+  //   }
+  //   setOffers(offersStackCallback(currentStackParam));
+  // };
+
+  // const filterSearch = () => {
+  //   if (!currentSortParam) {
+  //     return;
+  //   }
+  //   if (currentSortParam === "highest salary") {
+  //     setOffers(offersHighestSallary);
+  //   } else if (currentSortParam === "lowest salary") {
+  //     setOffers(offersLowesttSallary);
+  //   } else if (currentSortParam === "latest") {
+  //     setOffers(offersLatest);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   filterSearch();
+  // }, [currentSortParam]);
+
+  // useEffect(() => {
+  //   offersRemoteSearch();
+  // }, [remoteOffersParam]);
+
+  // useEffect(() => {
+  //   stackSearch();
+  // }, [currentStackParam]);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
   const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
@@ -55,16 +127,18 @@ export const Tabs = () => {
   const offersSearch = () => {
     //with remote param
     if (!currentStackParam && !remoteOffersParam && !currentSortParam) {
-      setOffers(offersList);
+      setOffers(offersList); //WORKS
     } else if (remoteOffersParam && !currentStackParam && !currentSortParam) {
-      setOffers(offersRemote);
+      setOffers(offersRemote); //WORKS
     } else if (currentStackParam && remoteOffersParam && !currentSortParam) {
-      setOffers(offersStackCallback(currentStackParam, remoteOffersParam)); //DZIAŁA BDB !!
+      setOffers(offersStackCallback(currentStackParam, remoteOffersParam)); //WORKS
     } else if (currentStackParam) {
+      setOffers(offersStackCallback(currentStackParam, remoteOffersParam));
+    } else if (currentStackParam && !remoteOffersParam && currentSortParam === "latest") {
       setOffers(offersStackCallback(currentStackParam, remoteOffersParam));
     }
 
-    //with sort param
+    // with sort param
     else if (currentSortParam === "highest salary") {
       setOffers(offersHighestSallaryCallback(currentSortParam, remoteOffersParam));
     } else if (currentSortParam === "lowest salary") {
@@ -73,10 +147,9 @@ export const Tabs = () => {
       setOffers(offersLatestSelector);
     } else if (currentSortParam === "latest" && currentStackParam) {
       setOffers(offersStackCallback(currentStackParam, remoteOffersParam, currentSortParam));
+    } else if (currentSortParam === "highest salary" && remoteOffersParam) {
+      setOffers(offersRemote); //TODO
     }
-    //else if (currentSortParam === "highest salary" && remoteOffersParam) {
-    //   setOffers(offersRemote); //TODO
-    // }
   };
 
   useEffect(() => {
@@ -153,4 +226,4 @@ export const Tabs = () => {
       </TabPanel>
     </TabsUnstyled>
   );
-};
+};;

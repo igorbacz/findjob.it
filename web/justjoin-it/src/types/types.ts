@@ -31,7 +31,7 @@ export class GeoProp {
 }
 
 export type StackProp = {
-  stackName: string;
+  stackName?: string;
   stackLvl?: string;
   value?: number;
 };
