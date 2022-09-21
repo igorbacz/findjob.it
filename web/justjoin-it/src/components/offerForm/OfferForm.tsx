@@ -38,10 +38,14 @@ import {
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
-import { BigOfferDetails, StackProp } from "../../types/types";
-import { OpenStreetMiniMap } from "./components/OpenStreetMiniMap";
+import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
+import axios from "axios";
+import { API_KEY } from "../../apiKey";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { useSearchParams } from "react-router-dom";
+import L from "leaflet";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("");
@@ -50,6 +54,79 @@ export const OfferForm = () => {
   const [techStack, setTechStack] = useState<StackProp>();
   const [techStackArray, setTechStackArray] = useState<StackProp[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [city, setCity] = useState("");
+  const [apiGeolocation, setApiGeolocation] = useState();
+  const [location, setLocation] = useState<GeoProp>({ longitude: "", latitude: "" });
+  const geolocation = useGeolocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentStackParam = searchParams.get("techStack");
+
+  const currentLongitude = geolocation.longitude;
+  const currentLatitude = geolocation.latitude;
+
+  console.log(currentLongitude, currentLatitude);
+
+  const params = {
+    access_key: API_KEY,
+    query: city,
+  };
+  const positionFromInput = () => {
+    console.log(city);
+    axios
+      .get("http://api.positionstack.com/v1/forward", { params })
+      .then((response: any) => {
+        setApiGeolocation(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    if (!apiGeolocation) {
+      console.log("no data");
+    } else {
+      //@ts-ignore
+      const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
+      //@ts-ignore
+      const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
+      const locationApi = { latitude: latitudeFromApi, longitude: longitudeFromApi };
+      console.log(locationApi);
+      console.log(longitudeFromApi, latitudeFromApi);
+      console.log(location);
+      setLocation({ longitude: longitudeFromApi, latitude: latitudeFromApi });
+      Object.assign(location, locationApi);
+      console.log(location);
+    }
+  }, [apiGeolocation]);
+
+  //@ts-ignore
+  const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
+  //@ts-ignore
+  const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
+
+  const handleChangeCity = (event: any) => {
+    setCity(event.target.value);
+    console.log(city);
+  };
+
+  useEffect(() => {
+    positionFromInput();
+  }, [city]);
+
+  const iconUrlFind = () => {
+    if (!currentStackParam) {
+      return;
+    } else {
+      const iconObject = stackIcons.find((stack) => stack.stack === currentStackParam);
+      const iconUrl = iconObject.url;
+      const LeafIcon = new L.Icon({
+        iconSize: [25, 25],
+        iconUrl: iconUrl,
+      });
+      return LeafIcon;
+    }
+  };
+
   const postOffer = () => {
     console.log(form);
   };
@@ -77,10 +154,6 @@ export const OfferForm = () => {
     getBase64(file);
   };
 
-  const geolocation = useGeolocation();
-  const longitude = geolocation.longitude;
-  const latitude = geolocation.latitude;
-
   const date = new Date();
   const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
@@ -107,16 +180,17 @@ export const OfferForm = () => {
     });
     setTechStackArray(updatedStackArray);
   };
-
+  // { latitude: currentLatitude, longitude: currentLongitude },
   const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
     const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
+      city: city,
       logo: image,
       dateAdded: currentDate,
       exp: choice,
-      geolocation: { latitude: latitude, longitude: longitude },
+      geolocation: location,
       techStack: techStackArray,
     });
   };
@@ -311,7 +385,7 @@ export const OfferForm = () => {
           <Typography variant="subtitle2">Choose your location</Typography>
         </HeaderLocation>
         <CityBox>
-          <TextField fullWidth label="Office city" variant="standard" name="city" onChange={handleChangeForm} />
+          <TextField fullWidth label="Office city" variant="standard" name="city" onClick={handleChangeCity} />
         </CityBox>
         <StreetBox>
           <TextField fullWidth label="Office street" variant="standard" name="adress" onChange={handleChangeForm} />
@@ -324,7 +398,20 @@ export const OfferForm = () => {
           </RadioGroup>
         </RemoteContainer>
         <MapBox>
-          <OpenStreetMiniMap />
+          <MapContainer center={[52.291335, 19.088525]} zoom={5} scrollWheelZoom={false} id="mini__map__container">
+            <>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {currentStackParam ? (
+                <Marker
+                  position={!apiGeolocation ? [currentLatitude, currentLongitude] : [latitudeFromApi, longitudeFromApi]}
+                  icon={iconUrlFind()}
+                ></Marker>
+              ) : null}
+            </>
+          </MapContainer>
         </MapBox>
         <ButtonContainer>
           <Button variant="contained" size="large" type="submit">
@@ -334,4 +421,4 @@ export const OfferForm = () => {
       </FormContainer>
     </form>
   );
-};;;;;;;
+};
