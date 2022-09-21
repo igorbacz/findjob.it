@@ -43,8 +43,10 @@ export const offersStackSelector =
       return filteredOffers;
     } else if (remoteOffersParam) {
       return filteredOffers.filter((item) => item.remote === true);
-    } else if (currentSortParam === "latest") {
-      return filteredOffers.sort((a: any, b: any) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
+    } else if (currentSortParam === "latest" && remoteOffersParam) {
+      return filteredOffers
+        .filter((item) => item.remote === true)
+        .sort((a: any, b: any) => new Date(b.dateAdded).valueOf() - new Date(a?.dateAdded).valueOf());
     }
   };
 
