@@ -16,9 +16,7 @@ export const Tabs = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
   const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
-  const filteredOffers = useSelector(filterAndSortSelector);
-  // const filteredOffers: any = useSelector(filterAndSortSelector);
-
+  const filteredOffers: any = useSelector(filterAndSortSelector);
   const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const currentSortParam = searchParams.get("sort");
   const remoteOffersParam = searchParams.get("remote");
@@ -39,7 +37,7 @@ export const Tabs = () => {
   };
 
   const filterSearch = () => {
-    setOffers(filteredOffers);
+    setOffers(filteredOffers(currentSortParam, remoteOffersParam, currentStackParam));
   };
 
   useEffect(() => {
