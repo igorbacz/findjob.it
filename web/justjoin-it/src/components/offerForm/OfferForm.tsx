@@ -41,7 +41,7 @@ import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { API_KEY } from "../../apiKey";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useSearchParams } from "react-router-dom";
@@ -64,8 +64,6 @@ export const OfferForm = () => {
   const currentLongitude = geolocation.longitude;
   const currentLatitude = geolocation.latitude;
 
-  console.log(currentLongitude, currentLatitude);
-
   const params = {
     access_key: API_KEY,
     query: city,
@@ -74,7 +72,7 @@ export const OfferForm = () => {
     console.log(city);
     axios
       .get("http://api.positionstack.com/v1/forward", { params })
-      .then((response: any) => {
+      .then((response: AxiosResponse) => {
         setApiGeolocation(response.data);
       })
       .catch((error) => {
@@ -90,12 +88,8 @@ export const OfferForm = () => {
       //@ts-ignore
       const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
       const locationApi = { latitude: latitudeFromApi, longitude: longitudeFromApi };
-      console.log(locationApi);
-      console.log(longitudeFromApi, latitudeFromApi);
-      console.log(location);
       setLocation({ longitude: longitudeFromApi, latitude: latitudeFromApi });
       Object.assign(location, locationApi);
-      console.log(location);
     }
   }, [apiGeolocation]);
 
@@ -105,6 +99,7 @@ export const OfferForm = () => {
   const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
 
   const handleChangeCity = (event: any) => {
+    //ChangeEvent<HTMLInputElement>
     setCity(event.target.value);
     console.log(city);
   };
@@ -157,7 +152,8 @@ export const OfferForm = () => {
   const date = new Date();
   const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-  const handleChangeExp = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeExp = (event: any) => {
+    //ChangeEvent<HTMLInputElement>
     setChoice(event.target.value);
   };
 
@@ -180,18 +176,18 @@ export const OfferForm = () => {
     });
     setTechStackArray(updatedStackArray);
   };
-  // { latitude: currentLatitude, longitude: currentLongitude },
+
   const handleChangeForm = (e: ChangeEvent<{ value: string | number; name: string }>) => {
     const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
-      city: city,
       logo: image,
       dateAdded: currentDate,
       exp: choice,
       geolocation: location,
       techStack: techStackArray,
+      city: city,
     });
   };
   return (
@@ -358,6 +354,7 @@ export const OfferForm = () => {
                 return (
                   <StackDetail>
                     <StyledRating
+                      key={item.stackName}
                       onClick={onStackLevelChange}
                       icon={<CircleIcon fontSize="small" />}
                       emptyIcon={<CircleOutlinedIcon fontSize="small" />}

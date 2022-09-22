@@ -3,9 +3,29 @@ import { RootState } from "./store";
 
 export const allOffersSelector = (state: RootState) => state;
 
+// export const filterAndSortSelector =
+//   (state: RootState) => (currentStackParam: null | string, remoteOffersParam: null | string, currentSortParam: null | string) => {};
+
 export const offersRemoteSelector = (state: RootState) => {
   return state.filter((item: BigOfferDetails) => item.remote === true);
 };
+
+ export const filterAndSortSelector = (state: RootState) => state;
+
+// export const filterAndSortSelector =
+//   (state: RootState) => (currentStackParam: null | string, remoteOffersParam: null | string, currentSortParam: null | string) => {
+//     state
+//       // .filter((item) => {
+//       //   if (currentStackParam && item.techStack.map((item) => item.stackName).indexOf(currentStackParam) === -1) {
+//       //     return false;
+//       //   }
+//       //   if (remoteOffersParam && item.remote) {
+//       //     return false;
+//       //   }
+//       //   return true;
+//       // })
+//       // .sort((a: any, b: any) => a.amount - b.amount);
+//   };
 
 // export const offersStackSelector = (state: RootState) => (currentStackParam: null | string) => {
 //   const filteredOffers: BigOfferDetails[] = [];

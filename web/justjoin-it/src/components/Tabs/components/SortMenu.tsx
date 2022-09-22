@@ -14,7 +14,6 @@ export default function SortMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
   const open = Boolean(anchorEl);
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleClickListItem = (event: React.MouseEvent<HTMLElement>) => {
@@ -41,7 +40,7 @@ export default function SortMenu() {
           onClick={handleClickListItem}
           endIcon={<KeyboardArrowDownIcon />}
         >
-          {options[selectedIndex]}
+          sort by
         </StyledButton>
       </List>
       <Menu
