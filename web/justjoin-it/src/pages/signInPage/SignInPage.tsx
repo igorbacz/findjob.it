@@ -3,11 +3,11 @@ import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "./styled";
 import { StyledLink } from "../../components/topBar/styled";
-import { ChangeEvent, ErrorInfo, EventHandler, SyntheticEvent, useState } from "react";
+import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 
-export const SignInPage = (error: any) => {
+export const SignInPage = (error?: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
 

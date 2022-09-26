@@ -13,14 +13,13 @@ import { allOffersSelector, filterAndSortSelector } from "../../services/selecto
 
 export const Tabs = () => {
   const [checked, setChecked] = useState(false);
+  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
+  const filteredOffers = useSelector(filterAndSortSelector);
+  const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
-  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
-  const filteredOffers: any = useSelector(filterAndSortSelector);
-  const [offers, setOffers] = useState<BigOfferDetails[]>(offersList);
   const currentSortParam = searchParams.get("sort");
   const remoteOffersParam = searchParams.get("remote");
-
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
   const remoteParam = () => {
@@ -36,13 +35,15 @@ export const Tabs = () => {
     }
   };
 
+  const sortingBySalary = currentSortParam === "highest salary" || currentSortParam === "lowest salary";
+
   const filterSearch = () => {
-    setOffers(filteredOffers(currentSortParam, remoteOffersParam, currentStackParam));
+    setOffers(filteredOffers(currentStackParam, remoteOffersParam, currentSortParam));
   };
 
   useEffect(() => {
     filterSearch();
-  }, [currentSortParam, remoteOffersParam, currentStackParam]);
+  }, [currentStackParam, remoteOffersParam, currentSortParam]);
 
   return (
     <TabsUnstyled defaultValue={0}>
@@ -94,24 +95,41 @@ export const Tabs = () => {
       </TabPanel>
       <TabPanel value={1}>
         <OfferWrapper>
-          {offers.map((offer) => {
-            return (
-              <MiniOffer
-                techStack={offer.techStack}
-                remote={offer.remote}
-                key={offer._id}
-                _id={offer._id}
-                logo={offer.logo}
-                title={offer.title}
-                amount={offer.amount}
-                companyName={offer.companyName}
-                city={offer.city}
-                dateAdded={offer.dateAdded}
-              />
-            );
-          })}
+          {sortingBySalary
+            ? offers
+                .filter((amount) => amount.amount)
+                .map((offer) => (
+                  <MiniOffer
+                    techStack={offer.techStack}
+                    dateAdded={offer.dateAdded}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                  />
+                ))
+            : offers.map((offer) => {
+                return (
+                  <MiniOffer
+                    techStack={offer.techStack}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                    dateAdded={offer.dateAdded}
+                  />
+                );
+              })}
         </OfferWrapper>
       </TabPanel>
     </TabsUnstyled>
   );
-};;;;;
+};

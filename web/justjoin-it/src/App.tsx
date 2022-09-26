@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="*" element={<OffersListPage />} />
-        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signin" element={<SignInPage componentStack={""} />} />
         <Route path="/post" element={<PostOffersPage />} />
         <Route path="/add-offer" element={<OfferFormPage />} />
         <Route path="/offer/:offerId" element={<BigOfferPage />} />

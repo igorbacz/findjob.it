@@ -36,7 +36,7 @@ import {
   StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
@@ -98,9 +98,9 @@ export const OfferForm = () => {
   //@ts-ignore
   const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
 
-  const handleChangeCity = (event: any) => {
-    //ChangeEvent<HTMLInputElement>
-    setCity(event.target.value);
+  const handleChangeCity = (event: MouseEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
+    setCity(target.value);
     console.log(city);
   };
 
@@ -132,18 +132,20 @@ export const OfferForm = () => {
   };
 
   const onLoad = (fileString: any) => {
+    console.log(fileString);
     setImage(fileString);
   };
 
-  const getBase64 = (file: any) => {
+  const getBase64 = (file: Blob) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
+    console.log(typeof reader.result);
     reader.onload = () => {
       onLoad(reader.result);
     };
   };
 
-  const onChange = (e: any) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     const file = files[0];
     getBase64(file);
@@ -152,12 +154,11 @@ export const OfferForm = () => {
   const date = new Date();
   const currentDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-  const handleChangeExp = (event: any) => {
-    //ChangeEvent<HTMLInputElement>
+  const handleChangeExp = (event: ChangeEvent<HTMLInputElement>): void => {
     setChoice(event.target.value);
   };
 
-  const onStackNameChange = (e: any) => {
+  const onStackNameChange = (e: KeyboardEvent<HTMLInputElement> & ChangeEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const stackNameValue = e.target.value;
       setTechStack({ stackName: stackNameValue });
@@ -166,8 +167,8 @@ export const OfferForm = () => {
     }
   };
 
-  const onStackLevelChange = (e: any) => {
-    const stackLvlValue = e.target.value;
+  const onStackLevelChange = (e: React.MouseEvent<HTMLInputElement>) => {
+    const stackLvlValue = (e.target as HTMLInputElement).value;
     const updatedStackArray = techStackArray.map((item) => {
       if (item.stackName === techStack.stackName) {
         return { ...item, stackLvl: stackLvlValue };
