@@ -131,7 +131,7 @@ export const OfferForm = () => {
     postOffer();
   };
 
-  const onLoad = (fileString: any) => {
+  const onLoad = (fileString: string) => {
     console.log(fileString);
     setImage(fileString);
   };
@@ -139,9 +139,8 @@ export const OfferForm = () => {
   const getBase64 = (file: Blob) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
-    console.log(typeof reader.result);
     reader.onload = () => {
-      onLoad(reader.result);
+      onLoad(reader.result as string);
     };
   };
 
