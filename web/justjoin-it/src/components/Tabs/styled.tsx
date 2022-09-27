@@ -57,6 +57,8 @@ export const TabPanel = styled(TabPanelUnstyled)`
   padding-top: 7px;
   padding-left: 10px;
   gap: 15px;
+  overflow-y: scroll;
+  height: 100%;
 `;
 
 export const TabsList = styled(TabsListUnstyled)`

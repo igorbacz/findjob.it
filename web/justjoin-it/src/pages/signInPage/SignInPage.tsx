@@ -7,7 +7,7 @@ import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 
-export const SignInPage = (error?: ErrorInfo) => {
+export const SignInPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
 
