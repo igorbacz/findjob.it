@@ -3,17 +3,15 @@ import { Box } from "@mui/material";
 
 export const PageContainer = styled(Box)`
   padding-top: 10px;
-  display: flex;
-  display: flex;
   height: 100%;
-  width: 100%;
-  flex-direction: row;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const LeftSideBox = styled(Box)`
   display: flex;
-  width: 60%;
+  width: 50%;
   height: 100%;
   overflow: hidden;
   flex-direction: column;

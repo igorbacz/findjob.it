@@ -5,6 +5,8 @@ export const BigOfferContainer = styled(Box)`
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
 `;
 
 export const HeaderBox = styled(Box)`
