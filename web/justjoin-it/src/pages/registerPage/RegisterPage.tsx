@@ -1,13 +1,13 @@
-import { Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
-import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "./styled";
+import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "../signInPage/styled";
 import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 
-export const SignInPage = (error: ErrorInfo) => {
+export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
 
@@ -39,7 +39,7 @@ export const SignInPage = (error: ErrorInfo) => {
     navigate("/");
   };
 
-  const handleLogin = (e: SyntheticEvent): void => {
+  const handleRegister = (e: SyntheticEvent): void => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
@@ -54,7 +54,7 @@ export const SignInPage = (error: ErrorInfo) => {
           <Typography variant="H1Styled">findjob.it</Typography>
         </StyledLink>
       </HeaderLoginBox>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleRegister}>
         <LabelContainer>
           <EmailIcon fontSize="large" />
           <TextField label="Email" name="email" onChange={handleChange} type="email" autoComplete="email" variant="standard" />
@@ -66,11 +66,11 @@ export const SignInPage = (error: ErrorInfo) => {
         </LabelContainer>
         {error && <ErrorBox>{errors.password}</ErrorBox>}
         <LinkContainer>
-          <ResetLink href="/register">Don't have an account? Register</ResetLink>
+          <ResetLink href="/signin">Sign in</ResetLink>
         </LinkContainer>
         <ButtonContainer>
-          <Button variant="contained" type="submit" onSubmit={handleLogin} fullWidth>
-            SIGN IN
+          <Button variant="contained" type="submit" onSubmit={handleRegister} fullWidth>
+            REGISTER
           </Button>
         </ButtonContainer>
       </form>

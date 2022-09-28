@@ -4,6 +4,8 @@ import { Box } from "@mui/material";
 export const Wrapper = styled(Box)`
   background-color: white;
   width: 350px;
+  height: 450px;
+  padding-bootom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +40,7 @@ export const ButtonContainer = styled(Box)`
 `;
 
 export const LinkContainer = styled(Box)`
-  text-align: right;
+  text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
 `;

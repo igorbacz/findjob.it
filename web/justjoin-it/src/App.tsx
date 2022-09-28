@@ -6,6 +6,7 @@ import { OffersListPage } from "./pages/OffersListPage/OffersListPage";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import { OfferFormPage } from "./pages/OfferFormPage/OfferFormPage";
+import { RegisterPage } from "./pages/registerPage/RegisterPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="*" element={<OffersListPage />} />
         <Route path="/signin" element={<SignInPage componentStack={""} />} />
+        <Route path="/register" element={<RegisterPage componentStack={""} />} />
         <Route path="/post" element={<PostOffersPage />} />
         <Route path="/add-offer" element={<OfferFormPage />} />
         <Route path="/offer/:offerId" element={<BigOfferPage />} />

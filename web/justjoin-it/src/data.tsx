@@ -503,7 +503,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "8",
-    dateAdded: "2022-09-06",
+    dateAdded: "2022-09-28",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/4790e438b8c7e2be1584b156222300593123c998.jpg?1658224535",
     title: "Node Developer",
     remote: false,
@@ -621,7 +621,7 @@ export const data: BigOfferDetails[] = [
   },
   {
     _id: "13",
-    dateAdded: "2022-09-01",
+    dateAdded: "2022-09-28",
     logo: "https://bucket.justjoin.it/offers/company_logos/thumb/f15cb923f1f6d1a45de71b32922c542e7df91a01.jpg?1649687024",
     title: "React Developer",
     remote: true,
