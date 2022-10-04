@@ -66,6 +66,8 @@ router.post("/login", async (req, res) => {
         expiresIn: "2h",
       });
       user.token = token;
+      // localStorage.setItem("token", token);
+      // localStorage.getItem("token");
       res.status(200).json(user);
     } else {
       res.status(400).json({ error: "Invalid Password" });
