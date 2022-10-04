@@ -13,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="*" element={<OffersListPage />} />
-        <Route path="/signin" element={<SignInPage componentStack={""} />} />
+        <Route path="/login" element={<SignInPage componentStack={""} />} />
         <Route path="/register" element={<RegisterPage componentStack={""} />} />
         <Route path="/post" element={<PostOffersPage />} />
         <Route path="/add-offer" element={<OfferFormPage />} />

@@ -66,7 +66,7 @@ export const RegisterPage = (error: ErrorInfo) => {
         </LabelContainer>
         {error && <ErrorBox>{errors.password}</ErrorBox>}
         <LinkContainer>
-          <ResetLink href="/signin">Sign in</ResetLink>
+          <ResetLink href="/login">Sign in</ResetLink>
         </LinkContainer>
         <ButtonContainer>
           <Button variant="contained" type="submit" onSubmit={handleRegister} fullWidth>

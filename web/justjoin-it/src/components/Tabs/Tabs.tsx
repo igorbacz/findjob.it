@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import TabsUnstyled from "@mui/base/TabsUnstyled";
-import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper } from "./styled";
+import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper, StyledTabs } from "./styled";
 import { BigOfferDetails } from "../../types/types";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
@@ -46,7 +45,7 @@ export const Tabs = () => {
   }, [currentStackParam, remoteOffersParam, currentSortParam]);
 
   return (
-    <TabsUnstyled defaultValue={0}>
+    <StyledTabs defaultValue={0}>
       <TabBar>
         <TabsList defaultValue={0}>
           {!isMatchMedium ? <Tab>Offers with salary</Tab> : <Tab>With salary</Tab>}
@@ -130,6 +129,6 @@ export const Tabs = () => {
               })}
         </OfferWrapper>
       </TabPanel>
-    </TabsUnstyled>
+    </StyledTabs>
   );
 };

@@ -3,7 +3,7 @@ import { BigOffer } from "../../components/bigOffer/BigOffer";
 import { OpenStreetMap } from "../../components/OpenStreetMap/OpenStreetMap";
 import { SearchBar } from "../../components/searchBar/SearchBar";
 import { TopBar } from "../../components/topBar/TopBar";
-import { LeftSideBox, PageContainer, RightSideBox } from "./styled";
+import { AllPageWrapper, LeftSideBox, PageContainer, RightSideBox } from "./styled";
 import { useParams } from "react-router-dom";
 import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";
@@ -18,7 +18,7 @@ export const BigOfferPage = () => {
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   return offer ? (
-    <Box>
+    <AllPageWrapper>
       {isMatchLarge ? (
         <TopBarResponsive />
       ) : (
@@ -37,7 +37,7 @@ export const BigOfferPage = () => {
           </RightSideBox>
         ) : null}
       </PageContainer>
-    </Box>
+    </AllPageWrapper>
   ) : (
     <Box>Offer not found</Box>
   );

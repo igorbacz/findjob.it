@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
+export const AllPageWrapper = styled(Box)`
+  height: 100%;
+`;
+
 export const PageContainer = styled(Box)`
   padding-top: 10px;
   height: 100%;

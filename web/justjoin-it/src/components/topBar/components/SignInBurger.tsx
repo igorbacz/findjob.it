@@ -9,7 +9,7 @@ export const SignInBurger = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/signin");
+    navigate("/login");
   };
   return (
     <SignInBox>

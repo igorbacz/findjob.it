@@ -6,13 +6,13 @@ import { Tabs } from "../../components/Tabs/Tabs";
 import { TopBar } from "../../components/topBar/TopBar";
 import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";
-import { LeftSideBox, PageContainer, RightSideBox } from "../bigOfferPage/styled";
+import { AllPageWrapper, LeftSideBox, PageContainer, RightSideBox } from "../bigOfferPage/styled";
 
 export const OffersListPage = () => {
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <Box>
+    <AllPageWrapper>
       {isMatchLarge ? (
         <Box>
           <TopBarResponsive />
@@ -30,12 +30,10 @@ export const OffersListPage = () => {
         </LeftSideBox>
         {!isMatchLarge ? (
           <RightSideBox>
-           
-              <OpenStreetMap />
-           
+            <OpenStreetMap />
           </RightSideBox>
         ) : null}
       </PageContainer>
-    </Box>
+    </AllPageWrapper>
   );
 };

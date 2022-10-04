@@ -1,4 +1,4 @@
-import { Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "./styled";
@@ -34,9 +34,23 @@ export const SignInPage = (error: ErrorInfo) => {
 
   let navigate = useNavigate();
 
-  const login = () => {
-    console.log(form);
-    navigate("/");
+  const login = async () => {
+    let result = await fetch("http://localhost:4000/api/login", {
+      method: "post",
+      body: JSON.stringify({ email: form.email, password: form.password }),
+      headers: {
+        "access-control-allow-origin": "*",
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    console.log(JSON.stringify({ email: form.email, password: form.password }));
+    result = await result.json();
+
+    if (result.ok) {
+      localStorage.setItem("token", JSON.stringify(result.body));
+      navigate("/");
+      console.log(form);
+    }
   };
 
   const handleLogin = (e: SyntheticEvent): void => {

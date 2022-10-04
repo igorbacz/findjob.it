@@ -18,7 +18,7 @@ export const SignInMenu = () => {
 
   const navigate = useNavigate();
   const handleClose = () => {
-    navigate("/signin");
+    navigate("/login");
     setAnchorEl(null);
   };
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));

@@ -3,6 +3,11 @@ import { Box, Button, FormControlLabel, Switch } from "@mui/material";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
+import TabsUnstyled from "@mui/base/TabsUnstyled";
+
+export const StyledTabs = styled(TabsUnstyled)`
+  overflow-y: scroll;
+`;
 
 export const OfferWrapper = styled(Box)`
   display: flex;
