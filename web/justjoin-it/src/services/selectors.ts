@@ -1,4 +1,5 @@
-import { RootState } from "./store";
+import { StackProp } from "../types/types";
+import { RootState } from "../types/types";
 
 export const allOffersSelector = (state: RootState) => state;
 
@@ -7,7 +8,11 @@ export const filterAndSortSelector =
     return state
       ? state
           .filter(
-            (item) => !((currentStackParam && !item.techStack.find((s) => s.stackName === currentStackParam)) || (remoteOffersParam && !item.remote))
+            (item) =>
+              !(
+                (currentStackParam && !item.techStack.find((s: StackProp) => s.stackName === currentStackParam)) ||
+                (remoteOffersParam && !item.remote)
+              )
           )
           .sort((a, b) => {
             if (currentSortParam === "latest") {

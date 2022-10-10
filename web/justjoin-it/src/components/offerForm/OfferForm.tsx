@@ -122,8 +122,17 @@ export const OfferForm = () => {
     }
   };
 
-  const postOffer = () => {
-    console.log(form);
+  const postOffer = async () => {
+    // console.log(form);
+    const response = await fetch("http://localhost:3001/api/add-offer", {
+      method: "POST",
+      body: JSON.stringify(form),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
   };
 
   const handlePostOffer = (e: FormEvent<HTMLFormElement>): void => {

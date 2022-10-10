@@ -1,13 +1,12 @@
 import { useMediaQuery } from "@mui/material";
 import { Fragment } from "react";
-import { PostOffers } from "../../components/postOffers/PostOffers";
+import { AdminPanel } from "../../components/adminPanel/AdminPanel";
 import { TopBar } from "../../components/topBar/TopBar";
 import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";
 
-export const PostOffersPage = () => {
+export const AdminPanelPage = () => {
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
-
   return (
     <Fragment>
       {isMatchLarge ? (
@@ -17,7 +16,7 @@ export const PostOffersPage = () => {
           <TopBar />
         </>
       )}
-      <PostOffers />
+      <AdminPanel />
     </Fragment>
   );
 };

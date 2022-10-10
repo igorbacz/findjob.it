@@ -39,6 +39,23 @@ export const BigOfferPage = () => {
       </PageContainer>
     </AllPageWrapper>
   ) : (
-    <Box>Offer not found</Box>
+    <AllPageWrapper>
+      {isMatchLarge ? (
+        <TopBarResponsive />
+      ) : (
+        <>
+          <TopBar />
+          <SearchBar />
+        </>
+      )}
+      <PageContainer>
+        <LeftSideBox>Offer not found</LeftSideBox>
+        {!isMatchLarge ? (
+          <RightSideBox>
+            <OpenStreetMap />
+          </RightSideBox>
+        ) : null}
+      </PageContainer>
+    </AllPageWrapper>
   );
 };

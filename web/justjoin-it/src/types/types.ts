@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { store } from "../services/store";
 
 export class SmallOffer {
   _id: string;
@@ -48,3 +49,5 @@ export interface Icon {
 export interface MiniTagType {
   days: number;
 }
+
+export type RootState = ReturnType<typeof store.getState>;

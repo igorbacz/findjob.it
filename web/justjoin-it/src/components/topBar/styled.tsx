@@ -108,6 +108,7 @@ export const BurgerBox = styled(Box)`
 export const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: inherit;
+  text-align: center;
 `;
 
 export const TopBarResponsiveHeader = styled(Box)`

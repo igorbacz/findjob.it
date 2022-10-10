@@ -15,8 +15,10 @@ import {
   StyledListItem,
   ImgBox,
 } from "./styled";
+import { StyledLink } from "../topBar/styled";
 
 export const PostOffers = () => {
+  const userToken = localStorage.getItem("token");
   return (
     <Fragment>
       <HeaderPostOffers>
@@ -89,10 +91,20 @@ export const PostOffers = () => {
                   <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
-
-              <Button variant="contained" size="large" href="/add-offer">
-                Kup ogłoszenie
-              </Button>
+              {!userToken ? (
+                <>
+                  <Button variant="contained" size="large" href="/add-offer" disabled>
+                    Kup ogłoszenie
+                  </Button>
+                  <StyledLink to="/login">
+                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                  </StyledLink>
+                </>
+              ) : (
+                <Button variant="contained" size="large" href="/add-offer">
+                  Kup ogłoszenie
+                </Button>
+              )}
             </ContentOffer>
           </OfferBox>
           <OfferBox>
@@ -154,9 +166,20 @@ export const PostOffers = () => {
                   <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
-              <Button variant="contained" size="large" href="/add-offer">
-                Kup ogłoszenie
-              </Button>
+              {!userToken ? (
+                <>
+                  <Button variant="contained" size="large" href="/add-offer" disabled>
+                    Kup ogłoszenie
+                  </Button>
+                  <StyledLink to="/login">
+                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                  </StyledLink>
+                </>
+              ) : (
+                <Button variant="contained" size="large" href="/add-offer">
+                  Kup ogłoszenie
+                </Button>
+              )}
             </ContentOffer>
           </OfferBox>
           <OfferBox>
@@ -218,9 +241,20 @@ export const PostOffers = () => {
                   <ListItemText primary="Możliwy Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
                 </StyledListItem>
               </List>
-              <Button variant="contained" size="large" href="/add-offer">
-                Kup ogłoszenie
-              </Button>
+              {!userToken ? (
+                <>
+                  <Button variant="contained" size="large" href="/add-offer" disabled>
+                    Kup ogłoszenie
+                  </Button>
+                  <StyledLink to="/login">
+                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                  </StyledLink>
+                </>
+              ) : (
+                <Button variant="contained" size="large" href="/add-offer">
+                  Kup ogłoszenie
+                </Button>
+              )}
             </ContentOffer>
           </OfferBox>
         </ContentOffers>

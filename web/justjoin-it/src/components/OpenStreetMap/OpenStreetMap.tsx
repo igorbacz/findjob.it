@@ -12,7 +12,7 @@ const MapComponent = () => {
 
   const iconUrlFind = (city: BigOfferDetails) => {
     const highestLevelStack = city.techStack.find((stack) => stack.value === 5);
-    const iconObject = stackIcons.find((stack) => stack.stack === highestLevelStack.stackName);
+    const iconObject = stackIcons?.find((stack) => stack.stack === highestLevelStack?.stackName);
     const iconUrl = iconObject.url;
     const LeafIcon = new L.Icon({
       iconSize: [25, 25],

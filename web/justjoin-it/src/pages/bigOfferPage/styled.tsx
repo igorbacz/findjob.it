@@ -7,7 +7,7 @@ export const AllPageWrapper = styled(Box)`
 
 export const PageContainer = styled(Box)`
   padding-top: 10px;
-  height: 100%;
+  height: 84%;
   overflow: auto;
   display: flex;
   flex-direction: row;
@@ -18,6 +18,7 @@ export const LeftSideBox = styled(Box)`
   width: 50%;
   height: 100%;
   overflow: hidden;
+
   flex-direction: column;
   flex: 1 1 auto;
 `;

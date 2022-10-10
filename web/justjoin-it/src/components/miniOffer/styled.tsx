@@ -168,3 +168,10 @@ export const LocationRemote = styled(Box)`
   overflow: hidden;
   white-space: nowrap;
 `;
+
+export const ButtonBox = styled(Box)`
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;

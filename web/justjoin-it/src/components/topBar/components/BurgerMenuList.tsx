@@ -19,9 +19,16 @@ import { SignInBurger } from "./SignInBurger";
 
 export const BurgerMenuList = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
+  const userToken = localStorage.getItem("token");
+
   return (
     <Fragment>
       <Box>
+        {userToken ? (
+          <BurgerButton href="/admin" variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
+            Admin panel
+          </BurgerButton>
+        ) : null}
         <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
           For Juniors
         </BurgerButton>
