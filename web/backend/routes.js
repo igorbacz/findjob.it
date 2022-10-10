@@ -40,6 +40,8 @@ router.post("/add-offer", async (req, res) => {
   }
 });
 
+router.delete("/delete-offer", async (req, res) => {});
+
 router.post("/register", async (req, res) => {
   const body = req.body;
   const oldUser = await User.findOne({ email: body.email });
@@ -66,8 +68,6 @@ router.post("/login", async (req, res) => {
         expiresIn: "2h",
       });
       user.token = token;
-      // localStorage.setItem("token", token);
-      // localStorage.getItem("token");
       res.status(200).json(user);
     } else {
       res.status(400).json({ error: "Invalid Password" });

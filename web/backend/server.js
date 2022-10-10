@@ -1,7 +1,6 @@
 require("dotenv").config();
-
 const corse = require("cors");
-
+const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -14,9 +13,13 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
 
 app.use(corse());
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
 
 const dataRouter = require("./routes");
-app.use("/api", dataRouter);
+app.use("/api/", dataRouter);
 
-app.listen(4000, () => console.log("Server Started"));
+const PORT = config.PORT || 3001;
+
+app.listen(PORT, () => console.log("Server Started"));
