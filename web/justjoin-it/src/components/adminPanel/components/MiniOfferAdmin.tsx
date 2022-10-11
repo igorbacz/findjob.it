@@ -1,18 +1,26 @@
 import { Button, Typography } from "@mui/material";
-import { BigOfferDetails, SmallOffer } from "../../types/types";
+import { BigOfferDetails, SmallOffer } from "../../../types/types";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { useSelector } from "react-redux";
-import { allOffersSelector } from "../../services/selectors";
-import { AmountResponsive, ButtonBox, LocationRemote, LogoContainer, MiniLogoImg, MiniOfferCon, Paragraph, Title } from "../miniOffer/styled";
+import { allOffersSelector } from "../../../services/selectors";
+import { MiniOfferCon, LogoContainer, MiniLogoImg, AmountResponsive, Title, LocationRemote, Paragraph, ButtonBox } from "../../miniOffer/styled";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);
   const offer = offers.find((offer) => offer._id === _id);
-  const dateFrom = new Date(offer?.dateAdded);
-  const dateToday = new Date();
 
-  const handleDelete = () => {
+  const handleDelete = (e: any) => {
     console.log(`delete ${_id}`);
+    console.log(e);
+    fetch(`http://localhost:3001/api/delete-offer${_id}`, {
+      headers: {
+        // "Access-Control-Allow-Credentials":,
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+      body: e,
+    });
   };
 
   return (
@@ -31,7 +39,9 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
         <Button variant="outlined" onClick={handleDelete}>
           DELETE
         </Button>
-        <Button variant="outlined">EDIT</Button>
+        <Button variant="outlined" href="">
+          EDIT
+        </Button>
         <Button variant="outlined" href={`/offer/${_id}`}>
           VIEW
         </Button>

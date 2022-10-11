@@ -13,7 +13,7 @@ import { data } from "../../../data";
 import { Pagination } from "@mui/material";
 import usePagination from "../../../hooks/usePagination";
 import { OfferWrapper } from "../../Tabs/styled";
-import MiniOfferAdmin from "../../miniOfferAdmin/MiniOfferAdmin";
+import MiniOfferAdmin from "./MiniOfferAdmin";
 
 interface TabPanelProps {
   children?: React.ReactNode;
