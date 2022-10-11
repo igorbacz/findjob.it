@@ -17,7 +17,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
 
-const dataRouter = require("./routes");
+const dataRouter = require("./routes/routes");
 app.use("/api/", dataRouter);
 
 const PORT = config.PORT || 3001;
