@@ -24,6 +24,7 @@ exports.addOffer = async (req, res) => {
     description: req.body.description,
     geolocation: req.body.geolocation,
     techStack: req.body.techStack,
+    mainStack: req.body.mainStack,
   });
   try {
     const newOffer = await offer.save();
@@ -33,13 +34,11 @@ exports.addOffer = async (req, res) => {
   }
 };
 
-// exports.deleteOffer = async (req, res) => {};
-
-exports.deleteUserOffer = async (req, res, next) => {
+exports.deleteUserOffer = async (req, res) => {
   try {
-    await deleteOffer(req.params.id);
-    res.status(200).json({ message: "Deleted offer" });
+    await Offer.findByIdAndDelete(req.body._id);
+    return res.status(200).json({ success: true, msg: "Offer Deleted" });
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 };

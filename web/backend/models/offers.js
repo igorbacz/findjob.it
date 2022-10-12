@@ -35,6 +35,9 @@ const offerSchema = new mongoose.Schema(
         type: Number,
       },
     },
+    mainStack: {
+      type: String,
+    },
     adress: {
       type: String,
     },
