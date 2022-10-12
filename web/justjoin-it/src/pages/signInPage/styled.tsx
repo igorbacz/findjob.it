@@ -18,6 +18,10 @@ export const Wrapper = styled(Box)`
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
 `;
 
+export const TextBox = styled(Box)`
+  text-align: center;
+`;
+
 export const Container = styled(Box)`
   padding: 25px 0px 25px 0px;
   width: 300px;

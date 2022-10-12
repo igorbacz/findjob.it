@@ -93,9 +93,11 @@ export const PostOffers = () => {
               </List>
               {!userToken ? (
                 <>
-                  <Button variant="contained" size="large" href="/add-offer" disabled>
-                    Kup ogłoszenie
-                  </Button>
+                  <StyledLink to="/add-offer">
+                    <Button variant="contained" size="large" disabled>
+                      Kup ogłoszenie
+                    </Button>
+                  </StyledLink>
                   <StyledLink to="/login">
                     <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
                   </StyledLink>
@@ -168,9 +170,11 @@ export const PostOffers = () => {
               </List>
               {!userToken ? (
                 <>
-                  <Button variant="contained" size="large" href="/add-offer" disabled>
-                    Kup ogłoszenie
-                  </Button>
+                  <StyledLink to="/add-offer">
+                    <Button variant="contained" size="large" disabled>
+                      Kup ogłoszenie
+                    </Button>
+                  </StyledLink>
                   <StyledLink to="/login">
                     <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
                   </StyledLink>
@@ -243,9 +247,11 @@ export const PostOffers = () => {
               </List>
               {!userToken ? (
                 <>
-                  <Button variant="contained" size="large" href="/add-offer" disabled>
-                    Kup ogłoszenie
-                  </Button>
+                  <StyledLink to="/add-offer">
+                    <Button variant="contained" size="large" disabled>
+                      Kup ogłoszenie
+                    </Button>
+                  </StyledLink>
                   <StyledLink to="/login">
                     <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
                   </StyledLink>

@@ -36,7 +36,7 @@ import {
   StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState, useContext } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
@@ -44,15 +44,16 @@ import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/
 import axios, { AxiosResponse } from "axios";
 import { API_KEY } from "../../apiKey";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import L from "leaflet";
+import { UserContext } from "../../context/AuthContext";
 
 export const OfferForm = () => {
-  const [choice, setChoice] = useState("");
+  const [choice, setChoice] = useState("Junior");
   const [image, setImage] = useState("");
   const [form, setForm] = useState(new BigOfferDetails());
   const [techStack, setTechStack] = useState<StackProp>();
-  const [techStackArray, setTechStackArray] = useState<StackProp[]>([]);
+  const [techStackArray, setTechStackArray] = useState<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const [city, setCity] = useState("");
   const [apiGeolocation, setApiGeolocation] = useState();
@@ -60,6 +61,12 @@ export const OfferForm = () => {
   const geolocation = useGeolocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
+  const navigate = useNavigate();
+
+  //TODO
+  // const user = useContext(UserContext);
+  // console.log(user);
+  // console.log(user.email);
 
   const currentLongitude = geolocation.longitude;
   const currentLatitude = geolocation.latitude;
@@ -123,7 +130,6 @@ export const OfferForm = () => {
   };
 
   const postOffer = async () => {
-    // console.log(form);
     const response = await fetch("http://localhost:3001/api/add-offer", {
       method: "POST",
       body: JSON.stringify(form),
@@ -138,6 +144,7 @@ export const OfferForm = () => {
   const handlePostOffer = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     postOffer();
+    navigate(`/`);
   };
 
   const onLoad = (fileString: string) => {
@@ -179,7 +186,7 @@ export const OfferForm = () => {
     const stackLvlValue = (e.target as HTMLInputElement).value;
     const updatedStackArray = techStackArray.map((item) => {
       if (item.stackName === techStack.stackName) {
-        return { ...item, stackLvl: stackLvlValue };
+        return { ...item, value: Number(stackLvlValue) };
       }
       return item;
     });
@@ -197,6 +204,7 @@ export const OfferForm = () => {
       geolocation: location,
       techStack: techStackArray,
       city: city,
+      mainStack: currentStackParam,
     });
   };
   return (
@@ -217,9 +225,9 @@ export const OfferForm = () => {
           </PhotoBox>
         </PhotoForm>
         <InpputsBox>
-          <TextField label="Short company name" variant="standard" name="companyName" onChange={handleChangeForm} />
+          <TextField required label="Short company name" variant="standard" name="companyName" onChange={handleChangeForm} />
 
-          <TextField label="Company size" type="number" variant="standard" name="companySize" onChange={handleChangeForm} />
+          <TextField required label="Company size" type="number" variant="standard" name="companySize" onChange={handleChangeForm} />
 
           <TextField disabled label="Company website" variant="standard" />
         </InpputsBox>
@@ -262,10 +270,11 @@ export const OfferForm = () => {
         <InfoBox>
           <Typography variant="subtitle2">Position info</Typography>
           <OfferTitleBox>
-            <TextField fullWidth label="Offer title" variant="standard" name="title" onChange={handleChangeForm} />
+            <TextField required fullWidth label="Offer title" variant="standard" name="title" onChange={handleChangeForm} />
           </OfferTitleBox>
           <OfferExpBox>
             <TextField
+              required
               fullWidth
               id="standard-select-currency-native"
               select
@@ -313,7 +322,15 @@ export const OfferForm = () => {
           </EmpTypeBox>
           <EmpoloymentSalaryBox>
             <SalaryFromBox>
-              <TextField fullWidth label="Monthly salary from (gross)" variant="standard" type="number" name="amount" onChange={handleChangeForm} />
+              <TextField
+                required
+                fullWidth
+                label="Monthly salary from (gross)"
+                variant="standard"
+                type="number"
+                name="amount"
+                onChange={handleChangeForm}
+              />
             </SalaryFromBox>
             <SalaryToBox>
               <TextField disabled fullWidth label="Monthly salary to (gross)" variant="standard" />
@@ -385,16 +402,16 @@ export const OfferForm = () => {
           <ToggleButtonsMultiple />
         </JobDescToggle>
         <JobDescBox>
-          <TextField id="outlined-multiline-static" fullWidth multiline rows={10} name="description" onChange={handleChangeForm} />
+          <TextField required id="outlined-multiline-static" fullWidth multiline rows={10} name="description" onChange={handleChangeForm} />
         </JobDescBox>
         <HeaderLocation>
           <Typography variant="subtitle2">Choose your location</Typography>
         </HeaderLocation>
         <CityBox>
-          <TextField fullWidth label="Office city" variant="standard" name="city" onClick={handleChangeCity} />
+          <TextField required fullWidth label="Office city" variant="standard" name="city" onClick={handleChangeCity} />
         </CityBox>
         <StreetBox>
-          <TextField fullWidth label="Office street" variant="standard" name="adress" onChange={handleChangeForm} />
+          <TextField required fullWidth label="Office street" variant="standard" name="adress" onChange={handleChangeForm} />
         </StreetBox>
         <RemoteContainer>
           <FormLabel>Fully remote ?</FormLabel>

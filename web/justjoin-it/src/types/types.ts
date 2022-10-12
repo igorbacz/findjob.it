@@ -3,7 +3,7 @@ import { store } from "../services/store";
 
 export class SmallOffer {
   _id: string;
-  dateAdded?: string;
+  dateAdded: string;
   remote: boolean;
   title: string;
   amount?: string;
@@ -11,6 +11,7 @@ export class SmallOffer {
   companyName: string;
   logo: string;
   techStack: StackProp[];
+  mainStack?: string;
 }
 
 export class BigOfferDetails extends SmallOffer {
@@ -18,12 +19,13 @@ export class BigOfferDetails extends SmallOffer {
   companySize: string;
   exp: string;
   description: string;
-  geolocation?: GeoProp;
+  geolocation: GeoProp;
 }
 
 export class User {
   email: string = "";
-  password: string = "";
+  password?: string = "";
+  token: string = "";
 }
 
 export class GeoProp {
@@ -32,7 +34,7 @@ export class GeoProp {
 }
 
 export type StackProp = {
-  stackName?: string;
+  stackName: string;
   stackLvl?: string;
   value?: number;
 };

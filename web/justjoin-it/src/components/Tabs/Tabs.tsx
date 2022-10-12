@@ -42,7 +42,7 @@ export const Tabs = () => {
 
   useEffect(() => {
     filterSearch();
-  }, [currentStackParam, remoteOffersParam, currentSortParam]);
+  }, [offersList, currentStackParam, remoteOffersParam, currentSortParam]);
 
   return (
     <StyledTabs defaultValue={0}>

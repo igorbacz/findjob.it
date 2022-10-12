@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { allOffersSelector } from "../../../services/selectors";
 import { BigOfferDetails } from "../../../types/types";
 import { useState } from "react";
-import { data } from "../../../data";
 import { Pagination } from "@mui/material";
 import usePagination from "../../../hooks/usePagination";
 import { OfferWrapper } from "../../Tabs/styled";
@@ -44,7 +43,7 @@ const a11yProps = (index: number) => {
 
 const AdminTabs = () => {
   const [value, setValue] = React.useState(0);
-  const offersList: BigOfferDetails[] = useSelector(allOffersSelector);
+  const data: BigOfferDetails[] = useSelector(allOffersSelector);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -61,14 +60,11 @@ const AdminTabs = () => {
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs value={value} onChange={handleChange}>
-          <Tab icon={<PersonPinIcon />} label="Your details" {...a11yProps(0)} />
-          <Tab icon={<NextWeekIcon />} label="Your offers" {...a11yProps(1)} />
+          <Tab icon={<NextWeekIcon />} label="Your offers" {...a11yProps(0)} />
+          <Tab icon={<PersonPinIcon />} label="Your details" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        email:
-      </TabPanel>
-      <TabPanel value={value} index={1}>
         <OfferWrapper>
           {_DATA.currentData().map((offer: BigOfferDetails) => (
             <MiniOfferAdmin
@@ -86,6 +82,9 @@ const AdminTabs = () => {
           ))}
         </OfferWrapper>
         <Pagination count={count} page={page} color="primary" onChange={handleChangePagination} />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        email:
       </TabPanel>
     </Box>
   );

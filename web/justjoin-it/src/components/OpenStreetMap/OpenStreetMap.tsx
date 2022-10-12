@@ -1,6 +1,6 @@
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
-import { stackIcons } from "../../data";
+import { data, stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BigOfferDetails } from "../../types/types";
@@ -8,11 +8,10 @@ import { allOffersSelector } from "../../services/selectors";
 
 const MapComponent = () => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const iconUrlFind = (city: BigOfferDetails) => {
-    const highestLevelStack = city.techStack.find((stack) => stack.value === 5);
-    const iconObject = stackIcons?.find((stack) => stack.stack === highestLevelStack?.stackName);
+    const iconObject = stackIcons?.find((stack) => stack.stack === city.mainStack);
     const iconUrl = iconObject.url;
     const LeafIcon = new L.Icon({
       iconSize: [25, 25],
@@ -43,7 +42,7 @@ const MapComponent = () => {
       ))}
     </>
   );
-};
+};;;;
 
 export const OpenStreetMap = () => (
   <MapContainer center={[52.291335, 19.088525]} zoom={6} scrollWheelZoom={false}>
