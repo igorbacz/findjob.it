@@ -8,7 +8,7 @@ import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { theme } from "../../theme";
 import { useSelector } from "react-redux";
-import { allOffersSelector, filterAndSortSelector } from "../../services/selectors";
+import { allOffersSelector, filterAndSortSelector } from "../../service/offers/selectors";
 
 export const Tabs = () => {
   const [checked, setChecked] = useState(false);

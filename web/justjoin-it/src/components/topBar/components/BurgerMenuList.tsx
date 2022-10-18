@@ -11,23 +11,27 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import NetworkCheckIcon from "@mui/icons-material/NetworkCheck";
 import HelpIcon from "@mui/icons-material/Help";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
-import { BurgerButton, SmallBox, SocialBox } from "../styled";
+import { BurgerButton, SmallBox, SocialBox, StyledLink } from "../styled";
 import { IconButton, Box, useMediaQuery } from "@mui/material";
 import { theme } from "../../../theme";
 import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
+import { useSelector } from "react-redux";
+import { userDataSelector } from "../../../service/user/selectors";
 
 export const BurgerMenuList = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
-  const userToken = localStorage.getItem("token");
-
+  const userData: any = useSelector(userDataSelector);
+  const isAuthenticated: boolean = userData.isAuthenticated;
   return (
     <Fragment>
       <Box>
-        {userToken ? (
-          <BurgerButton href="/admin" variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
-            Admin panel
-          </BurgerButton>
+        {isAuthenticated ? (
+          <StyledLink to={"/admin"}>
+            <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
+              Admin panel
+            </BurgerButton>
+          </StyledLink>
         ) : null}
         <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
           For Juniors

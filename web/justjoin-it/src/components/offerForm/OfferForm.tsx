@@ -36,7 +36,7 @@ import {
   StackFormContainer,
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState, useContext } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
@@ -46,7 +46,8 @@ import { API_KEY } from "../../apiKey";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import L from "leaflet";
-import { UserContext } from "../../context/AuthContext";
+import { userDataSelector } from "../../service/user/selectors";
+import { useSelector } from "react-redux";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
@@ -62,11 +63,9 @@ export const OfferForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
   const navigate = useNavigate();
+  const userData: any = useSelector(userDataSelector);
 
-  //TODO
-  // const user = useContext(UserContext);
-  // console.log(user);
-  // console.log(user.email);
+  const userEmail: string = userData.user;
 
   const currentLongitude = geolocation.longitude;
   const currentLatitude = geolocation.latitude;
@@ -205,6 +204,7 @@ export const OfferForm = () => {
       techStack: techStackArray,
       city: city,
       mainStack: currentStackParam,
+      adminEmail: userEmail,
     });
   };
   return (
@@ -322,15 +322,7 @@ export const OfferForm = () => {
           </EmpTypeBox>
           <EmpoloymentSalaryBox>
             <SalaryFromBox>
-              <TextField
-                required
-                fullWidth
-                label="Monthly salary from (gross)"
-                variant="standard"
-                type="number"
-                name="amount"
-                onChange={handleChangeForm}
-              />
+              <TextField fullWidth label="Monthly salary from (gross)" variant="standard" type="number" name="amount" onChange={handleChangeForm} />
             </SalaryFromBox>
             <SalaryToBox>
               <TextField disabled fullWidth label="Monthly salary to (gross)" variant="standard" />
@@ -444,4 +436,4 @@ export const OfferForm = () => {
       </FormContainer>
     </form>
   );
-};
+};;;

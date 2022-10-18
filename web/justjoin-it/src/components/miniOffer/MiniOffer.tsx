@@ -22,7 +22,7 @@ import { theme } from "../../theme";
 import { MiniTagNew } from "./components/MiniTagNew";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { useSelector } from "react-redux";
-import { allOffersSelector } from "../../services/selectors";
+import { allOffersSelector } from "../../service/offers/selectors";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);

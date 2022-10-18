@@ -16,9 +16,12 @@ import {
   ImgBox,
 } from "./styled";
 import { StyledLink } from "../topBar/styled";
+import { userDataSelector } from "../../service/user/selectors";
+import { useSelector } from "react-redux";
 
 export const PostOffers = () => {
-  const userToken = localStorage.getItem("token");
+  const userData: any = useSelector(userDataSelector);
+  const isAuthenticated: boolean = userData.isAuthenticated;
   return (
     <Fragment>
       <HeaderPostOffers>
@@ -52,50 +55,50 @@ export const PostOffers = () => {
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                  <ListItemText primary="Offer for 30 days" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                  <ListItemText primary="Job ad in technological summaries" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak Customer Care" />
+                  <ListItemText primary="No Individual Customer Care" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Bez odświeżeń" />
+                  <ListItemText primary="No bump ups" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak promocji w Social Media" />
+                  <ListItemText primary="No promotion in Social Media" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak indywidualnego copy" />
+                  <ListItemText primary="No individual copy" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                  <ListItemText primary="No Social boost - paid job ads promotion in social media with budget provided by the client" />
                 </StyledListItem>
               </List>
-              {!userToken ? (
+              {!isAuthenticated ? (
                 <>
                   <StyledLink to="/add-offer">
                     <Button variant="contained" size="large" disabled>
-                      Kup ogłoszenie
+                      Post a job
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
@@ -103,9 +106,11 @@ export const PostOffers = () => {
                   </StyledLink>
                 </>
               ) : (
-                <Button variant="contained" size="large" href="/add-offer">
-                  Kup ogłoszenie
-                </Button>
+                <StyledLink to={"/add-offer"}>
+                  <Button variant="contained" size="large">
+                    Post a job
+                  </Button>
+                </StyledLink>
               )}
             </ContentOffer>
           </OfferBox>
@@ -129,50 +134,53 @@ export const PostOffers = () => {
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                  <ListItemText primary="Offer for 30 days" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                  <ListItemText primary="Job ad in technological summaries" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Deykowany Opiekun Customer Care" />
+                  <ListItemText primary="Invividual Customer Care" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="1 automatyczne odświeżenie" />
+                  <ListItemText
+                    primary="
+1 automatic bump-up"
+                  />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak promocji w Social Media" />
+                  <ListItemText primary="No promotion in Social Media" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak indywidualnego copy" />
+                  <ListItemText primary="No individual copy" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <DoDisturbIcon color="secondary" />
                   </ListItemIcon>
-                  <ListItemText primary="Brak Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                  <ListItemText primary="No Social boost - paid job ads promotion in social media with budget provided by the client" />
                 </StyledListItem>
               </List>
-              {!userToken ? (
+              {!isAuthenticated ? (
                 <>
                   <StyledLink to="/add-offer">
                     <Button variant="contained" size="large" disabled>
-                      Kup ogłoszenie
+                      Post a job
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
@@ -180,9 +188,11 @@ export const PostOffers = () => {
                   </StyledLink>
                 </>
               ) : (
-                <Button variant="contained" size="large" href="/add-offer">
-                  Kup ogłoszenie
-                </Button>
+                <StyledLink to="/add-offer">
+                  <Button variant="contained" size="large">
+                    Post a job
+                  </Button>
+                </StyledLink>
               )}
             </ContentOffer>
           </OfferBox>
@@ -206,50 +216,50 @@ export const PostOffers = () => {
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie na 30 dni" />
+                  <ListItemText primary="Offer for 30 days" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Ogłoszenie w prasówce technologicznej" />
+                  <ListItemText primary="Job ad in technological summaries" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Deykowany Opiekun Customer Care" />
+                  <ListItemText primary="Invividual Customer Care" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="1 automatyczne odświeżenie" />
+                  <ListItemText primary="2 automatic bump-up" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Indywidualna promocja w Social Media" />
+                  <ListItemText primary="Individual promotion in Social Media" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Inywidualne copy ogłoszenia + audyt" />
+                  <ListItemText primary="Individual job ad copy + audit" />
                 </StyledListItem>
                 <StyledListItem>
                   <ListItemIcon>
                     <CheckCircleOutlineIcon color="primary" />
                   </ListItemIcon>
-                  <ListItemText primary="Możliwy Social Boost - płatna kampania marketingowa w social media na budżecie klienta" />
+                  <ListItemText primary="Optional Social boost - - paid job ads promotion in social media with budget provided by the client" />
                 </StyledListItem>
               </List>
-              {!userToken ? (
+              {!isAuthenticated ? (
                 <>
                   <StyledLink to="/add-offer">
                     <Button variant="contained" size="large" disabled>
-                      Kup ogłoszenie
+                      Post a job
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
@@ -257,9 +267,11 @@ export const PostOffers = () => {
                   </StyledLink>
                 </>
               ) : (
-                <Button variant="contained" size="large" href="/add-offer">
-                  Kup ogłoszenie
-                </Button>
+                <StyledLink to="/add-offer">
+                  <Button variant="contained" size="large">
+                    Post a job
+                  </Button>
+                </StyledLink>
               )}
             </ContentOffer>
           </OfferBox>

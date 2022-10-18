@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { store } from "../services/store";
+import { store } from "../service/store";
 
 export class SmallOffer {
   _id: string;
@@ -12,6 +12,7 @@ export class SmallOffer {
   logo: string;
   techStack: StackProp[];
   mainStack?: string;
+  adminEmail?: string;
 }
 
 export class BigOfferDetails extends SmallOffer {
@@ -25,7 +26,6 @@ export class BigOfferDetails extends SmallOffer {
 export class User {
   email: string = "";
   password?: string = "";
-  token: string = "";
 }
 
 export class GeoProp {
@@ -51,5 +51,5 @@ export interface Icon {
 export interface MiniTagType {
   days: number;
 }
-
+//@ts-ignore 
 export type RootState = ReturnType<typeof store.getState>;

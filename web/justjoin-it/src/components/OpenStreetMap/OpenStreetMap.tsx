@@ -4,7 +4,7 @@ import { data, stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BigOfferDetails } from "../../types/types";
-import { allOffersSelector } from "../../services/selectors";
+import { allOffersSelector } from "../../service/offers/selectors";
 
 const MapComponent = () => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);

@@ -1,20 +1,20 @@
-import { StackProp } from "../types/types";
-import { RootState } from "../types/types";
+import { BigOfferDetails, StackProp } from "../../types/types";
+import { RootState } from "../../types/types";
 
-export const allOffersSelector = (state: RootState) => state;
+export const allOffersSelector = (state: RootState) => state.offers;
 
 export const filterAndSortSelector =
   (state: RootState) => (currentStackParam: null | string, remoteOffersParam: null | string, currentSortParam: null | string) => {
-    return state
-      ? state
+    return state.offers
+      ? state.offers
           .filter(
-            (item) =>
+            (item: BigOfferDetails) =>
               !(
                 (currentStackParam && !item.techStack.find((s: StackProp) => s.stackName === currentStackParam)) ||
                 (remoteOffersParam && !item.remote)
               )
           )
-          .sort((a, b) => {
+          .sort((a: BigOfferDetails, b: BigOfferDetails) => {
             if (currentSortParam === "latest") {
               const x = new Date(b.dateAdded).valueOf();
               const y = new Date(a?.dateAdded).valueOf();

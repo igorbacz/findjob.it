@@ -6,20 +6,20 @@ import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useReducer, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
-import { UserContext } from "../../context/AuthContext";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../../service/user/userSlice";
+import { useSelector } from "react-redux";
+import { userDataSelector } from "../../service/user/selectors";
 
 export const SignInPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
-  const userToken = localStorage.getItem("token");
-  const [user, setUser] = useState<User>({ email: "", token: "" });
+  const dispatch = useDispatch();
 
-  const reducer = (state: any, item: any) => {
-    return [...state, item];
-  };
-  // const = useReducer(reducer, {});
+  const userData: any = useSelector(userDataSelector);
+  const isAuthenticated: boolean = userData.isAuthenticated;
 
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
@@ -44,7 +44,7 @@ export const SignInPage = (error: ErrorInfo) => {
 
   let navigate = useNavigate();
 
-  const login = async () => {
+  const loginFunc = async () => {
     const response = await fetch("http://localhost:3001/api/login", {
       method: "POST",
       body: JSON.stringify(form),
@@ -66,12 +66,10 @@ export const SignInPage = (error: ErrorInfo) => {
       .then((data) => {
         const userToken = data.token;
         localStorage.setItem("token", userToken);
-        Object.assign(user, form);
-        console.log(user);
+        dispatch(login(form.email));
         navigate("/");
-        console.log(data);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         alert(error.message);
       });
   };
@@ -81,72 +79,63 @@ export const SignInPage = (error: ErrorInfo) => {
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
 
-    login();
+    loginFunc();
   };
 
   const handleLogout = (e: SyntheticEvent): void => {
     localStorage.clear();
+    dispatch(logout());
     navigate("/");
   };
 
   return (
-    <UserContext.Provider value={user}>
-      <Wrapper>
-        <HeaderLoginBox>
-          <StyledLink to="/">
-            <Typography variant="H1Styled">findjob.it</Typography>
-          </StyledLink>
-        </HeaderLoginBox>
-        {userToken ? (
-          <Box>
-            <TextBox>
-              <Typography>You are already logged</Typography>
-            </TextBox>
-            <ButtonContainer>
-              <Button variant="contained" onClick={handleLogout} fullWidth>
-                LOGOUT
-              </Button>
-            </ButtonContainer>
-          </Box>
-        ) : (
-          <form onSubmit={handleLogin}>
-            <LabelContainer>
-              <EmailIcon fontSize="large" />
-              <TextField
-                label="Email"
-                name="email"
-                onChange={handleChange}
-                type="email"
-                autoComplete="email"
-                variant="standard"
-                ref={emailInputRef}
-              />
-            </LabelContainer>
-            {error && <ErrorBox>{errors.email}</ErrorBox>}
-            <LabelContainer>
-              <LockIcon fontSize="large" />
-              <TextField
-                label="Password"
-                type="password"
-                name="password"
-                onChange={handleChange}
-                autoComplete="current-password"
-                variant="standard"
-                ref={passwordInputRef}
-              />
-            </LabelContainer>
-            {error && <ErrorBox>{errors.password}</ErrorBox>}
-            <LinkContainer>
-              <ResetLink href="/register">Don't have an account? Register</ResetLink>
-            </LinkContainer>
-            <ButtonContainer>
-              <Button variant="contained" type="submit" onSubmit={handleLogin} fullWidth>
-                SIGN IN
-              </Button>
-            </ButtonContainer>
-          </form>
-        )}
-      </Wrapper>
-    </UserContext.Provider>
+    <Wrapper>
+      <HeaderLoginBox>
+        <StyledLink to="/">
+          <Typography variant="H1Styled">findjob.it</Typography>
+        </StyledLink>
+      </HeaderLoginBox>
+      {isAuthenticated ? (
+        <Box>
+          <TextBox>
+            <Typography>You are already logged</Typography>
+          </TextBox>
+          <ButtonContainer>
+            <Button variant="contained" onClick={handleLogout} fullWidth>
+              LOGOUT
+            </Button>
+          </ButtonContainer>
+        </Box>
+      ) : (
+        <form onSubmit={handleLogin}>
+          <LabelContainer>
+            <EmailIcon fontSize="large" />
+            <TextField label="Email" name="email" onChange={handleChange} type="email" autoComplete="email" variant="standard" ref={emailInputRef} />
+          </LabelContainer>
+          {error && <ErrorBox>{errors.email}</ErrorBox>}
+          <LabelContainer>
+            <LockIcon fontSize="large" />
+            <TextField
+              label="Password"
+              type="password"
+              name="password"
+              onChange={handleChange}
+              autoComplete="current-password"
+              variant="standard"
+              ref={passwordInputRef}
+            />
+          </LabelContainer>
+          {error && <ErrorBox>{errors.password}</ErrorBox>}
+          <LinkContainer>
+            <ResetLink href="/register">Don't have an account? Register</ResetLink>
+          </LinkContainer>
+          <ButtonContainer>
+            <Button variant="contained" type="submit" onSubmit={handleLogin} fullWidth>
+              SIGN IN
+            </Button>
+          </ButtonContainer>
+        </form>
+      )}
+    </Wrapper>
   );
 };;

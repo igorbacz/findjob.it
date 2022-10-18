@@ -4,8 +4,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./services/store";
-import { getOffersData } from "./services/actions";
+import { store } from "./service/store";
+import { getOffersData } from "./service/offers/actions";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 store.dispatch(getOffersData());

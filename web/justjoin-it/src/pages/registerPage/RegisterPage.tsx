@@ -34,17 +34,42 @@ export const RegisterPage = (error: ErrorInfo) => {
 
   let navigate = useNavigate();
 
-  const login = () => {
-    console.log(form);
-    navigate("/");
+  const Register = async () => {
+    const response = await fetch("http://localhost:3001/api/register", {
+      method: "POST",
+      body: JSON.stringify(form),
+      headers: {
+        "access-control-allow-origin": "*",
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          navigate("/");
+          return res.json();
+        }
+        if (res.status === 409) {
+          alert("User Already Exist. Please Login.");
+          navigate("/login");
+        } else {
+          return res.json().then(() => {
+            alert("Authentication failed!");
+            let errorMessage = "Authentication failed!";
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .catch((error: any) => {
+        alert(error.message);
+      });
   };
-
   const handleRegister = (e: SyntheticEvent): void => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
 
-    login();
+    Register();
+    navigate("/");
   };
 
   return (

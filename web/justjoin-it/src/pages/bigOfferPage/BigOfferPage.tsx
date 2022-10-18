@@ -9,7 +9,7 @@ import { TopBarResponsive } from "../../components/topBar/TopBarResponsive";
 import { theme } from "../../theme";
 import { useSelector } from "react-redux";
 import { BigOfferDetails } from "../../types/types";
-import { allOffersSelector } from "../../services/selectors";
+import { allOffersSelector } from "../../service/offers/selectors";
 
 export const BigOfferPage = () => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);

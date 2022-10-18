@@ -40,7 +40,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { ButtonWrapper } from "../offerForm/styled";
 import { useSelector } from "react-redux";
-import { allOffersSelector } from "../../services/selectors";
+import { allOffersSelector } from "../../service/offers/selectors";
 
 export const BigOffer = ({ logo, title, adress, amount, companyName, companySize, exp, description, remote }: BigOfferDetails) => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);

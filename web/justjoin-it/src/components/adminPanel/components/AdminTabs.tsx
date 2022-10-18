@@ -6,13 +6,14 @@ import Box from "@mui/material/Box";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import NextWeekIcon from "@mui/icons-material/NextWeek";
 import { useSelector } from "react-redux";
-import { allOffersSelector } from "../../../services/selectors";
+import { allOffersSelector } from "../../../service/offers/selectors";
 import { BigOfferDetails } from "../../../types/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import usePagination from "../../../hooks/usePagination";
 import { OfferWrapper } from "../../Tabs/styled";
 import MiniOfferAdmin from "./MiniOfferAdmin";
+import { userDataSelector } from "../../../service/user/selectors";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -44,18 +45,28 @@ const a11yProps = (index: number) => {
 const AdminTabs = () => {
   const [value, setValue] = React.useState(0);
   const data: BigOfferDetails[] = useSelector(allOffersSelector);
+  const userData: any = useSelector(userDataSelector);
+  const userEmail: string = userData.user;
+
+  const userOffers = data.filter((offer) => {
+    return offer.adminEmail === userEmail;
+  });
+
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
   const [page, setPage] = useState(1);
   const PER_PAGE = 5;
-  const count = Math.ceil(data.length / PER_PAGE);
-  const _DATA = usePagination(data, PER_PAGE);
+  const count = Math.ceil(userOffers.length / PER_PAGE);
+  const _DATA = usePagination(userOffers, PER_PAGE);
 
   const handleChangePagination = (e: any, p: number) => {
     setPage(p);
     _DATA.jump(p);
   };
+  useEffect(() => {
+    console.log("data changed");
+  }, [userOffers]);
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -66,27 +77,31 @@ const AdminTabs = () => {
       </Box>
       <TabPanel value={value} index={0}>
         <OfferWrapper>
-          {_DATA.currentData().map((offer: BigOfferDetails) => (
-            <MiniOfferAdmin
-              techStack={offer.techStack}
-              dateAdded={offer.dateAdded}
-              remote={offer.remote}
-              key={offer._id}
-              _id={offer._id}
-              logo={offer.logo}
-              title={offer.title}
-              amount={offer.amount}
-              companyName={offer.companyName}
-              city={offer.city}
-            />
-          ))}
+          {userOffers
+            ? _DATA
+                .currentData()
+                .map((offer: BigOfferDetails) => (
+                  <MiniOfferAdmin
+                    techStack={offer.techStack}
+                    dateAdded={offer.dateAdded}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                  />
+                ))
+            : null}
         </OfferWrapper>
         <Pagination count={count} page={page} color="primary" onChange={handleChangePagination} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        email:
+        email : {userEmail}
       </TabPanel>
     </Box>
   );
-};
+};;
 export default AdminTabs;
