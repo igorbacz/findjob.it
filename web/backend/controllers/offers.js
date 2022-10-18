@@ -1,6 +1,6 @@
 const Offer = require("../models/offers");
 
-exports.getAllOgffers = async (req, res, next) => {
+exports.getAllOffers = async (req, res, next) => {
   try {
     const offers = await Offer.find();
     res.json(offers);
@@ -25,6 +25,7 @@ exports.addOffer = async (req, res) => {
     geolocation: req.body.geolocation,
     techStack: req.body.techStack,
     mainStack: req.body.mainStack,
+    adminEmail: req.body.adminEmail,
   });
   try {
     const newOffer = await offer.save();
@@ -36,7 +37,7 @@ exports.addOffer = async (req, res) => {
 
 exports.deleteUserOffer = async (req, res) => {
   try {
-    await Offer.findByIdAndDelete(req.body._id);
+    await Offer.findByIdAndDelete(req.params._id);
     return res.status(200).json({ success: true, msg: "Offer Deleted" });
   } catch (error) {
     console.log(error);

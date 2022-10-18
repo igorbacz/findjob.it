@@ -59,6 +59,9 @@ const offerSchema = new mongoose.Schema(
         type: String | Number,
       },
     },
+    adminEmail: {
+      type: String,
+    },
   },
   {
     versionKey: false,
