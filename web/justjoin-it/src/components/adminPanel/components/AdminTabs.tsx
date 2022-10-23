@@ -51,6 +51,11 @@ const AdminTabs = () => {
   const userOffers = data.filter((offer) => {
     return offer.adminEmail === userEmail;
   });
+  //to do selectora TODO
+
+  useEffect(() => {
+    console.log(userOffers);
+  }, [userOffers]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -64,9 +69,7 @@ const AdminTabs = () => {
     setPage(p);
     _DATA.jump(p);
   };
-  useEffect(() => {
-    console.log("data changed");
-  }, [userOffers]);
+
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -103,5 +106,5 @@ const AdminTabs = () => {
       </TabPanel>
     </Box>
   );
-};;
+};;;
 export default AdminTabs;

@@ -7,8 +7,11 @@ import SortMenu from "./components/SortMenu";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { theme } from "../../theme";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { allOffersSelector, filterAndSortSelector } from "../../service/offers/selectors";
+import { getOffersData } from "../../service/offers/actions";
+import LargeView from "../miniOffer/components/views/LargeView";
+import DefaultView from "../miniOffer/components/views/DefaultView";
 
 export const Tabs = () => {
   const [checked, setChecked] = useState(false);
@@ -20,6 +23,13 @@ export const Tabs = () => {
   const currentSortParam = searchParams.get("sort");
   const remoteOffersParam = searchParams.get("remote");
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
+  const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(getOffersData());
+  }, []);
 
   const remoteParam = () => {
     if (!remoteOffersParam) {
@@ -74,22 +84,39 @@ export const Tabs = () => {
       </TabBar>
       <TabPanel value={0}>
         <OfferWrapper>
-          {offers
-            .filter((amount) => amount.amount)
-            .map((offer) => (
-              <MiniOffer
-                techStack={offer.techStack}
-                dateAdded={offer.dateAdded}
-                remote={offer.remote}
-                key={offer._id}
-                _id={offer._id}
-                logo={offer.logo}
-                title={offer.title}
-                amount={offer.amount}
-                companyName={offer.companyName}
-                city={offer.city}
-              />
-            ))}
+          {isMatchLarge
+            ? offers
+                .filter((amount) => amount.amount)
+                .map((offer) => (
+                  <LargeView
+                    techStack={offer.techStack}
+                    dateAdded={offer.dateAdded}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                  />
+                ))
+            : offers
+                .filter((amount) => amount.amount)
+                .map((offer) => (
+                  <DefaultView
+                    techStack={offer.techStack}
+                    dateAdded={offer.dateAdded}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                  />
+                ))}
         </OfferWrapper>
       </TabPanel>
       <TabPanel value={1}>

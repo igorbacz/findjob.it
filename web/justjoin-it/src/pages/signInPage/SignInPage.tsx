@@ -3,7 +3,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox, TextBox } from "./styled";
 import { StyledLink } from "../../components/topBar/styled";
-import { ChangeEvent, ErrorInfo, SyntheticEvent, useReducer, useRef, useState } from "react";
+import { ChangeEvent, ErrorInfo, SyntheticEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 import { useDispatch } from "react-redux";
@@ -19,8 +19,8 @@ export const SignInPage = (error: ErrorInfo) => {
   const dispatch = useDispatch();
 
   const userData: any = useSelector(userDataSelector);
-  const isAuthenticated: boolean = userData.isAuthenticated;
-
+  const isAuthenticated: any = userData.isAuthenticated;
+  console.log(isAuthenticated);
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -66,6 +66,7 @@ export const SignInPage = (error: ErrorInfo) => {
       .then((data) => {
         const userToken = data.token;
         localStorage.setItem("token", userToken);
+        console.log(userToken);
         dispatch(login(form.email));
         navigate("/");
       })

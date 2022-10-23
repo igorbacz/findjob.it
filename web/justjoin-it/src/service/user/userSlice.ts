@@ -15,7 +15,6 @@ export const UserSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.isAuthenticated = false;
-      console.log("logout");
     },
   },
 });

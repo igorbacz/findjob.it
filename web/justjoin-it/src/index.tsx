@@ -8,7 +8,7 @@ import { store } from "./service/store";
 import { getOffersData } from "./service/offers/actions";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-store.dispatch(getOffersData());
+// store.dispatch(getOffersData());
 root.render(
   <BrowserRouter>
     <Provider store={store}>

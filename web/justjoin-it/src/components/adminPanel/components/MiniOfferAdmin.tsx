@@ -5,6 +5,7 @@ import { MiniOfferCon, LogoContainer, MiniLogoImg, AmountResponsive, Title, Loca
 import { store } from "../../../service/store";
 import { deleteOffer } from "../../../service/offers/offersSlice";
 import { useDispatch } from "react-redux";
+import { StyledLink } from "../../topBar/styled";
 
 const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
   type AppDispatch = typeof store.dispatch;
@@ -17,12 +18,11 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
     });
     const data = await response.json();
     if (data) {
-      alert("Offer deleted");
+      dispatch(deleteOffer({ _id }));
     }
   };
 
   const handleDelete = async (e: any) => {
-    dispatch(deleteOffer(_id));
     await deleteOfferInDatabase(_id);
   };
 
@@ -45,9 +45,9 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
         <Button variant="outlined" href="">
           EDIT
         </Button>
-        <Button variant="outlined" href={`/offer/${_id}`}>
-          VIEW
-        </Button>
+        <StyledLink to={`/offer/${_id}`}>
+          <Button variant="outlined">VIEW</Button>
+        </StyledLink>
       </ButtonBox>
       <LocationRemote>
         {remote ? <Paragraph>{city}, Fully Remote</Paragraph> : <Paragraph>{city}</Paragraph>}

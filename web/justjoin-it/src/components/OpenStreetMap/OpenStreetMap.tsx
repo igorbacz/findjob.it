@@ -1,6 +1,6 @@
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
-import { data, stackIcons } from "../../data";
+import { stackIcons } from "../../data";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BigOfferDetails } from "../../types/types";

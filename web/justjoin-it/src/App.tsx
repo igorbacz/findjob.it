@@ -8,18 +8,57 @@ import { theme } from "./theme";
 import { OfferFormPage } from "./pages/OfferFormPage/OfferFormPage";
 import { RegisterPage } from "./pages/registerPage/RegisterPage";
 import { AdminPanelPage } from "./pages/AdminPanelPage/AdminPanelPage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./service/user/userSlice";
+import { ProtectedRoute } from "./ProtectedRoute";
+import { useSelector } from "react-redux";
+import { userDataSelector } from "./service/user/selectors";
 
 function App() {
+  const dispatch = useDispatch();
+  const userData: any = useSelector(userDataSelector);
+  useEffect(() => {
+    const userAuthenticaded = async () => {
+      const response = await fetch("http://localhost:3001/api/authUser", {
+        method: "GET",
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        dispatch(login(data));
+      } else {
+        dispatch(logout());
+      }
+    };
+    userAuthenticaded();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        {/* <Route path="/search" component={Search} onEnter={requireAuth} /> */}
         <Route path="*" element={<OffersListPage />} />
         <Route path="/login" element={<SignInPage componentStack={""} />} />
         <Route path="/register" element={<RegisterPage componentStack={""} />} />
-        <Route path="/admin" element={<AdminPanelPage />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminPanelPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/post" element={<PostOffersPage />} />
-        <Route path="/add-offer" element={<OfferFormPage />} />
+        <Route
+          path="/add-offer"
+          element={
+            <ProtectedRoute>
+              <OfferFormPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/offer/:offerId" element={<BigOfferPage />} />
       </Routes>
     </ThemeProvider>

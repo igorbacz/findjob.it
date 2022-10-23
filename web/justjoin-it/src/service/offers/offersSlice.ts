@@ -11,7 +11,9 @@ export const offerSlice = createSlice({
     },
     deleteOffer: (state, action) => {
       const { _id } = action.payload;
-      state = state.filter((offer: BigOfferDetails) => offer._id !== _id);
+      const filteredArray = state.filter((offer: BigOfferDetails) => offer._id !== _id);
+      state = filteredArray;
+      return state;
     },
   },
 });
