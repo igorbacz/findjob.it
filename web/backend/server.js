@@ -22,4 +22,6 @@ app.use("/api/", dataRouter);
 
 const PORT = config.PORT || 3001;
 
-app.listen(PORT, () => console.log("Server Started"));
+app.listen(PORT, () => {
+  console.log("Server Started");
+});

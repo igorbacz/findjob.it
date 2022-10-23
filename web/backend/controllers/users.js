@@ -37,3 +37,17 @@ exports.loginUser = async (req, res) => {
     res.status(401).json({ error: "User does not exist" });
   }
 };
+
+exports.authUser = async (req, res) => {
+  const token = req.header("Authorization");
+  if (!token) return res.status(401).send("Access denied. No token provided.");
+  jwt.verify(token, config.TOKEN_KEY, (err, decoded) => {
+    if (err) {
+      console.log(err);
+      return res.status(401).send({
+        message: "Unauthorized!",
+      });
+    }
+    res.status(200).json(decoded.email);
+  });
+};
