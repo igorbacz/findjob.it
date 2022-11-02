@@ -10,10 +10,11 @@ import { useSearchParams } from "react-router-dom";
 export const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const param = searchParams.get("techStack");
+
+  //TODOTEST
   const allSearch = () => {
     searchParams.delete("techStack");
     setSearchParams(searchParams);
-  
   };
 
   return (

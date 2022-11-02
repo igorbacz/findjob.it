@@ -18,9 +18,10 @@ import {
 import { StyledLink } from "../topBar/styled";
 import { userDataSelector } from "../../service/user/selectors";
 import { useSelector } from "react-redux";
+import { UserState } from "../../types/types";
 
 export const PostOffers = () => {
-  const userData: any = useSelector(userDataSelector);
+  const userData: UserState = useSelector(userDataSelector);
   const isAuthenticated: boolean = userData.isAuthenticated;
   return (
     <Fragment>

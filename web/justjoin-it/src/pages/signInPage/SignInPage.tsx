@@ -5,7 +5,7 @@ import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, Hea
 import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User } from "../../types/types";
+import { User, UserState } from "../../types/types";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../../service/user/userSlice";
 import { useSelector } from "react-redux";
@@ -18,8 +18,8 @@ export const SignInPage = (error: ErrorInfo) => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
-  const userData: any = useSelector(userDataSelector);
-  const isAuthenticated: any = userData.isAuthenticated;
+  const userData: UserState = useSelector(userDataSelector);
+  const isAuthenticated = userData.isAuthenticated;
   console.log(isAuthenticated);
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
@@ -70,7 +70,7 @@ export const SignInPage = (error: ErrorInfo) => {
         dispatch(login(form.email));
         navigate("/");
       })
-      .catch((error: any) => {
+      .catch((error) => {
         alert(error.message);
       });
   };

@@ -38,7 +38,7 @@ import {
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
-import { BigOfferDetails, GeoProp, StackProp } from "../../types/types";
+import { BigOfferDetails, GeoProp, StackProp, UserState } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
 import axios, { AxiosResponse } from "axios";
@@ -64,8 +64,7 @@ export const OfferForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
   const navigate = useNavigate();
-  const userData: any = useSelector(userDataSelector);
-  const dispatch = useDispatch();
+  const userData: UserState = useSelector(userDataSelector);
 
   const userEmail: string = userData.user;
 

@@ -7,7 +7,7 @@ import PersonPinIcon from "@mui/icons-material/PersonPin";
 import NextWeekIcon from "@mui/icons-material/NextWeek";
 import { useSelector } from "react-redux";
 import { allOffersSelector } from "../../../service/offers/selectors";
-import { BigOfferDetails } from "../../../types/types";
+import { BigOfferDetails, UserState } from "../../../types/types";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import usePagination from "../../../hooks/usePagination";
@@ -45,7 +45,7 @@ const a11yProps = (index: number) => {
 const AdminTabs = () => {
   const [value, setValue] = React.useState(0);
   const data: BigOfferDetails[] = useSelector(allOffersSelector);
-  const userData: any = useSelector(userDataSelector);
+  const userData: UserState = useSelector(userDataSelector);
   const userEmail: string = userData.user;
 
   const userOffers = data.filter((offer) => {

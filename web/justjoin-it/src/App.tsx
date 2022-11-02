@@ -12,12 +12,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { useSelector } from "react-redux";
-import { userDataSelector } from "./service/user/selectors";
 
 function App() {
   const dispatch = useDispatch();
-  const userData: any = useSelector(userDataSelector);
   useEffect(() => {
     const userAuthenticaded = async () => {
       const response = await fetch("http://localhost:3001/api/authUser", {

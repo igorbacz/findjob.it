@@ -59,7 +59,7 @@ export const RegisterPage = (error: ErrorInfo) => {
           });
         }
       })
-      .catch((error: any) => {
+      .catch((error) => {
         alert(error.message);
       });
   };

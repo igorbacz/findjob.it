@@ -22,7 +22,7 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
     }
   };
 
-  const handleDelete = async (e: any) => {
+  const handleDelete = async () => {
     await deleteOfferInDatabase(_id);
   };
 

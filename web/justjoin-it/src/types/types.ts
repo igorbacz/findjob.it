@@ -28,6 +28,11 @@ export class User {
   password?: string = "";
 }
 
+export type UserState = {
+  isAuthenticated: boolean;
+  user: string;
+};
+
 export class GeoProp {
   latitude: number | string;
   longitude: number | string;
@@ -51,5 +56,5 @@ export interface Icon {
 export interface MiniTagType {
   days: number;
 }
-//@ts-ignore 
+
 export type RootState = ReturnType<typeof store.getState>;
