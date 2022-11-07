@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { store } from "../service/store";
 
-export class SmallOffer {
+export interface SmallOffer {
   _id: string;
   dateAdded: string;
   remote: boolean;
@@ -15,7 +15,7 @@ export class SmallOffer {
   adminEmail?: string;
 }
 
-export class BigOfferDetails extends SmallOffer {
+export interface BigOfferDetails extends SmallOffer {
   adress: string;
   companySize: string;
   exp: string;

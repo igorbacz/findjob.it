@@ -17,10 +17,8 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-, "theme.tsx"  ],
+  "include": ["src", "theme.tsx"],
   "paths": {
-  "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
-}
+    "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
+  }
 }

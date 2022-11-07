@@ -53,7 +53,8 @@ import { getOffersData } from "../../service/offers/actions";
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
   const [image, setImage] = useState("");
-  const [form, setForm] = useState(new BigOfferDetails());
+  const [form, setForm] = useState({});
+  //TODO test form !
   const [techStack, setTechStack] = useState<StackProp>();
   const [techStackArray, setTechStackArray] = useState<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -437,4 +438,4 @@ export const OfferForm = () => {
       </FormContainer>
     </form>
   );
-};;;
+};;;;
