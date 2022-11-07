@@ -19,8 +19,6 @@ module.exports = {
 
       moduleFileExtensions: ["tsx", "ts", "js", "jsx"],
 
-      coveragePathIgnorePatterns,
-
       setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
     },
   ],

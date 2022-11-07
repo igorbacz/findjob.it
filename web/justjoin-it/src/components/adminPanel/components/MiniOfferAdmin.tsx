@@ -42,9 +42,6 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
         <Button variant="outlined" onClick={handleDelete}>
           DELETE
         </Button>
-        <Button variant="outlined" href="">
-          EDIT
-        </Button>
         <StyledLink to={`/offer/${_id}`}>
           <Button variant="outlined">VIEW</Button>
         </StyledLink>
