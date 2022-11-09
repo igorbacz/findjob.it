@@ -13,7 +13,7 @@ Backend of the application is deployed on: https://git.heroku.com/itjustfind.git
 
 - Presentation of the offers.
 - Map with pins where the offer was added
-- Filtering offers based on the date the offer was added, the amount of earnings, the possibility of remote work.
+- Filtering offers based on the date the offer was added, the amount of earnings, the possibility of remote work and main stack.
 - User registration and login
 - Adding job offer by login user.
 - Removing a job offer
