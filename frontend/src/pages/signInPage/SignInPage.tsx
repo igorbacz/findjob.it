@@ -45,7 +45,7 @@ export const SignInPage = (error: ErrorInfo) => {
   let navigate = useNavigate();
 
   const loginFunc = async () => {
-    const response = await fetch("https://itjustfind.herokuapp.com/api/login", {
+    const response = await fetch("https://itjustfind.herokuapp.com/login", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
