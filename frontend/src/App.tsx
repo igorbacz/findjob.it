@@ -36,9 +36,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path="*" element={<OffersListPage />} />
-        <Route path="/login" element={<SignInPage componentStack={""} />} />
-        <Route path="/register" element={<RegisterPage componentStack={""} />} />
+        <Route path="/findjob.it/" element={<OffersListPage />} />
+        <Route path="/findjob.it/login" element={<SignInPage componentStack={""} />} />
+        <Route path="/findjob.it/register" element={<RegisterPage componentStack={""} />} />
         <Route
           path="/admin"
           element={

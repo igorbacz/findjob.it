@@ -28,7 +28,7 @@ export const TopBarResponsive = () => {
           </IconButton>
         </BoxFlex>
         <LogoResponsiveWrapper>
-          <StyledLink to="/">
+          <StyledLink to="/fonjob.it/">
             <Typography variant="H2StyledBold">findjob.it</Typography>
           </StyledLink>
         </LogoResponsiveWrapper>

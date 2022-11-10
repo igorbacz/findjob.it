@@ -92,7 +92,7 @@ export const SignInPage = (error: ErrorInfo) => {
   return (
     <Wrapper>
       <HeaderLoginBox>
-        <StyledLink to="/">
+        <StyledLink to="/finjob.it/">
           <Typography variant="H1Styled">findjob.it</Typography>
         </StyledLink>
       </HeaderLoginBox>
