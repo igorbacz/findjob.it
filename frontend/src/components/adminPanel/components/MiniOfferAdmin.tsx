@@ -13,7 +13,7 @@ const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: Smal
   const dispatch = useAppDispatch();
 
   const deleteOfferInDatabase = async (_id: string) => {
-    const response = await fetch(`http://localhost:3001/api/delete-offer/${_id}`, {
+    const response = await fetch(`https://itjustfind.herokuapp.com/api/delete-offer/${_id}`, {
       method: "DELETE",
     });
     const data = await response.json();

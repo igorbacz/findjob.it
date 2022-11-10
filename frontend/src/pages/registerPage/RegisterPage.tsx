@@ -35,7 +35,7 @@ export const RegisterPage = (error: ErrorInfo) => {
   let navigate = useNavigate();
 
   const Register = async () => {
-    const response = await fetch("http://localhost:3001/api/register", {
+    const response = await fetch("https://itjustfind.herokuapp.com/api/register", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {

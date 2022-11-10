@@ -2,7 +2,7 @@
   "name": "justjoin-it",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://itjustfind.herokuapp.com/",
   "homepage": "https://igorbacz.github.io/findjob.it",
   "scripts": {
     "start": "react-scripts start",

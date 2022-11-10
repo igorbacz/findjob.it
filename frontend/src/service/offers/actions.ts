@@ -2,7 +2,7 @@ import { BigOfferDetails } from "../../types/types";
 import { offerSlice } from "./offersSlice";
 
 const getOffers = async () => {
-  const response = await fetch("http://localhost:3001/api/");
+  const response = await fetch("https://itjustfind.herokuapp.com/api/");
   if (!response.ok) {
     throw new Error("Could not fetch offers data");
   }
