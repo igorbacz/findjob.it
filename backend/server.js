@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
 
 const dataRouter = require("./routes/routes");
-app.use("/", dataRouter);
+app.use("/api", dataRouter);
 
 const PORT = "https://itjustfind.herokuapp.com";
 
