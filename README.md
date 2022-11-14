@@ -3,7 +3,7 @@
 
 FindJob.it is the fullstack application with job offers. 
 
-Backend of the application is deployed on: https://git.heroku.com/itjustfind.git
+Backend of the application is deployed on: https://itjustfind.herokuapp.com/api
 
 ## Author
 [Iwona Gorbacz](https://github.com/igorbacz)
