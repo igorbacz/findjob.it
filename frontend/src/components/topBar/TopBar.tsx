@@ -15,7 +15,7 @@ export const TopBar = () => {
     <Container>
       <LogoWrapper>
         <StyledLink to="/">
-          <Typography variant="H1Styled">findjob.it</Typography>
+          <Typography variant="H1Styled">zmiana</Typography>
         </StyledLink>
         <LogoParagraph> #1 Job Board for tech industry in Europe</LogoParagraph>
       </LogoWrapper>

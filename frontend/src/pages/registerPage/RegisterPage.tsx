@@ -75,7 +75,7 @@ export const RegisterPage = (error: ErrorInfo) => {
   return (
     <Wrapper>
       <HeaderLoginBox>
-        <StyledLink to="/findjob.it/">
+        <StyledLink to="/">
           <Typography variant="H1Styled">findjob.it</Typography>
         </StyledLink>
       </HeaderLoginBox>
@@ -91,7 +91,7 @@ export const RegisterPage = (error: ErrorInfo) => {
         </LabelContainer>
         {error && <ErrorBox>{errors.password}</ErrorBox>}
         <LinkContainer>
-          <ResetLink href="/findjob.it/login">Sign in</ResetLink>
+          <ResetLink href="/login">Sign in</ResetLink>
         </LinkContainer>
         <ButtonContainer>
           <Button variant="contained" type="submit" onSubmit={handleRegister} fullWidth>
