@@ -17,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch("https://itjustfind.herokuapp.com/authUser", {
+      const response = await fetch("https://itjustfind.herokuapp.com/api/authUser", {
         method: "GET",
         headers: {
           Authorization: localStorage.getItem("token"),
