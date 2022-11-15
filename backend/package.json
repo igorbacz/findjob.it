@@ -2,9 +2,6 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "18.x"
-  },
   "main": "index.js",
   "scripts": {
     "start": "npm i && node server.js",
@@ -21,6 +18,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.2",
     "dotenv": "^16.0.2"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
