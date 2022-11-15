@@ -6,6 +6,7 @@ const app = express();
 const mongoose = require("mongoose");
 const config = process.env;
 
+
 mongoose.connect(config.DATABASE_URL, { useNewUrlParser: true });
 
 const db = mongoose.connection;
@@ -20,7 +21,9 @@ app.use(express.json());
 const dataRouter = require("./routes/routes");
 app.use("/api", dataRouter);
 
-const PORT = config.PORT || 3001;
+const PORT = "https://itjustfind.herokuapp.com" || 5000;
+// console.log(process.env.PORT);
 app.listen(PORT, () => {
   console.log("Server Started");
 });
+
