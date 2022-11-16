@@ -9,7 +9,7 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b build"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -20,7 +20,6 @@
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "esri-leaflet-geocoder": "^3.1.3",
-    "gh-pages": "^4.0.0",
     "jest": "^29.2.2",
     "jest-environment-jsdom": "^29.2.2",
     "jsonwebtoken": "^8.5.1",
@@ -72,6 +71,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-leaflet": "^2.8.2",
     "@types/styled-components": "^5.1.26",
+    "gh-pages": "^4.0.0",
     "ts-jest": "^29.0.3"
   }
 }
