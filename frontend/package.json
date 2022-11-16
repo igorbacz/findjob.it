@@ -9,7 +9,7 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -b build"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
