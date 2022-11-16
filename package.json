@@ -1,0 +1,8 @@
+{
+  "homepage": "https://igorbacz.github.io/findjob.it",
+  "scripts": {
+    "predeploy": "cd frontend && npm run predeploy",
+    "deploy": "cd frontend && npm run deploy",
+    "start": "cd backend && npm run start"
+  }
+}
