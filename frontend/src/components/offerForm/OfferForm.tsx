@@ -47,6 +47,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
 import { useSelector } from "react-redux";
+import dotenv from "dotenv";
+
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
