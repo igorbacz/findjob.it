@@ -42,13 +42,11 @@ import { BigOfferDetails, GeoProp, StackProp, UserState } from "../../types/type
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
 import axios, { AxiosResponse } from "axios";
-import { API_KEY } from "../../apiKey";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
-import { useSelector, useDispatch } from "react-redux";
-import { getOffersData } from "../../service/offers/actions";
+import { useSelector } from "react-redux";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
@@ -75,6 +73,7 @@ export const OfferForm = () => {
     access_key: process.env.API_KEY,
     query: city,
   };
+  console.log(process.env.API_KEY);
   const positionFromInput = () => {
     axios
       .get("http://api.positionstack.com/v1/forward", { params })
