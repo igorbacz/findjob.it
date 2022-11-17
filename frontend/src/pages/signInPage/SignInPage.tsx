@@ -20,7 +20,6 @@ export const SignInPage = (error: ErrorInfo) => {
 
   const userData: UserState = useSelector(userDataSelector);
   const isAuthenticated = userData.isAuthenticated;
-  console.log(isAuthenticated);
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -66,7 +65,6 @@ export const SignInPage = (error: ErrorInfo) => {
       .then((data) => {
         const userToken = data.token;
         localStorage.setItem("token", userToken);
-        console.log(userToken);
         dispatch(login(form.email));
         navigate("/");
       })

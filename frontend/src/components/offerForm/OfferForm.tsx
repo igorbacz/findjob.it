@@ -72,11 +72,10 @@ export const OfferForm = () => {
   const currentLatitude = geolocation.latitude;
 
   const params = {
-    access_key: API_KEY,
+    access_key: process.env.API_KEY,
     query: city,
   };
   const positionFromInput = () => {
-    console.log(city);
     axios
       .get("http://api.positionstack.com/v1/forward", { params })
       .then((response: AxiosResponse) => {
@@ -108,7 +107,6 @@ export const OfferForm = () => {
   const handleChangeCity = (event: MouseEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     setCity(target.value);
-    console.log(city);
   };
 
   useEffect(() => {
@@ -148,7 +146,6 @@ export const OfferForm = () => {
   };
 
   const onLoad = (fileString: string) => {
-    console.log(fileString);
     setImage(fileString);
   };
 
