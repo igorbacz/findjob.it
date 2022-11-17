@@ -46,9 +46,8 @@ import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
-import { useSelector } from "react-redux";
-import dotenv from "dotenv";
-
+import { useSelector, useDispatch } from "react-redux";
+import { getOffersData } from "../../service/offers/actions";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
@@ -65,6 +64,7 @@ export const OfferForm = () => {
   const currentStackParam = searchParams.get("techStack");
   const navigate = useNavigate();
   const userData: UserState = useSelector(userDataSelector);
+  const dispatch = useDispatch();
 
   const userEmail: string = userData.user;
 
@@ -137,6 +137,8 @@ export const OfferForm = () => {
       },
     });
     const data = await response.json();
+    //@ts-ignore
+    dispatch(getOffersData());
     console.log(data);
   };
 
