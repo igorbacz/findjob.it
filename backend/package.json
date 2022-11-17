@@ -20,7 +20,8 @@
     "dotenv": "^16.0.2"
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.x",
+    "npm": "8.x"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
