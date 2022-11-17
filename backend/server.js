@@ -22,8 +22,7 @@ app.use(express.json());
 const dataRouter = require("./routes/routes");
 app.use("/api", dataRouter);
 
-const PORT = "https://itjustfind.herokuapp.com" || 5000;
-// console.log(process.env.PORT);
+const PORT = config.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server Started");
 });
