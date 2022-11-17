@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/findjob.it/static/css/main.dae97956.css",
-    "main.js": "/findjob.it/static/js/main.08b84ecb.js",
+    "main.js": "/findjob.it/static/js/main.023cd5bc.js",
     "index.html": "/findjob.it/index.html",
     "main.dae97956.css.map": "/findjob.it/static/css/main.dae97956.css.map",
-    "main.08b84ecb.js.map": "/findjob.it/static/js/main.08b84ecb.js.map"
+    "main.023cd5bc.js.map": "/findjob.it/static/js/main.023cd5bc.js.map"
   },
   "entrypoints": [
     "static/css/main.dae97956.css",
-    "static/js/main.08b84ecb.js"
+    "static/js/main.023cd5bc.js"
   ]
 }
