@@ -48,8 +48,10 @@ import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { getOffersData } from "../../service/offers/actions";
+// import dotenv from "dotenv";
 
 export const OfferForm = () => {
+  // dotenv.config();
   const [choice, setChoice] = useState("Junior");
   const [image, setImage] = useState("");
   const [form, setForm] = useState({});
@@ -72,10 +74,9 @@ export const OfferForm = () => {
   const currentLatitude = geolocation.latitude;
 
   const params = {
-    access_key: process.env.API_KEY,
+    access_key: process.env.REACT_APP_API_KEY,
     query: city,
   };
-  console.log(process.env.API_KEY);
   const positionFromInput = () => {
     axios
       .get("http://api.positionstack.com/v1/forward", { params })
@@ -139,7 +140,6 @@ export const OfferForm = () => {
     const data = await response.json();
     //@ts-ignore
     dispatch(getOffersData());
-    console.log(data);
   };
 
   const handlePostOffer = (e: FormEvent<HTMLFormElement>): void => {
