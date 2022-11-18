@@ -6,9 +6,7 @@ const app = express();
 const mongoose = require("mongoose");
 const config = process.env;
 
-const DATABASE_URL = "mongodb+srv://igorbacz:Iwona1990@cluster0.2pdcrp9.mongodb.net/?retryWrites=true&w=majority";
-
-mongoose.connect(DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect(config.DATABASE_URL, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
