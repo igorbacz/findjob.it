@@ -48,10 +48,8 @@ import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { getOffersData } from "../../service/offers/actions";
-// import dotenv from "dotenv";
 
 export const OfferForm = () => {
-  // dotenv.config();
   const [choice, setChoice] = useState("Junior");
   const [image, setImage] = useState("");
   const [form, setForm] = useState({});
@@ -79,7 +77,7 @@ export const OfferForm = () => {
   };
   const positionFromInput = () => {
     axios
-      .get("http://api.positionstack.com/v1/forward", { params })
+      .get("https://api.positionstack.com/v1/forward", { params })
       .then((response: AxiosResponse) => {
         setApiGeolocation(response.data);
       })
