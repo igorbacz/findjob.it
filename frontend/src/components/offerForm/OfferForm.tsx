@@ -38,7 +38,7 @@ import {
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import ToggleButtonsMultiple from "./components/ToggleButtons";
-import { BigOfferDetails, GeoProp, StackProp, UserState } from "../../types/types";
+import { GeoProp, StackProp, UserState } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
 import axios, { AxiosResponse } from "axios";

@@ -2,7 +2,6 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox, TextBox } from "./styled";
-import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, UserState } from "../../types/types";
@@ -17,6 +16,10 @@ export const SignInPage = (error: ErrorInfo) => {
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const onClickToRegisterPage = () => {
+    navigate("/register");
+  };
 
   const userData: UserState = useSelector(userDataSelector);
   const isAuthenticated = userData.isAuthenticated;
@@ -40,8 +43,6 @@ export const SignInPage = (error: ErrorInfo) => {
     }
     return newErrors;
   };
-
-  let navigate = useNavigate();
 
   const loginFunc = async () => {
     const response = await fetch("https://itjustfind.herokuapp.com/api/login", {
@@ -90,9 +91,13 @@ export const SignInPage = (error: ErrorInfo) => {
   return (
     <Wrapper>
       <HeaderLoginBox>
-        <StyledLink to="/finjob.it/">
+        <Box
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <Typography variant="H1Styled">findjob.it</Typography>
-        </StyledLink>
+        </Box>
       </HeaderLoginBox>
       {isAuthenticated ? (
         <Box>
@@ -126,7 +131,7 @@ export const SignInPage = (error: ErrorInfo) => {
           </LabelContainer>
           {error && <ErrorBox>{errors.password}</ErrorBox>}
           <LinkContainer>
-            <ResetLink href="/register">Don't have an account? Register</ResetLink>
+            <ResetLink onClick={onClickToRegisterPage}>Don't have an account? Register</ResetLink>
           </LinkContainer>
           <ButtonContainer>
             <Button variant="contained" type="submit" onSubmit={handleLogin} fullWidth>
@@ -137,4 +142,4 @@ export const SignInPage = (error: ErrorInfo) => {
       )}
     </Wrapper>
   );
-};;
+};;;

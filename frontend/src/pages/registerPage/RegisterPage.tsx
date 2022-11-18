@@ -1,8 +1,7 @@
-import { Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
 import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox } from "../signInPage/styled";
-import { StyledLink } from "../../components/topBar/styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
@@ -10,6 +9,10 @@ import { User } from "../../types/types";
 export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
+  const navigate = useNavigate();
+  const onClickToLoginPage = () => {
+    navigate("/login");
+  };
 
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
@@ -31,8 +34,6 @@ export const RegisterPage = (error: ErrorInfo) => {
     }
     return newErrors;
   };
-
-  let navigate = useNavigate();
 
   const Register = async () => {
     const response = await fetch("https://itjustfind.herokuapp.com/api/register", {
@@ -67,7 +68,6 @@ export const RegisterPage = (error: ErrorInfo) => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
-
     Register();
     navigate("/");
   };
@@ -75,9 +75,13 @@ export const RegisterPage = (error: ErrorInfo) => {
   return (
     <Wrapper>
       <HeaderLoginBox>
-        <StyledLink to="/">
+        <Box
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <Typography variant="H1Styled">findjob.it</Typography>
-        </StyledLink>
+        </Box>
       </HeaderLoginBox>
       <form onSubmit={handleRegister}>
         <LabelContainer>
@@ -91,7 +95,7 @@ export const RegisterPage = (error: ErrorInfo) => {
         </LabelContainer>
         {error && <ErrorBox>{errors.password}</ErrorBox>}
         <LinkContainer>
-          <ResetLink href="/login">Sign in</ResetLink>
+          <ResetLink onClick={onClickToLoginPage}>Sign in</ResetLink>
         </LinkContainer>
         <ButtonContainer>
           <Button variant="contained" type="submit" onSubmit={handleRegister} fullWidth>
