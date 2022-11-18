@@ -12,8 +12,14 @@ import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
 import HelpIcon from "@mui/icons-material/Help";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { SignInBurger } from "./components/SignInBurger";
+import { UserState } from "../../types/types";
+import { userDataSelector } from "../../service/user/selectors";
+import { useSelector } from "react-redux";
+import SchoolIcon from "@mui/icons-material/School";
 
 export const TopBarResponsive = () => {
+  const userData: UserState = useSelector(userDataSelector);
+  const isAuthenticated: boolean = userData.isAuthenticated;
   const [open, setOpen] = useState(false);
   return (
     <Fragment>
@@ -35,6 +41,13 @@ export const TopBarResponsive = () => {
       </TopBarResponsiveHeader>
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <BurgerHeader />
+        {isAuthenticated ? (
+          <StyledLink to={"/admin"}>
+            <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
+              Admin panel
+            </BurgerButton>
+          </StyledLink>
+        ) : null}
         <BurgerButton variant="text" href="/" startIcon={<WorkOutlineOutlinedIcon />}>
           Offers
         </BurgerButton>
