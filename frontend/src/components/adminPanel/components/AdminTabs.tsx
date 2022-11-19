@@ -51,7 +51,6 @@ const AdminTabs = () => {
   const userOffers = data.filter((offer) => {
     return offer.adminEmail === userEmail;
   });
-  //to do selectora TODO
 
   useEffect(() => {
     console.log(userOffers);

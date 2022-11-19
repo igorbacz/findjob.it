@@ -22,6 +22,6 @@ Backend of the application is deployed on: https://itjustfind.herokuapp.com/api
 <details><summary>Backend features</summary>
 
 - Providing models for offer and user
-- Providing controllers for creating deleting offers
+- Providing controllers for creating and deleting offers
 - Providing controller for fetching page resource data
 </details>

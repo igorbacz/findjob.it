@@ -203,13 +203,6 @@ export const HeaderJobDesc = styled(Box)`
   display: flex;
   align-items: flex-end;
 `;
-export const JobDescToggle = styled(Box)`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 10;
-  grid-row-end: 11;
-  padding-left: 30px;
-`;
 
 export const JobDescBox = styled(Box)`
   grid-column-start: 1;

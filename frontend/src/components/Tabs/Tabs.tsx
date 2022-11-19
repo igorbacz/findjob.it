@@ -31,7 +31,6 @@ export const Tabs = () => {
     dispatch(getOffersData());
   }, []);
 
-  //TODOTEST
   const remoteParam = () => {
     if (!remoteOffersParam) {
       searchParams.set("remote", "1");

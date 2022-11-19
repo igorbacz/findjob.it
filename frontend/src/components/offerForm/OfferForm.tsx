@@ -22,7 +22,6 @@ import {
   InpputsBox,
   InpputsSecondBox,
   JobDescBox,
-  JobDescToggle,
   OfferExpBox,
   OfferTitleBox,
   PhotoBox,
@@ -37,7 +36,6 @@ import {
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
-import ToggleButtonsMultiple from "./components/ToggleButtons";
 import { GeoProp, StackProp, UserState } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
@@ -389,9 +387,6 @@ export const OfferForm = () => {
         <HeaderJobDesc>
           <Typography variant="subtitle2">Job description</Typography>
         </HeaderJobDesc>
-        <JobDescToggle>
-          <ToggleButtonsMultiple />
-        </JobDescToggle>
         <JobDescBox>
           <TextField required id="outlined-multiline-static" fullWidth multiline rows={10} name="description" onChange={handleChangeForm} />
         </JobDescBox>
@@ -429,7 +424,7 @@ export const OfferForm = () => {
         </MapBox>
         <ButtonContainer>
           <Button variant="contained" size="large" type="submit">
-            NEXT STEP
+            PUBLISH
           </Button>
         </ButtonContainer>
       </FormContainer>
