@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper, StyledTabs } from "./styled";
-import { BigOfferDetails } from "../../types/types";
+import { AppDispatch, BigOfferDetails } from "../../types/types";
 import { useSearchParams } from "react-router-dom";
 import MiniOffer from "../miniOffer/MiniOffer";
 import SortMenu from "./components/SortMenu";
@@ -24,10 +24,9 @@ export const Tabs = () => {
   const remoteOffersParam = searchParams.get("remote");
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const isMatchLarge = useMediaQuery(theme.breakpoints.down("lg"));
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    //@ts-ignore
     dispatch(getOffersData());
   }, []);
 
@@ -122,22 +121,20 @@ export const Tabs = () => {
       <TabPanel value={1}>
         <OfferWrapper>
           {sortingBySalary
-            ? offers
-                .filter((amount) => amount.amount)
-                .map((offer) => (
-                  <MiniOffer
-                    techStack={offer.techStack}
-                    dateAdded={offer.dateAdded}
-                    remote={offer.remote}
-                    key={offer._id}
-                    _id={offer._id}
-                    logo={offer.logo}
-                    title={offer.title}
-                    amount={offer.amount}
-                    companyName={offer.companyName}
-                    city={offer.city}
-                  />
-                ))
+            ? offers.map((offer) => (
+                <MiniOffer
+                  techStack={offer.techStack}
+                  dateAdded={offer.dateAdded}
+                  remote={offer.remote}
+                  key={offer._id}
+                  _id={offer._id}
+                  logo={offer.logo}
+                  title={offer.title}
+                  amount={offer.amount}
+                  companyName={offer.companyName}
+                  city={offer.city}
+                />
+              ))
             : offers.map((offer) => {
                 return (
                   <MiniOffer

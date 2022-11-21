@@ -11,24 +11,29 @@ export const filterAndSortSelector =
             (item: BigOfferDetails) =>
               !(
                 (currentStackParam && !item.techStack.find((s: StackProp) => s.stackName === currentStackParam)) ||
-                (remoteOffersParam && !item.remote)
+                (remoteOffersParam && !item.remote) ||
+                (currentSortParam === "highest salary" && !item.amount) ||
+                (currentSortParam === "lowest salary" && !item.amount)
               )
           )
-          .sort((a: BigOfferDetails, b: BigOfferDetails) => {
+          .sort((a, b) => {
             if (currentSortParam === "latest") {
               const x = new Date(b.dateAdded).valueOf();
               const y = new Date(a?.dateAdded).valueOf();
               return x - y;
             }
             if (currentSortParam === "highest salary") {
-              const x = Number(b.amount);
-              const y = Number(a.amount);
-              return y <= x ? 1 : -1;
+              console.log(a.amount, b.amount);
+              const x = parseInt(b.amount);
+              const y = parseInt(a.amount);
+              return x - y;
+              // return y <= x ? 1 : -1;
             }
             if (currentSortParam === "lowest salary") {
-              const x = Number(b.amount);
-              const y = Number(a.amount);
-              return y >= x ? 1 : -1;
+              const x = parseInt(b.amount);
+              const y = parseInt(a.amount);
+              // return y >= x ? 1 : -1;
+              return y - x;
             } else return 0;
           })
       : [];

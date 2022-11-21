@@ -36,7 +36,7 @@ import {
 } from "./styled";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ChangeEvent, FormEvent, MouseEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
-import { GeoProp, StackProp, UserState } from "../../types/types";
+import { AppDispatch, GeoProp, StackProp, UserState } from "../../types/types";
 import useGeolocation from "react-hook-geolocation";
 import { StackDetail, StackDetails, StackName, StyledRating } from "../bigOffer/styled";
 import axios, { AxiosResponse } from "axios";
@@ -62,7 +62,7 @@ export const OfferForm = () => {
   const currentStackParam = searchParams.get("techStack");
   const navigate = useNavigate();
   const userData: UserState = useSelector(userDataSelector);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const userEmail: string = userData.user;
 
@@ -134,7 +134,6 @@ export const OfferForm = () => {
       },
     });
     const data = await response.json();
-    //@ts-ignore
     dispatch(getOffersData());
   };
 
