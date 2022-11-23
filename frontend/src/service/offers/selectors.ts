@@ -23,16 +23,13 @@ export const filterAndSortSelector =
               return x - y;
             }
             if (currentSortParam === "highest salary") {
-              console.log(a.amount, b.amount);
               const x = parseInt(b.amount);
               const y = parseInt(a.amount);
               return x - y;
-              // return y <= x ? 1 : -1;
             }
             if (currentSortParam === "lowest salary") {
               const x = parseInt(b.amount);
               const y = parseInt(a.amount);
-              // return y >= x ? 1 : -1;
               return y - x;
             } else return 0;
           })

@@ -121,20 +121,22 @@ export const Tabs = () => {
       <TabPanel value={1}>
         <OfferWrapper>
           {sortingBySalary
-            ? offers.map((offer) => (
-                <MiniOffer
-                  techStack={offer.techStack}
-                  dateAdded={offer.dateAdded}
-                  remote={offer.remote}
-                  key={offer._id}
-                  _id={offer._id}
-                  logo={offer.logo}
-                  title={offer.title}
-                  amount={offer.amount}
-                  companyName={offer.companyName}
-                  city={offer.city}
-                />
-              ))
+            ? offers
+                .filter((amount) => amount.amount)
+                .map((offer) => (
+                  <MiniOffer
+                    techStack={offer.techStack}
+                    dateAdded={offer.dateAdded}
+                    remote={offer.remote}
+                    key={offer._id}
+                    _id={offer._id}
+                    logo={offer.logo}
+                    title={offer.title}
+                    amount={offer.amount}
+                    companyName={offer.companyName}
+                    city={offer.city}
+                  />
+                ))
             : offers.map((offer) => {
                 return (
                   <MiniOffer
