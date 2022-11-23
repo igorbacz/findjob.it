@@ -27,14 +27,14 @@ export const PostOffers = () => {
     <Fragment>
       <HeaderPostOffers>
         <HeaderText>
-          <Typography variant="H2Styled">Dzięki nam dotrzesz skutecznie do społeczności ponad 400 tysięcy polskich programistów</Typography>
+          <Typography variant="H2Styled">The fast way [to warm mars] is to drop thermonuclear weapons over the poles. — Elon Musk</Typography>
         </HeaderText>
         <ImgBox sx={{ display: { xs: "none", md: "none", lg: "block", xl: "block" } }}>
           <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
         </ImgBox>
       </HeaderPostOffers>
       <OffersBox>
-        <Typography variant="H3Styled">Poznaj ogłoszenia na findjob.it</Typography>
+        <Typography variant="H3Styled">Get to know job ads on findjob.it</Typography>
         <ContentOffers>
           <OfferBox>
             <OfferHeader>
@@ -103,7 +103,7 @@ export const PostOffers = () => {
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
-                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                    <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
@@ -185,7 +185,7 @@ export const PostOffers = () => {
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
-                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                    <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
@@ -264,7 +264,7 @@ export const PostOffers = () => {
                     </Button>
                   </StyledLink>
                   <StyledLink to="/login">
-                    <Typography variant="PStyled">Zaloguj się aby dodać ogłoszenie </Typography>
+                    <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
