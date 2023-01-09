@@ -126,7 +126,7 @@ export const OfferForm = () => {
   };
 
   const postOffer = async () => {
-    const response = await fetch("https://itjustfind.herokuapp.com/api/add-offer", {
+    const response = await fetch("http://localhost:3000/offers", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {

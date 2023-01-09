@@ -7,16 +7,20 @@ import { deleteOffer } from "../../../service/offers/offersSlice";
 import { useDispatch } from "react-redux";
 import { StyledLink } from "../../topBar/styled";
 
-const MiniOffer = ({ logo, title, amount, companyName, city, _id, remote }: SmallOffer) => {
+const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   type AppDispatch = typeof store.dispatch;
   const useAppDispatch: () => AppDispatch = useDispatch;
   const dispatch = useAppDispatch();
 
   const deleteOfferInDatabase = async (_id: string) => {
-    const response = await fetch(`https://itjustfind.herokuapp.com/api/delete-offer/${_id}`, {
+    console.log(_id);
+    const response = await fetch(`http://localhost:3000/offers/${_id}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    const data = await response.json();
+    const data = await response;
     if (data) {
       dispatch(deleteOffer({ _id }));
     }

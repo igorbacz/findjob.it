@@ -8,7 +8,7 @@ export interface SmallOffer {
   title: string;
   amount?: string;
   city: string;
-  companyName: string;
+  companyName?: string;
   logo: string;
   techStack: StackProp[];
   mainStack?: string;

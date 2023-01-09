@@ -12,17 +12,20 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
+import Cookies from "js-cookie";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch("https://itjustfind.herokuapp.com/api/authUser", {
+      const response = await fetch("http://localhost:3000/authentication/", {
         method: "GET",
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: Cookies.get("token"),
+          // Cookie: Cookies.get("token"), TODO
         },
       });
+      console.log(Cookies.get("token"));
       const data = await response.json();
       if (response.ok) {
         dispatch(login(data));

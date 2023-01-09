@@ -66,7 +66,7 @@ export const theme = createTheme({
   },
   typography: {
     allVariants: {
-      fontFamily: "Open Sans,sans-serif",
+      fontFamily: "Oswald",
       color: "rgba(0, 0, 0, 0.87)",
       fontSize: "0.875rem",
 

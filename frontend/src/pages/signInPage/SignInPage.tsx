@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { login, logout } from "../../service/user/userSlice";
 import { useSelector } from "react-redux";
 import { userDataSelector } from "../../service/user/selectors";
+import Cookies from "js-cookie";
 
 export const SignInPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -45,12 +46,13 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const loginFunc = async () => {
-    const response = await fetch("https://itjustfind.herokuapp.com/api/login", {
+    const response = await fetch("http://localhost:3000/authentication/login", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
         "access-control-allow-origin": "*",
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
     })
       .then((res) => {
@@ -65,7 +67,7 @@ export const SignInPage = (error: ErrorInfo) => {
       })
       .then((data) => {
         const userToken = data.token;
-        localStorage.setItem("token", userToken);
+        Cookies.set("token", userToken);
         dispatch(login(form.email));
         navigate("/");
       })
@@ -83,7 +85,7 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const handleLogout = (e: SyntheticEvent): void => {
-    localStorage.clear();
+    Cookies.remove("token");
     dispatch(logout());
     navigate("/");
   };
