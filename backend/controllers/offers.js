@@ -9,6 +9,7 @@ exports.getAllOffers = async (req, res, next) => {
   }
 };
 
+
 exports.addOffer = async (req, res) => {
   const offer = new Offer({
     dateAdded: req.body.dateAdded,

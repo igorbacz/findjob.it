@@ -20,10 +20,11 @@ function App() {
     const userAuthenticaded = async () => {
       const response = await fetch("http://localhost:3000/authentication/", {
         method: "GET",
-        headers: {
-          Authorization: Cookies.get("token"),
-          // Cookie: Cookies.get("token"), TODO
-        },
+        credentials: "include",
+        // headers: {
+        //   "Access-Control-Allow-Credentials": "true",
+        //   httpOnly: "true",
+        // },
       });
       console.log(Cookies.get("token"));
       const data = await response.json();
@@ -35,7 +36,7 @@ function App() {
     };
     userAuthenticaded();
   }, []);
-
+  console.log(Cookies.get("token"));
   return (
     <ThemeProvider theme={theme}>
       <Routes>
