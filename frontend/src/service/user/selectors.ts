@@ -1,5 +1,5 @@
 import { RootState } from "../../types/types";
 
-export const userDataSelector = (state: RootState) => state.user;
+export const userDataSelector = (state: RootState) => state.userData.userEmail;
 
-export const isAuthenticatedSelector = (state: RootState) => state.user.isAuthenticated;
+export const isAuthenticatedSelector = (state: RootState) => state.userData.isAuthenticated;

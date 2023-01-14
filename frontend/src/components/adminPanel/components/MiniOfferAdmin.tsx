@@ -13,7 +13,6 @@ const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   const dispatch = useAppDispatch();
 
   const deleteOfferInDatabase = async (_id: string) => {
-    console.log(_id);
     const response = await fetch(`http://localhost:3000/offers/${_id}`, {
       method: "DELETE",
       headers: {

@@ -9,10 +9,11 @@ import { OfferFormPage } from "./pages/OfferFormPage/OfferFormPage";
 import { RegisterPage } from "./pages/registerPage/RegisterPage";
 import { AdminPanelPage } from "./pages/AdminPanelPage/AdminPanelPage";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
-import Cookies from "js-cookie";
+import { userDataSelector } from "./service/user/selectors";
+import { UserState } from "./types/types";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,12 +22,7 @@ function App() {
       const response = await fetch("http://localhost:3000/authentication/", {
         method: "GET",
         credentials: "include",
-        // headers: {
-        //   "Access-Control-Allow-Credentials": "true",
-        //   httpOnly: "true",
-        // },
       });
-      console.log(Cookies.get("token"));
       const data = await response.json();
       if (response.ok) {
         dispatch(login(data));
@@ -36,7 +32,7 @@ function App() {
     };
     userAuthenticaded();
   }, []);
-  console.log(Cookies.get("token"));
+
   return (
     <ThemeProvider theme={theme}>
       <Routes>

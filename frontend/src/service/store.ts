@@ -4,7 +4,7 @@ import { UserSlice } from "./user/userSlice";
 
 const rootReducer = {
   offers: offerSlice.reducer,
-  user: UserSlice.reducer,
+  userData: UserSlice.reducer,
 };
 
 export const store = configureStore({ reducer: rootReducer });

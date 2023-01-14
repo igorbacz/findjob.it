@@ -45,16 +45,11 @@ const a11yProps = (index: number) => {
 const AdminTabs = () => {
   const [value, setValue] = React.useState(0);
   const data: BigOfferDetails[] = useSelector(allOffersSelector);
-  const userData: UserState = useSelector(userDataSelector);
-  const userEmail: string = userData.user;
+  const userEmail: string = useSelector(userDataSelector);
 
   const userOffers = data.filter((offer) => {
     return offer.adminEmail === userEmail;
   });
-
-  useEffect(() => {
-    console.log(userOffers);
-  }, [userOffers]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);

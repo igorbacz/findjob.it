@@ -30,7 +30,7 @@ export class User {
 
 export type UserState = {
   isAuthenticated: boolean;
-  user: string;
+  user: any;
 };
 
 export class GeoProp {

@@ -4,11 +4,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, HeaderLoginBox, ErrorBox, TextBox } from "./styled";
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User, UserState } from "../../types/types";
+import { User } from "../../types/types";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../../service/user/userSlice";
 import { useSelector } from "react-redux";
-import { userDataSelector } from "../../service/user/selectors";
+import { isAuthenticatedSelector } from "../../service/user/selectors";
 import Cookies from "js-cookie";
 
 export const SignInPage = (error: ErrorInfo) => {
@@ -22,8 +22,7 @@ export const SignInPage = (error: ErrorInfo) => {
     navigate("/register");
   };
 
-  const userData: UserState = useSelector(userDataSelector);
-  const isAuthenticated = userData.isAuthenticated;
+  const isAuthenticated = useSelector(isAuthenticatedSelector);
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -67,8 +66,9 @@ export const SignInPage = (error: ErrorInfo) => {
       })
       .then((data) => {
         const userToken = data.token;
-        Cookies.set("token", userToken);
-        dispatch(login(form.email));
+        console.log(data);
+        Cookies.set("Authentication", userToken);
+        dispatch(login(form));
         navigate("/");
       })
       .catch((error) => {
@@ -85,7 +85,7 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const handleLogout = (e: SyntheticEvent): void => {
-    Cookies.remove("token");
+    Cookies.remove("Authentication");
     dispatch(logout());
     navigate("/");
   };
