@@ -4,11 +4,16 @@ import { IconText, IconWrapper } from "../styled";
 import { useSearchParams } from "react-router-dom";
 import { StackButton } from "../../../shared/StackButton";
 
+
 export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const stackSearch = () => {
     searchParams.set("techStack", stack);
     setSearchParams(searchParams);
+  };
+  // const [searchParams, setSearchParams] = useSearchParams();
+  const setParamsForstackSearch = () => {
+    setSearchParams({ techStack: stack });
   };
 
   const param = searchParams.get("techStack");
@@ -19,6 +24,7 @@ export const IconContainer = ({ logo, stack, background, _id }: Icon) => {
         logo={logo}
         _id={_id}
         background={param === stack || !param ? background : "linear-gradient(-90deg, rgb(145, 147, 170), rgb(125, 130, 168))"}
+        onClick={setParamsForstackSearch}
       />
       <IconText>
         <Typography variant="PStyled">{stack}</Typography>

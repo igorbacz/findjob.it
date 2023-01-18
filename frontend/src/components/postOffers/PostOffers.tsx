@@ -16,13 +16,11 @@ import {
   ImgBox,
 } from "./styled";
 import { StyledLink } from "../topBar/styled";
-import { userDataSelector } from "../../service/user/selectors";
+import { isAuthenticatedSelector } from "../../service/user/selectors";
 import { useSelector } from "react-redux";
-import { UserState } from "../../types/types";
 
 export const PostOffers = () => {
-  const userData: UserState = useSelector(userDataSelector);
-  const isAuthenticated: boolean = userData.isAuthenticated;
+  const isAuthenticated: boolean = useSelector(isAuthenticatedSelector);
   return (
     <Fragment>
       <HeaderPostOffers>

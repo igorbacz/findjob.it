@@ -17,13 +17,12 @@ import { theme } from "../../../theme";
 import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
 import { useSelector } from "react-redux";
-import { userDataSelector } from "../../../service/user/selectors";
+import { isAuthenticatedSelector } from "../../../service/user/selectors";
 import { UserState } from "../../../types/types";
 
 export const BurgerMenuList = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
-  const userData: UserState = useSelector(userDataSelector);
-  const isAuthenticated: boolean = userData.isAuthenticated;
+  const isAuthenticated: boolean = useSelector(isAuthenticatedSelector);
   return (
     <Fragment>
       <Box>
