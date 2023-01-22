@@ -1,15 +1,8 @@
-import { useSearchParams } from "react-router-dom";
 import { StyledIconButton } from "../components/searchBar/styled";
-import { Icon } from "../types/types";
 
-export const StackButton = ({ _id, background, logo, stackSearch }: any) => {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const stackSearch = () => {
-  //   setSearchParams({ techStack: stack });
-  // };
-
+export const StackButton = ({ _id, background, logo, onClickParamSet }: any) => {
   return (
-    <StyledIconButton key={_id} size="small" sx={{ background: background }} onClick={stackSearch}>
+    <StyledIconButton key={_id} size="small" sx={{ background: background }} onClick={onClickParamSet}>
       {logo}
     </StyledIconButton>
   );

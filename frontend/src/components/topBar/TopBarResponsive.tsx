@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { BurgerHeader } from "./components/BurgerHeader";
 import { BurgerButton, ButtonCurrency, SmallBox, StyledLink, LogoResponsiveWrapper, BoxFlex, TopBarResponsiveHeader } from "./styled";
-import { SignInMenu } from "./components/SignInMenu";
+import { SignInMenu } from "./components/signInMenu/SignInMenu";
 import { CurrencyMenu } from "./components/CurrencyMenu";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";

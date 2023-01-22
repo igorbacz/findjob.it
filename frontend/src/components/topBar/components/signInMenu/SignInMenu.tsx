@@ -5,8 +5,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
-import { StyledSignInMenu } from "./StyledSignInMenu";
-import { theme } from "../../../theme";
+import { StyledSignInMenu } from "../StyledSignInMenu";
+// import { theme } from "../../../../theme";
 import { useNavigate } from "react-router-dom";
 
 export const SignInMenu = () => {
@@ -21,7 +21,7 @@ export const SignInMenu = () => {
     navigate("/login");
     setAnchorEl(null);
   };
-  const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
+  // const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Fragment>
@@ -30,9 +30,9 @@ export const SignInMenu = () => {
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
-        size={isMatchMedium ? "small" : "medium"}
+        // size={isMatchMedium ? "small" : "medium"}
       >
-        <Typography variant="buttonFont"> Sign In</Typography>
+        <Typography variant="buttonFont">Sign In</Typography>
       </Button>
       <StyledSignInMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose} disableRipple>

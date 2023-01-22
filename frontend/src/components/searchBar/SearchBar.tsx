@@ -2,8 +2,8 @@ import { Container, ContainerSection, StyledField, ContainerRightSection, IconTe
 import { IconButton, Typography } from "@mui/material";
 import { SearchOutlined } from "@mui/icons-material";
 import { LocationMenu } from "./components/LocationMenu";
-import { MoreFilters } from "./components/MoreFilters";
-import { IconContainer } from "./components/IconContainer";
+import { MoreFilters } from "./components/moreFilters/MoreFilters";
+import { IconContainer } from "./components/iconContainer/IconContainer";
 import { stackIcons } from "../../data";
 import { useSearchParams } from "react-router-dom";
 

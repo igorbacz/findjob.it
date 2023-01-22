@@ -8,3 +8,5 @@ const rootReducer = {
 };
 
 export const store = configureStore({ reducer: rootReducer });
+export type AppStore = typeof store;
+

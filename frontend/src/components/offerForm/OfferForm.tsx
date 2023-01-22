@@ -1,6 +1,6 @@
 import { Button, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, TextField, Typography } from "@mui/material";
 import { companyInustries, companyTypes, currency, employmentTypes, exp, stackIcons } from "../../data";
-import { IconContainer } from "../searchBar/components/IconContainer";
+import { IconContainer } from "../searchBar/components/iconContainer/IconContainer";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import {
