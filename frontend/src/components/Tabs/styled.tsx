@@ -29,6 +29,7 @@ export const StyledSwitch = styled(Switch)`
 
 export const StyledFormControlLabel = styled(FormControlLabel)`
   color: #777;
+  font-family: Open Sans, sans-serif;
 `;
 
 export const Tab = styled(TabUnstyled)`

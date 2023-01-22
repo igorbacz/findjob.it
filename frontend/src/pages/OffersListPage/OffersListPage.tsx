@@ -28,7 +28,11 @@ export const OffersListPage = () => {
         <LeftSideBox>
           <Tabs />
         </LeftSideBox>
-        {!isMatchLarge ? <RightSideBox>{/* <OpenStreetMap /> */}</RightSideBox> : null}
+        {!isMatchLarge ? (
+          <RightSideBox>
+            <OpenStreetMap />
+          </RightSideBox>
+        ) : null}
       </PageContainer>
     </AllPageWrapper>
   );

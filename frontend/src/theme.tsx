@@ -63,13 +63,19 @@ export const theme = createTheme({
         },
       },
     },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Open Sans , sans-serif",
+          color: "rgba(0, 0, 0, 0.87)",
+        },
+      },
+    },
   },
   typography: {
     allVariants: {
-      fontFamily: "Oswald",
       color: "rgba(0, 0, 0, 0.87)",
       fontSize: "0.875rem",
-
       lineHeight: " 1.43",
       fontWeight: "200",
     },
@@ -79,6 +85,8 @@ export const theme = createTheme({
     buttonFont: {
       lineHeight: "1.75",
       whiteSpace: "nowrap",
+      fontFamily: "Open Sans , sans-serif",
+      // fontStyle: "serif ",
     },
 
     subtitleLight: {
@@ -121,7 +129,7 @@ export const theme = createTheme({
 
     H1Styled: {
       fontSize: "35px",
-      fontWeight: "bold",
+      fontWeight: "600",
       textDecorationLine: "none",
     },
     H6Light: {

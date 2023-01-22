@@ -39,13 +39,13 @@ export const SignInMenu = () => {
           <IconButton>
             <SupportAgentIcon />
           </IconButton>
-          Sign in as a developer
+          <Typography variant="buttonFont">Sign in as a developer</Typography>
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <IconButton>
             <WorkIcon />
           </IconButton>
-          Sign in to Employer Panel
+          <Typography variant="buttonFont">Sign in to Employer Panel</Typography>
         </MenuItem>
       </StyledSignInMenu>
     </Fragment>
