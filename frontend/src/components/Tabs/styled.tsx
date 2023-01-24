@@ -62,6 +62,7 @@ export const TabPanel = styled(TabPanelUnstyled)`
   background-color: rgb(243, 246, 248);
   padding-top: 7px;
   padding-left: 10px;
+  padding-bottom: 10px;
   gap: 15px;
   overflow-y: scroll;
   height: 100%;

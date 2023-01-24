@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
 export const MiniOfferCon = styled(Box)`
-  width: 97%;
+  width: 96%;
   height: 77px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 2fr;
