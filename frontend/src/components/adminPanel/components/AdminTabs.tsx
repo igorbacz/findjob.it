@@ -1,14 +1,13 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import NextWeekIcon from "@mui/icons-material/NextWeek";
 import { useSelector } from "react-redux";
 import { allOffersSelector } from "../../../service/offers/selectors";
-import { BigOfferDetails, UserState } from "../../../types/types";
-import { useEffect, useState } from "react";
+import { BigOfferDetails } from "../../../types/types";
+import { useState } from "react";
 import { Pagination } from "@mui/material";
 import usePagination from "../../../hooks/usePagination";
 import { OfferWrapper } from "../../Tabs/styled";
@@ -28,7 +27,7 @@ const TabPanel = (props: TabPanelProps) => {
     <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Box>{children}</Box>
         </Box>
       )}
     </div>

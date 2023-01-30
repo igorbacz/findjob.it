@@ -6,7 +6,7 @@ import AdminTabs from "./components/AdminTabs";
 
 export const AdminPanel = () => {
   return (
-    <Fragment>
+    <>
       <HeaderPostOffers>
         <HeaderText>
           <Typography component={"span"} variant="H2Styled">
@@ -18,6 +18,6 @@ export const AdminPanel = () => {
         </ImgBox>
       </HeaderPostOffers>
       <AdminTabs />
-    </Fragment>
+    </>
   );
 };

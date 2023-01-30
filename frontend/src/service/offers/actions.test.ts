@@ -2,6 +2,7 @@ import "isomorphic-fetch";
 
 const mockOffer = {
   _id: "63342b37ea0f6c875c73128b",
+  id: "63342b37ea0f6c875c73128b",
   dateAdded: "2022-09-01",
   remote: false,
   title: "Node Developer",
