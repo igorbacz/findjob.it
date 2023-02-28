@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs: 'node16'
+    runs-on: 'node16'
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS Credentials
