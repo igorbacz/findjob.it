@@ -36,7 +36,7 @@ export const RegisterPage = (error: ErrorInfo) => {
   };
 
   const Register = async () => {
-    const response = await fetch("http://localhost:3000/authentication/register", {
+    const response = await fetch("http://54.172.176.247:3000/authentication/register", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {

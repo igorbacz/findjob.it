@@ -32,7 +32,7 @@ const mockOffer = {
 
 describe("actions.ts", () => {
   test("test fetch offer call", async () => {
-    const res = await fetch("http://localhost:3000/offers");
+    const res = await fetch("http://54.172.176.247:3000/offers");
     const result = await res.json();
     const offer = JSON.parse(JSON.stringify(result))[0];
     expect(offer).toStrictEqual(mockOffer);

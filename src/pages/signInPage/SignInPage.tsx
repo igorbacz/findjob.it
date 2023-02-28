@@ -45,7 +45,7 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const loginFunc = async () => {
-    const response = await fetch("http://localhost:3000/authentication/login", {
+    const response = await fetch("http://54.172.176.247:3000/authentication/login", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {

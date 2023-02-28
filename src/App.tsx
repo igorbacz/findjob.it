@@ -19,7 +19,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch("http://localhost:3000/authentication/", {
+      const response = await fetch("http://54.172.176.247:3000/authentication/", {
         method: "GET",
         credentials: "include",
       });
