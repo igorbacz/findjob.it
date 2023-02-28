@@ -6,7 +6,7 @@ import { TopBarResponsive } from "../../../components/topBar/TopBarResponsive";
 import { allOffersSelector } from "../../../service/offers/selectors";
 import { theme } from "../../../theme";
 import { BigOfferDetails } from "../../../types/types";
-import { AllPageWrapper, PageContainer, LeftSideBox, RightSideBox } from "../styled";
+import { AllPageWrapper, PageContainer, LeftSideBox } from "../styled";
 
 export const LargeView = () => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);
