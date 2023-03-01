@@ -44,6 +44,7 @@ export const SignInPage = (error: ErrorInfo) => {
     return newErrors;
   };
 
+  //TODO remove coment
   const loginFunc = async () => {
     const response = await fetch("http://54.172.176.247:3000/authentication/login", {
       method: "POST",
