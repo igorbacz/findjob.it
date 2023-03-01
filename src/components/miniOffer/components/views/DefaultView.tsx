@@ -1,6 +1,6 @@
 import BusinessIcon from "@mui/icons-material/Business";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { allOffersSelector } from "../../../../service/offers/selectors";
 import { SmallOffer, BigOfferDetails } from "../../../../types/types";

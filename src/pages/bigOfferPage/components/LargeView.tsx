@@ -1,10 +1,8 @@
-import { useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BigOffer } from "../../../components/bigOffer/BigOffer";
 import { TopBarResponsive } from "../../../components/topBar/TopBarResponsive";
 import { allOffersSelector } from "../../../service/offers/selectors";
-import { theme } from "../../../theme";
 import { BigOfferDetails } from "../../../types/types";
 import { AllPageWrapper, PageContainer, LeftSideBox } from "../styled";
 

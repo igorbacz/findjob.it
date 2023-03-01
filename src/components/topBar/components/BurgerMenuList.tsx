@@ -18,7 +18,6 @@ import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
 import { useSelector } from "react-redux";
 import { isAuthenticatedSelector } from "../../../service/user/selectors";
-import { UserState } from "../../../types/types";
 
 export const BurgerMenuList = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));

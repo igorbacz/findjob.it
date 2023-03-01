@@ -32,7 +32,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import MovingIcon from "@mui/icons-material/Moving";
 import TimelapseIcon from "@mui/icons-material/Timelapse";
 import { FileUpload } from "./components/FileUpload";
-import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Stack from "./components/Stack";
 import { useParams } from "react-router-dom";
 import { theme } from "../../theme";

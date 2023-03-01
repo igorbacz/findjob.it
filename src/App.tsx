@@ -9,11 +9,10 @@ import { OfferFormPage } from "./pages/OfferFormPage/OfferFormPage";
 import { RegisterPage } from "./pages/registerPage/RegisterPage";
 import { AdminPanelPage } from "./pages/AdminPanelPage/AdminPanelPage";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { userDataSelector } from "./service/user/selectors";
-import { UserState } from "./types/types";
+
 
 function App() {
   const dispatch = useDispatch();

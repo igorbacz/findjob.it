@@ -1,6 +1,4 @@
-import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
-import { Fragment } from "react";
+import { Typography } from "@mui/material";
 import { HeaderPostOffers, HeaderText, ImgBox } from "../postOffers/styled";
 import AdminTabs from "./components/AdminTabs";
 

@@ -1,4 +1,4 @@
-import { Typography, useMediaQuery } from "@mui/material";
+import { Typography } from "@mui/material";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { useSelector } from "react-redux";
 import { allOffersSelector } from "../../../../service/offers/selectors";

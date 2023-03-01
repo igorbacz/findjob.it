@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { StackDetail, StyledRating, StackName, StackLvl } from "../styled";
+import { StackDetail, StyledRating, StackName } from "../styled";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import { StackProp } from "../../../types/types";
@@ -11,7 +11,6 @@ const Stack = ({ value, stackName }: StackProp) => {
       <StackName>
         <Typography variant="subtitle4">{stackName}</Typography>
       </StackName>
-      {/* <StackLvl>{stackLvl}</StackLvl> */}
     </StackDetail>
   );
 };
