@@ -126,7 +126,7 @@ export const OfferForm = () => {
   };
 
   const postOffer = async () => {
-    const response = await fetch("http://54.172.176.247:3000/offers", {
+    const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
