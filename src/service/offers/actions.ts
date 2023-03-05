@@ -2,7 +2,9 @@ import { BigOfferDetails } from "../../types/types";
 import { offerSlice } from "./offersSlice";
 
 export const getOffers = async () => {
-  const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers");
+  const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers", {
+    // mode: "no-cors",
+  });
   if (!response.ok) {
     throw new Error("Could not fetch offers data");
   }

@@ -18,8 +18,9 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/authentication/", {
+      const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers/authentication/", {
         method: "GET",
+        mode: "no-cors",
         credentials: "include",
       });
       const data = await response.json();

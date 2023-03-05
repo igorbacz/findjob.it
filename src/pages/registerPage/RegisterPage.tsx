@@ -38,9 +38,10 @@ export const RegisterPage = (error: ErrorInfo) => {
   const Register = async () => {
     const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/authentication/register", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
-        "access-control-allow-origin": "*",
+        "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json",
       },
     })

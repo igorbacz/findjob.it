@@ -128,6 +128,7 @@ export const OfferForm = () => {
   const postOffer = async () => {
     const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
         "Content-Type": "application/json",

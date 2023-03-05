@@ -47,9 +47,10 @@ export const SignInPage = (error: ErrorInfo) => {
   const loginFunc = async () => {
     const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/authentication/login", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
-        "access-control-allow-origin": "*",
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
         Accept: "application/json",
       },
