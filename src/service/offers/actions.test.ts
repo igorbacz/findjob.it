@@ -1,4 +1,5 @@
 import "isomorphic-fetch";
+import apiUrl from "../../const/apiUrl";
 
 const mockOffer = {
   _id: "63342b37ea0f6c875c73128b",
@@ -32,7 +33,7 @@ const mockOffer = {
 
 describe("actions.ts", () => {
   test("test fetch offer call", async () => {
-    const res = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers");
+    const res = await fetch(`${apiUrl}/offers`);
     const result = await res.json();
     const offer = JSON.parse(JSON.stringify(result))[0];
     expect(offer).toStrictEqual(mockOffer);

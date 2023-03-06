@@ -10,6 +10,7 @@ import { login, logout } from "../../service/user/userSlice";
 import { useSelector } from "react-redux";
 import { isAuthenticatedSelector } from "../../service/user/selectors";
 import Cookies from "js-cookie";
+import apiUrl from "../../const/apiUrl";
 
 export const SignInPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -45,13 +46,12 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const loginFunc = async () => {
-    const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/authentication/login", {
+    const response = await fetch(`${apiUrl}/authentication/login`, {
       method: "POST",
-      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
         Accept: "application/json",
       },
     })
@@ -60,6 +60,7 @@ export const SignInPage = (error: ErrorInfo) => {
           return res.json();
         } else {
           return res.json().then((data) => {
+            console.log(error);
             let errorMessage = "Authentication failed!";
             throw new Error(errorMessage);
           });

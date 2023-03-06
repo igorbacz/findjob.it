@@ -5,6 +5,7 @@ import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, Hea
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
+import apiUrl from "../../const/apiUrl";
 
 export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -36,9 +37,8 @@ export const RegisterPage = (error: ErrorInfo) => {
   };
 
   const Register = async () => {
-    const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/authentication/register", {
+    const response = await fetch(`${apiUrl}/authentication/register`, {
       method: "POST",
-      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
         "Access-Control-Allow-Origin": "*",

@@ -6,6 +6,7 @@ import { store } from "../../../service/store";
 import { deleteOffer } from "../../../service/offers/offersSlice";
 import { useDispatch } from "react-redux";
 import { StyledLink } from "../../topBar/styled";
+import apiUrl from "../../../const/apiUrl";
 
 const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   type AppDispatch = typeof store.dispatch;
@@ -13,9 +14,8 @@ const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   const dispatch = useAppDispatch();
 
   const deleteOfferInDatabase = async (_id: string) => {
-    const response = await fetch(`https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers/${_id}`, {
+    const response = await fetch(`${apiUrl}/offers/${_id}`, {
       method: "DELETE",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },

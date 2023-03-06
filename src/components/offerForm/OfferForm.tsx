@@ -46,6 +46,7 @@ import L from "leaflet";
 import { userDataSelector } from "../../service/user/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { getOffersData } from "../../service/offers/actions";
+import apiUrl from "../../const/apiUrl";
 
 export const OfferForm = () => {
   const [choice, setChoice] = useState("Junior");
@@ -56,7 +57,7 @@ export const OfferForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [city, setCity] = useState("");
   const [apiGeolocation, setApiGeolocation] = useState();
-  const [location, setLocation] = useState<GeoProp>({ longitude: "", latitude: "" });
+  const [location, setLocation] = useState<GeoProp>();
   const geolocation = useGeolocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentStackParam = searchParams.get("techStack");
@@ -69,47 +70,51 @@ export const OfferForm = () => {
   const currentLongitude = geolocation.longitude;
   const currentLatitude = geolocation.latitude;
 
-  const params = {
-    access_key: process.env.REACT_APP_API_KEY,
-    query: city,
-  };
-  const positionFromInput = () => {
-    axios
-      .get("https://api.positionstack.com/v1/forward", { params })
-      .then((response: AxiosResponse) => {
-        setApiGeolocation(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   useEffect(() => {
-    if (!apiGeolocation) {
-      console.log("no data");
-    } else {
-      //@ts-ignore
-      const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
-      //@ts-ignore
-      const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
-      const locationApi = { latitude: latitudeFromApi, longitude: longitudeFromApi };
-      setLocation({ longitude: longitudeFromApi, latitude: latitudeFromApi });
-      Object.assign(location, locationApi);
-    }
-  }, [apiGeolocation]);
+    setLocation({ longitude: currentLongitude, latitude: currentLatitude });
+  }, [geolocation]);
 
-  //@ts-ignore
-  const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
-  //@ts-ignore
-  const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
+  // const params = {
+  //   access_key: process.env.REACT_APP_API_KEY,
+  //   query: city,
+  // };
+  // const positionFromInput = () => {
+  //   axios
+  //     .get("https://api.positionstack.com/v1/forward", { params })
+  //     .then((response: AxiosResponse) => {
+  //       setApiGeolocation(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  // useEffect(() => {
+  //   if (!apiGeolocation) {
+  //     console.log("no data");
+  //   } else {
+  //     //@ts-ignore
+  //     const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
+  //     //@ts-ignore
+  //     const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
+  //     const locationApi = { latitude: latitudeFromApi, longitude: longitudeFromApi };
+  //     setLocation({ longitude: longitudeFromApi, latitude: latitudeFromApi });
+  //     Object.assign(location, locationApi);
+  //   }
+  // }, [apiGeolocation]);
+
+  // //@ts-ignore
+  // const latitudeFromApi = apiGeolocation?.data?.[0]?.latitude;
+  // //@ts-ignore
+  // const longitudeFromApi = apiGeolocation?.data[0]?.longitude;
 
   const handleChangeCity = (event: MouseEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     setCity(target.value);
   };
 
-  useEffect(() => {
-    positionFromInput();
-  }, [city]);
+  // useEffect(() => {
+  //   positionFromInput();
+  // }, [city]);
 
   const iconUrlFind = () => {
     if (!currentStackParam) {
@@ -126,15 +131,15 @@ export const OfferForm = () => {
   };
 
   const postOffer = async () => {
-    const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers", {
+    const response = await fetch(`${apiUrl}/offers`, {
       method: "POST",
-      mode: "no-cors",
       body: JSON.stringify(form),
       headers: {
         "Content-Type": "application/json",
       },
     });
     const data = await response.json();
+    console.log(form);
     dispatch(getOffersData());
   };
 
@@ -415,7 +420,8 @@ export const OfferForm = () => {
               />
               {currentStackParam ? (
                 <Marker
-                  position={!apiGeolocation ? [currentLatitude, currentLongitude] : [latitudeFromApi, longitudeFromApi]}
+                  position={[currentLatitude, currentLongitude]}
+                  // TODO position={!apiGeolocation ? [currentLatitude, currentLongitude] : [latitudeFromApi, longitudeFromApi]}
                   icon={iconUrlFind()}
                 ></Marker>
               ) : null}

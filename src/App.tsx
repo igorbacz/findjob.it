@@ -12,15 +12,14 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
-
+import apiUrl from "./const/apiUrl";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch("https://894xsxeql5.execute-api.us-east-1.amazonaws.com/offers/authentication/", {
+      const response = await fetch(`${apiUrl}/authentication/`, {
         method: "GET",
-        mode: "no-cors",
         credentials: "include",
       });
       const data = await response.json();
