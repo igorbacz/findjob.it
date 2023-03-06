@@ -52,6 +52,7 @@ export const SignInPage = (error: ErrorInfo) => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
         Accept: "application/json",
       },
     })
