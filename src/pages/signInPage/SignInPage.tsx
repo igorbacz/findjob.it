@@ -69,7 +69,6 @@ export const SignInPage = (error: ErrorInfo) => {
       })
       .then((data) => {
         const userToken = data.token;
-        console.log(data);
         Cookies.set("Authentication", userToken);
         dispatch(login(form));
         navigate("/");
@@ -92,7 +91,6 @@ export const SignInPage = (error: ErrorInfo) => {
     dispatch(logout());
     navigate("/");
   };
-
   return (
     <Wrapper>
       <HeaderLoginBox>

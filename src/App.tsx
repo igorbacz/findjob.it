@@ -21,11 +21,6 @@ function App() {
       const response = await fetch(`${apiUrl}/authentication/`, {
         method: "GET",
         credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers": "*",
-        },
       });
       const data = await response.json();
       if (response.ok) {
