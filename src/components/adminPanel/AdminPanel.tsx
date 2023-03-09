@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { HeaderPostOffers, HeaderText, ImgBox } from "../postOffers/styled";
 import AdminTabs from "./components/AdminTabs";
-
+//TODO remove
 export const AdminPanel = () => {
   return (
     <>
