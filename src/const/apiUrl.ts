@@ -6,6 +6,6 @@
 
  // const apiUrl = "xc1rq7jvw2.execute-api.us-east-1.amazonaws.com/apiNest"
 
- // const apiUrl = "http://localhost:3000";
+//  const apiUrl = "http://localhost:3000";
 
  export default apiUrl;
