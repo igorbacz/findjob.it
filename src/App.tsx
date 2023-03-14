@@ -21,6 +21,7 @@ function App() {
       const response = await fetch(`${apiUrl}/authentication/`, {
         method: "GET",
         credentials: "include",
+        mode: "no-cors",
       });
       const data = await response.json();
       if (response.ok) {
