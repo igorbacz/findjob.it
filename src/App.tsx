@@ -20,8 +20,7 @@ function App() {
     const userAuthenticaded = async () => {
       const response = await fetch(`${apiUrl}/authentication/`, {
         method: "GET",
-        // credentials: "include",
-        mode: "no-cors",
+        credentials: "include",
         headers: {
           "Access-Control-Allow-Credentials": "true",
         },
