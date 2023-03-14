@@ -49,11 +49,10 @@ export const SignInPage = (error: ErrorInfo) => {
     const response = await fetch(`${apiUrl}/authentication/login`, {
       method: "POST",
       body: JSON.stringify(form),
-      mode: "no-cors",
+      // mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
         "Access-Control-Allow-Credentials": "true",
         Accept: "application/json",
       },

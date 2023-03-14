@@ -40,7 +40,6 @@ export const RegisterPage = (error: ErrorInfo) => {
     const response = await fetch(`${apiUrl}/authentication/register`, {
       method: "POST",
       body: JSON.stringify(form),
-      mode: "no-cors",
       headers: {
         "Content-type": "application/json",
         "Access-Control-Allow-Origin": "*",
