@@ -8,7 +8,7 @@ export const getOffers = async () => {
     throw new Error("Could not fetch offers data");
   }
   const data = await response.json();
-  return JSON.parse(data);
+  return data;
 };
 
 export const getOffersData = () => {
