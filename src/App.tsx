@@ -18,7 +18,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      // const response = await fetch(``, {
       const response = await fetch(`${authUrl}`, {
         method: "GET",
         credentials: "include",
