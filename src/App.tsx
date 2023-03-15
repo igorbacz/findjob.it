@@ -21,6 +21,7 @@ function App() {
       const response = await fetch(`${authUrl}`, {
         method: "GET",
         credentials: "include",
+        mode: "no-cors",
         // headers: {
         //   "Access-Control-Allow-Credentials": "true",
         // },
