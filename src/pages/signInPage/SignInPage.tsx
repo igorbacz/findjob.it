@@ -46,35 +46,37 @@ export const SignInPage = (error: ErrorInfo) => {
   };
 
   const loginFunc = async () => {
-    const response = await fetch(`${apiUrl}/authentication/login`, {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            console.log(error);
-            let errorMessage = "Authentication failed!";
-            throw new Error(errorMessage);
+        const response = await fetch("https://yulik37sf3.execute-api.us-east-1.amazonaws.com/login", {
+          // const response = await fetch(`${apiUrl}/authentication/login`, {
+          method: "POST",
+          body: JSON.stringify(form),
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+          },
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            } else {
+              return res.json().then((data) => {
+                console.log(error);
+                let errorMessage = "Authentication failed!";
+                throw new Error(errorMessage);
+              });
+            }
+          })
+          .then((data) => {
+            const userToken = data.token;
+            Cookies.set("Authentication", userToken);
+            dispatch(login(form));
+            navigate("/");
+          })
+          .catch((error) => {
+            alert(error.message);
           });
-        }
-      })
-      .then((data) => {
-        const userToken = data.token;
-        Cookies.set("Authentication", userToken);
-        dispatch(login(form));
-        navigate("/");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
   };
 
   const handleLogin = (e: SyntheticEvent): void => {
