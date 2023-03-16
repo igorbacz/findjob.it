@@ -1,30 +1,4 @@
-import {
-  BigOfferContainer,
-  HeaderBox,
-  LogoBox,
-  LogoImg,
-  HeaderInfo,
-  AdressHeader,
-  HeaderDetails,
-  HeaderDetail,
-  IconCon,
-  DataName,
-  DataDesc,
-  StackContainer,
-  ContainerHeader,
-  StackDetails,
-  BigOfferSection,
-  Content,
-  InputsContainer,
-  InputContainer,
-  StyledSmallField,
-  BigInputContainer,
-  StyledBigField,
-  FileContainer,
-  TitleBox,
-  LogoResponsiveBox,
-  RemoteBigBox,
-} from "./styled";
+import * as styled from "./styled";
 import { BigOfferDetails, StackProp } from "../../types/types";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
@@ -51,129 +25,129 @@ export const BigOffer = ({ logo, title, adress, amount, companyName, companySize
   const navigate = useNavigate();
 
   return (
-    <BigOfferContainer>
-      <HeaderBox>
+    <styled.BigOfferContainer>
+      <styled.HeaderBox>
         <ButtonWrapper>
           <IconButton onClick={() => navigate(-1)} color="success">
             <ArrowBackIcon />
           </IconButton>
         </ButtonWrapper>
         {!isMatchMedium ? (
-          <LogoBox>
-            <LogoImg alt="logo" src={logo}></LogoImg>
-          </LogoBox>
+          <styled.LogoBox>
+            <styled.LogoImg alt="logo" src={logo}></styled.LogoImg>
+          </styled.LogoBox>
         ) : (
-          <LogoResponsiveBox>
-            <LogoImg alt="logo" src={logo}></LogoImg>
-          </LogoResponsiveBox>
+          <styled.LogoResponsiveBox>
+            <styled.LogoImg alt="logo" src={logo}></styled.LogoImg>
+          </styled.LogoResponsiveBox>
         )}
-        <HeaderInfo>
-          <TitleBox>
+        <styled.HeaderInfo>
+          <styled.TitleBox>
             <Typography variant="headerFont">{title}</Typography>
-          </TitleBox>
-          <AdressHeader>
+          </styled.TitleBox>
+          <styled.AdressHeader>
             <PlaceOutlinedIcon />
             <Typography variant="subtitle1">{adress}</Typography>
-            {!isMatchMedium ? remote && <RemoteBigBox>Fully Remote</RemoteBigBox> : null}
-          </AdressHeader>
+            {!isMatchMedium ? remote && <styled.RemoteBigBox>Fully Remote</styled.RemoteBigBox> : null}
+          </styled.AdressHeader>
           {!amount && <Typography variant="subtitleLight">Undisclosed Salary</Typography>}
           {amount && <Typography variant="subtitleLight">{amount} PLN</Typography>}
-          {isMatchMedium ? remote && <RemoteBigBox>Fully Remote</RemoteBigBox> : null}
-        </HeaderInfo>
-      </HeaderBox>
-      <HeaderDetails>
-        <HeaderDetail>
-          <IconCon>
+          {isMatchMedium ? remote && <styled.RemoteBigBox>Fully Remote</styled.RemoteBigBox> : null}
+        </styled.HeaderInfo>
+      </styled.HeaderBox>
+      <styled.HeaderDetails>
+        <styled.HeaderDetail>
+          <styled.IconCon>
             <LocationCityIcon />
-          </IconCon>
-          <DataName>
+          </styled.IconCon>
+          <styled.DataName>
             <Typography>{companyName}</Typography>
-          </DataName>
-          <DataDesc>
+          </styled.DataName>
+          <styled.DataDesc>
             <Typography variant="dataDesc">Company name</Typography>
-          </DataDesc>
-        </HeaderDetail>
-        <HeaderDetail>
-          <IconCon>
+          </styled.DataDesc>
+        </styled.HeaderDetail>
+        <styled.HeaderDetail>
+          <styled.IconCon>
             <PeopleIcon />
-          </IconCon>
-          <DataName>
+          </styled.IconCon>
+          <styled.DataName>
             <Typography>{companySize}+/-</Typography>
-          </DataName>
-          <DataDesc>
+          </styled.DataName>
+          <styled.DataDesc>
             <Typography variant="dataDesc">Company size</Typography>
-          </DataDesc>
-        </HeaderDetail>
-        <HeaderDetail>
-          <IconCon>
+          </styled.DataDesc>
+        </styled.HeaderDetail>
+        <styled.HeaderDetail>
+          <styled.IconCon>
             <MovingIcon />
-          </IconCon>
-          <DataName>
+          </styled.IconCon>
+          <styled.DataName>
             <Typography>{exp}</Typography>
-          </DataName>
-          <DataDesc>
+          </styled.DataName>
+          <styled.DataDesc>
             <Typography variant="dataDesc">EXP.lvl</Typography>
-          </DataDesc>
-        </HeaderDetail>
-        <HeaderDetail>
-          <IconCon>
+          </styled.DataDesc>
+        </styled.HeaderDetail>
+        <styled.HeaderDetail>
+          <styled.IconCon>
             <TimelapseIcon />
-          </IconCon>
-          <DataName>
+          </styled.IconCon>
+          <styled.DataName>
             <Typography>New</Typography>
-          </DataName>
-          <DataDesc>
+          </styled.DataName>
+          <styled.DataDesc>
             <Typography variant="dataDesc">Added</Typography>
-          </DataDesc>
-        </HeaderDetail>
-      </HeaderDetails>
-      <StackContainer>
-        <ContainerHeader>
+          </styled.DataDesc>
+        </styled.HeaderDetail>
+      </styled.HeaderDetails>
+      <styled.StackContainer>
+        <styled.ContainerHeader>
           <Typography variant="subtitle2">Tech Stack</Typography>
-        </ContainerHeader>
-        <StackDetails>
+        </styled.ContainerHeader>
+        <styled.StackDetails>
           {stack?.map((item: StackProp) => {
             return <Stack {...item} key={item.stackName} />;
           })}
-        </StackDetails>
-      </StackContainer>
-      <BigOfferSection>
-        <ContainerHeader>
+        </styled.StackDetails>
+      </styled.StackContainer>
+      <styled.BigOfferSection>
+        <styled.ContainerHeader>
           <Typography variant="subtitle2">Description</Typography>
-        </ContainerHeader>
-        <Content>
+        </styled.ContainerHeader>
+        <styled.Content>
           <Typography variant="subtitle5">{description}</Typography>
-        </Content>
-      </BigOfferSection>
-      <BigOfferSection>
-        <ContainerHeader>
+        </styled.Content>
+      </styled.BigOfferSection>
+      <styled.BigOfferSection>
+        <styled.ContainerHeader>
           <Typography variant="subtitle2">Apply</Typography>
-        </ContainerHeader>
-        <InputsContainer>
-          <InputContainer>
+        </styled.ContainerHeader>
+        <styled.InputsContainer>
+          <styled.InputContainer>
             <p>First and last name </p>
-            <StyledSmallField required id="outlined-basic" label="Enter your first and last name" variant="outlined" />
-          </InputContainer>
-          <InputContainer>
+            <styled.StyledSmallField required id="outlined-basic" label="Enter your first and last name" variant="outlined" />
+          </styled.InputContainer>
+          <styled.InputContainer>
             <p>Email adress</p>
-            <StyledSmallField required id="outlined-basic" label="Enter your email adress" variant="outlined" />
-          </InputContainer>
-        </InputsContainer>
-        <BigInputContainer>
-          <InputContainer>
+            <styled.StyledSmallField required id="outlined-basic" label="Enter your email adress" variant="outlined" />
+          </styled.InputContainer>
+        </styled.InputsContainer>
+        <styled.BigInputContainer>
+          <styled.InputContainer>
             <p>Introduce yourself (linkedin/github links)</p>
-            <StyledBigField
+            <styled.StyledBigField
               id="outlined-basic"
               label="Type something about you or paste links to your linkedin, github"
               variant="outlined"
               fullWidth
             />
-          </InputContainer>
-        </BigInputContainer>
-        <FileContainer>
+          </styled.InputContainer>
+        </styled.BigInputContainer>
+        <styled.FileContainer>
           <FileUpload />
-        </FileContainer>
-      </BigOfferSection>
-    </BigOfferContainer>
+        </styled.FileContainer>
+      </styled.BigOfferSection>
+    </styled.BigOfferContainer>
   );
 };

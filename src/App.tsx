@@ -12,19 +12,19 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./service/user/userSlice";
 import { ProtectedRoute } from "./ProtectedRoute";
-import authUrl from "./const/authUrl";
+// import authUrl from "./const/authUrl";
+import apiUrl from "./const/apiUrl";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     const userAuthenticaded = async () => {
-      const response = await fetch(`${authUrl}`, {
+      const response = await fetch(`${apiUrl}/authentication`, {
         method: "GET",
         credentials: "include",
-        mode: "no-cors",
-        // headers: {
-        //   "Access-Control-Allow-Credentials": "true",
-        // },
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
       const data = await response.json();
       if (response.ok) {
