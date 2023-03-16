@@ -1,9 +1,10 @@
 # findjob.it
-**[FindJob.it](https://igorbacz.github.io/findjob.it/) is a single page application created with React, React Redux & Typescript**.
+**[FindJob.it](https://www.iwonagorbacz.pl/) is a single page application created with React, React Redux & Typescript**.
 
 FindJob.it is the fullstack application with job offers. 
+Frontend of the application is deployed on AWS S3 with Cloud Front and Route 53.
 
-Backend of the application is deployed on: https://itjustfind.herokuapp.com/api
+Backend of the application is deployed on: https://nestapi.herokuapp.com/
 
 ## Author
 [Iwona Gorbacz](https://github.com/igorbacz)
