@@ -1,16 +1,17 @@
 import React, { Component, FunctionComponentElement } from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { userDataSelector } from "./service/user/selectors";
+import { isAuthenticatedSelector, userDataSelector } from "./service/user/selectors";
+import { ROUTES } from "./routes/routesMap";
 
 interface Props {
   children: FunctionComponentElement<Component>;
 }
 
 export const ProtectedRoute = ({ children }: Props) => {
-  const userData: string = useSelector(userDataSelector);
-  if (!userData) {
-    return <Navigate to={"/login"} replace />;
+  const isAuth: boolean = useSelector(isAuthenticatedSelector);
+  if (!isAuth) {
+    return <Navigate to={ROUTES.login} replace />;
   }
   return children;
 };

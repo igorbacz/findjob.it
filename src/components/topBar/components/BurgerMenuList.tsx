@@ -18,6 +18,7 @@ import { Fragment } from "react";
 import { SignInBurger } from "./SignInBurger";
 import { useSelector } from "react-redux";
 import { isAuthenticatedSelector } from "../../../service/user/selectors";
+import { ROUTES } from "../../../routes/routesMap";
 
 export const BurgerMenuList = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
@@ -26,7 +27,7 @@ export const BurgerMenuList = () => {
     <Fragment>
       <Box>
         {isAuthenticated ? (
-          <StyledLink to={"/admin"}>
+          <StyledLink to={ROUTES.admin}>
             <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
               Admin panel
             </BurgerButton>

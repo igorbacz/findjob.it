@@ -4,12 +4,13 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import WorkIcon from "@mui/icons-material/Work";
 import { theme } from "../../../theme";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../routes/routesMap";
 
 export const SignInBurger = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/login");
+    navigate(ROUTES.login);
   };
   return (
     <SignInBox>

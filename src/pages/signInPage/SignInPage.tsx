@@ -9,8 +9,8 @@ import { useDispatch } from "react-redux";
 import { login, logout } from "../../service/user/userSlice";
 import { useSelector } from "react-redux";
 import { isAuthenticatedSelector } from "../../service/user/selectors";
-import Cookies from "js-cookie";
-import apiUrl from "../../const/apiUrl";
+import apiClient from "../../service/api/apiClient";
+import { ROUTES } from "../../routes/routesMap";
 
 export const SignInPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -20,7 +20,7 @@ export const SignInPage = (error: ErrorInfo) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const onClickToRegisterPage = () => {
-    navigate("/register");
+    navigate(ROUTES.register);
   };
 
   const isAuthenticated = useSelector(isAuthenticatedSelector);
@@ -32,74 +32,50 @@ export const SignInPage = (error: ErrorInfo) => {
   const findErrors = () => {
     const { email, password }: User = form;
     const newErrors = new User();
-
     if (!email || email === "") {
       newErrors.email = "E-mail is required!";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "E-mail has incorrect format";
     }
-
     if (!password || password === "") {
       newErrors.password = "Password is required!";
     }
     return newErrors;
   };
 
-  const loginFunc = async () => {
-    // const response = await fetch("https://yulik37sf3.execute-api.us-east-1.amazonaws.com/login", {
-    const response = await fetch(`${apiUrl}/authentication/login`, {
-      method: "POST",
-      body: JSON.stringify(form),
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        // "Access-Control-Allow-Origin": "*",
-        // "Access-Control-Allow-Credentials": "true",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          const cookie = res.headers.get("Set-Cookie");
-          document.cookie = cookie;
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            console.log(error);
-            let errorMessage = "Authentication failed!";
-            throw new Error(errorMessage);
-          });
-        }
-      })
-      .then((data) => {
-        const userToken = data.token;
-        // Cookies.set("Authentication", userToken);
-        dispatch(login(form));
-        navigate("/");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+  const loginUser = async (credentials: User) => {
+    try {
+      const response = await apiClient.postReq<any>("/authentication/login", credentials);
+      const cookie = response.headers.get("Set-Cookie");
+      document.cookie = cookie;
+      dispatch(login(credentials));
+      navigate(ROUTES.home);
+      return response.json();
+    } catch (error) {
+      const errorMessage = "Authentication failed!";
+      alert(errorMessage);
+      console.log(error);
+    }
   };
 
-  const handleLogin = (e: SyntheticEvent): void => {
+  const handleLogin = async (e: SyntheticEvent) => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
-
-    loginFunc();
+    loginUser(form);
   };
 
-  const handleLogout = (e: SyntheticEvent): void => {
-    Cookies.remove("Authentication");
+  const handleLogout = async (e: SyntheticEvent): Promise<any> => {
     dispatch(logout());
-    navigate("/");
+    navigate(ROUTES.home);
+    //TODO logout post request and get  empty cookie
   };
   return (
     <Wrapper>
       <HeaderLoginBox>
         <Box
           onClick={() => {
-            navigate("/");
+            navigate(ROUTES.home);
           }}
         >
           <Typography variant="H1Styled">findjob.it</Typography>

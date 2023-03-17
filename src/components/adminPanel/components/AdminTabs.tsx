@@ -99,5 +99,5 @@ const AdminTabs = () => {
       </TabPanel>
     </Box>
   );
-};;;
+}
 export default AdminTabs;

@@ -15,6 +15,7 @@ import { SignInBurger } from "./components/SignInBurger";
 import { isAuthenticatedSelector } from "../../service/user/selectors";
 import { useSelector } from "react-redux";
 import SchoolIcon from "@mui/icons-material/School";
+import { ROUTES } from "../../routes/routesMap";
 
 export const TopBarResponsive = () => {
   const isAuthenticated: boolean = useSelector(isAuthenticatedSelector);
@@ -32,7 +33,7 @@ export const TopBarResponsive = () => {
           </IconButton>
         </BoxFlex>
         <LogoResponsiveWrapper>
-          <StyledLink to="/">
+          <StyledLink to={ROUTES.home}>
             <Typography variant="H2StyledBold">findjob.it</Typography>
           </StyledLink>
         </LogoResponsiveWrapper>
@@ -40,13 +41,13 @@ export const TopBarResponsive = () => {
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <BurgerHeader />
         {isAuthenticated ? (
-          <StyledLink to={"/admin"}>
+          <StyledLink to={ROUTES.admin}>
             <BurgerButton variant="text" color="secondary" startIcon={<SchoolIcon />} fullWidth>
               Admin panel
             </BurgerButton>
           </StyledLink>
         ) : null}
-        <BurgerButton variant="text" href="/" startIcon={<WorkOutlineOutlinedIcon />}>
+        <BurgerButton variant="text" href={ROUTES.home} startIcon={<WorkOutlineOutlinedIcon />}>
           Offers
         </BurgerButton>
         <BurgerButton variant="text" color="secondary" startIcon={<BusinessOutlinedIcon />}>

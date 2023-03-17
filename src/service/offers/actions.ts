@@ -1,9 +1,9 @@
-import apiUrl from "../../const/apiUrl";
+import API_URL from "../../const/apiUrl";
 import { BigOfferDetails } from "../../types/types";
 import { offerSlice } from "./offersSlice";
 
 export const getOffers = async () => {
-  const response = await fetch(`${apiUrl}/offers`, {});
+  const response = await fetch(`${API_URL}/offers`, {});
   if (!response.ok) {
     throw new Error("Could not fetch offers data");
   }

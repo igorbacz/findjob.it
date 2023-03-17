@@ -8,6 +8,7 @@ import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import { StyledSignInMenu } from "../StyledSignInMenu";
 // import { theme } from "../../../../theme";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../../routes/routesMap";
 
 export const SignInMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -18,7 +19,7 @@ export const SignInMenu = () => {
 
   const navigate = useNavigate();
   const handleClose = () => {
-    navigate("/login");
+    navigate(ROUTES.login);
     setAnchorEl(null);
   };
   // const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));

@@ -7,6 +7,7 @@ import { CurrencyMenu } from "./components/CurrencyMenu";
 import { BurgerMenu } from "./components/BurgerMenu";
 import { TopBarResponsive } from "./TopBarResponsive";
 import { theme } from "../../theme";
+import { ROUTES } from "../../routes/routesMap";
 
 export const TopBar = () => {
   const isMatchMedium = useMediaQuery(theme.breakpoints.down("md"));
@@ -14,13 +15,13 @@ export const TopBar = () => {
   return (
     <Container>
       <LogoWrapper>
-        <StyledLink to="/">
+        <StyledLink to={ROUTES.home}>
           <Typography variant="H1Styled">findjob.it</Typography>
         </StyledLink>
         <LogoParagraph> #1 Job Board for tech industry in Europe</LogoParagraph>
       </LogoWrapper>
       <Items>
-        <StyledLink to="/">
+        <StyledLink to={ROUTES.home}>
           <Item>
             <Typography variant="buttonFont">Offers</Typography>
           </Item>
@@ -36,7 +37,7 @@ export const TopBar = () => {
         </Item>
       </Items>
       <ButtonsWrapper>
-        <StyledLink to="/post">
+        <StyledLink to={ROUTES.post}>
           <Button color="secondary" variant="outlined">
             <Typography variant="buttonFont"> Post a Job</Typography>
           </Button>

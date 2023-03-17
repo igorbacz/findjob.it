@@ -18,6 +18,7 @@ import {
 import { StyledLink } from "../topBar/styled";
 import { isAuthenticatedSelector } from "../../service/user/selectors";
 import { useSelector } from "react-redux";
+import { ROUTES } from "../../routes/routesMap";
 
 export const PostOffers = () => {
   const isAuthenticated: boolean = useSelector(isAuthenticatedSelector);
@@ -95,17 +96,17 @@ export const PostOffers = () => {
               </List>
               {!isAuthenticated ? (
                 <>
-                  <StyledLink to="/add-offer">
+                  <StyledLink to={ROUTES.addOffer}>
                     <Button variant="contained" size="large" disabled>
                       Post a job
                     </Button>
                   </StyledLink>
-                  <StyledLink to="/login">
+                  <StyledLink to={ROUTES.login}>
                     <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
-                <StyledLink to={"/add-offer"}>
+                <StyledLink to={ROUTES.addOffer}>
                   <Button variant="contained" size="large">
                     Post a job
                   </Button>
@@ -177,17 +178,17 @@ export const PostOffers = () => {
               </List>
               {!isAuthenticated ? (
                 <>
-                  <StyledLink to="/add-offer">
+                  <StyledLink to={ROUTES.addOffer}>
                     <Button variant="contained" size="large" disabled>
                       Post a job
                     </Button>
                   </StyledLink>
-                  <StyledLink to="/login">
+                  <StyledLink to={ROUTES.login}>
                     <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
-                <StyledLink to="/add-offer">
+                <StyledLink to={ROUTES.addOffer}>
                   <Button variant="contained" size="large">
                     Post a job
                   </Button>
@@ -256,17 +257,17 @@ export const PostOffers = () => {
               </List>
               {!isAuthenticated ? (
                 <>
-                  <StyledLink to="/add-offer">
+                  <StyledLink to={ROUTES.addOffer}>
                     <Button variant="contained" size="large" disabled>
                       Post a job
                     </Button>
                   </StyledLink>
-                  <StyledLink to="/login">
+                  <StyledLink to={ROUTES.login}>
                     <Typography variant="PStyled">Log in to add the job offer</Typography>
                   </StyledLink>
                 </>
               ) : (
-                <StyledLink to="/add-offer">
+                <StyledLink to={ROUTES.addOffer}>
                   <Button variant="contained" size="large">
                     Post a job
                   </Button>

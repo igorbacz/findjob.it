@@ -5,14 +5,15 @@ import { Wrapper, LabelContainer, ButtonContainer, LinkContainer, ResetLink, Hea
 import { ChangeEvent, ErrorInfo, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
-import apiUrl from "../../const/apiUrl";
+import API_URL from "../../const/apiUrl";
+import { ROUTES } from "../../routes/routesMap";
 
 export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
   const [errors, setErrors] = useState(new User());
   const navigate = useNavigate();
   const onClickToLoginPage = () => {
-    navigate("/login");
+    navigate(ROUTES.login);
   };
 
   const handleChange = (e: ChangeEvent<{ value: string; name: string }>) => {
@@ -37,7 +38,7 @@ export const RegisterPage = (error: ErrorInfo) => {
   };
 
   const Register = async () => {
-    const response = await fetch(`${apiUrl}/authentication/register`, {
+    await fetch(`${API_URL}/authentication/register`, {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
@@ -48,12 +49,12 @@ export const RegisterPage = (error: ErrorInfo) => {
     })
       .then((res) => {
         if (res.ok) {
-          navigate("/");
+          navigate(ROUTES.home);
           return res.json();
         }
         if (res.status === 409) {
           alert("User Already Exist. Please Login.");
-          navigate("/login");
+          navigate(ROUTES.login);
         } else {
           return res.json().then(() => {
             alert("Authentication failed!");
@@ -71,7 +72,7 @@ export const RegisterPage = (error: ErrorInfo) => {
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
     Register();
-    navigate("/");
+    navigate(ROUTES.home);
   };
 
   return (
@@ -79,7 +80,7 @@ export const RegisterPage = (error: ErrorInfo) => {
       <HeaderLoginBox>
         <Box
           onClick={() => {
-            navigate("/");
+            navigate(ROUTES.home);
           }}
         >
           <Typography variant="H1Styled">findjob.it</Typography>
