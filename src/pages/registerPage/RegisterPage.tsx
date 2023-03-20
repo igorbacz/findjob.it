@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../../types/types";
 import API_URL from "../../const/apiUrl";
 import { ROUTES } from "../../routes/routesMap";
+import apiClient from "../../service/api/apiClient";
+import { response } from "express";
 
 export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -36,42 +38,27 @@ export const RegisterPage = (error: ErrorInfo) => {
     }
     return newErrors;
   };
-
-  const Register = async () => {
-    await fetch(`${API_URL}/authentication/register`, {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          navigate(ROUTES.home);
-          return res.json();
-        }
-        if (res.status === 409) {
-          alert("User Already Exist. Please Login.");
-          navigate(ROUTES.login);
-        } else {
-          return res.json().then(() => {
-            alert("Authentication failed!");
-            let errorMessage = "Authentication failed!";
-            throw new Error(errorMessage);
-          });
-        }
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+  const registerUser = async (credentials: User) => {
+    try {
+      const response = await apiClient.postReq<any>("/authentication/register", credentials);
+      navigate(ROUTES.home);
+      return response.json();
+    } catch (error) {
+      if (response.status(409)) {
+        let errorMessage = "User already exist. Please login.";
+        return alert(errorMessage);
+      }
+      let errorMessage = "Authentication failed!";
+      alert(errorMessage);
+      console.log(error);
+    }
   };
+
   const handleRegister = (e: SyntheticEvent): void => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.values(newErrors).some((el) => el)) return setErrors(newErrors);
-    Register();
+    registerUser(form);
     navigate(ROUTES.home);
   };
 

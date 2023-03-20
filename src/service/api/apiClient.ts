@@ -18,9 +18,9 @@ const postReq = async <RequestBodyT>(endpoint: string, requestData?: RequestBody
     credentials: "include",
   });
 
-const deleteReq = async <RequestBodyT>(endpoint: string, id: string): Promise<Response> =>
+const deleteReq = async (endpoint: string, id: string): Promise<Response> =>
   fetch(API_URL + endpoint + id, {
-    method: "POST",
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },

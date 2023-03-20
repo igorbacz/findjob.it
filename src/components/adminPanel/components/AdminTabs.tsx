@@ -13,26 +13,7 @@ import usePagination from "../../../hooks/usePagination";
 import { OfferWrapper } from "../../Tabs/styled";
 import MiniOfferAdmin from "./MiniOfferAdmin";
 import { userDataSelector } from "../../../service/user/selectors";
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-const TabPanel = (props: TabPanelProps) => {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Box>{children}</Box>
-        </Box>
-      )}
-    </div>
-  );
-};
+import { TabPanel } from "./TabPanel";
 
 const a11yProps = (index: number) => {
   return {

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BigOfferDetails } from "../../types/types";
 import { allOffersSelector } from "../../service/offers/selectors";
+import { MAP_URL } from "../../const/mapUrl";
 
 const MapComponent = () => {
   const offers: BigOfferDetails[] = useSelector(allOffersSelector);
@@ -20,13 +21,10 @@ const MapComponent = () => {
     return LeafIcon;
   };
   const map = useMap();
-
+  const MAP_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   return (
     <>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+      <TileLayer attribution={MAP_ATTRIBUTION} url={MAP_URL} />
       {offers.map((city) => (
         <Marker
           position={[Number(city.geolocation.latitude), Number(city.geolocation.longitude)]}
@@ -42,7 +40,7 @@ const MapComponent = () => {
       ))}
     </>
   );
-};;;;
+};
 
 export const OpenStreetMap = () => (
   <MapContainer center={[52.291335, 19.088525]} zoom={6} scrollWheelZoom={false}>

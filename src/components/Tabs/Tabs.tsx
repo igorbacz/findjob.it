@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { InsideTabsBox, StyledFormControlLabel, StyledSwitch, Tab, TabBar, TabPanel, TabsList, OfferWrapper, StyledTabs } from "./styled";
 import { AppDispatch, BigOfferDetails } from "../../types/types";
 import { useSearchParams } from "react-router-dom";
-import MiniOffer from "../miniOffer/MiniOffer";
 import SortMenu from "./components/SortMenu";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
@@ -12,6 +11,7 @@ import { allOffersSelector, filterAndSortSelector } from "../../service/offers/s
 import { getOffersData } from "../../service/offers/actions";
 import LargeView from "../miniOffer/components/views/LargeView";
 import DefaultView from "../miniOffer/components/views/DefaultView";
+import MiniOffer from "../miniOffer/MiniOffer";
 
 export const Tabs = () => {
   const [checked, setChecked] = useState(false);

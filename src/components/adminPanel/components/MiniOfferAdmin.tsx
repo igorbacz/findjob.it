@@ -6,7 +6,7 @@ import { store } from "../../../service/store";
 import { deleteOffer } from "../../../service/offers/offersSlice";
 import { useDispatch } from "react-redux";
 import { StyledLink } from "../../topBar/styled";
-import API_URL from "../../../const/apiUrl";
+import apiClient from "../../../service/api/apiClient";
 
 const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   type AppDispatch = typeof store.dispatch;
@@ -14,16 +14,8 @@ const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
   const dispatch = useAppDispatch();
 
   const deleteOfferInDatabase = async (_id: string) => {
-    const response = await fetch(`${API_URL}/offers/${_id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response;
-    if (data) {
-      dispatch(deleteOffer({ _id }));
-    }
+    const response = await apiClient.deleteReq("/offers/", _id);
+    response.ok && dispatch(deleteOffer({ _id }));
   };
 
   const handleDelete = async () => {
@@ -56,6 +48,6 @@ const MiniOffer = ({ logo, title, amount, city, _id, remote }: SmallOffer) => {
       </LocationRemote>
     </MiniOfferCon>
   );
-};;
+};
 
 export default MiniOffer;

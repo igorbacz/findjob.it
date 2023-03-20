@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { BACKGROUND_URL } from "../../const/backgroundUrl";
 import { HeaderPostOffers, HeaderText, ImgBox } from "../postOffers/styled";
 import AdminTabs from "./components/AdminTabs";
 
@@ -12,7 +13,7 @@ export const AdminPanel = () => {
           </Typography>
         </HeaderText>
         <ImgBox sx={{ display: { xs: "none", md: "none", lg: "block", xl: "block" } }}>
-          <img src="https://justjoin.it/next-assets/addOffer/technology-header.svg" alt="ikony"></img>
+          <img src={BACKGROUND_URL} alt="ikony"></img>
         </ImgBox>
       </HeaderPostOffers>
       <AdminTabs />

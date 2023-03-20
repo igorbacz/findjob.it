@@ -5,6 +5,7 @@ FindJob.it is the fullstack application with job offers.
 Frontend of the application is deployed on AWS S3 with Cloud Front and Route 53.
 
 Backend of the application is deployed on: https://nestapi.herokuapp.com/
+Here you can find swagger documentation of this project: https://nestapi.herokuapp.com/api
 
 ## Author
 [Iwona Gorbacz](https://github.com/igorbacz)
