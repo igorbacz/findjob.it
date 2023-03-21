@@ -3,7 +3,7 @@ export const ROUTES = {
   login: "/login",
   register: "/register",
   admin: "/admin",
-  post: "/post",
+  offersEmployer: "/offers-employer",
   addOffer: "/add-offer",
   singleOffer: "/offer/:offerId",
 };

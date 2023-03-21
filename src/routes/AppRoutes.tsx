@@ -5,7 +5,7 @@ import { AdminPanelPage } from "../pages/AdminPanelPage/AdminPanelPage";
 import { BigOfferPage } from "../pages/bigOfferPage/BigOfferPage";
 import { OfferFormPage } from "../pages/OfferFormPage/OfferFormPage";
 import { OffersListPage } from "../pages/OffersListPage/OffersListPage";
-import { PostOffersPage } from "../pages/postOffersPage/PostOffersPage";
+import { OffersEmployerPage } from "../pages/offersEmployerPage/OffersEmployerPage";
 import { RegisterPage } from "../pages/registerPage/RegisterPage";
 import { SignInPage } from "../pages/signInPage/SignInPage";
 import { ProtectedRoute } from "../ProtectedRoute";
@@ -24,7 +24,7 @@ export const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
-      <Route path={ROUTES.post} element={<PostOffersPage />} />
+      <Route path={ROUTES.offersEmployer} element={<OffersEmployerPage />} />
       <Route
         path={ROUTES.addOffer}
         element={

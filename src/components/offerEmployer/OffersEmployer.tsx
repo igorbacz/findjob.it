@@ -2,11 +2,10 @@ import { Typography } from "@mui/material";
 import { Fragment } from "react";
 import { HeaderPostOffers, HeaderText, OffersBox, ContentOffers, ImgBox } from "./styled";
 import { BACKGROUND_URL } from "../../const/backgroundUrl";
-import { OfferBasic } from "./components/OfferBasic";
-import { OfferPremium } from "./components/OfferPremium";
-import { OfferBusiness } from "./components/OfferBusiness";
+import { variantsOfOffers } from "./variantsOfOffers";
+import { OfferEmployer } from "./components/OfferEmployer";
 
-export const PostOffers = () => {
+export const OffersEmployer = () => {
   return (
     <Fragment>
       <HeaderPostOffers>
@@ -20,9 +19,9 @@ export const PostOffers = () => {
       <OffersBox>
         <Typography variant="H3Styled">Get to know job ads on findjob.it</Typography>
         <ContentOffers>
-          <OfferBasic />
-          <OfferPremium />
-          <OfferBusiness />
+          {variantsOfOffers.map((item) => (
+            <OfferEmployer name={item.name} price={item.price} content={item.content} />
+          ))}
         </ContentOffers>
       </OffersBox>
     </Fragment>

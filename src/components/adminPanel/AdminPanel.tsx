@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { BACKGROUND_URL } from "../../const/backgroundUrl";
-import { HeaderPostOffers, HeaderText, ImgBox } from "../postOffers/styled";
+import { HeaderPostOffers, HeaderText, ImgBox } from "../offerEmployer/styled";
 import AdminTabs from "./components/AdminTabs";
 
 export const AdminPanel = () => {

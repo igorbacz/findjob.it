@@ -37,7 +37,7 @@ export const TopBar = () => {
         </Item>
       </Items>
       <ButtonsWrapper>
-        <StyledLink to={ROUTES.post}>
+        <StyledLink to={ROUTES.offersEmployer}>
           <Button color="secondary" variant="outlined">
             <Typography variant="buttonFont"> Post a Job</Typography>
           </Button>

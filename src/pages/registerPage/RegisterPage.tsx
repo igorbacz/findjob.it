@@ -8,7 +8,7 @@ import { User } from "../../types/types";
 import API_URL from "../../const/apiUrl";
 import { ROUTES } from "../../routes/routesMap";
 import apiClient from "../../service/api/apiClient";
-import { response } from "express";
+// import { response } from "express";
 
 export const RegisterPage = (error: ErrorInfo) => {
   const [form, setForm] = useState(new User());
@@ -44,10 +44,10 @@ export const RegisterPage = (error: ErrorInfo) => {
       navigate(ROUTES.home);
       return response.json();
     } catch (error) {
-      if (response.status(409)) {
-        let errorMessage = "User already exist. Please login.";
-        return alert(errorMessage);
-      }
+      // if (response.status(409)) {
+      //   let errorMessage = "User already exist. Please login.";
+      //   return alert(errorMessage);
+      // }
       let errorMessage = "Authentication failed!";
       alert(errorMessage);
       console.log(error);
