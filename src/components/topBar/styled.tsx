@@ -8,8 +8,6 @@ export const Container = styled(Box)`
   height: 70px;
   background-color: white;
   width: 100%;
-  top: 0;
-  position: fixed;
 `;
 
 export const LogoWrapper = styled(Box)`
