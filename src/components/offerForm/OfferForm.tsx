@@ -378,9 +378,9 @@ export const OfferForm = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {currentStackParam ? (
+                //TODO if don't have lat i lang -> do nothing 
                 <Marker
                   position={[currentLatitude, currentLongitude]}
-                  // TODO position={!apiGeolocation ? [currentLatitude, currentLongitude] : [latitudeFromApi, longitudeFromApi]}
                   icon={iconUrlFind()}
                 ></Marker>
               ) : null}

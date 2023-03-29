@@ -7,6 +7,7 @@ export const Container = styled(Box)`
   width: 100%;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding-top: 70px;
 `;
 
 export const ContainerSection = styled(Box)`
