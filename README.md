@@ -18,6 +18,7 @@ Here you can find swagger documentation of this project: https://nestapi.herokua
 - Filtering offers based on the date the offer was added, the amount of earnings, the possibility of remote work and main stack.
 - User registration and login
 - Adding job offer by login user.
+- Admin Panel with offers added by current user
 - Removing a job offer
 </details>
 
