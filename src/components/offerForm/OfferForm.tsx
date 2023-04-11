@@ -55,7 +55,8 @@ export const OfferForm = () => {
   const [techStackArray, setTechStackArray] = useState<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const [city, setCity] = useState("");
-  const [apiGeolocation, setApiGeolocation] = useState();
+  //TODO
+  // const [apiGeolocation, setApiGeolocation] = useState();
   const [location, setLocation] = useState<GeoProp>();
   const geolocation = useGeolocation();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -378,11 +379,8 @@ export const OfferForm = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {currentStackParam ? (
-                //TODO if don't have lat i lang -> do nothing 
-                <Marker
-                  position={[currentLatitude, currentLongitude]}
-                  icon={iconUrlFind()}
-                ></Marker>
+                //TODO if don't have lat i lang -> do nothing
+                <Marker position={[currentLatitude, currentLongitude]} icon={iconUrlFind()}></Marker>
               ) : null}
             </>
           </MapContainer>
